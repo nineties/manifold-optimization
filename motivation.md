@@ -1,5 +1,6 @@
 ---
 title: モチベーション
+mathjax: true
 ---
 
 test
