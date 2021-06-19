@@ -8,4 +8,4 @@
 
 を参考にしています。
 
-1. [モチベーション](motivation/index.md)
+1. [モチベーション](motivation/index)
