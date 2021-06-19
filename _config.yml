@@ -1,10 +1,5 @@
-theme: celeste
+theme: minima
 repository: nineties/manifold-optimization
 
 title: Manifold Optimization
 author: Koichi Nakamura <koichi@idein.jp>
-
-github:
-    - project_tagline: test
-    - is_user_page: true
-    - is_project_page: false
