@@ -3,3 +3,5 @@ repository: nineties/manifold-optimization
 
 title: Manifold Optimization
 author: Koichi Nakamura <koichi@idein.jp>
+
+header_pages: index
