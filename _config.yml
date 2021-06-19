@@ -1,0 +1,11 @@
+theme: jekyll-theme-minimal
+repository: nineties/manifold-optimization
+
+title: Manifold Optimization
+
+github:
+    - project_tagline: test
+    - is_user_page: true
+    - is_project_page: false
+
+google_analytics: UA-129434657-1
