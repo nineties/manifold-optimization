@@ -7,4 +7,4 @@ Computer Visionやロボットの制御など様々な場面で登場する多�
 
 もし内容に謝りがありましたら、 [IssueやPull Request](https://github.com/nineties/manifold-optimization)を頂けますとありがたいです。
 
-1. [モチベーション](motivation/index)
+1. [モチベーション](motivation)
