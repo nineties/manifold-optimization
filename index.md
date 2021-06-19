@@ -7,3 +7,5 @@ Computer Visionやロボットの制御など様々な場面で必要になる�
 - [Optimization Algorithms on Matrix Manifolds - Full Online Text](https://press.princeton.edu/absil)
 
 を参考にしています。
+
+- [モチベーション](motivation.md)
