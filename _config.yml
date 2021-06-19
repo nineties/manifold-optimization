@@ -2,9 +2,7 @@ theme: minima
 repository: nineties/manifold-optimization
 
 title: Manifold Optimization
-author:
-    name: 中村晃一(Koichi Nakamura)
-    email: koichi@idein.jp
+author: Koichi Nakamura <koichi@idein.jp>
 
 github:
     - project_tagline: test
