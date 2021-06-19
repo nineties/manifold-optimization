@@ -2,12 +2,14 @@
 title: 多様体
 ---
 
+[教科書](https://press.princeton.edu/absil)で多様体の定義では、よくある(?)定義と異なって極大アトラスを用いるものになっている。よくある定義では多様体 $M$ の構造をハウスドルフ空間であるなど天下り的に与える事が多いけど、これから多様体と見なして分析しようとしている $M$ の構造が予め与えるというのは確かに違和感がある。教科書の定義では $M$ は単なる集合として導入されて、 $M$ 上のチャートの集合によって構造を入れるというより自然な感じな流れになっている。
+
+ただ、今回の目的は多様体の抽象論的な構成方法ではなくて最適化問題について学ぶ事であるので、以下では一般的な定義を採用して進めていく事にする。
+
 ## 多様体の定義
 
-基本的には[教科書](https://press.princeton.edu/absil)の定義に従うが、チャートが同相写像ではなく全単射で定義されていたりして、馴染みが無かったので、細かいところは変えている。
-
 <div class="definition" markdown=1>
-$M$を位相空間とする。$M$の開集合 $U$から $\mathbb{R}^d$ の開集合$V$ への同相写像 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $\varphi$ の事をチャートと呼ぶこともある。
+$M$を位相空間とする。$M$の開集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への同相写像 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $\varphi$ の事をチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における**座標(coordinate)**と言う。
 </div>
@@ -18,42 +20,37 @@ $M$を位相空間とする。$M$の開集合 $U$から $\mathbb{R}^d$ の開集
 
 <img src="images/chart.png" width="50%">
 
-学的な例として例えば $M$ として単位円周 $M=\\{(x,y)\|x^2+y^2=1\\}$ を考える。 $U$ をこの $x>0$ の範囲 $U=\\{(x,y)\|x^2+y^2=1,x>0\\}$ として $$\varphi:U\rightarrow(-\pi/2,\pi/2)$$を
-\\[
-\varphi(x, y) = \tan^{-1}(y/x)
-\\]
-とすると $(U,\varphi)$ はチャート。
-
 <div class="definition" markdown=1>
 $M$ を位相空間とする。$M$の $d$次元チャートの集合
  $\\{U_\lambda\\}_{\lambda\in\Lambda}$ で
 
 \\[ M=\bigcup_{\lambda\in\Lambda}U_\lambda \\]
 
-となるものを **アトラス(atlas)**という。
+となるものを $d$次元 **アトラス(atlas)**という。
 </div>
-アトラスはチャートを集めた地図帳のようなもの。
-    
+
+アトラスは地図を集めた地図帳。
+
 <div class="definition" markdown=1>
-位相空間 $M$ のアトラス $A$　の2つの交わるチャート $(U_\alpha,\varphi_\alpha),(U_\beta,\varphi_\beta),U_\alpha\cap U_\beta\neq\emptyset$ に対して
+位相空間 $M$ とその $d$次元アトラス $A$ のペア $(M,A)$ を $d$次元 **多様体(manifold)** という。誤解の恐れがない場合には $M$自身 の事を多様体と呼ぶこともある。
+</div>
 
-\\[ \varphi_\beta\circ\varphi_\alpha:\mathbb{R}^d\rightarrow\mathbb{R}^d \\]
+多様体とは、地図帳がセットになって色々調べることができるようになった位相空間。
 
+<div class="definition" markdown=1>
+多様体 $M$ の2つの交わるチャート $(U,\varphi),(V,\psi),U\cap V\neq\emptyset$ に対して
+
+\\[ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) \\]
 を **座標変換(change of coordinates)**という
 </div>
 
-上が一般的な定義だが、今回は微分可能多様体に興味があるので、今後アトラスといったら以下の $C^\infty$ アトラス、つまり任意の座標変換が滑らかであるようなアトラスを指す事にする。
+2つの地図に重なっている地域があるならば、一方の地図ともう一方の地図の対応を付けられるということ。
+
+<img src="images/change_of_coordinates.png" width="50%">
+
+$U,V$ は$M$の開集合なので $U\cap V$ も開集合。 $\varphi,\psi$ は同相写像だから $\varphi(U\cap V),\psi(U\cap V)$ も開集合。よって、$\psi\circ\varphi^{-1}$は $\mathbb{R}^d$ の開集合から $\mathbb{R}^d$ の開集合への同相写像になる。
 
 <div class="definition" markdown=1>
-位相空間  $M$ のアトラス $A$ の任意の座標変換が $C^\infty$ 級である時これを **$C^\infty$ アトラス** という
-</div>
+多様体 $M$ の任意の座標変換が $C^\alpha$ 級である時これを **$C^\alpha$ 級多様体($C^\alpha$ manifold)** という
+</div> 
 
-<div class="definition" markdown=1>
-$A$と$B$がある位相空間 $M$のアトラスである時、 $A\cup B$もアトラスであるならば $A$ と$B$ は **同値(equivalent)**であるという。
-</div>
-
-アトラスの同値が、実際に同値関係である事は明らか。
-
-<div class="definition" markdown=1>
-位相空間 $M$ のアトラス $A$ に対して、 $A$ と同値な全てのアトラスを含むアトラスを **極大アトラス(maximal atlas)** といい、 $A^+$ と表す。
-</div>
