@@ -14,7 +14,7 @@ title: 多様体
 
 <div class="box" markdown=1>
 <div class="title"> 定義:チャート </div>
-$M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $\varphi$ の事をチャートと呼ぶこともある。
+$M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における**座標(coordinate)**と言う。
 </div>
@@ -42,6 +42,8 @@ $\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合で
 特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
 $\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
 $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
+
+チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートである。但し、 $\varphi\|_V$ は $\varphi$ の定義域を $V$ に制限した写像。これは、これらの間の座標変換が恒等写像になる事から明らか。地図をその一部にだけ注目しても地図である事は変わらないという事。
 
 両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。
 
@@ -186,3 +188,17 @@ $M$ は $A$ の加算個のチャートで覆うことができる。つまり�
 
 任意の異なる点 $x,y\in M,x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in A$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
 </div>
+
+ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。
+
+<div class="box" markdown=1>
+<div class="title"> 補題 2.1 </div>
+$M$ を集合、 $A$ を極大アトラスとする。
+$M$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in A$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
+
+すなわち、あるチャート $U_\alpha,U_\beta\subset U$ が存在して $x\in U_\alpha,y\in U_\beta,U_\alpha\cap U_\beta=\emptyset$
+</div>
+
+つまり、一つの地図の中に限って見ればハウスドルフ性は自然に成立するということ。
+
+$\varphi$ は全単射だから $x\neq y$ の時、$\varphi(x)\neq\varphi(y)$ である。よって $\mathbb{R}^d$ はハウスドルフ空間だから $\varphi(x),\varphi(y)$ を分離する開集合で $\varphi(U)$ に含まれる物を選ぶ事ができる。これらの $\varphi$ での逆像を $U_\alpha,U_\beta$ とすれば $U_\alpha,U_\beta\subset U$ であって $\varphi$ は全単射だから $U_\alpha\cap U_\beta=\emptyset$ となる。それぞれのチャートの写像は $\varphi$ を $U_\alpha,U_\beta$ に制限したものをとれば良い。
