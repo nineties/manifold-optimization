@@ -76,10 +76,37 @@ $U$ がアトラス $\mathcal{B}$ について条件を満たすとする。こ�
 
 証明
 
-$(\mathcal{M},\mathcal{A})$ を多様体とし、 $\mathcal{N}\subset\mathcal{M}$ をその開集合とする。ここで $\mathcal{A}$ の全てのチャートを $U$ に制限した
+$(\mathcal{M},\mathcal{A})$ を多様体とし、 $U\subset\mathcal{M}$ をその開集合とする。ここで $\mathcal{A}$ の全てのチャートを $U$ に制限した
 
 \\[
 \mathcal{A}\_U=\\{(U\cap U_\alpha,\varphi_\alpha\|_{U\cap U\_\alpha})\ \|\ (U\_\alpha,\varphi\_\alpha)\in\mathcal{A}\\}
 \\]
 
-を考える。これが $\mathcal{N}$ の極大アトラスになり、可算被覆を持つ事とハウスドルフ性を満たすことを示せば良い。
+を考える。これが $U$ の極大アトラスとなり、可算被覆を持つこととハウスドルフ性を満たす事を示せば良い。
+
+
+$U$ は開集合だから
+$\varphi(U\cap U_\alpha)$ は $\mathbb{R}^d$ の開集合。そして $\varphi_\alpha\|\_{U\cap U\_\alpha}$ は全単射だから $(U\cap U\_\alpha,\varphi\_\alpha\|\_{U\cap U\_\alpha})$ はチャート。さらに $\bigcup_\alpha (U\cap U_\alpha) = U\cap\left(\bigcup_\alpha U_\alpha\right) = U\cap\mathcal{M} = U$ だから $\mathcal{A}_U$ はアトラス。
+
+$\mathcal{A}_U$ が極大アトラスではないとすると、 $\mathcal{A}_U$ に含まれないチャート $(V,\psi)$ で $\mathcal{A}_U$ と両立するものが存在。$\mathcal{N}$ のチャートは $\mathcal{M}$ のチャートでもあるから $\mathcal{A}$ が極大アトラスである事より $(V,\psi)\in\mathcal{A}$。この時 $U\cap V=V$ だから $(V,\psi)\in\mathcal{A}_U$ となり矛盾。よって $\mathcal{A}_U$ は $U$ の極大アトラス。
+
+$\mathcal{A}$は可算被覆を持つから、それらと $U$ の共通部分を取る事で $\mathcal{A}_U$ の可算被覆を作れる。
+
+$x,y\in U,x\neq y$ とする。 $\mathcal{M}$ のハウスドルフ性より $\mathcal{M}$ のチャート $U_\alpha,U_\beta$ で
+
+\\[ x\in U_\alpha, y\in U_\beta, U_\alpha\cap U_\beta = \emptyset \\]
+
+となるものが取れる。これらを $U$ に制限すれば $x,y$ を分離する $U$ のチャートが得られる。 $\square$
+
+---
+
+<div class="box" markdown=1>
+<div class="title"> 命題 3.3 </div>
+$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。この時 $\mathcal{A}$ は $\mathcal{M}$ の開集合系の**基底 (base)** である。
+
+すなわち、任意の開集合 $U$ は $\mathcal{A}$ のチャート $U_\alpha$ の和集合として表すことができる。
+</div>
+
+証明
+
+$U$は開集合だから チャート $(U_\alpha,\varphi_\alpha)$ と $U$ の共通部分を取った $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ も $\mathcal{M}$ のチャートである。これが $\mathcal{A}$ の全てのチャートと両立する事は簡単に示せて $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})\in\mathcal{A}$ である。よって $U = \bigcup_\alpha(U\cap U_\alpha)$である事より示された。 $\square$
