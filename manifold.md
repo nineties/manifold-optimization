@@ -171,8 +171,6 @@ $\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^
 
 以上で多様体の定義に必要な道具は揃ったが、実用上2つの条件を加える。1つは $\mathcal{M}$ が可算個のチャートで覆えるということ、もう一つはハウスドルフ性である。これらが具体的にどう役に立つかは(私もまだ勉強途中でよく分からないので)あとで、実際に使う場面で見る。
 
-後ほど、極大アトラスの定める多様体の位相について議論するけれども、これらの条件がある事でその位相によって多様体が第二可算でハウスドルフな空間になって扱いやすくなる(はず)。
-
 <div class="box" markdown=1>
 <div class="title"> 定義:多様体 </div>
 集合 $\mathcal{M}$ と$d$次元極大アトラス $\mathcal{A}=\\{(U_\alpha,\varphi_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。

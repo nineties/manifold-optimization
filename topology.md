@@ -44,10 +44,33 @@ $\\{U_\alpha\\}$ が開集合であるならば、任意のチャート $(V,\var
 $\mathcal{M}$ とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を **アトラス位相(atlas topology)** という。
 </div>
 
+
+以後の証明をやり易くする為に、以下の事実を証明する。
+<div class="box" markdown=1>
+<div class="title"> 命題3.2 </div>
+$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。この時 $\mathcal{A}$ は $\mathcal{M}$ の開集合系の**基底 (base)** である。
+
+すなわち、任意の開集合 $U$ は $\mathcal{A}$ のチャート $U_\alpha$ の和集合として表すことができる。
+</div>
+
+まず、次の一般的な事実を確認する。
+
+チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートである。そして $(U,\varphi)$ と $(V,\varphi\|_V)$ は両立する。また、$(U,\varphi)$ がアトラス $\mathcal{A}$ と両立するならば $(V,\varphi\|_V)$ も $\mathcal{A}$ と両立する。この事は $\varphi\circ\varphi\|_V^{-1}$ が恒等写像となる事から簡単に示せる。
+
+これを使って命題3.2を証明する。
+
+証明
+
+$U$は開集合だから任意のチャート $(U_\alpha,\varphi_\alpha)\in\mathcal{A}$ について、$\varphi_\alpha(U\cap U_\alpha)$ は開集合である。そして、$U\cap U_\alpha\subset U_\alpha$であるから$(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ もチャートである。そして $(U_\alpha,\varphi_\alpha)\in\mathcal{A})$ である事より $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ は $\mathcal{A}$ と両立するが、$\mathcal{A}$ は極大アトラスなので
+$(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})\in\mathcal{A}$
+
+よって $U = \bigcup_\alpha(U\cap U_\alpha)$である事より示された。 $\square$
+
+
 $U\subset\mathcal{M}$ が開集合であるか否かの判定に極大アトラス $\mathcal{A}$ の全てのチャートを調べるのは大変なので、以下の命題を示す。
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.1 </div>
+<div class="title"> 命題 3.3 </div>
 $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $U\subset\mathcal{M}$ が開集合である事は、適当な $U$ を覆うアトラス $\mathcal{B}\subset\mathcal{A}$ の任意のチャート $(U_\beta,\varphi_\beta)\in\mathcal{B}$ について $\varphi_\beta(U\cap U_\beta)$ が開集合である事と同値。
 </div>
@@ -70,27 +93,20 @@ $U$ がアトラス $\mathcal{B}$ について条件を満たすとする。こ�
 ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}$ より $\varphi_\beta(U_\alpha\cap U_\beta$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\varphi_\alpha(U\cap U_\alpha)$ も開集合となる。 $\square$
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.2 </div>
+<div class="title"> 命題 3.4 </div>
 多様体の任意の開集合は多様体である
 </div>
 
 証明
 
-$(\mathcal{M},\mathcal{A})$ を多様体とし、 $U\subset\mathcal{M}$ をその開集合とする。ここで $\mathcal{A}$ の全てのチャートを $U$ に制限した
+$(\mathcal{M},\mathcal{A})$ を多様体とし、 $U\subset\mathcal{M}$ をその開集合とする。
+ここで $U$ に含まれるチャートだけを集めた
 
-\\[
-\mathcal{A}\_U=\\{(U\cap U_\alpha,\varphi_\alpha\|_{U\cap U\_\alpha})\ \|\ (U\_\alpha,\varphi\_\alpha)\in\mathcal{A}\\}
-\\]
+\\[ \mathcal{A}_U =\\{(V,\psi)\ \|\ (V,\psi)\in\mathcal{A},V\subset U\\}\\]
 
-を考える。これが $U$ の極大アトラスとなり、可算被覆を持つこととハウスドルフ性を満たす事を示せば良い。
+を考える。これが $U$ の極大アトラスとなるのは明らか。
 
-
-$U$ は開集合だから
-$\varphi(U\cap U_\alpha)$ は $\mathbb{R}^d$ の開集合。そして $\varphi_\alpha\|\_{U\cap U\_\alpha}$ は全単射だから $(U\cap U\_\alpha,\varphi\_\alpha\|\_{U\cap U\_\alpha})$ はチャート。さらに $\bigcup_\alpha (U\cap U_\alpha) = U\cap\left(\bigcup_\alpha U_\alpha\right) = U\cap\mathcal{M} = U$ だから $\mathcal{A}_U$ はアトラス。
-
-$\mathcal{A}_U$ が極大アトラスではないとすると、 $\mathcal{A}_U$ に含まれないチャート $(V,\psi)$ で $\mathcal{A}_U$ と両立するものが存在。$\mathcal{N}$ のチャートは $\mathcal{M}$ のチャートでもあるから $\mathcal{A}$ が極大アトラスである事より $(V,\psi)\in\mathcal{A}$。この時 $U\cap V=V$ だから $(V,\psi)\in\mathcal{A}_U$ となり矛盾。よって $\mathcal{A}_U$ は $U$ の極大アトラス。
-
-$\mathcal{A}$は可算被覆を持つから、それらと $U$ の共通部分を取る事で $\mathcal{A}_U$ の可算被覆を作れる。
+$\mathcal{A}$は可算被覆を持つから、それらと $U$ の共通部分を取る事で $\mathcal{A}_U$ の可算被覆を作れる。($U$ は開集合だから任意の $U\_\alpha$ に対して $U\cap U\_\alpha$ はチャートである事に注意)
 
 $x,y\in U,x\neq y$ とする。 $\mathcal{M}$ のハウスドルフ性より $\mathcal{M}$ のチャート $U_\alpha,U_\beta$ で
 
@@ -98,15 +114,21 @@ $x,y\in U,x\neq y$ とする。 $\mathcal{M}$ のハウスドルフ性より $\m
 
 となるものが取れる。これらを $U$ に制限すれば $x,y$ を分離する $U$ のチャートが得られる。 $\square$
 
----
-
 <div class="box" markdown=1>
-<div class="title"> 命題 3.3 </div>
-$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。この時 $\mathcal{A}$ は $\mathcal{M}$ の開集合系の**基底 (base)** である。
+<div class="title"> 命題 3.6 </div>
+$\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると
 
-すなわち、任意の開集合 $U$ は $\mathcal{A}$ のチャート $U_\alpha$ の和集合として表すことができる。
+$(\mathcal{M},\mathcal{A})$ がハウスドルフ性を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$がハウスドルフ空間となる
 </div>
 
 証明
 
-$U$は開集合だから チャート $(U_\alpha,\varphi_\alpha)$ と $U$ の共通部分を取った $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ も $\mathcal{M}$ のチャートである。これが $\mathcal{A}$ の全てのチャートと両立する事は簡単に示せて $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})\in\mathcal{A}$ である。よって $U = \bigcup_\alpha(U\cap U_\alpha)$である事より示された。 $\square$
+($\Rightarrow$)
+$\mathcal{A}$ がアトラス位相の基底である事から明らか。
+
+($\Leftarrow$)
+$x,y\in\mathcal{M},x\neq y$ とする。 $\mathcal{M}$ はハウスドルフ空間だから開集合 $U,V\subset\mathcal{M}$ が存在して
+
+\\[ x\in U,y\in V,U\cap V=\emptyset \\]
+
+となる。$U,V$ は開集合だから、それぞれ $\mathcal{A}$ のチャートの和集合で表す事ができ、その中に $x,y$ を含む互いに交わらないチャートが存在する。$\square$
