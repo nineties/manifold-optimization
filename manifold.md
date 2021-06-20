@@ -1,5 +1,6 @@
 ---
-title: 2. 多様体
+section: 2
+title: 多様体
 ---
 
 [教科書](https://press.princeton.edu/absil)の多様体の定義では、よくある(?)定義と異なって極大アトラスを用いるものになっている。
@@ -9,8 +10,8 @@ title: 2. 多様体
 
 また、今回関心があるのは可微分多様体であるので、以下特に断りなく多様体と言ったら可微分多様体の事とする。
 
-<div class="box" markdown=1>
-<div class="title"> 定義:チャート </div>
+<div class="def" markdown=1>
+<div class="title"> チャート </div>
 $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における**座標(coordinate)**と言う。
@@ -22,7 +23,7 @@ $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユー�
 
 <img src="images/chart.png" width="50%">
 
-<div class="box" markdown=1>
+<div class="def" markdown=1>
 <div class="title"> 定義:チャートの両立 </div>
 2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 
@@ -44,8 +45,8 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
 
 両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。
 
-<div class="box" markdown=1>
-<div class="title"> 定義:アトラス </div>
+<div class="def" markdown=1>
+<div class="title"> アトラス </div>
 $\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
  $\\{(U_\lambda,\varphi_\lambda\\}$ で
 
@@ -113,8 +114,8 @@ V=\\{x=ny+c\|n,c\in\mathbb{R}\\}
 
 ---
 
-<div class="box" markdown=1>
-<div class="title"> 定義:極大アトラス </div>
+<div class="def" markdown=1>
+<div class="title"> 極大アトラス </div>
 集合 $\mathcal{M}$ の$d$次元チャート $(U,\varphi)$ とアトラス $\mathcal{A}$ について $\mathcal{A}\cup\\{(U,\varphi)\\}$ も $\mathcal{M}$ のアトラスであるならば、 $(U,\varphi)$ は $\mathcal{A}$ と両立するという。
 
 アトラス $\mathcal{A}$ と両立するチャート全ての集合 $\mathcal{A}^+$ を $\mathcal{A}$の**極大アトラス(maximal atlas)**という。
@@ -171,8 +172,8 @@ $\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^
 
 以上で多様体の定義に必要な道具は揃ったが、実用上2つの条件を加える。1つは $\mathcal{M}$ が可算個のチャートで覆えるということ、もう一つはハウスドルフ性である。これらが具体的にどう役に立つかは(私もまだ勉強途中でよく分からないので)あとで、実際に使う場面で見る。
 
-<div class="box" markdown=1>
-<div class="title"> 定義:多様体 </div>
+<div class="def" markdown=1>
+<div class="title"> 多様体 </div>
 集合 $\mathcal{M}$ と$d$次元極大アトラス $\mathcal{A}=\\{(U_\alpha,\varphi_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。
 
 *可算被覆をもつ(Countability condition)**
@@ -186,8 +187,8 @@ $\mathcal{M}$ は $\mathcal{A}$ の可算個のチャートで覆うことがで
 
 ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。
 
-<div class="box" markdown=1>
-<div class="title"> 補題 2.1 </div>
+<div class="lemma" markdown=1>
+<div class="title"></div>
 $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 $\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in \mathcal{A}$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
 
@@ -202,7 +203,7 @@ $\varphi$ は全単射だから $x\neq y$ の時、$\varphi(x)\neq\varphi(y)$ �
 
 ここでよく使うことになりそうな多様体の例を挙げる。
 
-<div class="box" markdown=1>
+<div class="example" markdown=1>
 <div class="title"> $n$次元球面 </div>
 
 \\[
@@ -231,7 +232,7 @@ $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分�
 
 よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。
 
-<div class="box" markdown=1>
+<div class="example" markdown=1>
 <div class="title"> 一般線形化群 </div>
 正則な $n$次実正方行列の集合 $GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $ 
 に対して、写像

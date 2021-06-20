@@ -9,7 +9,6 @@ Computer Visionやロボットの制御など様々な場面で登場する多�
 
 もし内容に誤りがありましたら、 [IssueやPull Request](https://github.com/nineties/manifold-optimization)を頂けますとありがたいです。
 
-
 1. [モチベーション](motivation)
 2. [多様体](manifold)
 3. [多様体の位相](topology)

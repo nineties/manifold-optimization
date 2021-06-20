@@ -1,15 +1,94 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
-.box {
+.section {
+    counter-increment: section 1;
+    counter-reset: count 0;
+}
+
+.def {
     position: relative;
     padding: 20px 16px 16px;
     padding-bottom: 0px;
     margin-bottom: 10px;
     border: 1px solid;
+    counter-increment: count 1;
 }
 
-.box .title {
+.def .title:before {
+    content: "定義 " counter(section) "." counter(count) " ";
+}
+
+.def .title {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.prop {
+    position: relative;
+    padding: 20px 16px 16px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    counter-increment: count 1;
+}
+
+.prop .title:before {
+    content: "命題 " counter(section) "." counter(count) " ";
+}
+
+.prop .title {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.lemma {
+    position: relative;
+    padding: 20px 16px 16px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    counter-increment: count 1;
+}
+
+.lemma .title:before {
+    content: "補題 " counter(section) "." counter(count) " ";
+}
+
+.lemma .title {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.example {
+    position: relative;
+    padding: 20px 16px 16px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    counter-increment: count 1;
+}
+
+.example .title:before {
+    content: "例 " counter(section) "." counter(count) " ";
+}
+
+.example .title {
     position: absolute;
     top: -20px;
     left: 12px;
