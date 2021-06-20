@@ -82,4 +82,4 @@ $(\mathcal{M},\mathcal{A})$ を多様体とし、 $\mathcal{N}\subset\mathcal{M}
 \mathcal{A}\_U=\\{(U\cap U_\alpha,\varphi_\alpha\|_{U\cap U\_\alpha})\ \|\ (U\_\alpha,\varphi\_\alpha)\in\mathcal{A}\\}
 \\]
 
-を考える。これが $\mathcal{N}$ の極大アトラスになり、可算性とハウスドルフ性を満たすことを示せば良い。
+を考える。これが $\mathcal{N}$ の極大アトラスになり、可算被覆を持つ事とハウスドルフ性を満たすことを示せば良い。
