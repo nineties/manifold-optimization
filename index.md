@@ -1,5 +1,7 @@
 Computer Visionやロボットの制御など様々な場面で登場する多様体上での最適化の理論とアルゴリズムについて勉強した際のノートです。
-基本的には
+日本語文献が少ないように思ったので、他の人の役に立てばと思い公開して書きます。
+
+このノートでは、基本的には
 
 - [Optimization Algorithms on Matrix Manifolds](https://press.princeton.edu/absil)
 
