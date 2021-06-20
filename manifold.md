@@ -9,8 +9,6 @@ title: 多様体
 
 また、今回関心があるのは可微分多様体であるので、以下特に断りなく多様体と言ったら可微分多様体の事とする。
 
-## 多様体の定義
-
 <div class="box" markdown=1>
 <div class="title"> 定義:チャート </div>
 $M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
@@ -201,3 +199,56 @@ $M$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in A$ に�
 つまり、一つの地図の中に限って見ればハウスドルフ性は自然に成立するということ。
 
 $\varphi$ は全単射だから $x\neq y$ の時、$\varphi(x)\neq\varphi(y)$ である。よって $\mathbb{R}^d$ はハウスドルフ空間だから $\varphi(x),\varphi(y)$ を分離する開集合で $\varphi(U)$ に含まれる物を選ぶ事ができる。これらの $\varphi$ での逆像を $U_\alpha,U_\beta$ とすれば $U_\alpha,U_\beta\subset U$ であって $\varphi$ は全単射だから $U_\alpha\cap U_\beta=\emptyset$ となる。それぞれのチャートの写像は $\varphi$ を $U_\alpha,U_\beta$ に制限したものをとれば良い。
+
+---
+
+ここでよく使うことになりそうな多様体の例を挙げる。
+
+<div class="box" markdown=1>
+<div class="title"> $n$次元球面 </div>
+
+\\[
+S^n=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^{n+1},||\mathbf{x}||=1\\}
+\\]
+
+を **$n$ 次元球面($n$-sphere)**という。
+$U_\pm$ を $S^n$ から $(\mp 1,0,\ldots)$ を除いた集合とし, 写像 $\varphi_\pm :U_\pm\rightarrow\mathbb{R}^n$ を
+\\[
+\varphi_\pm(x_0,x_1,\ldots,x_n) = \frac{1}{1\pm x_0}(x_1,\ldots,x_n)
+\\]
+とすると $(U_\pm,\varphi_\pm)$ はチャートである。また、 $A=\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ はアトラスであり、 $(S^n,A^+)$ は$n$次元多様体である。
+</div>
+
+
+$\varphi_\pm$ がチャートである事と、$A$ がアトラスである事の証明は 前節でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $A^+$ をとると $(S^n,A^+)$ が多様体になる事を示す。
+
+まず $S^n=U_+\cup U_-$ だから可算性は明らか。続いて、ハウスドルフ性についてだが、補題2.1より2点が同じチャートに含まれる場合には分離できるので、$(1,0,\ldots)$ と $(-1,0,\ldots)$ を分離するチャートが存在する事を示せば良い。
+
+$V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分とすれば
+
+\\[ \varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^n,\|\|\mathbf{x}\|\|>1\\} \\]
+
+となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
+そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,A^+)$ はハウスドルフ性を満たす。
+
+よって $(S^n,A^+)$ は $n$ 次元多様体である。
+
+<div class="box" markdown=1>
+<div class="title"> 一般線形化群 </div>
+正則な $n$次実正方行列の集合 $GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $ 
+に対して、写像
+\\[
+\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)
+\\]
+を考えると $A=\\{(GL_n,\varphi)\\}$ がアトラスとなり、 $(GL_n,A^+)$ は $n^2$次元多様体となる。
+</div>
+
+ここで $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル。
+
+まず $\varphi(GL_n)$ が開集合である事を示す。$\det'=\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。従って $\varphi(GL_n)=\det'^{-1}(\mathbb{R}\setminus\\{0\\})$ は開集合。($\because$ ユークリッド空間の一点集合 $\\{0\\}$ は閉集合だから、その補集合である $\mathbb{R}\setminus\\{0\\}$ は開集合。そして、開集合の連続写像による逆像は開集合。)
+
+そして $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算性は明らか。ハウスドルフ性も補題2.1より明らか。
+
+---
+
+同じようにして特殊線形化群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ などについても考えたいが、同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にする。
