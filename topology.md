@@ -90,7 +90,7 @@ $U$ がアトラス $\mathcal{B}$ について条件を満たすとする。こ�
 
 である。ただし、$\beta$ に関しての和は $\mathcal{B}$ の全てのチャートに対して取る。
 
-ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}$ より $\varphi_\beta(U_\alpha\cap U_\beta$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\varphi_\alpha(U\cap U_\alpha)$ も開集合となる。 $\square$
+ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}$ より $\varphi_\beta(U_\alpha\cap U_\beta)$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\varphi_\alpha(U\cap U_\alpha)$ も開集合となる。 $\square$
 
 <div class="box" markdown=1>
 <div class="title"> 命題 3.4 </div>
@@ -115,7 +115,7 @@ $x,y\in U,x\neq y$ とする。 $\mathcal{M}$ のハウスドルフ性より $\m
 となるものが取れる。これらを $U$ に制限すれば $x,y$ を分離する $U$ のチャートが得られる。 $\square$
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.6 </div>
+<div class="title"> 命題 3.5 </div>
 $\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると
 
 $(\mathcal{M},\mathcal{A})$ がハウスドルフ性を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$がハウスドルフ空間となる
@@ -132,3 +132,40 @@ $x,y\in\mathcal{M},x\neq y$ とする。 $\mathcal{M}$ はハウスドルフ空�
 \\[ x\in U,y\in V,U\cap V=\emptyset \\]
 
 となる。$U,V$ は開集合だから、それぞれ $\mathcal{A}$ のチャートの和集合で表す事ができ、その中に $x,y$ を含む互いに交わらないチャートが存在する。$\square$
+
+
+<div class="box" markdown=1>
+<div class="title"> 命題 3.6 </div>
+$\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると
+
+$(\mathcal{M},\mathcal{A})$ が可算被覆を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$が第二可算空間となる
+</div>
+
+(この命題が成り立つのか、以下の証明が正しいのか、ちょっと自信がない。)
+
+まず、ユークリッド空間 $\mathbb{R}^d$ は第二可算空間である事を確認する。つまり可算個の基底が存在して、それらの和集合で全ての開集合が表せる。基底としては中心が有理点、半径が正の有理数であるような全ての開球をとれば良い。
+
+証明
+
+($\Leftarrow$)は明らかなので($\Rightarrow$)を示せば良い。
+
+$B_1,B_2,\ldots\subset\mathbb{R}^d$ をユークリッド空間 $\mathbb{R}^d$ の基底とする。
+$(\mathcal{M},\mathcal{A})$ は可算被覆を持つので、それを $(U_1,\varphi_1),(U_2,\varphi_2),\ldots\in\mathcal{A}$ とすると $\mathcal{M}=\bigcup_{i\in I} U_i$ となる。
+この時、任意の $i$ について $\varphi_i(U_i)$ は $\mathbb{R}^d$ の開集合であるから、
+
+\\[ \varphi_i(U_i)=\bigcup_{B_j\subset\varphi_i(U_i)}B_j \\]
+
+と表す事ができる。よって
+
+\\[
+U_i = \bigcup_{B_j\subset\varphi_i(U_i)}\varphi_i^{-1}(B_j)
+\\]
+
+と書くことができる。
+$B_j$ は $\mathbb{R}^d$ の開集合で $\varphi^{-1}_i(B_j)\subset U_i$ だから $(\varphi^{-1}_i(B_j), B_j)$ は $\mathcal{A}$ に含まれるチャート、つまり $\varphi^{-1}_i(B_j)$ は$\mathcal{M}$ の開集合となる。従ってこれらを集めた
+
+\\[ \mathcal{U}=\\{\varphi^{-1}_i(B_j)\|i\in I,B_j\subset\varphi_i(U_i)\\} \\]
+
+は $\mathcal{M}$ を覆う可算個の開集合族となるが、これが $\mathcal{M}$ の基底となっている事を示せば良い。すなわち任意の開集合 $U\subset\mathcal{M}$ が $\mathcal{U}$ に含まれる集合の和集合として表される事を示せば良い。
+
+$U$ は開集合だから任意の $(U_i,\varphi_i)$ について $\varphi_i(U\cap U_i)$ は開集合。そして $\varphi_i(U\cap U_i)\subset\varphi_i(U_i)$ だから$\varphi(U\cap U_i)$ は $\\{B_j\\}_{B_j\subset\varphi_i(U_i)}$ に含まれる開集合の和で表される。すなわち $U\cap U\_i$ は $\\{\varphi\_i^{-1}(B\_j)\\}\_{B\_j\subset\varphi_i(U_i)}$ に含まれる開集合の和で表される。よって$U=\bigcup_i(U\cap U_i)$ だから $U$ は $\mathcal{U}$ に含まれる開集合の和で表される。$\square$
