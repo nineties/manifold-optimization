@@ -149,23 +149,11 @@ $(\mathcal{M},\mathcal{A})$ が可算被覆を持つ $\Leftrightarrow$ $\mathcal
 
 ($\Leftarrow$)は明らかなので($\Rightarrow$)を示せば良い。
 
-$B_1,B_2,\ldots\subset\mathbb{R}^d$ をユークリッド空間 $\mathbb{R}^d$ の基底とする。
-$(\mathcal{M},\mathcal{A})$ は可算被覆を持つので、それを $(U_1,\varphi_1),(U_2,\varphi_2),\ldots\in\mathcal{A}$ とすると $\mathcal{M}=\bigcup_{i\in I} U_i$ となる。
-この時、任意の $i$ について $\varphi_i(U_i)$ は $\mathbb{R}^d$ の開集合であるから、
+$\mathcal{B}=\\{B_1,B_2,\ldots\\}$ をユークリッド空間 $\mathbb{R}^d$ の可算基底とする。
+$(\mathcal{M},\mathcal{A})$ は可算被覆を持つので、それを $(U_1,\varphi_1),(U_2,\varphi_2),\ldots\in\mathcal{A}$ とすると $\mathcal{M}=\bigcup_i U_i$ である。
 
-\\[ \varphi_i(U_i)=\bigcup_{B_j\subset\varphi_i(U_i)}B_j \\]
+ここで $V_{ij}=\varphi_i^{-1}(B_j)$ とおくと、$V_{ij}\subset U_i$ かつ $\varphi_i(V_{ij})=B_j$ は開集合だから $(V_{ij},\varphi_i\|\_{V_{ij}})$ は $\mathcal{A}$ に含まれるチャート。従って $V_{ij}$ は $\mathcal{M}$ の開集合。これらを全て集めた集合 $\mathcal{V}=\\{V_{ij}\\}$ は可算集合である。
 
-と表す事ができる。よって
+任意の $\mathcal{M}$ の開集合 $U\subset\mathcal{M}$ と $i$ について $\varphi_i(U\cap U_i)$ は $\mathbb{R}^d$ の開集合だから$\mathcal{B}$に含まれる開集合の和で表される。従って $U\cap U_i$ は$\\{\varphi_i^{-1}(B_1),\varphi_i^{-1}(B_2),\ldots\\}\subset\mathcal{V}$ に含まれる開集合の和で表される。よって $U=\bigcup_i(U\cap U_i)$ だから $U$ は $\mathcal{V}$ に含まれる開集合の和で表される。
 
-\\[
-U_i = \bigcup_{B_j\subset\varphi_i(U_i)}\varphi_i^{-1}(B_j)
-\\]
-
-と書くことができる。
-$B_j$ は $\mathbb{R}^d$ の開集合で $\varphi^{-1}_i(B_j)\subset U_i$ だから $(\varphi^{-1}_i(B_j), B_j)$ は $\mathcal{A}$ に含まれるチャート、つまり $\varphi^{-1}_i(B_j)$ は$\mathcal{M}$ の開集合となる。従ってこれらを集めた
-
-\\[ \mathcal{U}=\\{\varphi^{-1}_i(B_j)\|i\in I,B_j\subset\varphi_i(U_i)\\} \\]
-
-は $\mathcal{M}$ を覆う可算個の開集合族となるが、これが $\mathcal{M}$ の基底となっている事を示せば良い。すなわち任意の開集合 $U\subset\mathcal{M}$ が $\mathcal{U}$ に含まれる集合の和集合として表される事を示せば良い。
-
-$U$ は開集合だから任意の $(U_i,\varphi_i)$ について $\varphi_i(U\cap U_i)$ は開集合。そして $\varphi_i(U\cap U_i)\subset\varphi_i(U_i)$ だから$\varphi(U\cap U_i)$ は $\\{B_j\\}_{B_j\subset\varphi_i(U_i)}$ に含まれる開集合の和で表される。すなわち $U\cap U\_i$ は $\\{\varphi\_i^{-1}(B\_j)\\}\_{B\_j\subset\varphi_i(U_i)}$ に含まれる開集合の和で表される。よって$U=\bigcup_i(U\cap U_i)$ だから $U$ は $\mathcal{U}$ に含まれる開集合の和で表される。$\square$
+以上より $\mathcal{V}$ が $\mathcal{M}$ の可算基底になっている事から $\mathcal{M}$ は第二可算空間となる。 $\square$
