@@ -2,14 +2,19 @@
 title: 多様体
 ---
 
-[教科書](https://press.princeton.edu/absil)で多様体の定義では、よくある(?)定義と異なって極大アトラスを用いるものになっている。よくある定義では多様体 $M$ の構造をハウスドルフ空間であるなど天下り的に与える事が多いけど、これから多様体と見なして分析しようとしている $M$ の構造が予め与えるというのは確かに違和感がある。教科書の定義では $M$ は単なる集合として導入されて、 $M$ 上のチャートの集合によって構造を入れるというより自然な感じな流れになっている。
+[教科書](https://press.princeton.edu/absil)の多様体の定義では、よくある(?)定義と異なって極大アトラスを用いるものになっている。
+よくある定義では多様体 $M$ の構造をハウスドルフ空間であるなど天下り的に与える事が多いけど、これから多様体と見なして分析しようとしている $M$ の構造が予め与えるというのは確かに違和感がある。
+実際の問題に取り組む際にも調べたい対象の構造が予め分かっているという事は少ないと思う。
 
-ただ、今回の目的は多様体の抽象論的な構成方法ではなくて最適化問題について学ぶ事であるので、以下では一般的な定義を採用して進めていく事にする。
+教科書の定義では $M$ は単なる集合として導入されて、 $M$ 上のチャートの集合によって構造を入れるというより自然な感じな流れになっている。少し抽象論的で難しいが、これに従ってノートを取る。
+
+
+今回関心があるのは、可微分多様体についてであるので、これに限定した定義をする。
 
 ## 多様体の定義
 
 <div class="definition" markdown=1>
-$M$を位相空間とする。$M$の開集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への同相写像 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $\varphi$ の事をチャートと呼ぶこともある。
+$M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $\varphi$ の事をチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における**座標(coordinate)**と言う。
 </div>
@@ -21,36 +26,159 @@ $M$を位相空間とする。$M$の開集合 $U$からユークリッド空間 
 <img src="images/chart.png" width="50%">
 
 <div class="definition" markdown=1>
-$M$ を位相空間とする。$M$の $d$次元チャートの集合
- $\\{U_\lambda\\}_{\lambda\in\Lambda}$ で
+2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 
-\\[ M=\bigcup_{\lambda\in\Lambda}U_\lambda \\]
+\\[ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) \\]
+を **座標変換(change of coordinates)**という。
 
-となるものを $d$次元 **アトラス(atlas)**という。
+$\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは **両立する(compatible)**という。
+</div>
+
+2つの地図に重なっている地域があるならば、一方の地図ともう一方の地図の対応を付けられるということで、これらの地図が両立するというのはその対応が滑らかな写像になっているということ。
+
+<img src="images/change_of_coordinates.png" width="50%">
+
+特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
+$\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
+$\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
+
+両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。
+
+<div class="definition" markdown=1>
+$M$ を集合とする。$M$の $d$次元チャートの集合
+ $\\{(U_\lambda,\varphi_\lambda\\}$ で
+
+\\[ M=\bigcup_\lambda U_\lambda \\]
+
+であり、任意の2つのチャートが両立するものを
+ $d$次元 **アトラス(atlas)**という。
 </div>
 
 アトラスは地図を集めた地図帳。
 
+---
+2次元単位球面のアトラスの例:
+
+$S^2=\\{(x,y,z)\|x^2+y^2+z^2=1\\}$ について $U_+=S^2\setminus\\{(0,0,-1)\\},U_-=S^2\setminus\\{(0,0,1)\\}$
+とする。$U_+$ は$S^2$の南極一点を除いた集合、$U_-$ は北極一点を除いた集合。
+$\varphi_+:U_+\rightarrow \mathbb{R}^2: p\rightarrow\varphi_+(p)$ を、 $p$を$(0,0,-1)$と$p$を通る直線が平面 $z=0$ と交わる点に移す写像とする(南極点から$xy$平面への射影)。同様に $\varphi_-:U_-\rightarrow\mathbb{R}^2$ を北極点からの射影と定義する。このとき $\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ は $S^2$ のアトラスとなる。
+
+実際に計算してみると
+\\[
+\varphi_+(x,y,z)=\left(\frac{x}{1+z},\frac{y}{1+z}\right),\quad
+\varphi_-(x,y,z)=\left(\frac
+{x}{1-z},\frac{y}{1-z}\right) 
+\\]
+となる。これらの逆写像は
+\\[
+\begin{aligned}
+\varphi_+^{-1}(u,v)&=\left(\frac{2u}{u^2+v^2+1},\frac{2v}{u^2+v^2+1},-\frac{u^2+v^2-1}{u^2+v^2+1}\right) \\\\ \\\\
+\varphi_-^{-1}(u,v)&=\left(\frac{2u}{u^2+v^2+1},\frac{2v}{u^2+v^2+1},\frac{u^2+v^2-1}{u^2+v^2+1}\right)
+\end{aligned}
+\\]
+
+となり、確かに $\varphi_+,\varphi_-$ は全単射で $\mathbb{R}^2$ は開集合だから、これらはチャートである。
+
+次に座標変換について調べるが、まず
+$\varphi_+(U_+\cap U_-)=\varphi_-(U_+\cap U_-)=\mathbb{R}\setminus\{(0,0)\}$ はユークリッド空間 $\mathbb{R}^2$ の開集合である。(一点集合は閉集合だから)
+
+
+座標変換 $\varphi_-\circ\varphi_+^{-1}$ は
+
+\\[
+\varphi_-\circ\varphi_+^{-1}(u,v)=\left(\frac{u}{u^2+v^2},\frac{v}{u^2+v^2}\right)
+\\]
+
+となるが、これは $\mathbb{R}\setminus\\{(0,0)\\}$ 上の微分同相写像である。以上より2つのチャートは両立し、$S^2=U_+\cup U_-$ なので $\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ は $S^2$ のアトラス。
+
+---
+馴染みのない例:
+
+$M$ を $\mathbb{R}^2$ 内の直線の集合とし、$U$ を $y$ 軸に並行ではない直線の集合、$V$ を $x$ 軸に並行ではない直線の集合とする。つまり
+
+\\[
+U=\\{y=mx+b\|m,b\in\mathbb{R}\\},
+V=\\{x=ny+c\|n,c\in\mathbb{R}\\}
+\\]
+
+とかける。ここで
+\\[
+\begin{aligned}
+\varphi&:U\rightarrow\mathbb{R}^2:\varphi(y=mx+b)=(m,b)\\\\\\\\
+\psi&:V\rightarrow\mathbb{R}^2:\psi(x=ny+c)=(n,c)\\\\\\\\
+\end{aligned}
+\\]
+と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=M$ だから $\\{(U,\varphi),(V,\psi\\}$ は$M$ のアトラス)。
+
+---
+
 <div class="definition" markdown=1>
-位相空間 $M$ とその $d$次元アトラス $A$ のペア $(M,A)$ を $d$次元 **多様体(manifold)** という。誤解の恐れがない場合には $M$自身 の事を多様体と呼ぶこともある。
+集合 $M$ の$d$次元チャート $(U,\varphi)$ とアトラス $A$ について $A\cup\\{(U,\varphi)\\}$ も $M$ のアトラスであるならば、 $(U,\varphi)$ は $A$ と両立するという。
+
+アトラス $A$ と両立するチャート全ての集合 $A^+$ を $A$の**極大アトラス(maximal atlas)**という。
 </div>
 
-多様体とは、地図帳がセットになって色々調べることができるようになった位相空間。
+つまり極大アトラス $A^+$ は $A$ を含む最大のアトラス。
 
-<div class="definition" markdown=1>
-多様体 $M$ の2つの交わるチャート $(U,\varphi),(V,\psi),U\cap V\neq\emptyset$ に対して
+---
 
+$A$が$A^+$に含まれるのは明らか。
+$A^+$ 自身もアトラスになるという事は、あまり自明ではないと思うから証明する。
+その為には $A^+$ に含まれる任意の2つのチャート $(U,\varphi),(V,\psi)$ が両立する事を示せば良いが、一方が $A$ に含まれているならばこれらが両立するのは定義より明らか。よって、これらが $A$ に含まれていない時にも両立する事を示せば良い。
+
+それぞれのチャートは $A$ と両立するので, 任意の$(U_\alpha,\varphi_\alpha)\in A$ について
+$\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^d$ の開集合。従ってこれらの共通部分
+
+\\[ 
+\varphi_\alpha(U\cap U_\alpha)\cap\varphi_\alpha(V\cap U_\alpha) = \varphi_\alpha(U\cap V\cap U_\alpha)
+\\]
+
+も開集合。($\because$ $f$が全単射ならば $f(A\cap B)=f(A)\cap f(B)$)
+
+よって$\varphi\circ\varphi_\alpha$ は同相写像だから
+
+\\[
+\varphi(U\cap V\cap U_\alpha)=(\varphi\circ\varphi_\alpha^{-1})(\varphi_\alpha(U\cap V\cap U_\alpha))
+\\]
+
+も $\mathbb{R}^d$ の開集合。よって
+
+\\[
+\varphi(U\cap V)=\varphi\left(\bigcup_\alpha U\cap V\cap U_\alpha\right) = \bigcup_\alpha\varphi(U\cap V\cap U_\alpha)
+\\]
+
+も開集合。全く同様にして $\psi(U\cap V)$ も開集合。
+
+あとは座標変換 $\psi\circ\varphi^{-1}:\varphi(U\cap V)\rightarrow\psi(U\cap V)$が微分同相写像である事を示せば良い。任意の $(U_\alpha,\varphi_\alpha)\in A$ に対して、
+
+\\[\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap U_\alpha)\\]
+
+は仮定より微分同相写像。これを開集合 $\varphi(U\cap V\cap U_\alpha)$ に制限した
+
+\\[\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap V\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap V\cap U_\alpha)\\]
+
+も微分同相写像。$\psi\circ\varphi_\alpha^{-1}$ も同様なので、これらの合成
+
+\\[\psi\circ\varphi^{-1}:\varphi(U\cap V\cap U_\alpha)\rightarrow\psi(U\cap V\cap U_\alpha)\\]
+
+も微分同相写像。よって $$\varphi(U\cap V)= \bigcup_\alpha\varphi(U\cap V\cap U_\alpha)$$ であったので
 \\[ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) \\]
-を **座標変換(change of coordinates)**という
-</div>
+も微分同相写像である。以上より $(U,\varphi),(V,\psi)$ は両立する。
 
-2つの地図に重なっている地域があるならば、一方の地図ともう一方の地図の対応を付けられるということ。
+---
 
-<img src="images/change_of_coordinates.png" width="50%">
+以上で多様体の定義に必要な道具は揃ったが、実用上2つの条件を加える。1つは $M$ が加算個のチャートで覆えるということ、もう一つはハウスドルフ性である。これらが具体的にどう役に立つかは(私もまだ勉強途中でよく分からないので)あとで、実際に使う場面で見る。
 
-$U,V$ は$M$の開集合なので $U\cap V$ も開集合。 $\varphi,\psi$ は同相写像だから $\varphi(U\cap V),\psi(U\cap V)$ も開集合。よって、$\psi\circ\varphi^{-1}$は $\mathbb{R}^d$ の開集合から $\mathbb{R}^d$ の開集合への同相写像になる。
+後ほど、極大アトラスの定める多様体の位相について議論するけれども、これらの条件がある事でその位相によって多様体が第二加算でハウスドルフな空間になって扱いやすくなる(はず)。
 
 <div class="definition" markdown=1>
-多様体 $M$ の任意の座標変換が $C^\alpha$ 級である時これを **$C^\alpha$ 級多様体($C^\alpha$ manifold)** という
-</div> 
+集合 $M$ と$d$次元極大アトラス $A=\\{(U_\alpha,\varphi_\alpha)\\}$ が以下を満たすとき、 $(M,A)$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $M$ 自身を多様体と呼ぶ。
 
+**加算性(Countability condition)**
+
+$M$ は $A$ の加算個のチャートで覆うことができる。つまり、$U_{\alpha_1},U_{\alpha_2},\ldots$ が存在して $ M=\bigcup_iU_{\alpha_i}$ と書ける。
+
+**ハウスドルフ性(Hausdorff condition)**
+
+任意の異なる点 $x,y\in M,x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in A$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
+</div>
