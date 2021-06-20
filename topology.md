@@ -41,36 +41,55 @@ $\\{U_\alpha\\}$ が開集合であるならば、任意のチャート $(V,\var
 
 <div class="box" markdown=1>
 <div class="title"> 定義:アトラス位相 </div>
-$\mathcal{M}$ とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を **アトラス位相(atlas topology)** という。
+$\mathcal{M}$ を集合とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を **アトラス位相(atlas topology)** という。
 </div>
 
+以後、特に断りがなければ、$(\mathcal{M},\mathcal{A})$ の位相はアトラス位相によって与えられるとする。
+アトラス位相を導入すると、チャートはよくある多様体の定義で仮定される性質を満たすようになる。
 
-以後の証明をやり易くする為に、以下の事実を証明する。
 <div class="box" markdown=1>
 <div class="title"> 命題3.2 </div>
-$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。この時 $\mathcal{A}$ は $\mathcal{M}$ の開集合系の**基底 (base)** である。
-
-すなわち、任意の開集合 $U$ は $\mathcal{A}$ のチャート $U_\alpha$ の和集合として表すことができる。
+$\mathcal{M}$ を集合 $\mathcal{A}$ を極大アトラスとする。
+任意のチャート $(U,\varphi)\in\mathcal{A}$ について $U$ は開集合であり、 $\varphi:U\rightarrow\varphi(U)$ は同相写像である。
 </div>
 
 まず、次の一般的な事実を確認する。
 
 チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートである。そして $(U,\varphi)$ と $(V,\varphi\|_V)$ は両立する。また、$(U,\varphi)$ がアトラス $\mathcal{A}$ と両立するならば $(V,\varphi\|_V)$ も $\mathcal{A}$ と両立する。この事は $\varphi\circ\varphi\|_V^{-1}$ が恒等写像となる事から簡単に示せる。
 
-これを使って命題3.2を証明する。
+証明
+
+$(U,\varphi)$ と $\mathcal{A}$ が両立する事から $U$ が開集合であるのは明らか。
+
+任意の開集合 $V\subset\varphi(U)$ の $\varphi$ の逆像 $\varphi^{-1}(V)$ は $U$ の部分集合だから $\left(\varphi^{-1}(V),\varphi\|_{\varphi^{-1}(V))}\right)$ も $\mathcal{A}$ と両立するチャートである。従って $\varphi^{-1}(V)$ は開集合だから $\varphi:U\rightarrow\varphi(U)$ は連続。
+
+また、任意の開集合 $W\subset U$ に対して $\varphi(W)=\varphi(W\cap U)$ は開集合だから $\varphi^{-1}:\varphi(U)\rightarrow U$ も連続。$\square$
+
+<div class="box" markdown=1>
+<div class="title"> 命題3.3 </div>
+
+</div>
+
+<div class="box" markdown=1>
+<div class="title"> 命題3.3 </div>
+$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。この時 $\mathcal{A}$ は $\mathcal{M}$ の開集合系の**基底 (base)** である。
+すなわち、任意の開集合 $U$ は $\mathcal{A}$ のチャート $U_\alpha$ の和集合として表すことができる。
+</div>
 
 証明
 
-$U$は開集合だから任意のチャート $(U_\alpha,\varphi_\alpha)\in\mathcal{A}$ について、$\varphi_\alpha(U\cap U_\alpha)$ は開集合である。そして、$U\cap U_\alpha\subset U_\alpha$であるから$(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ もチャートである。そして $(U_\alpha,\varphi_\alpha)\in\mathcal{A})$ である事より $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ は $\mathcal{A}$ と両立するが、$\mathcal{A}$ は極大アトラスなので
-$(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})\in\mathcal{A}$
+$U$は開集合だから任意のチャート $(U_\beta,\varphi_\beta)\in\mathcal{A}$ について $U\cap U_\beta$ は開集合。
 
+
+$\varphi_\alpha(U\cap U_\alpha)$ は開集合である。そして、$U\cap U_\alpha\subset U_\alpha$であるから$(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ もチャートである。そして $(U_\alpha,\varphi_\alpha)\in\mathcal{A})$ である事より $(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})$ は $\mathcal{A}$ と両立するが、$\mathcal{A}$ は極大アトラスなので
+$(U\cap U\_\alpha, \varphi_\alpha\|\_{U\cap U_\alpha})\in\mathcal{A}$
 よって $U = \bigcup_\alpha(U\cap U_\alpha)$である事より示された。 $\square$
 
 
-$U\subset\mathcal{M}$ が開集合であるか否かの判定に極大アトラス $\mathcal{A}$ の全てのチャートを調べるのは大変なので、以下の命題を示す。
+$U\subset\mathcal{M}$ が開集合であるか否かを判定するのに極大アトラス $\mathcal{A}$ の全てのチャートを調べる必要はない。
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.3 </div>
+<div class="title"> 命題 3.4 </div>
 $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $U\subset\mathcal{M}$ が開集合である事は、適当な $U$ を覆うアトラス $\mathcal{B}\subset\mathcal{A}$ の任意のチャート $(U_\beta,\varphi_\beta)\in\mathcal{B}$ について $\varphi_\beta(U\cap U_\beta)$ が開集合である事と同値。
 </div>
@@ -93,7 +112,7 @@ $U$ がアトラス $\mathcal{B}$ について条件を満たすとする。こ�
 ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}$ より $\varphi_\beta(U_\alpha\cap U_\beta)$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\varphi_\alpha(U\cap U_\alpha)$ も開集合となる。 $\square$
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.4 </div>
+<div class="title"> 命題 3.5 </div>
 多様体の任意の開集合は多様体である
 </div>
 
@@ -115,7 +134,7 @@ $x,y\in U,x\neq y$ とする。 $\mathcal{M}$ のハウスドルフ性より $\m
 となるものが取れる。これらを $U$ に制限すれば $x,y$ を分離する $U$ のチャートが得られる。 $\square$
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.5 </div>
+<div class="title"> 命題 3.6 </div>
 $\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると
 
 $(\mathcal{M},\mathcal{A})$ がハウスドルフ性を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$がハウスドルフ空間となる
@@ -135,7 +154,7 @@ $x,y\in\mathcal{M},x\neq y$ とする。 $\mathcal{M}$ はハウスドルフ空�
 
 
 <div class="box" markdown=1>
-<div class="title"> 命題 3.6 </div>
+<div class="title"> 命題 3.7 </div>
 $\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると
 
 $(\mathcal{M},\mathcal{A})$ が可算被覆を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$が第二可算空間となる
@@ -152,7 +171,7 @@ $(\mathcal{M},\mathcal{A})$ が可算被覆を持つ $\Leftrightarrow$ $\mathcal
 $\mathcal{B}=\\{B_1,B_2,\ldots\\}$ をユークリッド空間 $\mathbb{R}^d$ の可算基底とする。
 $(\mathcal{M},\mathcal{A})$ は可算被覆を持つので、それを $(U_1,\varphi_1),(U_2,\varphi_2),\ldots\in\mathcal{A}$ とすると $\mathcal{M}=\bigcup_i U_i$ である。
 
-ここで $V_{ij}=\varphi_i^{-1}(B_j)$ とおくと、$V_{ij}\subset U_i$ かつ $\varphi_i(V_{ij})=B_j$ は開集合だから $(V_{ij},\varphi_i\|\_{V_{ij}})$ は $\mathcal{A}$ に含まれるチャート。従って $V_{ij}$ は $\mathcal{M}$ の開集合。これらを全て集めた集合 $\mathcal{V}=\\{V_{ij}\\}$ は可算集合である。
+ここで $\varphi_i$ は同相写像だから $V_{ij}=\varphi_i^{-1}(B_j)$ は $\mathcal{M}$ の開集合。これらを全て集めた集合 $\mathcal{V}=\\{V_{ij}\\}$ は可算集合である。
 
 任意の $\mathcal{M}$ の開集合 $U\subset\mathcal{M}$ と $i$ について $\varphi_i(U\cap U_i)$ は $\mathbb{R}^d$ の開集合だから$\mathcal{B}$に含まれる開集合の和で表される。従って $U\cap U_i$ は$\\{\varphi_i^{-1}(B_1),\varphi_i^{-1}(B_2),\ldots\\}\subset\mathcal{V}$ に含まれる開集合の和で表される。よって $U=\bigcup_i(U\cap U_i)$ だから $U$ は $\mathcal{V}$ に含まれる開集合の和で表される。
 
