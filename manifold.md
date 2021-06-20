@@ -13,7 +13,8 @@ title: 多様体
 
 ## 多様体の定義
 
-<div class="definition" markdown=1>
+<div class="box" markdown=1>
+<span class="title"> 定義:チャート </span>
 $M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $\varphi$ の事をチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における**座標(coordinate)**と言う。
@@ -25,7 +26,8 @@ $M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\m
 
 <img src="images/chart.png" width="50%">
 
-<div class="definition" markdown=1>
+<div class="box" markdown=1>
+<span class="title"> 定義:チャートの両立 </span>
 2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 
 \\[ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) \\]
@@ -44,7 +46,8 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
 
 両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。
 
-<div class="definition" markdown=1>
+<div class="box" markdown=1>
+<span class="title"> 定義:アトラス </span>
 $M$ を集合とする。$M$の $d$次元チャートの集合
  $\\{(U_\lambda,\varphi_\lambda\\}$ で
 
@@ -112,7 +115,8 @@ V=\\{x=ny+c\|n,c\in\mathbb{R}\\}
 
 ---
 
-<div class="definition" markdown=1>
+<div class="box" markdown=1>
+<span class="title"> 定義:極大アトラス </span>
 集合 $M$ の$d$次元チャート $(U,\varphi)$ とアトラス $A$ について $A\cup\\{(U,\varphi)\\}$ も $M$ のアトラスであるならば、 $(U,\varphi)$ は $A$ と両立するという。
 
 アトラス $A$ と両立するチャート全ての集合 $A^+$ を $A$の**極大アトラス(maximal atlas)**という。
@@ -171,7 +175,8 @@ $\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^
 
 後ほど、極大アトラスの定める多様体の位相について議論するけれども、これらの条件がある事でその位相によって多様体が第二加算でハウスドルフな空間になって扱いやすくなる(はず)。
 
-<div class="definition" markdown=1>
+<div class="box" markdown=1>
+<span class="title"> 定義:多様体 </span>
 集合 $M$ と$d$次元極大アトラス $A=\\{(U_\alpha,\varphi_\alpha)\\}$ が以下を満たすとき、 $(M,A)$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $M$ 自身を多様体と呼ぶ。
 
 **加算性(Countability condition)**

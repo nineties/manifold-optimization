@@ -1,9 +1,20 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
-.definition {
-    padding: 10px;
+.box {
+    position: relative;
+    padding: 20px 16px 16px;
     padding-bottom: 0px;
     margin-bottom: 10px;
     border: 1px solid;
+}
+
+.box .title {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #fff;
+    font-weight: bold;
 }
