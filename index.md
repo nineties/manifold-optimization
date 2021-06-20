@@ -10,6 +10,8 @@ Computer Visionやロボットの制御など様々な場面で登場する多�
 
 1. [モチベーション](motivation)
 2. [多様体](manifold)
+3. [多様体の位相](topology)
+
 
 参考にした文献
 
