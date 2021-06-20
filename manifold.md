@@ -3,22 +3,22 @@ title: 2. 多様体
 ---
 
 [教科書](https://press.princeton.edu/absil)の多様体の定義では、よくある(?)定義と異なって極大アトラスを用いるものになっている。
-よくある定義では多様体 $M$ の位相空間的な構造が天下り的に与えられる事が多いけど、今から多様体と見なして分析しようとしている空間の構造が予め与えられるというのは違和感がある。
+よくある定義では多様体 $\mathcal{M}$ の位相空間的な構造が天下り的に与えられる事が多いけど、今から多様体と見なして分析しようとしている空間の構造が予め与えられるというのは違和感がある。
 
-教科書の定義では $M$ は単なる集合として導入されて、 $M$ 上のチャートの集合によって構造を入れるというより自然な感じな流れになっている。少し抽象論的で難しいが、これに従ってノートを取る。
+教科書の定義では $\mathcal{M}$ は単なる集合として導入されて、 $\mathcal{M}$ 上のチャートの集合によって構造を入れるというより自然な感じな流れになっている。少し抽象論的で難しいが、これに従ってノートを取る。
 
 また、今回関心があるのは可微分多様体であるので、以下特に断りなく多様体と言ったら可微分多様体の事とする。
 
 <div class="box" markdown=1>
 <div class="title"> 定義:チャート </div>
-$M$を集合とする。$M$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$M$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
+$\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の **チャート(chart)**という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における**座標(coordinate)**と言う。
 </div>
 
-チャートは $M$ の局所的な様子を、調べやすいユークリッド空間 $\mathbb{R}^d$ に写しとっていて、 $\varphi(U)$ を通して $U$ について調べることが可能になる。
+チャートを使って、$\mathcal{M}$ の局所的な様子を調べやすいユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。
 
-例えば $M$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを見なくても、地図上である程度のことは把握できる。
+例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを見なくても、地図上である程度のことは把握できる。
 
 <img src="images/chart.png" width="50%">
 
@@ -46,10 +46,10 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
 
 <div class="box" markdown=1>
 <div class="title"> 定義:アトラス </div>
-$M$ を集合とする。$M$の $d$次元チャートの集合
+$\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
  $\\{(U_\lambda,\varphi_\lambda\\}$ で
 
-\\[ M=\bigcup_\lambda U_\lambda \\]
+\\[ \mathcal{M}=\bigcup_\lambda U_\lambda \\]
 
 であり、任意の2つのチャートが両立するものを
  $d$次元 **アトラス(atlas)**という。
@@ -95,7 +95,7 @@ $\varphi_+(U_+\cap U_-)=\varphi_-(U_+\cap U_-)=\mathbb{R}\setminus\{(0,0)\}$ は
 ---
 馴染みのない例:
 
-$M$ を $\mathbb{R}^2$ 内の直線の集合とし、$U$ を $y$ 軸に並行ではない直線の集合、$V$ を $x$ 軸に並行ではない直線の集合とする。つまり
+$\mathcal{M}$ を $\mathbb{R}^2$ 内の直線の集合とし、$U$ を $y$ 軸に並行ではない直線の集合、$V$ を $x$ 軸に並行ではない直線の集合とする。つまり
 
 \\[
 U=\\{y=mx+b\|m,b\in\mathbb{R}\\},
@@ -109,26 +109,26 @@ V=\\{x=ny+c\|n,c\in\mathbb{R}\\}
 \psi&:V\rightarrow\mathbb{R}^2:\psi(x=ny+c)=(n,c)\\\\\\\\
 \end{aligned}
 \\]
-と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=M$ だから $\\{(U,\varphi),(V,\psi\\}$ は$M$ のアトラス)。
+と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi\\}$ は$\mathcal{M}$ のアトラス)。
 
 ---
 
 <div class="box" markdown=1>
 <div class="title"> 定義:極大アトラス </div>
-集合 $M$ の$d$次元チャート $(U,\varphi)$ とアトラス $A$ について $A\cup\\{(U,\varphi)\\}$ も $M$ のアトラスであるならば、 $(U,\varphi)$ は $A$ と両立するという。
+集合 $\mathcal{M}$ の$d$次元チャート $(U,\varphi)$ とアトラス $\mathcal{A}$ について $\mathcal{A}\cup\\{(U,\varphi)\\}$ も $\mathcal{M}$ のアトラスであるならば、 $(U,\varphi)$ は $\mathcal{A}$ と両立するという。
 
-アトラス $A$ と両立するチャート全ての集合 $A^+$ を $A$の**極大アトラス(maximal atlas)**という。
+アトラス $\mathcal{A}$ と両立するチャート全ての集合 $\mathcal{A}^+$ を $\mathcal{A}$の**極大アトラス(maximal atlas)**という。
 </div>
 
-つまり極大アトラス $A^+$ は $A$ を含む最大のアトラス。
+つまり極大アトラス $\mathcal{A}^+$ は $\mathcal{A}$ を含む最大のアトラス。
 
 ---
 
-$A$が$A^+$に含まれるのは明らか。
-$A^+$ 自身もアトラスになるという事は、あまり自明ではないと思うから証明する。
-その為には $A^+$ に含まれる任意の2つのチャート $(U,\varphi),(V,\psi)$ が両立する事を示せば良いが、一方が $A$ に含まれているならばこれらが両立するのは定義より明らか。よって、これらが $A$ に含まれていない時にも両立する事を示せば良い。
+$\mathcal{A}$が$\mathcal{A}^+$に含まれるのは明らか。
+$\mathcal{A}^+$ 自身もアトラスになるという事は、あまり自明ではないと思うから証明する。
+その為には $\mathcal{A}^+$ に含まれる任意の2つのチャート $(U,\varphi),(V,\psi)$ が両立する事を示せば良いが、一方が $\mathcal{A}$ に含まれているならばこれらが両立するのは定義より明らか。よって、これらが $\mathcal{A}$ に含まれていない時にも両立する事を示せば良い。
 
-それぞれのチャートは $A$ と両立するので, 任意の$(U_\alpha,\varphi_\alpha)\in A$ について
+それぞれのチャートは $\mathcal{A}$ と両立するので, 任意の$(U_\alpha,\varphi_\alpha)\in \mathcal{A}$ について
 $\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^d$ の開集合。従ってこれらの共通部分
 
 \\[ 
@@ -151,7 +151,7 @@ $\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^
 
 も開集合。全く同様にして $\psi(U\cap V)$ も開集合。
 
-あとは座標変換 $\psi\circ\varphi^{-1}:\varphi(U\cap V)\rightarrow\psi(U\cap V)$が微分同相写像である事を示せば良い。任意の $(U_\alpha,\varphi_\alpha)\in A$ に対して、
+あとは座標変換 $\psi\circ\varphi^{-1}:\varphi(U\cap V)\rightarrow\psi(U\cap V)$が微分同相写像である事を示せば良い。任意の $(U_\alpha,\varphi_\alpha)\in \mathcal{A}$ に対して、
 
 \\[\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap U_\alpha)\\]
 
@@ -169,29 +169,29 @@ $\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^
 
 ---
 
-以上で多様体の定義に必要な道具は揃ったが、実用上2つの条件を加える。1つは $M$ が可算個のチャートで覆えるということ、もう一つはハウスドルフ性である。これらが具体的にどう役に立つかは(私もまだ勉強途中でよく分からないので)あとで、実際に使う場面で見る。
+以上で多様体の定義に必要な道具は揃ったが、実用上2つの条件を加える。1つは $\mathcal{M}$ が可算個のチャートで覆えるということ、もう一つはハウスドルフ性である。これらが具体的にどう役に立つかは(私もまだ勉強途中でよく分からないので)あとで、実際に使う場面で見る。
 
 後ほど、極大アトラスの定める多様体の位相について議論するけれども、これらの条件がある事でその位相によって多様体が第二可算でハウスドルフな空間になって扱いやすくなる(はず)。
 
 <div class="box" markdown=1>
 <div class="title"> 定義:多様体 </div>
-集合 $M$ と$d$次元極大アトラス $A=\\{(U_\alpha,\varphi_\alpha)\\}$ が以下を満たすとき、 $(M,A)$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $M$ 自身を多様体と呼ぶ。
+集合 $\mathcal{M}$ と$d$次元極大アトラス $\mathcal{A}=\\{(U_\alpha,\varphi_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。
 
 **可算性(Countability condition)**
 
-$M$ は $A$ の可算個のチャートで覆うことができる。つまり、$U_{\alpha_1},U_{\alpha_2},\ldots$ が存在して $ M=\bigcup_iU_{\alpha_i}$ と書ける。
+$\mathcal{M}$ は $\mathcal{A}$ の可算個のチャートで覆うことができる。つまり、$U_{\alpha_1},U_{\alpha_2},\ldots$ が存在して $ \mathcal{M}=\bigcup_iU_{\alpha_i}$ と書ける。
 
 **ハウスドルフ性(Hausdorff condition)**
 
-任意の異なる点 $x,y\in M,x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in A$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
+任意の異なる点 $x,y\in \mathcal{M},x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in \mathcal{A}$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
 </div>
 
 ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。
 
 <div class="box" markdown=1>
 <div class="title"> 補題 2.1 </div>
-$M$ を集合、 $A$ を極大アトラスとする。
-$M$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in A$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
+$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
+$\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in \mathcal{A}$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
 
 すなわち、あるチャート $U_\alpha,U_\beta\subset U$ が存在して $x\in U_\alpha,y\in U_\beta,U_\alpha\cap U_\beta=\emptyset$
 </div>
@@ -216,11 +216,11 @@ $U_\pm$ を $S^n$ から $(\mp 1,0,\ldots)$ を除いた集合とし, 写像 $\v
 \\[
 \varphi_\pm(x_0,x_1,\ldots,x_n) = \frac{1}{1\pm x_0}(x_1,\ldots,x_n)
 \\]
-とすると $(U_\pm,\varphi_\pm)$ はチャートである。また、 $A=\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ はアトラスであり、 $(S^n,A^+)$ は$n$次元多様体である。
+とすると $(U_\pm,\varphi_\pm)$ はチャートである。また、 $\mathcal{A}=\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ はアトラスであり、 $(S^n,\mathcal{A}^+)$ は$n$次元多様体である。
 </div>
 
 
-$\varphi_\pm$ がチャートである事と、$A$ がアトラスである事の証明は 前節でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $A^+$ をとると $(S^n,A^+)$ が多様体になる事を示す。
+$\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスである事の証明は 前節でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $\mathcal{A}^+$ をとると $(S^n,\mathcal{A}^+)$ が多様体になる事を示す。
 
 まず $S^n=U_+\cup U_-$ だから可算性は明らか。続いて、ハウスドルフ性についてだが、補題2.1より2点が同じチャートに含まれる場合には分離できるので、$(1,0,\ldots)$ と $(-1,0,\ldots)$ を分離するチャートが存在する事を示せば良い。
 
@@ -229,9 +229,9 @@ $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分�
 \\[ \varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^n,\|\|\mathbf{x}\|\|>1\\} \\]
 
 となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
-そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,A^+)$ はハウスドルフ性を満たす。
+そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。
 
-よって $(S^n,A^+)$ は $n$ 次元多様体である。
+よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。
 
 <div class="box" markdown=1>
 <div class="title"> 一般線形化群 </div>
@@ -240,7 +240,7 @@ $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分�
 \\[
 \varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)
 \\]
-を考えると $A=\\{(GL_n,\varphi)\\}$ がアトラスとなり、 $(GL_n,A^+)$ は $n^2$次元多様体となる。
+を考えると $\mathcal{A}=\\{(GL_n,\varphi)\\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。
 </div>
 
 ここで $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル。
