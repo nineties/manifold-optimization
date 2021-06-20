@@ -10,6 +10,8 @@ $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の**開集合(open subset)**であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
 </div>
 
+$U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
+
 <div class="box" markdown=1>
 <div class="title"> 命題3.1 </div>
 集合 $\mathcal{M}$, 極大アトラス $\mathcal{A}$ の定める開集合の族は開集合の公理を満たす。
@@ -19,7 +21,7 @@ $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 3. $\\{U_\alpha\\}$が開集合ならば$\bigcup_\alpha U_\alpha$ も開集合
 </div>
 
-Proof.
+証明
 
 $\mathcal{M},\emptyset$ が$\mathcal{M}$の開集合となる事は明らか。
 
@@ -41,3 +43,43 @@ $\\{U_\alpha\\}$ が開集合であるならば、任意のチャート $(V,\var
 <div class="title"> 定義:アトラス位相 </div>
 $\mathcal{M}$ とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を **アトラス位相(atlas topology)** という。
 </div>
+
+$U\subset\mathcal{M}$ が開集合であるか否かの判定に極大アトラス $\mathcal{A}$ の全てのチャートを調べるのは大変なので、以下の命題を示す。
+
+<div class="box" markdown=1>
+<div class="title"> 命題 3.1 </div>
+$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
+部分集合 $U\subset\mathcal{M}$ が開集合である事は、適当な $U$ を覆うアトラス $\mathcal{B}\subset\mathcal{A}$ の任意のチャート $(U_\beta,\varphi_\beta)\in\mathcal{B}$ について $\varphi_\beta(U\cap U_\beta)$ が開集合である事と同値。
+</div>
+
+証明
+
+$U$ がアトラス $\mathcal{B}$ について条件を満たすとする。この時、任意のチャート $(U_\alpha,\varphi_\alpha)\in\mathcal{A}$ について
+
+\\[
+\begin{aligned}
+\varphi_\alpha(U\cap U_\alpha) &= \bigcup_{\beta}\varphi_\alpha(U\cap U_\alpha\cap U_\beta) \\\\ \\\\
+&= \bigcup_\beta(\varphi_\alpha\circ\varphi_\beta^{-1})(\varphi_\beta(U\cap U_\alpha\cap U_\beta)) \\\\ \\\\
+&= \bigcup_\beta(\varphi_\alpha\circ\varphi_\beta^{-1})(\varphi_\beta((U\cap U_\beta)\cap(U_\alpha\cap U_\beta))) \\\\ \\\\
+&= \bigcup_\beta(\varphi_\alpha\circ\varphi_\beta^{-1})\left(\varphi_\beta(U\cap U_\beta)\cap\varphi_\beta(U_\alpha\cap U_\beta)\right) \\\\ \\\\
+\end{aligned}
+\\]
+
+である。ただし、$\beta$ に関しての和は $\mathcal{B}$ の全てのチャートに対して取る。
+
+ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}$ より $\varphi_\beta(U_\alpha\cap U_\beta$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\varphi_\alpha(U\cap U_\alpha)$ も開集合となる。 $\square$
+
+<div class="box" markdown=1>
+<div class="title"> 命題 3.2 </div>
+多様体の任意の開集合は多様体である
+</div>
+
+証明
+
+$(\mathcal{M},\mathcal{A})$ を多様体とし、 $\mathcal{N}\subset\mathcal{M}$ をその開集合とする。ここで $\mathcal{A}$ の全てのチャートを $U$ に制限した
+
+\\[
+\mathcal{A}\_U=\\{(U\cap U_\alpha,\varphi_\alpha\|_{U\cap U\_\alpha})\ \|\ (U\_\alpha,\varphi\_\alpha)\in\mathcal{A}\\}
+\\]
+
+を考える。これが $\mathcal{N}$ の極大アトラスになり、可算性とハウスドルフ性を満たすことを示せば良い。
