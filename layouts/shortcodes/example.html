@@ -9,7 +9,7 @@
 {{- if $label }}
 {{- .Page.Scratch.SetInMap $label "name" $name }}
 {{- .Page.Scratch.SetInMap $label "url" $url }}
-<div id="{{ $label }}" style="padding-top:100px"></div>
+<div id="{{ $label }}" style="padding-top:100px;margin-top:-100px"></div>
 {{- end }}
 
 <div class="box"
