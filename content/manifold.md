@@ -6,9 +6,9 @@ section: 2
 [教科書](https://press.princeton.edu/absil)では、(私が)よく見る定義とは異なり **極大アトラス** を用いて多様体の定義を行なっている。
 よくある定義では多様体 $\mathcal{M}$ の位相構造が天下り的に与えられる事が多いが、極大アトラスを用いた定義では $\mathcal{M}$ は単なる集合として導入されて極大アトラスによってその位相構造が自然と定まるという順番になる。
 
-この定義を見て最初は戸惑いを感じたが、よくよく考えてみれば多様体というのは謎の空間 $\mathcal{M}$ を局所的にユークリッド空間と同一視する事で調べようというものであるのに、$\mathcal{M}$ の位相構造が最初から分かっているというのは確かに奇妙な前提であるようには思う。極大アトラスを用いた定義ではそのような違和感を(私は)感じずに読み進める事ができた。
+最初はこの定義を見て戸惑ったが、よくよく考えてみれば多様体というのは謎の空間 $\mathcal{M}$ を局所的にユークリッド空間と同一視する事で調べようというものであるのに、謎の空間 $\mathcal{M}$ の位相構造が最初から分かっているというのは奇妙な前提であるようにも思う。
 
-{{% definition title="チャート" label="def.chart" %}}
+{{% definition title="チャート" %}}
 $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の **チャート(chart)** という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi$ における **座標(coordinate)** と言う。
@@ -20,7 +20,7 @@ $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユー�
 
 {{< figure src="../images/chart.png" >}}
 
-{{% definition title="チャートの両立" label="def.compatible-charts" %}}
+{{% definition title="チャートの両立" %}}
 2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
@@ -41,14 +41,21 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
 以下の命題は頻繁に使う事になる。
 
 {{% proposition %}}
-チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートである。但し、 $\varphi\|_V$ は $\varphi$ の定義域を $V$ に制限した写像。
+チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートであり、$(U,\varphi)$ と両立する任意のチャートと両立する。
 
-また $(V,\varphi|V)$ は $(U,\varphi)$ と両立する任意のチャートと両立する。
+但し、 $\varphi\|_V$ は $\varphi$ の定義域を $V$ に制限した写像。
 {{% /proposition %}}
 
-これは、$U,V$ の間の座標変換が恒等写像になる事から明らか。地図の一部にだけ注目しても地図である事には変わらないし、他の地図との座標変換も変わらないという事。
+$U,V$ の間の座標変換が恒等写像になる事から明らか。地図の一部にだけ注目しても地図である事には変わらないし、他の地図との座標変換も変わらないという事。
 
-両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。
+全く同じだが、次の形で用いることも多い。
+
+{{% proposition %}}
+集合 $\mathcal{M}$ のチャート $(U,\varphi)$ と 部分集合 $V\subset \mathcal{M}$ について $\varphi(U\cap V)$ が $\mathbb{R}^d$ の開集合ならば、 $(U\cap V,\varphi\|_{U\cap V})$ もチャートであり、
+$(U,\varphi)$ と両立する任意のチャートと両立する。
+{{% /proposition %}}
+
+両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が開集合とは限らない為。
 
 {{% definition title="アトラス" %}}
 $\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
@@ -87,7 +94,7 @@ $$
 となり、確かに $\varphi_+,\varphi_-$ は全単射で $\mathbb{R}^2$ は開集合だから、これらはチャートである。
 
 次に座標変換について調べるが、まず
-$\varphi_+(U_+\cap U_-)=\varphi_-(U_+\cap U_-)=\mathbb{R}\setminus\{(0,0)\}$ はユークリッド空間 $\mathbb{R}^2$ の開集合である。(一点集合は閉集合だから)
+$\varphi_+(U_+\cap U_-)=\varphi_-(U_+\cap U_-)=\mathbb{R}\setminus\\{(0,0)\\}$ であって、これはユークリッド空間 $\mathbb{R}^2$ の開集合。($\because$ 一点集合$\\{(0,0)\\}$は閉集合)
 
 
 座標変換 $\varphi_-\circ\varphi_+^{-1}$ は
@@ -115,7 +122,7 @@ $$
 \psi&:V\rightarrow\mathbb{R}^2:\psi(x=ny+c)=(n,c)\\\\
 \end{aligned}
 $$
-と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi\\}$ は$\mathcal{M}$ のアトラス)。
+と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi)\\}$ は$\mathcal{M}$ のアトラス)。
 
 {{% definition title="極大アトラス" %}}
 集合 $\mathcal{M}$ の$d$次元チャート $(U,\varphi)$ とアトラス $\mathcal{A}$ について $\mathcal{A}\cup\\{(U,\varphi)\\}$ も $\mathcal{M}$ のアトラスであるならば、 $(U,\varphi)$ は $\mathcal{A}$ と両立するという。
@@ -140,7 +147,7 @@ $$
 
 も開集合。($\because$ $f$が全単射ならば $f(A\cap B)=f(A)\cap f(B)$)
 
-よって$\varphi\circ\varphi_\alpha$ は同相写像だから
+よって$\varphi\circ\varphi_\alpha^{-1}$ は同相写像だから
 
 $$
 \varphi(U\cap V\cap U_\alpha)=(\varphi\circ\varphi_\alpha^{-1})(\varphi_\alpha(U\cap V\cap U_\alpha))
@@ -176,9 +183,7 @@ $$
 $$
 \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) 
 $$
-も微分同相写像である。以上より任意の $(U,\varphi),(V,\psi)\in\mathcal{A}^+$ は両立するのでアトラスである。
-
-$\mathcal{A}\subset \mathcal{A}^+$ であって $\mathcal{A}^+$ が最大である事は明らか。 $\square$
+も微分同相写像である。以上より任意の $(U,\varphi),(V,\psi)\in\mathcal{A}^+$ は両立するのでアトラスである。 $\square$
 
 ---
 
@@ -200,7 +205,7 @@ $\mathcal{M}$ は $\mathcal{A}$ の可算個のチャートで覆うことがで
 
 ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。
 
-{{% lemma %}}
+{{% lemma label="lem.hausdorff" %}}
 $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 $\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in \mathcal{A}$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
 
@@ -229,9 +234,9 @@ $$
 {{% /example %}}
 
 
-$\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスである事の証明は 前節でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $\mathcal{A}^+$ をとると $(S^n,\mathcal{A}^+)$ が多様体になる事を示す。
+$\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスである事の証明は上でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $\mathcal{A}^+$ をとると $(S^n,\mathcal{A}^+)$ が多様体になる事を示す。
 
-まず $S^n=U_+\cup U_-$ だから可算被覆を持つ事は明らか。続いて、ハウスドルフ性についてだが、補題2.8より2点が同じチャートに含まれる場合には分離できるので、$(1,0,\ldots)$ と $(-1,0,\ldots)$ を分離するチャートが存在する事を示せば良い。
+まず $S^n=U_+\cup U_-$ だから可算被覆を持つ事は明らか。続いて、ハウスドルフ性についてだが、{{< ref "lem.hausdorff" >}}より2点が同じチャートに含まれる場合には成立するので、2点が $(1,0,\ldots)$ と $(-1,0,\ldots)$ である場合のみ考えれば良い。
 
 $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分とすれば
 
@@ -240,21 +245,31 @@ $$\varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^n,\|\|\ma
 となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
 そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。
 
-よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。
+よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。$\square$
 
 {{% example title="一般線型群" %}}
-正則な $n$次実正方行列の集合 $GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $ 
-に対して、写像
+$n$次実正則行列の集合 $$GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $$
+は行列の積によって群となる。これを **一般線型群(general linear group)** という。
+
+写像
 $$\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
 を考えると $\mathcal{A}=\\{(GL_n,\varphi)\\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。
 {{% /example %}}
 
 ここで $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル。
 
-まず $\varphi(GL_n)$ が開集合である事を示す。$\det'=\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。従って $\varphi(GL_n)=\det'^{-1}(\mathbb{R}\setminus\\{0\\})$ は開集合。($\because$ ユークリッド空間の一点集合 $\\{0\\}$ は閉集合だから、その補集合である $\mathbb{R}\setminus\\{0\\}$ は開集合。そして、開集合の連続写像による逆像は開集合。)
+まず $\varphi(GL_n)$ が開集合である事を示す。補集合を考えると、
+$$
+\begin{aligned}
+\mathbf{x}\in\mathbb{R}^{n^2}\setminus\varphi(GL_n)&\Leftrightarrow\det\circ\mathrm{vec}^{-1}(\mathbf{x})=0 \\\\
+&\Leftrightarrow\mathbf{x}\in(\det\circ\mathrm{vec}^{-1})^{-1}(\\{0\\})
+\end{aligned}$$
 
-そして $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も補題2.8より明らか。
+ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\\{0\\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(GL_n)$ も閉集合。よって $GL_n$ は開集合。
+
+また $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も{{< ref "lem.hausdorff" >}}より明らか。
 
 ---
+$GL_n$ のような群構造を持つ多様体を **リー群(Lie group)** という。
 
-同じようにして特殊線型群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ などについても考えたいが、同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にする。
+同じようにして特殊線型群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。
