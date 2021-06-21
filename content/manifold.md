@@ -190,17 +190,17 @@ $$
 以上で多様体の定義に必要な最低限の道具は揃ったが、実用上2つの条件を加える。1つは $\mathcal{M}$ が可算個のチャートで覆えるということ、もう一つはハウスドルフ性である。
 これらを仮定すると、後ほど導入される極大アトラスの定める位相によって $\mathcal{M}$ が第二可算かつハウスドルフになる事が言える。
 
-{{% definition title="多様体" %}}
+{{% definition title="多様体" label="def.manifold" %}}
 集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}=\\{(U\_\alpha,\varphi\_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。
 
+**ハウスドルフ性(Hausdorff condition)**
+
+任意の異なる点 $x,y\in \mathcal{M},x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in \mathcal{A}$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
 
 **可算被覆をもつ(Countability condition)**
 
 $\mathcal{M}$ は $\mathcal{A}$ の可算個のチャートで覆うことができる。つまり、$U_{\alpha_1},U_{\alpha_2},\ldots$ が存在して $ \mathcal{M}=\bigcup_iU_{\alpha_i}$ と書ける。
 
-**ハウスドルフ性(Hausdorff condition)**
-
-任意の異なる点 $x,y\in \mathcal{M},x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in \mathcal{A}$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
 {{% /definition %}}
 
 ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。
