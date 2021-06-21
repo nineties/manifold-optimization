@@ -271,6 +271,39 @@ $\mathcal{A}$ がアトラス位相の基底である事から明らか。</p>
 $x,y\in\mathcal{M},x\neq y$ とする。 $\mathcal{M}$ はハウスドルフ空間だから開集合 $U,V\subset\mathcal{M}$ が存在して</p>
 <p>$$ x\in U,y\in V,U\cap V=\emptyset $$</p>
 <p>となる。$U,V$ は開集合だから、それぞれ $\mathcal{A}$ のチャートの和集合で表す事ができ、その中に $x,y$ を含む互いに交わらないチャートが存在する。$\square$</p>
+<hr>
+<p>続いてコンパクト性について確認する。</p>
+<div class="box"
+    >
+    <div class="title">
+        定義3.10:  コンパクト集合
+    </div>
+<p>$\mathcal{M}$ を多様体、 $A$ をその部分集合とする。 $A$ が次の性質を満たすとき <strong>コンパクト集合(compact set)</strong> という。</p>
+<p>$A$ の任意の開被覆 $\{U_\alpha\}_\alpha$ に対して、この中の有限個の開集合で $A$ を覆うことができる。</p>
+</div>
+<div class="box"
+    >
+    <div class="title">
+        命題3.11
+    </div>
+<p>$\mathcal{M}$ を多様体とする。集合 $A\subset\mathcal{M}$ が $\mathcal{M}$ のあるチャート $(U,\varphi)$ に含まれる $(A\subset U)$ ならば、 $A$ がコンパクトである事と $\varphi(A)$ がコンパクトである事は同値。</p>
+</div>
+<p>$\varphi$ は同相写像なので明らか。 $\varphi(A)$ はユークリッド空間 $\mathbb{R}^d$ の部分集合であるから、それがコンパクトかどうか(つまり $A$ がコンパクトかどうか)はハイネ•ボレルの被覆定理を使って調べる事ができる。</p>
+<div class="box"
+    >
+    <div class="title">
+        定理3.12:  ハイネ・ボレルの被覆定理
+    </div>
+<p>ユークリッド空間 $\mathbb{R}^d$ の部分集合 $A$ がコンパクトである事と、$A$が有界閉集合である事は同値。</p>
+</div>
+<p>複数のチャートにまたがる集合のコンパクト性は以下で確認できる。これが成立することは明らか。</p>
+<div class="box"
+    >
+    <div class="title">
+        命題3.13
+    </div>
+<p>コンパクト集合の有限個の和集合はコンパクトである。</p>
+</div>
 
     </article>
   </section>

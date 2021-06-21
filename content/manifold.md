@@ -1,5 +1,5 @@
 ---
-title: 2. 多様体
+title: 2. 多様体の定義
 section: 2
 ---
 
