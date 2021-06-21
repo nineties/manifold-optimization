@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="ja-jp"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="1. モチベーション" />
+<meta property="og:site_name" content="Manifold Optimization" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="https://nineties.github.io/manifold-optimization/motivation/" />
+<meta property="og:locale" content="ja-jp" />
+<meta property="article:published_time" content="0001-01-01
+" /> <meta property="article:modified_time" content="0001-01-01
+" />
+
+
+
+
+
+
+    <title>1. モチベーション</title>
+    <link rel="canonical" href="https://nineties.github.io/manifold-optimization/motivation/" />
+
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="https://nineties.github.io/manifold-optimization/css/style.css" />
+<link rel="stylesheet" href="https://nineties.github.io/manifold-optimization/css/custom.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+
+<link rel="stylesheet" type="text/css" href="https://nineties.github.io/manifold-optimization/css/mathjax-style.css">
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']],
+        processEscapes: true,
+        tags: "ams",
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        matchFontHeight: false,
+        displayAlign: "left",
+        displayIndent: "2em"
+      },
+      options: {
+        renderActions: {
+           
+          find_script_mathtex: [10, function (doc) {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            }
+          }, '']
+        }
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+
+
+<body
+  lang="ja-jp"
+  class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a
+    href="https://nineties.github.io/manifold-optimization/"
+    class="b bb bw1 pb1 no-underline black"
+    >Manifold Optimization</a
+  >
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">1. モチベーション</h1>
+
+    <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+      <p>分の姿勢を推定するという問題を考える。これは例えばオドメトリーの値やコンパスや加速度センサなどの値、カメラで検出したランドマークの座標などの情報を元にして計算される何らかのコスト関数を最小化する問題として表現される。</p>
+<p>つまり、ロボットの姿勢が単位ベクトル $\mathbf{v}\in\mathbb{R}^3,||\mathbf{v}||=1$ で表されるとすると、実数値のコスト関数 $f$ に対して $f(\mathbf{v})$ が最小になる $\mathbf{v}$ は何か？という問題になる。</p>
+<p>この事は、ユークリッド空間 $\mathbb{R}^3$ 上の実数値関数 $f:\mathbb{R}^3\rightarrow\mathbb{R}$ に対する
+制約付き最適化問題</p>
+<p>$$
+\min_{\mathbf{x}\in\mathbb{R}^3}\ f(\mathbf{x})\quad\text{subject to}\quad ||\mathbf{x}||=1
+$$</p>
+<p>として表現出来るが、 制約条件がある為、ニュートン法などの反復解法を単純に用いてこれを解くことはできない。</p>
+<p>上記の制約条件は $\mathbf{x}$ が単位球面 $ S^2 := \{||\mathbf{x}||=1|\mathbf{x}\in\mathbb{R}^3\} $ の点であると言い換える事ができる。つまり、ユークリッド空間上の制約付き最適化問題から、<strong>多様体 $S^2$ 上での制約なし最適化問題</strong></p>
+<p>$$
+\min_{\mathbf{x}\in S^2}\ f(\mathbf{x})
+$$</p>
+<p>とみなす事ができる。</p>
+<p>このような感じで、他にも様々な問題が <strong>多様体上の最適化問題</strong> に帰着する。このような問題をどのように取り扱うのかを学んでいくのが本ノートの目的である。</p>
+
+    </article>
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+  </body>
+</html>

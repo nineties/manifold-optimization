@@ -1,0 +1,8 @@
+{{- .Page.Scratch.Add "counter" 1 }}
+
+<div class="box">
+    <div class="title">
+        命題{{ .Page.Params.section }}.{{ .Page.Scratch.Get "counter" }}
+    </div>
+{{ .Inner }}
+</div>
