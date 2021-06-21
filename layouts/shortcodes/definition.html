@@ -1,9 +1,2 @@
-{{- .Page.Scratch.Add "counter" 1 }}
-
-<div class="box">
-    <div class="title">
-        定義{{ .Page.Params.section }}.{{ .Page.Scratch.Get "counter" }}
-        {{- with .Get "title" }}:  {{.}} {{- end }}
-    </div>
-{{ .Inner }}
-</div>
+{{- .Scratch.Set "kind" "定義" }}
+{{ partial "box.html" . }}
