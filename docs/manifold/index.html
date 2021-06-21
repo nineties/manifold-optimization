@@ -126,7 +126,7 @@
 <p>この定義を見て最初は戸惑いを感じたが、よくよく考えてみれば多様体というのは謎の空間 $\mathcal{M}$ を局所的にユークリッド空間と同一視する事で調べようというものであるのに、$\mathcal{M}$ の位相構造が最初から分かっているというのは確かに奇妙な前提であるようには思う。極大アトラスを用いた定義ではそのような違和感を(私は)感じずに読み進める事ができた。</p>
 <div class="box">
     <div class="title">
-        定義2.1
+        定義2.1:  チャート
     </div>
 <p>$\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の <strong>チャート(chart)</strong> という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。</p>
 <p>点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における <strong>座標(coordinate)</strong> と言う。</p>
@@ -139,7 +139,7 @@
 
 <div class="box">
     <div class="title">
-        定義2.2
+        定義2.2:  チャートの両立
     </div>
 <p>2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して</p>
 <p>$$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$</p>
@@ -166,7 +166,7 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。</
 <p>両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。</p>
 <div class="box">
     <div class="title">
-        定義2.4
+        定義2.4:  アトラス
     </div>
 <p>$\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
 $\{(U_\lambda,\varphi_\lambda\}$ で</p>
@@ -218,7 +218,7 @@ $$
 と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\{(a,b)|a,b\in\mathbb{R},a\neq 0\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\{(U,\varphi),(V,\psi\}$ は$\mathcal{M}$ のアトラス)。</p>
 <div class="box">
     <div class="title">
-        定義2.5
+        定義2.5:  極大アトラス
     </div>
 <p>集合 $\mathcal{M}$ の$d$次元チャート $(U,\varphi)$ とアトラス $\mathcal{A}$ について $\mathcal{A}\cup\{(U,\varphi)\}$ も $\mathcal{M}$ のアトラスであるならば、 $(U,\varphi)$ は $\mathcal{A}$ と両立するという。</p>
 <p>アトラス $\mathcal{A}$ と両立するチャート全ての集合 $\mathcal{A}^+$ を $\mathcal{A}$の <strong>極大アトラス(maximal atlas)</strong> という。</p>
@@ -270,7 +270,7 @@ $$
 これらを仮定すると、後ほど導入される極大アトラスの定める位相によって $\mathcal{M}$ が第二可算かつハウスドルフになる事が言える。</p>
 <div class="box">
     <div class="title">
-        定義2.7
+        定義2.7:  多様体
     </div>
 <p>集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}=\{(U_\alpha,\varphi_\alpha)\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を <strong>$d$次元多様体($d$-dimentional manifold)</strong> という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。</p>
 <p><strong>可算被覆をもつ(Countability condition)</strong></p>
@@ -293,7 +293,7 @@ $\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\i
 <p>ここでよく使うことになりそうな多様体の例を挙げる。</p>
 <div class="box">
     <div class="title">
-        例2.9
+        例2.9:  $n$次元球面
     </div>
 <p>$$
 S^n=\{\mathbf{x}|\mathbf{x}\in\mathbb{R}^{n+1},||\mathbf{x}||=1\}
@@ -314,7 +314,7 @@ $$
 <p>よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。</p>
 <div class="box">
     <div class="title">
-        例2.10
+        例2.10:  一般線型群
     </div>
 <p>正則な $n$次実正方行列の集合 $GL_n=\{X\in\mathbb{R}^{n\times n}|\det X\neq 0\} $
 に対して、写像
@@ -325,7 +325,7 @@ $$\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
 <p>まず $\varphi(GL_n)$ が開集合である事を示す。$\det'=\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。従って $\varphi(GL_n)=\det'^{-1}(\mathbb{R}\setminus\{0\})$ は開集合。($\because$ ユークリッド空間の一点集合 $\{0\}$ は閉集合だから、その補集合である $\mathbb{R}\setminus\{0\}$ は開集合。そして、開集合の連続写像による逆像は開集合。)</p>
 <p>そして $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も補題2.8より明らか。</p>
 <hr>
-<p>同じようにして特殊線形化群 $SL_n=\{X\in\mathbb{R}^{n\times n}|\det X=1\}$ などについても考えたいが、同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にする。</p>
+<p>同じようにして特殊線型群 $SL_n=\{X\in\mathbb{R}^{n\times n}|\det X=1\}$ などについても考えたいが、同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にする。</p>
 
     </article>
   </section>

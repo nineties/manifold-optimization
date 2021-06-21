@@ -124,7 +124,7 @@
       <p>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法について見ていく。</p>
 <div class="box">
     <div class="title">
-        定義3.1
+        定義3.1:  開集合
     </div>
 <p>$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の <strong>開集合(open subset)</strong> であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。</p>
@@ -151,7 +151,7 @@ $$\varphi\left(\left(\bigcup_\alpha U_\alpha\right)\cap V\right) = \varphi\left(
 となることから、同様にして $\bigcup_\alpha U_\alpha$ も $\mathcal{M}$ の開集合である。$\square$</p>
 <div class="box">
     <div class="title">
-        定義3.3
+        定義3.3:  アトラス位相
     </div>
 <p>$\mathcal{M}$ を集合とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を <strong>アトラス位相(atlas topology)</strong> という。</p>
 </div>
@@ -164,8 +164,6 @@ $$\varphi\left(\left(\bigcup_\alpha U_\alpha\right)\cap V\right) = \varphi\left(
 <p>$\mathcal{M}$ を集合 $\mathcal{A}$ を極大アトラスとする。
 任意のチャート $(U,\varphi)\in\mathcal{A}$ について $U$ は開集合であり、 $\varphi:U\rightarrow\varphi(U)$ は同相写像である。</p>
 </div>
-<p>まず、次の一般的な事実を確認する。</p>
-<p>チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi|_V)$ もチャートである。そして $(U,\varphi)$ と $(V,\varphi|_V)$ は両立する。また、$(U,\varphi)$ がアトラス $\mathcal{A}$ と両立するならば $(V,\varphi|_V)$ も $\mathcal{A}$ と両立する。この事は $\varphi\circ\varphi|_V^{-1}$ が恒等写像となる事から簡単に示せる。</p>
 <p>証明</p>
 <p>$(U,\varphi)$ と $\mathcal{A}$ が両立する事から $U$ が開集合であるのは明らか。</p>
 <p>任意の開集合 $V\subset\varphi(U)$ の $\varphi$ の逆像 $\varphi^{-1}(V)$ は $U$ の部分集合だから $\left(\varphi^{-1}(V),\varphi|_{\varphi^{-1}(V))}\right)$ も $\mathcal{A}$ と両立するチャートである。従って $\varphi^{-1}(V)$ は開集合だから $\varphi:U\rightarrow\varphi(U)$ は連続。</p>
