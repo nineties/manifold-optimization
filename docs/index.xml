@@ -24,7 +24,7 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
     </item>
     
     <item>
-      <title>2. 多様体</title>
+      <title>2. 多様体の定義</title>
       <link>https://nineties.github.io/manifold-optimization/manifold/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -55,6 +55,15 @@ $\mathcal{M},\emptyset$ が$\mathcal{M}$の開集合となる事は明らか。
 $U,V$ が開集合であるならば、任意のチャート $(W,\varphi)$ に対して
 $$\varphi((U\cap V)\cap W) = \varphi((U\cap W)\cap (V\cap W)) = \varphi(U\cap W)\cap\varphi(V\cap W)\quad\text{($\because \varphi$は全単射)}$$
 であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ は $\mathcal{M}$の開集合。</description>
+    </item>
+    
+    <item>
+      <title>4. 多様体の様々な構成</title>
+      <link>https://nineties.github.io/manifold-optimization/construction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nineties.github.io/manifold-optimization/construction/</guid>
+      <description></description>
     </item>
     
   </channel>
