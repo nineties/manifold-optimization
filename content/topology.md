@@ -5,7 +5,7 @@ section: 3
 
 すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法について見ていく。
 
-{{% definition %}}
+{{% definition title="開集合" %}}
 $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の **開集合(open subset)** であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
 {{% /definition %}}
@@ -34,7 +34,7 @@ $\\{U_\alpha\\}$ が開集合であるならば、任意のチャート $(V,\var
 $$\varphi\left(\left(\bigcup_\alpha U_\alpha\right)\cap V\right) = \varphi\left(\bigcup_\alpha\left(U_\alpha\cap V\right)\right) = \bigcup_\alpha\varphi(U_\alpha\cap V)$$
 となることから、同様にして $\bigcup_\alpha U_\alpha$ も $\mathcal{M}$ の開集合である。$\square$
 
-{{% definition %}}
+{{% definition title="アトラス位相" %}}
 $\mathcal{M}$ を集合とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を **アトラス位相(atlas topology)** という。
 {{% /definition %}}
 
@@ -45,10 +45,6 @@ $\mathcal{M}$ を集合とする。 $\mathcal{M}$の極大アトラス $\mathcal
 $\mathcal{M}$ を集合 $\mathcal{A}$ を極大アトラスとする。
 任意のチャート $(U,\varphi)\in\mathcal{A}$ について $U$ は開集合であり、 $\varphi:U\rightarrow\varphi(U)$ は同相写像である。
 {{% /proposition %}}
-
-まず、次の一般的な事実を確認する。
-
-チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートである。そして $(U,\varphi)$ と $(V,\varphi\|_V)$ は両立する。また、$(U,\varphi)$ がアトラス $\mathcal{A}$ と両立するならば $(V,\varphi\|_V)$ も $\mathcal{A}$ と両立する。この事は $\varphi\circ\varphi\|_V^{-1}$ が恒等写像となる事から簡単に示せる。
 
 証明
 

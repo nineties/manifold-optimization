@@ -3,6 +3,7 @@
 <div class="box">
     <div class="title">
         補題{{ .Page.Params.section }}.{{ .Page.Scratch.Get "counter" }}
+        {{- with .Get "title" }}:  {{.}} {{- end }}
     </div>
 {{ .Inner }}
 </div>
