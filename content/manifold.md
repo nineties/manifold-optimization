@@ -40,7 +40,7 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
 
 以下の命題は頻繁に使う事になる。
 
-{{% proposition %}}
+{{% proposition label="prop.subchart-is-chart" %}}
 チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートであり、$(U,\varphi)$ と両立する任意のチャートと両立する。
 
 但し、 $\varphi\|_V$ は $\varphi$ の定義域を $V$ に制限した写像。
@@ -50,7 +50,7 @@ $U,V$ の間の座標変換が恒等写像になる事から明らか。地図�
 
 全く同じだが、次の形で用いることも多い。
 
-{{% proposition %}}
+{{% proposition label="prop.intersection-is-chart" %}}
 集合 $\mathcal{M}$ のチャート $(U,\varphi)$ と 部分集合 $V\subset \mathcal{M}$ について $\varphi(U\cap V)$ が $\mathbb{R}^d$ の開集合ならば、 $(U\cap V,\varphi\|_{U\cap V})$ もチャートであり、
 $(U,\varphi)$ と両立する任意のチャートと両立する。
 {{% /proposition %}}
@@ -236,7 +236,7 @@ $$
 
 $\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスである事の証明は上でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $\mathcal{A}^+$ をとると $(S^n,\mathcal{A}^+)$ が多様体になる事を示す。
 
-まず $S^n=U_+\cup U_-$ だから可算被覆を持つ事は明らか。続いて、ハウスドルフ性についてだが、{{< ref "lem.hausdorff" >}}より2点が同じチャートに含まれる場合には成立するので、2点が $(1,0,\ldots)$ と $(-1,0,\ldots)$ である場合のみ考えれば良い。
+まず $S^n=U_+\cup U_-$ だから可算被覆を持つ事は明らか。続いて、ハウスドルフ性についてだが、{{< ref lem.hausdorff >}}より2点が同じチャートに含まれる場合には成立するので、2点が $(1,0,\ldots)$ と $(-1,0,\ldots)$ である場合のみ考えれば良い。
 
 $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分とすれば
 
@@ -267,7 +267,7 @@ $$
 
 ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\\{0\\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(GL_n)$ も閉集合。よって $GL_n$ は開集合。
 
-また $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も{{< ref "lem.hausdorff" >}}より明らか。
+また $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も{{< ref lem.hausdorff >}}より明らか。
 
 ---
 $GL_n$ のような群構造を持つ多様体を **リー群(Lie group)** という。

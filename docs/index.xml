@@ -41,7 +41,7 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
     </item>
     
     <item>
-      <title>3. 多様体の位相</title>
+      <title>3. 多様体の位相構造</title>
       <link>https://nineties.github.io/manifold-optimization/topology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -49,12 +49,12 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
       <description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法について見ていく。
 定義3.1: 開集合  $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
  $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
-命題3.2  集合 $\mathcal{M}$, 極大アトラス $\mathcal{A}$ の定める開集合の族は開集合の公理を満たす。
+命題3.2  集合 $\mathcal{M}$ の極大アトラスの定める開集合の族は開集合の公理を満たす。すなわち、
  $\mathcal{M},\emptyset$ は開集合 $U,V$ が開集合ならば $U\cap V$ も開集合 $\{U_\alpha\}$が開集合ならば$\bigcup_\alpha U_\alpha$ も開集合   証明
 $\mathcal{M},\emptyset$ が$\mathcal{M}$の開集合となる事は明らか。
 $U,V$ が開集合であるならば、任意のチャート $(W,\varphi)$ に対して
 $$\varphi((U\cap V)\cap W) = \varphi((U\cap W)\cap (V\cap W)) = \varphi(U\cap W)\cap\varphi(V\cap W)\quad\text{($\because \varphi$は全単射)}$$
-であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ の $\mathcal{M}$の開集合。</description>
+であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ は $\mathcal{M}$の開集合。</description>
     </item>
     
   </channel>

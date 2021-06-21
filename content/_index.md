@@ -15,7 +15,7 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 
 1. [モチベーション](motivation)
 2. [多様体](manifold)
-3. [多様体の位相](topology)
+3. [多様体の位相構造](topology)
 
 
 参考にした文献
