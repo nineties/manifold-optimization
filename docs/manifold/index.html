@@ -126,30 +126,28 @@
 <p>この定義を見て最初は戸惑いを感じたが、よくよく考えてみれば多様体というのは謎の空間 $\mathcal{M}$ を局所的にユークリッド空間と同一視する事で調べようというものであるのに、$\mathcal{M}$ の位相構造が最初から分かっているというのは確かに奇妙な前提であるようには思う。極大アトラスを用いた定義ではそのような違和感を(私は)感じずに読み進める事ができた。</p>
 <div class="box">
     <div class="title">
-        定義2.1:  チャート
+        定義 2.1:  チャート
     </div>
 <p>$\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の <strong>チャート(chart)</strong> という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。</p>
-<p>点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における <strong>座標(coordinate)</strong> と言う。</p>
+<p>点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi$ における <strong>座標(coordinate)</strong> と言う。</p>
 </div>
-<p>チャートで、$\mathcal{M}$ の局所的な様子を調べやすいユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。</p>
-<p>これは例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを見なくても、地図上を見ることで地球の事をある程度調べる事ができる。</p>
-<p style="text-align:center;">
-<img src="../images/chart.png" width="80%" >
-</p>
+<p>チャートで、$\mathcal{M}$ の局所的な様子をより調べやすい空間であるユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。</p>
+<p>これは例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを直接観察するよりは、地図を観察する方が易しい。</p>
+<figure><img src="../images/chart.png"/>
+</figure>
 
 <div class="box">
     <div class="title">
-        定義2.2:  チャートの両立
+        定義 2.2:  チャートの両立
     </div>
 <p>2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して</p>
 <p>$$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$</p>
 <p>を <strong>座標変換(change of coordinates)</strong> という。</p>
 <p>$\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは <strong>両立する(compatible)</strong> という。</p>
 </div>
-<p>2つの地図に重なっている地域があるならば、一方の地図ともう一方の地図の対応を付けられるということで、これらの地図が両立するというのはその対応が滑らかな写像になっているということ。</p>
-<p style="text-align:center;">
-<img src="../images/change_of_coordinates.png" width="80%" >
-</p>
+<p>2つの地図に重なっている地域があるならば、その地域について一方の地図から一方の地図への写像が作れる。これらの地図が両立するというのはその対応が滑らかだということ。</p>
+<figure><img src="../images/change_of_coordinates.png"/>
+</figure>
 
 <p>特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
 $\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
@@ -157,7 +155,7 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。</
 <p>以下の命題は頻繁に使う事になる。</p>
 <div class="box">
     <div class="title">
-        命題2.3
+        命題 2.3
     </div>
 <p>チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi|_V)$ もチャートである。但し、 $\varphi|_V$ は $\varphi$ の定義域を $V$ に制限した写像。</p>
 <p>また $(V,\varphi|V)$ は $(U,\varphi)$ と両立する任意のチャートと両立する。</p>
@@ -166,7 +164,7 @@ $\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。</
 <p>両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が $\mathbb{R}^d$ の開集合とは限らない為、推移律が成り立たない。</p>
 <div class="box">
     <div class="title">
-        定義2.4:  アトラス
+        定義 2.4:  アトラス
     </div>
 <p>$\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
 $\{(U_\lambda,\varphi_\lambda\}$ で</p>
@@ -218,14 +216,14 @@ $$
 と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\{(a,b)|a,b\in\mathbb{R},a\neq 0\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\{(U,\varphi),(V,\psi\}$ は$\mathcal{M}$ のアトラス)。</p>
 <div class="box">
     <div class="title">
-        定義2.5:  極大アトラス
+        定義 2.5:  極大アトラス
     </div>
 <p>集合 $\mathcal{M}$ の$d$次元チャート $(U,\varphi)$ とアトラス $\mathcal{A}$ について $\mathcal{A}\cup\{(U,\varphi)\}$ も $\mathcal{M}$ のアトラスであるならば、 $(U,\varphi)$ は $\mathcal{A}$ と両立するという。</p>
 <p>アトラス $\mathcal{A}$ と両立するチャート全ての集合 $\mathcal{A}^+$ を $\mathcal{A}$の <strong>極大アトラス(maximal atlas)</strong> という。</p>
 </div>
 <div class="box">
     <div class="title">
-        命題2.6
+        命題 2.6
     </div>
 <p>極大アトラス $\mathcal{A}^+$ は $\mathcal{A}$ を含む最大のアトラスである。</p>
 </div>
@@ -270,7 +268,7 @@ $$
 これらを仮定すると、後ほど導入される極大アトラスの定める位相によって $\mathcal{M}$ が第二可算かつハウスドルフになる事が言える。</p>
 <div class="box">
     <div class="title">
-        定義2.7:  多様体
+        定義 2.7:  多様体
     </div>
 <p>集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}=\{(U_\alpha,\varphi_\alpha)\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を <strong>$d$次元多様体($d$-dimentional manifold)</strong> という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。</p>
 <p><strong>可算被覆をもつ(Countability condition)</strong></p>
@@ -281,7 +279,7 @@ $$
 <p>ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。</p>
 <div class="box">
     <div class="title">
-        補題2.8
+        補題 2.8
     </div>
 <p>$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 $\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in \mathcal{A}$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。</p>
@@ -293,7 +291,7 @@ $\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\i
 <p>ここでよく使うことになりそうな多様体の例を挙げる。</p>
 <div class="box">
     <div class="title">
-        例2.9:  $n$次元球面
+        例 2.9:  $n$次元球面
     </div>
 <p>$$
 S^n=\{\mathbf{x}|\mathbf{x}\in\mathbb{R}^{n+1},||\mathbf{x}||=1\}
@@ -314,7 +312,7 @@ $$
 <p>よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。</p>
 <div class="box">
     <div class="title">
-        例2.10:  一般線型群
+        例 2.10:  一般線型群
     </div>
 <p>正則な $n$次実正方行列の集合 $GL_n=\{X\in\mathbb{R}^{n\times n}|\det X\neq 0\} $
 に対して、写像

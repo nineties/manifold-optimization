@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://nineties.github.io/manifold-optimization/motivation/</guid>
-      <description>分の姿勢を推定するという問題を考える。これは例えばオドメトリーの値やコンパスや加速度センサなどの値、カメラで検出したランドマークの座標などの情報を元にして計算される何らかのコスト関数を最小化する問題として表現される。
+      <description>ロボットが自分の姿勢を推定するという問題を考える。これは例えばオドメトリーの値やコンパスや加速度センサなどの値、カメラで検出したランドマークの座標などの情報を元にして計算される何らかのコスト関数を最小化する問題として表現される。
 つまり、ロボットの姿勢が単位ベクトル $\mathbf{v}\in\mathbb{R}^3,||\mathbf{v}||=1$ で表されるとすると、実数値のコスト関数 $f$ に対して $f(\mathbf{v})$ が最小になる $\mathbf{v}$ は何か？という問題になる。
 この事は、ユークリッド空間 $\mathbb{R}^3$ 上の実数値関数 $f:\mathbb{R}^3\rightarrow\mathbb{R}$ に対する 制約付き最適化問題
 $$ \min_{\mathbf{x}\in\mathbb{R}^3}\ f(\mathbf{x})\quad\text{subject to}\quad ||\mathbf{x}||=1 $$
@@ -31,11 +31,11 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
       <guid>https://nineties.github.io/manifold-optimization/manifold/</guid>
       <description>教科書では、(私が)よく見る定義とは異なり 極大アトラス を用いて多様体の定義を行なっている。 よくある定義では多様体 $\mathcal{M}$ の位相構造が天下り的に与えられる事が多いが、極大アトラスを用いた定義では $\mathcal{M}$ は単なる集合として導入されて極大アトラスによってその位相構造が自然と定まるという順番になる。
 この定義を見て最初は戸惑いを感じたが、よくよく考えてみれば多様体というのは謎の空間 $\mathcal{M}$ を局所的にユークリッド空間と同一視する事で調べようというものであるのに、$\mathcal{M}$ の位相構造が最初から分かっているというのは確かに奇妙な前提であるようには思う。極大アトラスを用いた定義ではそのような違和感を(私は)感じずに読み進める事ができた。
-定義2.1: チャート  $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の チャート(chart) という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
-点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における 座標(coordinate) と言う。
- チャートで、$\mathcal{M}$ の局所的な様子を調べやすいユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。
-これは例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを見なくても、地図上を見ることで地球の事をある程度調べる事ができる。
-定義2.2: チャートの両立  2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
+定義 2.1: チャート  $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の チャート(chart) という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
+点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi$ における 座標(coordinate) と言う。
+ チャートで、$\mathcal{M}$ の局所的な様子をより調べやすい空間であるユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。
+これは例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを直接観察するよりは、地図を観察する方が易しい。
+ 定義 2.2: チャートの両立  2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description>
     </item>
@@ -47,9 +47,9 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
       
       <guid>https://nineties.github.io/manifold-optimization/topology/</guid>
       <description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法について見ていく。
-定義3.1: 開集合  $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
+定義 3.1: 開集合  $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
  $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
-命題3.2  集合 $\mathcal{M}$, 極大アトラス $\mathcal{A}$ の定める開集合の族は開集合の公理を満たす。
+命題 3.2  集合 $\mathcal{M}$, 極大アトラス $\mathcal{A}$ の定める開集合の族は開集合の公理を満たす。
  $\mathcal{M},\emptyset$ は開集合 $U,V$ が開集合ならば $U\cap V$ も開集合 $\{U_\alpha\}$が開集合ならば$\bigcup_\alpha U_\alpha$ も開集合   証明
 $\mathcal{M},\emptyset$ が$\mathcal{M}$の開集合となる事は明らか。
 $U,V$ が開集合であるならば、任意のチャート $(W,\varphi)$ に対して
