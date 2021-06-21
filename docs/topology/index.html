@@ -122,17 +122,19 @@
 
     <article itemprop="articleBody" id="content" class="w-90 lh-copy">
       <p>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法について見ていく。</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        定義 3.1:  開集合
+        定義3.1:  開集合
     </div>
 <p>$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の <strong>開集合(open subset)</strong> であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。</p>
 </div>
 <p>$U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.2
+        命題3.2
     </div>
 <p>集合 $\mathcal{M}$, 極大アトラス $\mathcal{A}$ の定める開集合の族は開集合の公理を満たす。</p>
 <ol>
@@ -149,17 +151,19 @@
 <p>$\{U_\alpha\}$ が開集合であるならば、任意のチャート $(V,\varphi)$ に対して
 $$\varphi\left(\left(\bigcup_\alpha U_\alpha\right)\cap V\right) = \varphi\left(\bigcup_\alpha\left(U_\alpha\cap V\right)\right) = \bigcup_\alpha\varphi(U_\alpha\cap V)$$
 となることから、同様にして $\bigcup_\alpha U_\alpha$ も $\mathcal{M}$ の開集合である。$\square$</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        定義 3.3:  アトラス位相
+        定義3.3:  アトラス位相
     </div>
 <p>$\mathcal{M}$ を集合とする。 $\mathcal{M}$の極大アトラス $\mathcal{A}$ の定める開集合の族を開集合系とする位相を <strong>アトラス位相(atlas topology)</strong> という。</p>
 </div>
 <p>以後、特に断りがなければ、$(\mathcal{M},\mathcal{A})$ の位相はアトラス位相によって与えられるとする。
 アトラス位相を導入すると、チャートはよくある多様体の定義で仮定される性質を満たすようになる。</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.4
+        命題3.4
     </div>
 <p>$\mathcal{M}$ を集合 $\mathcal{A}$ を極大アトラスとする。
 任意のチャート $(U,\varphi)\in\mathcal{A}$ について $U$ は開集合であり、 $\varphi:U\rightarrow\varphi(U)$ は同相写像である。</p>
@@ -168,9 +172,10 @@ $$\varphi\left(\left(\bigcup_\alpha U_\alpha\right)\cap V\right) = \varphi\left(
 <p>$(U,\varphi)$ と $\mathcal{A}$ が両立する事から $U$ が開集合であるのは明らか。</p>
 <p>任意の開集合 $V\subset\varphi(U)$ の $\varphi$ の逆像 $\varphi^{-1}(V)$ は $U$ の部分集合だから $\left(\varphi^{-1}(V),\varphi|_{\varphi^{-1}(V))}\right)$ も $\mathcal{A}$ と両立するチャートである。従って $\varphi^{-1}(V)$ は開集合だから $\varphi:U\rightarrow\varphi(U)$ は連続。</p>
 <p>また、任意の開集合 $W\subset U$ に対して $\varphi(W)=\varphi(W\cap U)$ は開集合だから $\varphi^{-1}:\varphi(U)\rightarrow U$ も連続。$\square$</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.5
+        命題3.5
     </div>
 <p>$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。この時 $\mathcal{A}$ は $\mathcal{M}$ の開集合系の<strong>基底 (base)</strong> である。
 すなわち、任意の開集合 $U$ は $\mathcal{A}$ のチャート $U_\alpha$ の和集合として表すことができる。</p>
@@ -181,9 +186,10 @@ $$\varphi\left(\left(\bigcup_\alpha U_\alpha\right)\cap V\right) = \varphi\left(
 $(U\cap U_\alpha, \varphi_\alpha|_{U\cap U_\alpha})\in\mathcal{A}$
 よって $U = \bigcup_\alpha(U\cap U_\alpha)$である事より示された。 $\square$</p>
 <p>$U\subset\mathcal{M}$ が開集合であるか否かを判定するのに極大アトラス $\mathcal{A}$ の全てのチャートを調べる必要はない。</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.6
+        命題3.6
     </div>
 <p>$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
 部分集合 $U\subset\mathcal{M}$ が開集合である事は、適当な $U$ を覆うアトラス $\mathcal{B}\subset\mathcal{A}$ の任意のチャート $(U_\beta,\varphi_\beta)\in\mathcal{B}$ について $\varphi_\beta(U\cap U_\beta)$ が開集合である事と同値。</p>
@@ -200,9 +206,10 @@ $(U\cap U_\alpha, \varphi_\alpha|_{U\cap U_\alpha})\in\mathcal{A}$
 \]</p>
 <p>である。ただし、$\beta$ に関しての和は $\mathcal{B}$ の全てのチャートに対して取る。</p>
 <p>ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}$ より $\varphi_\beta(U_\alpha\cap U_\beta)$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\varphi_\alpha(U\cap U_\alpha)$ も開集合となる。 $\square$</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.7
+        命題3.7
     </div>
 <p>多様体の任意の開集合は多様体である</p>
 </div>
@@ -215,9 +222,10 @@ $(U\cap U_\alpha, \varphi_\alpha|_{U\cap U_\alpha})\in\mathcal{A}$
 <p>$x,y\in U,x\neq y$ とする。 $\mathcal{M}$ のハウスドルフ性より $\mathcal{M}$ のチャート $U_\alpha,U_\beta$ で</p>
 <p>$$x\in U_\alpha, y\in U_\beta, U_\alpha\cap U_\beta = \emptyset $$</p>
 <p>となるものが取れる。これらを $U$ に制限すれば $x,y$ を分離する $U$ のチャートが得られる。 $\square$</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.8
+        命題3.8
     </div>
 <p>$\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると</p>
 <p>$(\mathcal{M},\mathcal{A})$ がハウスドルフ性を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$がハウスドルフ空間となる</p>
@@ -229,9 +237,10 @@ $\mathcal{A}$ がアトラス位相の基底である事から明らか。</p>
 $x,y\in\mathcal{M},x\neq y$ とする。 $\mathcal{M}$ はハウスドルフ空間だから開集合 $U,V\subset\mathcal{M}$ が存在して</p>
 <p>$$ x\in U,y\in V,U\cap V=\emptyset $$</p>
 <p>となる。$U,V$ は開集合だから、それぞれ $\mathcal{A}$ のチャートの和集合で表す事ができ、その中に $x,y$ を含む互いに交わらないチャートが存在する。$\square$</p>
-<div class="box">
+<div class="box"
+    >
     <div class="title">
-        命題 3.9
+        命題3.9
     </div>
 <p>$\mathcal{M}$を集合, $\mathcal{A}$ を極大アトラスとすると</p>
 <p>$(\mathcal{M},\mathcal{A})$ が可算被覆を持つ $\Leftrightarrow$ $\mathcal{A}$ の定めるアトラス位相で$\mathcal{M}$が第二可算空間となる</p>

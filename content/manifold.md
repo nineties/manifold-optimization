@@ -8,7 +8,7 @@ section: 2
 
 この定義を見て最初は戸惑いを感じたが、よくよく考えてみれば多様体というのは謎の空間 $\mathcal{M}$ を局所的にユークリッド空間と同一視する事で調べようというものであるのに、$\mathcal{M}$ の位相構造が最初から分かっているというのは確かに奇妙な前提であるようには思う。極大アトラスを用いた定義ではそのような違和感を(私は)感じずに読み進める事ができた。
 
-{{% definition title="チャート" %}}
+{{% definition title="チャート" label="def.chart" %}}
 $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の **チャート(chart)** という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
 
 点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi$ における **座標(coordinate)** と言う。
@@ -20,7 +20,7 @@ $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユー�
 
 {{< figure src="../images/chart.png" >}}
 
-{{% definition title="チャートの両立" %}}
+{{% definition title="チャートの両立" label="def.compatible-charts" %}}
 2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
