@@ -11,14 +11,14 @@ section: 2
 {{% definition title="チャート" %}}
 $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユークリッド空間 $\mathbb{R}^d$ の開集合$V$ への全単射 $\varphi:U\rightarrow V$がある時 $(U,\varphi)$を$\mathcal{M}$の$d$次元の **チャート(chart)** という。誤解の恐れのない場合には $U$ や $\varphi$ の事を単体でチャートと呼ぶこともある。
 
-点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi(x)$ における **座標(coordinate)** と言う。
+点 $x\in U$ に対して $\varphi(x)\in\mathbb{R}^d$ を $x$ のチャート $\varphi$ における **座標(coordinate)** と言う。
 {{% /definition %}}
 
-チャートで、$\mathcal{M}$ の局所的な様子を調べやすいユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。
+チャートで、$\mathcal{M}$ の局所的な様子をより調べやすい空間であるユークリッド空間 $\mathbb{R}^d$ に写しとる事で、 $\varphi(U)$ を通して $U$ について調べることが可能になる。
 
-これは例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを見なくても、地図上を見ることで地球の事をある程度調べる事ができる。
+これは例えば $\mathcal{M}$ を地球、 チャートをある一地方の地図だと思うとイメージしやすい。地球そのものを直接観察するよりは、地図を観察する方が易しい。
 
-{{< image "chart.png" >}}
+{{< figure src="../images/chart.png" >}}
 
 {{% definition title="チャートの両立" %}}
 2つの$d$次元チャート $(U,\varphi),(V,\psi)$ に対して
@@ -30,9 +30,9 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 $\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは **両立する(compatible)** という。
 {{% /definition %}}
 
-2つの地図に重なっている地域があるならば、一方の地図ともう一方の地図の対応を付けられるということで、これらの地図が両立するというのはその対応が滑らかな写像になっているということ。
+2つの地図に重なっている地域があるならば、その地域について一方の地図から一方の地図への写像が作れる。これらの地図が両立するというのはその対応が滑らかだということ。
 
-{{< image "change_of_coordinates.png" >}}
+{{< figure src="../images/change_of_coordinates.png" >}}
 
 特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
 $\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
