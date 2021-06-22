@@ -193,7 +193,7 @@ $A$ がコンパクトで、$B$ が閉集合ならば $A\cap B$ はコンパク�
 
 $B$の補集合$B^\circ$は開集合だから、$A\cap B$ の開被覆が与えられたら、これに $B^\circ$ を加えると $A$ の開被覆が作れる。これから $A$ の有限被覆を作って $B^\circ$ を除いたものが $A\cap B$ の有限被覆になる。 $\square$
 
-{{% proposition %}}
+{{% proposition label="prop.compact-is-closed" %}}
 多様体 $\mathcal{M}$ のコンパクト部分集合は閉集合。
 {{% /proposition %}}
 
@@ -202,3 +202,7 @@ $B$の補集合$B^\circ$は開集合だから、$A\cap B$ の開被覆が与え�
 $A\subset\mathcal{M}$ がコンパクトであるとする。$A$ が閉集合である事を示すには任意の $p\in A^\circ$ に対して開近傍 $p\in U\subset A^\circ$ が存在する事を示せば良い。
 
 点 $p\in A^\circ$ をとる。任意の $q\in A$ について, $p\neq q$ だから $p\in U_q, q\in V_q, U_q\cap V_q=\emptyset$ となる開集合 $U_q,V_q\subset\mathcal{M}$ が取れる。このような $V_q$ 全ての和集合は $A$ の開被覆となるので有限被覆 $A\subset V_{q_1}\cup\cdots\cup V_{q_n}$ が取れる。この時対応する $U_q$ の共通部分 $U=U_{q_1}\cap\cdots\cap U_{q_n}$ は開集合であり、$V_{q_k}$ の全てと交わらないから $p\in U\subset A^\circ$ となる。 $\square$
+
+{{< ref ex.y-shape-space >}} の空間はハウスドルフでないので、 {{< ref prop.compact-is-closed >}} は成立しない。例えば以下のように原点 $(0,0)$ を跨ぐ区間 $X$ を考えると、この$\varphi$ の像は $\mathbb{R}$ の有界閉集合になるのでコンパクトである。一方で、この補集合 $X^\circ$ にはもう一つの原点 $(0,1)$ が含まれるが、これを含む任意の開集合は $X$ と交わってしまう。よって $X^\circ$ は開集合ではないので、$X$ は閉集合ではない。
+
+{{< figure src="../images/y-shaped-space.png" >}}

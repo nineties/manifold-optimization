@@ -273,3 +273,26 @@ $$
 $GL_n$ のような群構造を持つ多様体を **リー群(Lie group)** という。
 
 同じようにして特殊線型群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。
+
+---
+
+ハウスドルフ性を満たさない例を挙げる。
+
+{{% example title="2直線を張り合わせた空間" label="ex.y-shape-space" %}}
+
+空間 $\mathbb{R}\times \\{0,1\\}$ において $x<0$ の部分で $(x,0)$ と $(x,1)$ を同一視して得られる商空間を $\mathcal{M}$ とする。
+
+$\pi:X\rightarrow\mathcal{M}$ を商写像とする。$U=\pi(\mathbb{R}\times\\{0\\}), V=\pi(\mathbb{R}\times\\{1\\})$ とし、
+
+$$
+\begin{aligned}
+\varphi:U \rightarrow\mathbb{R}: (x,0)\mapsto x \\\\
+\psi:V \rightarrow\mathbb{R}: (x,1)\mapsto x \\\\
+\end{aligned}
+$$
+
+とおくと $\mathcal{A}=\\{(U,\varphi),(V,\psi)\\}$ は $\mathcal{M}$ のアトラス。
+{{% /example %}}
+
+$\mathcal{M}$ は2つの直線を張り合わせた空間で、 $\varphi,\psi$ は張り合わせる前の直線を取り出すもの。この時 $(\mathcal{M},\mathcal{A}^+)$ はハウスドルフ性を満たさない。
+具体的には異なる2点 $(0,0),(0,1)\in\mathcal{M}$ について条件を満たすチャートは存在しない。
