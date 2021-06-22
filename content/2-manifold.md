@@ -32,7 +32,7 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 $\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは **両立する(compatible)** という。
 {{% /definition %}}
 
-2つの地図に重なっている地域があるならば、その地域について調べるのにどちらの地図を選んでも良いという事を言っている。
+2つの地図に重なっている地域があるとき、それらが両立するならばその地域について調べるのにどちらの地図を選んでも良いという事を言っている。
 
 {{< figure src="../images/change-of-coordinates.png" >}}
 
