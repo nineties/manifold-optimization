@@ -51,3 +51,21 @@ $$ \psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 {{% /definition %}}
 
 {{< figure src="../images/coordinate-representation.png" >}}
+
+{{% definition title="可微分写像" %}}
+$F:\mathcal{M}\rightarrow\mathcal{N}$ が **可微分(differentiable)** であるとは、任意の点 $x\in\mathcal{M}$ について、その周りでの $F$ の座標表示
+
+$$ \psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
+
+が 点 $\varphi(x)\in\mathbb{R}^m$ で$C^\infty$ 級である事をいう。これは座標表示の選び方によらない。
+{{% /definition %}}
+
+座標表示の選び方に寄らないのは、多様体の任意の座標変換は微分同相であるから。
+
+{{% definition title="微分同相写像" %}}
+$F:\mathcal{M}\rightarrow\mathcal{N}$ が全単射で $F$ も $F^{-1}$ も可微分であるとき、$F$ を **微分同相写像(diffeomorphism)** という。
+
+微分同相写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ が存在するとき、$\mathcal{M},\mathcal{N}$ は **微分同相(diffeomorphic)** であるといい
+$$ \mathcal{M}\simeq\mathcal{N}$$
+と書く。
+{{% /definition %}}
