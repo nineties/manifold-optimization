@@ -13,10 +13,10 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 
 もし内容に誤りがありましたら、 [IssueやPull Request](https://github.com/nineties/manifold-optimization)を頂けますとありがたいです。
 
-1. [モチベーション](motivation)
-2. [多様体の定義](manifold)
-3. [多様体の位相構造](topology)
-4. [多様体の様々な構成](construction)
+1. [モチベーション](1-motivation)
+2. [多様体の定義](2-manifold)
+3. [多様体の位相構造](3-topology)
+4. [多様体の様々な構成](4-construction)
 
 
 参考にした文献
