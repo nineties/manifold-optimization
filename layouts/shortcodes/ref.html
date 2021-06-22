@@ -1,4 +1,6 @@
 {{- range .Site.Pages }}
     {{- $map := .Scratch.Get ($.Get 0) }}
-    <a href="{{ $map.url }}">{{ $map.name }}</a>
+    {{- if $map }}
+        <a href="{{ $map.url }}">{{ $map.name }}</a>
+    {{- end }}
 {{- end }}
