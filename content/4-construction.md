@@ -50,3 +50,4 @@ $$ \psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 を $F$ の点 $x$ の周りでの $\varphi,\psi$ による **座標表示(coordinate representation)** という。
 {{% /definition %}}
 
+{{< figure src="../images/coordinate-representation.png" >}}

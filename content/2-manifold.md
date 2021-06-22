@@ -32,7 +32,7 @@ $\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合で
 
 2つの地図に重なっている地域があるならば、その地域について一方の地図から一方の地図への写像が作れる。これらの地図が両立するというのはその対応が滑らかだということ。
 
-{{< figure src="../images/change_of_coordinates.png" >}}
+{{< figure src="../images/change-of-coordinates.png" >}}
 
 特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
 $\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
