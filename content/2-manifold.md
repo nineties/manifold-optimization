@@ -32,9 +32,17 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 $\varphi(U\cap V), \psi(U\cap V)$ がどちらも $\mathbb{R}^d$ の開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは **両立する(compatible)** という。
 {{% /definition %}}
 
+写像 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が $C^\infty$ 級であるというのは、
+
+$$ f(x_1,\ldots,x_m)=(f(x_1,\ldots,x_m),\ldots,f(x_1,\ldots,x_m)) $$
+
+の時、各 $f_i$ の $x_1,\ldots,x_m$ での任意の偏微分係数が存在し連続であるということ。
+
+
 2つの地図に重なっている地域があるとき、それらが両立するならばその地域について調べるのにどちらの地図を選んでも良いという事を言っている。
 
 {{< figure src="../images/change-of-coordinates.png" >}}
+
 
 特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
 $\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
