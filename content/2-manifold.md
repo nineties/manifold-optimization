@@ -23,13 +23,13 @@ $\mathcal{M}$を集合とする。$\mathcal{M}$の部分集合 $U$からユー�
 {{< figure src="../images/chart.png" >}}
 
 {{% definition title="チャートの両立" %}}
-2つのチャート $(U,\varphi),(V,\psi)$ に対して
+2つの $d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 
 を **座標変換(change of coordinates)** という。
 
-$\varphi(U\cap V), \psi(U\cap V)$ がどちらも開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは **両立する(compatible)** という。
+$\varphi(U\cap V), \psi(U\cap V)$ がどちらも$\mathbb{R}^d$の開集合であり、$\psi\circ\varphi^{-1}$ が($C^\infty$) 微分同相写像であるとき、2つのチャートは **両立する(compatible)** という。
 {{% /definition %}}
 
 写像 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が $C^\infty$ 級であるというのは、
@@ -42,9 +42,6 @@ $$ f(x_1,\ldots,x_m)=(f(x_1,\ldots,x_m),\ldots,f(x_1,\ldots,x_m)) $$
 2つの地図に重なっている地域があるとき、それらが両立するならばその地域について調べるのにどちらの地図を選んでも良いという事を言っている。
 
 {{< figure src="../images/change-of-coordinates.png" >}}
-
-2つのチャートが両立するとき、それらの次元は必ず等しい。何故ならば $m\neq n$ だと $\mathbb{R}^m,\mathbb{R}^n$ の開集合の間に同相写像は存在しないから。(証明は難しそう)
-
 
 特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
 $\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
