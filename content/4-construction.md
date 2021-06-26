@@ -1,6 +1,6 @@
 ---
-title: 4. 多様体の様々な構成と可微分写像
-section: 4
+title: 5. 多様体の様々な構成と可微分写像
+section: 5
 ---
 
 {{% definition title="多様体の直和" %}}

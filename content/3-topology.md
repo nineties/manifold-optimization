@@ -10,11 +10,11 @@ section: 3
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
 
 {{% definition title="開集合" %}}
-$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
-部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の **開集合(open subset)** であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
+多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の **開集合(open subset)** であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 {{% /definition %}}
 
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
+
 
 {{% proposition %}}
 集合 $\mathcal{M}$ の極大アトラスの定める開集合の族は開集合の公理を満たす。すなわち、

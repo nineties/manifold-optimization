@@ -16,7 +16,8 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 1. [モチベーション](1-motivation)
 2. [多様体の定義](2-manifold)
 3. [多様体の位相構造](3-topology)
-4. [多様体の様々な構成と可微分写像](4-construction)
+4. [接ベクトルと接空間](4-tangent-space)
+5. [多様体の様々な構成と可微分写像](5-construction)
 
 
 参考にした文献

@@ -46,7 +46,7 @@ $$ f(x_1,\ldots,x_m)=(f(x_1,\ldots,x_m),\ldots,f(x_1,\ldots,x_m)) $$
 
 {{% definition title="アトラス" %}}
 $\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
- $\\{(U_\lambda,\varphi_\lambda\\}$ で
+ $\\{(U_\lambda,\varphi_\lambda)\\}$ で
 
 $$\mathcal{M}=\bigcup_\lambda U_\lambda$$
 
@@ -54,7 +54,68 @@ $$\mathcal{M}=\bigcup_\lambda U_\lambda$$
  $d$次元 **アトラス(atlas)** という。
 {{% /definition %}}
 
-アトラスは地図を集めた地図帳であり、 $\mathcal{M}$ 全体を覆うの。
+アトラスは地図を集めた地図帳であり、 $\mathcal{M}$ 全体を覆う。
+
+---
+
+2次元単位球面のアトラスの例:
+
+$S^2=\\{(x,y,z)\|x^2+y^2+z^2=1\\}$ について $U_+=S^2\setminus\\{(0,0,-1)\\},U_-=S^2\setminus\\{(0,0,1)\\}$
+とする。$U_+$ は$S^2$の南極一点を除いた集合、$U_-$ は北極一点を除いた集合。
+$\varphi_+:U_+\rightarrow \mathbb{R}^2: p\rightarrow\varphi_+(p)$ を、 $p$を$(0,0,-1)$と$p$を通る直線が平面 $z=0$ と交わる点に移す写像とする(南極点から$xy$平面への射影)。同様に $\varphi_-:U_-\rightarrow\mathbb{R}^2$ を北極点からの射影と定義する。このとき $\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ は $S^2$ のアトラスとなる。
+
+実際に計算してみると
+
+$$
+\varphi_+(x,y,z)=\left(\frac{x}{1+z},\frac{y}{1+z}\right),\quad
+\varphi_-(x,y,z)=\left(\frac
+{x}{1-z},\frac{y}{1-z}\right) 
+$$
+となる。これらの逆写像は
+$$
+\begin{aligned}
+\varphi_+^{-1}(u,v)&=\left(\frac{2u}{u^2+v^2+1},\frac{2v}{u^2+v^2+1},-\frac{u^2+v^2-1}{u^2+v^2+1}\right) \\\\ \\\\
+\varphi_-^{-1}(u,v)&=\left(\frac{2u}{u^2+v^2+1},\frac{2v}{u^2+v^2+1},\frac{u^2+v^2-1}{u^2+v^2+1}\right)
+\end{aligned}
+$$
+
+となり、確かに $\varphi_+,\varphi_-$ は全単射で $\mathbb{R}^2$ は開集合だから、これらはチャートである。
+
+次に座標変換について調べるが、まず
+$\varphi_+(U_+\cap U_-)=\varphi_-(U_+\cap U_-)=\mathbb{R}\setminus\\{(0,0)\\}$ であって、これはユークリッド空間 $\mathbb{R}^2$ の開集合。($\because$ 一点集合$\\{(0,0)\\}$は閉集合)
+
+
+座標変換 $\varphi_-\circ\varphi_+^{-1}$ は
+
+$$
+\varphi_-\circ\varphi_+^{-1}(u,v)=\left(\frac{u}{u^2+v^2},\frac{v}{u^2+v^2}\right)
+$$
+
+となるが、これは $\mathbb{R}\setminus\\{(0,0)\\}$ 上の微分同相写像である。以上より2つのチャートは両立し、$S^2=U_+\cup U_-$ なので $\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ は $S^2$ のアトラス。
+
+---
+馴染みのない例:
+
+$\mathcal{M}$ を $\mathbb{R}^2$ 内の直線の集合とし、$U$ を $y$ 軸に並行ではない直線の集合、$V$ を $x$ 軸に並行ではない直線の集合とする。つまり
+
+$$
+U=\\{y=mx+b\|m,b\in\mathbb{R}\\},
+V=\\{x=ny+c\|n,c\in\mathbb{R}\\}
+$$
+
+とかける。ここで
+$$
+\begin{aligned}
+\varphi&:U\rightarrow\mathbb{R}^2:\varphi(y=mx+b)=(m,b)\\\\
+\psi&:V\rightarrow\mathbb{R}^2:\psi(x=ny+c)=(n,c)\\\\
+\end{aligned}
+$$
+と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi)\\}$ は$\mathcal{M}$ のアトラス)。
+
+---
+
+
+
 一つの $\mathcal{M}$ に対してアトラスの選び方は無数にあるが、それらの間に同値関係を定義する事ができる。すると、今後述べるいろいろな性質について同値なアトラスだったらどれを具体的に選んで使っても良いという形になり便利。
 
 {{% definition title="アトラスの両立" %}}
@@ -141,96 +202,40 @@ $$
 チャート $(U, \varphi)\in\mathcal{A}$ の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)\in\mathcal{A}^+$
 {{% /proposition %}}
 
-$U,V$ の間の座標変換が恒等写像になる事から明らか。地図の一部にだけ注目しても地図である事には変わらないし、他の地図との座標変換も変わらないという事。全く同じだが、次の形で用いることも多い。
+これは$U,V$ の間の座標変換が恒等写像になる事から明らか。地図の一部にだけ注目しても地図である事には変わらないし、他の地図との座標変換も変わらないという事。全く同じだが、次の形で用いることも多い。
 
 {{% proposition label="prop.intersection-is-chart" %}}
 集合 $\mathcal{M}$ のチャート $(U,\varphi)\in\mathcal{A}$ と 部分集合 $V\subset \mathcal{M}$ について $\varphi(U\cap V)$ が $\mathbb{R}^d$ の開集合ならば、 $(U\cap V,\varphi\|_{U\cap V})\in\mathcal{A}^+$
 {{% /proposition %}}
 
-2次元単位球面のアトラスの例:
-
-$S^2=\\{(x,y,z)\|x^2+y^2+z^2=1\\}$ について $U_+=S^2\setminus\\{(0,0,-1)\\},U_-=S^2\setminus\\{(0,0,1)\\}$
-とする。$U_+$ は$S^2$の南極一点を除いた集合、$U_-$ は北極一点を除いた集合。
-$\varphi_+:U_+\rightarrow \mathbb{R}^2: p\rightarrow\varphi_+(p)$ を、 $p$を$(0,0,-1)$と$p$を通る直線が平面 $z=0$ と交わる点に移す写像とする(南極点から$xy$平面への射影)。同様に $\varphi_-:U_-\rightarrow\mathbb{R}^2$ を北極点からの射影と定義する。このとき $\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ は $S^2$ のアトラスとなる。
-
-実際に計算してみると
-
-$$
-\varphi_+(x,y,z)=\left(\frac{x}{1+z},\frac{y}{1+z}\right),\quad
-\varphi_-(x,y,z)=\left(\frac
-{x}{1-z},\frac{y}{1-z}\right) 
-$$
-となる。これらの逆写像は
-$$
-\begin{aligned}
-\varphi_+^{-1}(u,v)&=\left(\frac{2u}{u^2+v^2+1},\frac{2v}{u^2+v^2+1},-\frac{u^2+v^2-1}{u^2+v^2+1}\right) \\\\ \\\\
-\varphi_-^{-1}(u,v)&=\left(\frac{2u}{u^2+v^2+1},\frac{2v}{u^2+v^2+1},\frac{u^2+v^2-1}{u^2+v^2+1}\right)
-\end{aligned}
-$$
-
-となり、確かに $\varphi_+,\varphi_-$ は全単射で $\mathbb{R}^2$ は開集合だから、これらはチャートである。
-
-次に座標変換について調べるが、まず
-$\varphi_+(U_+\cap U_-)=\varphi_-(U_+\cap U_-)=\mathbb{R}\setminus\\{(0,0)\\}$ であって、これはユークリッド空間 $\mathbb{R}^2$ の開集合。($\because$ 一点集合$\\{(0,0)\\}$は閉集合)
-
-
-座標変換 $\varphi_-\circ\varphi_+^{-1}$ は
-
-$$
-\varphi_-\circ\varphi_+^{-1}(u,v)=\left(\frac{u}{u^2+v^2},\frac{v}{u^2+v^2}\right)
-$$
-
-となるが、これは $\mathbb{R}\setminus\\{(0,0)\\}$ 上の微分同相写像である。以上より2つのチャートは両立し、$S^2=U_+\cup U_-$ なので $\\{(U_+,\varphi_+),(U_-,\varphi_-)\\}$ は $S^2$ のアトラス。
-
----
-馴染みのない例:
-
-$\mathcal{M}$ を $\mathbb{R}^2$ 内の直線の集合とし、$U$ を $y$ 軸に並行ではない直線の集合、$V$ を $x$ 軸に並行ではない直線の集合とする。つまり
-
-$$
-U=\\{y=mx+b\|m,b\in\mathbb{R}\\},
-V=\\{x=ny+c\|n,c\in\mathbb{R}\\}
-$$
-
-とかける。ここで
-$$
-\begin{aligned}
-\varphi&:U\rightarrow\mathbb{R}^2:\varphi(y=mx+b)=(m,b)\\\\
-\psi&:V\rightarrow\mathbb{R}^2:\psi(x=ny+c)=(n,c)\\\\
-\end{aligned}
-$$
-と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi)\\}$ は$\mathcal{M}$ のアトラス)。
-
----
-
 以上で多様体の定義に必要な最低限の道具は揃ったが、実用上2つの条件を加える。1つは $\mathcal{M}$ が可算個のチャートで覆えるということ、もう一つはハウスドルフ性である。
 これらを仮定すると、後ほど導入される極大アトラスの定める位相によって $\mathcal{M}$ が第二可算かつハウスドルフになる事が言える。
 
 {{% definition title="多様体" label="def.manifold" %}}
-集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}=\\{(U\_\alpha,\varphi\_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A})$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。
+集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}^+=\\{(U\_\alpha,\varphi\_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A}^+)$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。
 
 **ハウスドルフ性(Hausdorff condition)**
 
-任意の異なる点 $x,y\in \mathcal{M},x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in \mathcal{A}$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
+任意の異なる点 $x,y\in \mathcal{M},x\neq y$ に対して、これらを含む交わらないチャート,すなわち $(U,\varphi),(V,\psi)\in \mathcal{A}^+$ で$x\in U,y\in V$ かつ $U\cap V=\emptyset$であるものが存在する。
 
 **可算被覆をもつ(Countability condition)**
 
-$\mathcal{M}$ は $\mathcal{A}$ の可算個のチャートで覆うことができる。つまり、$U_{\alpha_1},U_{\alpha_2},\ldots$ が存在して $ \mathcal{M}=\bigcup_iU_{\alpha_i}$ と書ける。
+$\mathcal{M}$ は $\mathcal{A}^+$ の可算個のチャートで覆うことができる。つまり、$U_{\alpha_1},U_{\alpha_2},\ldots$ が存在して $ \mathcal{M}=\bigcup_iU_{\alpha_i}$ と書ける。
 
 {{% /definition %}}
 
 ある集合と極大アトラスがハウスドルフ性を満たすか調べる為には、以下の補題が役に立つ。
 
 {{% lemma label="lem.hausdorff" %}}
-$\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。
-$\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in \mathcal{A}$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
+$\mathcal{M}$ を集合、 $\mathcal{A}^+$ を極大アトラスとする。
+$\mathcal{M}$ の異なる2点 $x,y$ がある1つのチャート $(U,\varphi)\in \mathcal{A}^+$ に含まれるならば、これらを分離する $U$ に含まれるチャートが存在する。
 
 すなわち、あるチャート $U_\alpha,U_\beta\subset U$ が存在して $x\in U_\alpha,y\in U_\beta,U_\alpha\cap U_\beta=\emptyset$
 {{% /lemma %}}
 
 $\varphi$ は全単射だから $x\neq y$ の時、$\varphi(x)\neq\varphi(y)$ である。よって $\mathbb{R}^d$ はハウスドルフ空間だから $\varphi(x),\varphi(y)$ を分離する開集合で $\varphi(U)$ に含まれる物を選ぶ事ができる。これらの $\varphi$ での逆像を $U_\alpha,U_\beta$ とすれば $U_\alpha,U_\beta\subset U$ であって $\varphi$ は全単射だから $U_\alpha\cap U_\beta=\emptyset$ となる。それぞれのチャートの写像は $\varphi$ を $U_\alpha,U_\beta$ に制限したものをとれば良い。$\square$
 
-つまり、一つの地図の中に限って見ればハウスドルフ性は自然に成立するということ。
+つまり、一つの地図の中に限って見ればハウスドルフ性は自然に成立するということなので、ハウスドルフ性について確認するときは2点が異なるチャートの点である時だけを調べれば良い。
 
 ---
 
