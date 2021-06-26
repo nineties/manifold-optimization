@@ -212,7 +212,7 @@ $$
 これらを仮定すると、後ほど導入される極大アトラスの定める位相によって $\mathcal{M}$ が第二可算かつハウスドルフになる事が言える。
 
 {{% definition title="多様体" label="def.manifold" %}}
-集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}^+=\\{(U\_\alpha,\varphi\_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A}^+)$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。
+集合 $\mathcal{M}$ と極大アトラス $\mathcal{A}^+=\\{(U\_\alpha,\varphi\_\alpha)\\}$ が以下を満たすとき、 $(\mathcal{M},\mathcal{A}^+)$ を **$d$次元多様体($d$-dimentional manifold)** という。誤解の恐れの無い場合は $\mathcal{M}$ 自身を多様体と呼ぶ。また $\mathcal{A}^+$ を $\mathcal{M}$ の **微分構造(differential structure)** という。
 
 **ハウスドルフ性(Hausdorff condition)**
 
