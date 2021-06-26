@@ -36,35 +36,13 @@ $\varphi(U\cap V), \psi(U\cap V)$ がどちらも$\mathbb{R}^d$の開集合で�
 
 $$ f(x_1,\ldots,x_m)=(f(x_1,\ldots,x_m),\ldots,f(x_1,\ldots,x_m)) $$
 
-の時、各 $f_i$ の $x_1,\ldots,x_m$ での任意の偏微分係数が存在し連続であるということ。
-
+の時、各 $f_i$ の $x_1,\ldots,x_m$ での任意の偏微分係数が存在し連続であるということ。$f$ が微分同相であるというのは全単射であり $f$ も $f^{-1}$ も$C^\infty$ 級であるということ。
 
 2つの地図に重なっている地域があるとき、それらが両立するならばその地域について調べるのにどちらの地図を選んでも良いという事を言っている。
 
 {{< figure src="../images/change-of-coordinates.png" >}}
 
-特別な場合として交わらないチャートは常に両立する。なぜならば $U\cap V=\emptyset$ ならば
-$\varphi$ は全単射だから $\varphi(U\cap V)=\emptyset$。よってこれは $\mathbb{R}^d$ の開集合。 $\psi(U\cap V)$ も同じく開集合。
-$\psi\circ\varphi^{-1}$ は空写像になるが、空写像は微分同相。
-
-以下の命題は頻繁に使う事になる。
-
-{{% proposition label="prop.subchart-is-chart" %}}
-チャート $(U,\varphi)$ と $U$の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)$ もチャートであり、$(U,\varphi)$ と両立する任意のチャートと両立する。
-
-但し、 $\varphi\|_V$ は $\varphi$ の定義域を $V$ に制限した写像。
-{{% /proposition %}}
-
-$U,V$ の間の座標変換が恒等写像になる事から明らか。地図の一部にだけ注目しても地図である事には変わらないし、他の地図との座標変換も変わらないという事。
-
-全く同じだが、次の形で用いることも多い。
-
-{{% proposition label="prop.intersection-is-chart" %}}
-集合 $\mathcal{M}$ のチャート $(U,\varphi)$ と 部分集合 $V\subset \mathcal{M}$ について $\varphi(U\cap V)$ が $\mathbb{R}^d$ の開集合ならば、 $(U\cap V,\varphi\|_{U\cap V})$ もチャートであり、
-$(U,\varphi)$ と両立する任意のチャートと両立する。
-{{% /proposition %}}
-
-両立関係は同値関係とは限らない。3つのチャート $(U,\varphi),(V,\psi),(W,\xi)$ について前者2つ、後者2つが両立しても $\varphi(U\cap W),\xi(U\cap W)$ が開集合とは限らない為。
+特別な場合として交わらないチャートは常に両立する。($\because$ 空集合は開集合。空集合から空集合への写像は微分同相)
 
 {{% definition title="アトラス" %}}
 $\mathcal{M}$ を集合とする。$\mathcal{M}$の $d$次元チャートの集合
@@ -76,9 +54,99 @@ $$\mathcal{M}=\bigcup_\lambda U_\lambda$$
  $d$次元 **アトラス(atlas)** という。
 {{% /definition %}}
 
-アトラスは地図を集めた地図帳。
+アトラスは地図を集めた地図帳であり、 $\mathcal{M}$ 全体を覆うの。
+一つの $\mathcal{M}$ に対してアトラスの選び方は無数にあるが、それらの間に同値関係を定義する事ができる。すると、今後述べるいろいろな性質について同値なアトラスだったらどれを具体的に選んで使っても良いという形になり便利。
+
+{{% definition title="アトラスの両立" %}}
+$\mathcal{M}$ のアトラス $\mathcal{A},\mathcal{B}$ について $\mathcal{A}\cup\mathcal{B}$ も $\mathcal{M}$ のアトラスとなるとき、 $\mathcal{A},\mathcal{B}$ は **両立する(compatible)** といい $\mathcal{A}\sim\mathcal{B}$ と書く。
+{{% /definition %}}
+
+アトラスの両立性とは、地図帳を2冊持ってきて、それらを両方同時に使っても不都合が生じないという状況。そして、これは同値関係である。
+
+{{% proposition %}}
+アトラスの両立関係は同値関係である。
+{{% /proposition %}}
+
+これは直感的には明らかな感じがするけど、証明は結構複雑。
 
 ---
+証明
+
+任意のアトラスについて
+$$\mathcal{A}\sim\mathcal{A}\quad(\text{反射律}) $$
+$$\mathcal{A}\sim\mathcal{B}\Rightarrow\mathcal{B}\rightarrow\mathcal{A}\quad(\text{対称律})$$
+が成立することは明らかなので、
+$$\mathcal{A}\sim\mathcal{B},\mathcal{B}\sim\mathcal{C}\Rightarrow\mathcal{A}\sim\mathcal{C}\quad(\text{推移律})$$
+を示せば良い。その為には、$\mathcal{A}\sim\mathcal{B},\mathcal{B}\sim\mathcal{C}$ の時に、任意のチャート $(U,\varphi)\in\mathcal{A},(V,\psi)\in\mathcal{C}$ が両立する事を示せば良い。
+
+それぞれのチャートは, 任意の$(U_\alpha,\varphi_\alpha)\in \mathcal{B}$ と両立するので
+$\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^d$ の開集合。従ってこれらの共通部分
+
+$$
+\varphi_\alpha(U\cap U_\alpha)\cap\varphi_\alpha(V\cap U_\alpha) = \varphi_\alpha(U\cap V\cap U_\alpha)
+$$
+
+も開集合。($\because$ $f$が全単射ならば $f(A\cap B)=f(A)\cap f(B)$)
+
+よって$\varphi\circ\varphi_\alpha^{-1}$ は同相写像だから
+
+$$
+\varphi(U\cap V\cap U_\alpha)=(\varphi\circ\varphi_\alpha^{-1})(\varphi_\alpha(U\cap V\cap U_\alpha))
+$$
+
+も $\mathbb{R}^d$ の開集合。よって
+
+$$
+\varphi(U\cap V)=\varphi\left(\bigcup_\alpha U\cap V\cap U_\alpha\right) = \bigcup_\alpha\varphi(U\cap V\cap U_\alpha)
+$$
+
+も開集合。全く同様にして $\psi(U\cap V)$ も開集合。
+
+あとは座標変換 $\psi\circ\varphi^{-1}:\varphi(U\cap V)\rightarrow\psi(U\cap V)$が微分同相写像である事を示せば良い。任意の $(U_\alpha,\varphi_\alpha)\in \mathcal{B}$ に対して、
+
+$$
+\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap U_\alpha)
+$$
+
+は仮定より微分同相写像。これを開集合 $\varphi(U\cap V\cap U_\alpha)$ に制限した
+
+$$
+\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap V\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap V\cap U_\alpha)
+$$
+
+も微分同相写像。$\psi\circ\varphi_\alpha^{-1}$ も同様なので、これらの合成
+
+$$
+\psi\circ\varphi^{-1}:\varphi(U\cap V\cap U_\alpha)\rightarrow\psi(U\cap V\cap U_\alpha)
+$$
+
+も微分同相写像。よって $$\varphi(U\cap V)= \bigcup_\alpha\varphi(U\cap V\cap U_\alpha)$$ であったので
+$$
+\psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) 
+$$
+も微分同相写像である。$\square$
+
+---
+
+以上でアトラス $\mathcal{A}$ の同値類 $[\mathcal{A}]=\\{\mathcal{B}|\mathcal{B}\sim\mathcal{A}\\}$ を考える事ができるようになる。
+アトラスの同値類を用いて多様体を定義するという流儀もあるようだけど、ここでは極大アトラスを導入する。何故かというと、この後定義するハウスドルフ性や第二可算性に関して、極大アトラスを用いた方が(多分)シンプルに述べられるから。
+
+{{% definition title="極大アトラス" %}}
+アトラス $\mathcal{A}$ と両立するアトラス全ての合併を $\mathcal{A}$の **極大アトラス(maximal atlas)** といい、$\mathcal{A}^+$ と書く。
+{{% /definition %}}
+
+任意のアトラスについて、その極大アトラスが一意に存在する。$\mathcal{A}^+$ には非常に多くのチャートが含まれるが、以下の事実は良く使う。
+
+{{% proposition label="prop.subchart-is-chart" %}}
+チャート $(U, \varphi)\in\mathcal{A}$ の部分集合 $V\subset U$ について $\varphi(V)$ が $\mathbb{R}^d$ の開集合ならば、 $(V,\varphi\|_V)\in\mathcal{A}^+$
+{{% /proposition %}}
+
+$U,V$ の間の座標変換が恒等写像になる事から明らか。地図の一部にだけ注目しても地図である事には変わらないし、他の地図との座標変換も変わらないという事。全く同じだが、次の形で用いることも多い。
+
+{{% proposition label="prop.intersection-is-chart" %}}
+集合 $\mathcal{M}$ のチャート $(U,\varphi)\in\mathcal{A}$ と 部分集合 $V\subset \mathcal{M}$ について $\varphi(U\cap V)$ が $\mathbb{R}^d$ の開集合ならば、 $(U\cap V,\varphi\|_{U\cap V})\in\mathcal{A}^+$
+{{% /proposition %}}
+
 2次元単位球面のアトラスの例:
 
 $S^2=\\{(x,y,z)\|x^2+y^2+z^2=1\\}$ について $U_+=S^2\setminus\\{(0,0,-1)\\},U_-=S^2\setminus\\{(0,0,1)\\}$
@@ -132,67 +200,6 @@ $$
 \end{aligned}
 $$
 と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi)\\}$ は$\mathcal{M}$ のアトラス)。
-
-{{% definition title="極大アトラス" %}}
-集合 $\mathcal{M}$ の$d$次元チャート $(U,\varphi)$ とアトラス $\mathcal{A}$ について $\mathcal{A}\cup\\{(U,\varphi)\\}$ も $\mathcal{M}$ のアトラスであるならば、 $(U,\varphi)$ は $\mathcal{A}$ と両立するという。
-
-アトラス $\mathcal{A}$ と両立するチャート全ての集合 $\mathcal{A}^+$ を $\mathcal{A}$の **極大アトラス(maximal atlas)** という。
-{{% /definition %}}
-
-{{% proposition %}}
-極大アトラス $\mathcal{A}^+$ は $\mathcal{A}$ を含む最大のアトラスである。
-{{% /proposition %}}
-
-証明
-
-$\mathcal{A}^+$ がアトラスであることを示す。
-$(U,\varphi),(V,\psi)\in \mathcal{A}^+$ について、一方が $\mathcal{A}$ に含まれているのならば、これらが両立するのは定義より明らかなので、どちらも $\mathcal{A}$ に含まれていない場合を考える。
-それぞれのチャートは $\mathcal{A}$ と両立するので, 任意の$(U_\alpha,\varphi_\alpha)\in \mathcal{A}$ について
-$\varphi_\alpha(U\cap U_\alpha),\varphi_\alpha(V\cap U_\alpha)$ は $\mathbb{R}^d$ の開集合。従ってこれらの共通部分
-
-$$
-\varphi_\alpha(U\cap U_\alpha)\cap\varphi_\alpha(V\cap U_\alpha) = \varphi_\alpha(U\cap V\cap U_\alpha)
-$$
-
-も開集合。($\because$ $f$が全単射ならば $f(A\cap B)=f(A)\cap f(B)$)
-
-よって$\varphi\circ\varphi_\alpha^{-1}$ は同相写像だから
-
-$$
-\varphi(U\cap V\cap U_\alpha)=(\varphi\circ\varphi_\alpha^{-1})(\varphi_\alpha(U\cap V\cap U_\alpha))
-$$
-
-も $\mathbb{R}^d$ の開集合。よって
-
-$$
-\varphi(U\cap V)=\varphi\left(\bigcup_\alpha U\cap V\cap U_\alpha\right) = \bigcup_\alpha\varphi(U\cap V\cap U_\alpha)
-$$
-
-も開集合。全く同様にして $\psi(U\cap V)$ も開集合。
-
-あとは座標変換 $\psi\circ\varphi^{-1}:\varphi(U\cap V)\rightarrow\psi(U\cap V)$が微分同相写像である事を示せば良い。任意の $(U_\alpha,\varphi_\alpha)\in \mathcal{A}$ に対して、
-
-$$
-\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap U_\alpha)
-$$
-
-は仮定より微分同相写像。これを開集合 $\varphi(U\cap V\cap U_\alpha)$ に制限した
-
-$$
-\varphi_\alpha\circ\varphi^{-1}:\varphi(U\cap V\cap U_\alpha)\rightarrow\varphi_\alpha(U\cap V\cap U_\alpha)
-$$
-
-も微分同相写像。$\psi\circ\varphi_\alpha^{-1}$ も同様なので、これらの合成
-
-$$
-\psi\circ\varphi^{-1}:\varphi(U\cap V\cap U_\alpha)\rightarrow\psi(U\cap V\cap U_\alpha)
-$$
-
-も微分同相写像。よって $$\varphi(U\cap V)= \bigcup_\alpha\varphi(U\cap V\cap U_\alpha)$$ であったので
-$$
-\psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) 
-$$
-も微分同相写像である。以上より任意の $(U,\varphi),(V,\psi)\in\mathcal{A}^+$ は両立するのでアトラスである。 $\square$
 
 ---
 
