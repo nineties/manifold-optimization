@@ -17,19 +17,19 @@ $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description></item><item><title>3. 多様体の位相構造</title><link>https://nineties.github.io/manifold-optimization/3-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/3-topology/</guid><description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法と構造について見ていく。
 多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
-定義3.1: 開集合 $\mathcal{M}$ を集合、 $\mathcal{A}$ を極大アトラスとする。 部分集合 $\mathcal{N}\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(U,\varphi)\in \mathcal{A}$ について $\varphi(\mathcal{N}\cap U)$ が開集合である事をいう。
+定義3.1: 開集合 多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
 命題3.2 集合 $\mathcal{M}$ の極大アトラスの定める開集合の族は開集合の公理を満たす。すなわち、
 $\mathcal{M},\emptyset$ は開集合 $U,V$ が開集合ならば $U\cap V$ も開集合 $\{U_\alpha\}$が開集合ならば$\bigcup_\alpha U_\alpha$ も開集合 証明
 $\mathcal{M},\emptyset$ が$\mathcal{M}$の開集合となる事は明らか。
 $U,V$ が開集合であるならば、任意のチャート $(W,\varphi)$ に対して
 $$\varphi((U\cap V)\cap W) = \varphi((U\cap W)\cap (V\cap W)) = \varphi(U\cap W)\cap\varphi(V\cap W)\quad\text{($\because \varphi$は全単射)}$$
-であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ は $\mathcal{M}$の開集合。</description></item><item><title>4. 多様体の様々な構成と可微分写像</title><link>https://nineties.github.io/manifold-optimization/4-construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-construction/</guid><description>定義4.1: 多様体の直和 $d$次元 多様体 $(\mathcal{M},\mathcal{A}),(\mathcal{N},\mathcal{B})$ に対して
+であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ は $\mathcal{M}$の開集合。</description></item><item><title>4. 接ベクトルと接空間</title><link>https://nineties.github.io/manifold-optimization/4-tangent-space/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-tangent-space/</guid><description/></item><item><title>5. 多様体の様々な構成と可微分写像</title><link>https://nineties.github.io/manifold-optimization/4-construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-construction/</guid><description>定義5.1: 多様体の直和 $d$次元 多様体 $(\mathcal{M},\mathcal{A}),(\mathcal{N},\mathcal{B})$ に対して
 $$ (\mathcal{M}\sqcup\mathcal{N},\mathcal{A}\sqcup\mathcal{B}) $$
 も$d$次元多様体となる。これを $\mathcal{M},\mathcal{N}$の 直和(disjoint union) という。
 共通部分がない2つの多様体を持ってきて、まとめて1つの多様体だと言っているだけなので、これ自体はあまり面白くないが、商空間を用いた構成の前段で直和を構成する場合がある。
-例えば 例2.12 では、まず2つの直線を持ってきて(これが$\mathbb{R}$と$\mathbb{R}$の直和)、商集合を作るという操作をしている。
-定義4.2: 積多様体 $m$次元多様体 $(\mathcal{M},\mathcal{A})$ と $n$ 次元多様体 $(\mathcal{N},\mathcal{B})$ について直積
+例えば 例2.13 では、まず2つの直線を持ってきて(これが$\mathbb{R}$と$\mathbb{R}$の直和)、商集合を作るという操作をしている。
+定義5.2: 積多様体 $m$次元多様体 $(\mathcal{M},\mathcal{A})$ と $n$ 次元多様体 $(\mathcal{N},\mathcal{B})$ について直積
 $$\mathcal{M}\times\mathcal{N}$$
 は$m+n$ 次元多様体となる。これを $\mathcal{M},\mathcal{N}$ の 積多様体(product manifold) という。積多様体の位相は $\mathcal{M},\mathcal{N}$ の積位相と一致する。
 $$ \begin{aligned} &amp;amp;\mathcal{C} = \{(U\times V,\varphi\times\psi)|(U,\varphi)\in\mathcal{A},(V,\psi)\in\mathcal{B}\} \\
