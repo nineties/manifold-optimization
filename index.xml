@@ -15,7 +15,7 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
 定義2.2: チャートの両立 2つの $d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description></item><item><title>3. 多様体の位相構造</title><link>https://nineties.github.io/manifold-optimization/3-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/3-topology/</guid><description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法と構造について見ていく。
-多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
+多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 定義2.9 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
 定義3.1: 開集合 多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
@@ -24,7 +24,15 @@ $\mathcal{M},\emptyset$ は開集合 $U,V$ が開集合ならば $U\cap V$ も�
 $\mathcal{M},\emptyset$ が$\mathcal{M}$の開集合となる事は明らか。
 $U,V$ が開集合であるならば、任意のチャート $(W,\varphi)$ に対して
 $$\varphi((U\cap V)\cap W) = \varphi((U\cap W)\cap (V\cap W)) = \varphi(U\cap W)\cap\varphi(V\cap W)\quad\text{($\because \varphi$は全単射)}$$
-であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ は $\mathcal{M}$の開集合。</description></item><item><title>4. 接ベクトルと接空間</title><link>https://nineties.github.io/manifold-optimization/4-tangent-space/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-tangent-space/</guid><description/></item><item><title>5. 多様体の様々な構成と可微分写像</title><link>https://nineties.github.io/manifold-optimization/4-construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-construction/</guid><description>定義5.1: 多様体の直和 $d$次元 多様体 $(\mathcal{M},\mathcal{A}),(\mathcal{N},\mathcal{B})$ に対して
+であるので $\varphi(U\cap W),\varphi(V\cap W)$ が $\mathbb{R}^d$ の開集合である事より $\varphi((U\cap V)\cap W)$ も$\mathbb{R}^d$の開集合。従って $U\cap V$ は $\mathcal{M}$の開集合。</description></item><item><title>4. 可微分写像と部分多様体</title><link>https://nineties.github.io/manifold-optimization/4-submanifold/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-submanifold/</guid><description>多様体と多様体の関係性について調べたりする時に、それらの間の写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ について考える。多様体ではその微分構造に関心があるので $F$ も何らかの微分可能な写像を考える必要があるが、一般の多様体上で定義された $F$ の微分可能性を直接述べるのは難しい。そこで、チャートを利用する。
+定義4.1: 座標表示 $m$次元多様体 $\mathcal{M}$ と $n$次元多様体$\mathcal{N}$ の間の写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ と点 $x\in \mathcal{M}$ に対して、
+$x$ を含む $\mathcal{M}$ のチャート $\varphi:U\rightarrow \varphi(U),\ x\in U$ と $F(x)$ を含む $\mathcal{N}$ のチャート $\psi:V\rightarrow \psi(V),\ x\in V$ を用いた写像
+$$ \hat{F}=\psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
+を $F$ の点 $x$ の周りでの $\varphi,\psi$ による 座標表示(coordinate representation) という。
+$f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の微分可能性の定義を復習する。
+定義4.2 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が点 $a\in\mathbb{R}^m$ で 微分可能(differentiable) であるとは
+$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$
+を満たす線型写像: $\mathrm{D}_f(a)[-]:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が存在する事である。$f$ が任意の点で微分可能である事を、 $f$ は微分可能であるという。</description></item><item><title>4. 接ベクトルと接空間</title><link>https://nineties.github.io/manifold-optimization/4-tangent-space/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-tangent-space/</guid><description/></item><item><title>5. 多様体の様々な構成と可微分写像</title><link>https://nineties.github.io/manifold-optimization/4-construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-construction/</guid><description>定義5.1: 多様体の直和 $d$次元 多様体 $(\mathcal{M},\mathcal{A}),(\mathcal{N},\mathcal{B})$ に対して
 $$ (\mathcal{M}\sqcup\mathcal{N},\mathcal{A}\sqcup\mathcal{B}) $$
 も$d$次元多様体となる。これを $\mathcal{M},\mathcal{N}$の 直和(disjoint union) という。
 共通部分がない2つの多様体を持ってきて、まとめて1つの多様体だと言っているだけなので、これ自体はあまり面白くないが、商空間を用いた構成の前段で直和を構成する場合がある。
