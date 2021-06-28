@@ -1,5 +1,5 @@
 ---
-title: 4. 可微分写像と部分多様体
+title: 4. 可微分写像、部分多様体
 section: 4
 ---
 
@@ -110,18 +110,21 @@ $m$ 次元多様体 $\mathcal{M}$ から $n$ 次元多様体 $\mathcal{N}$ へ�
 - $F$ のランクが $n$ である時、$F$ を **沈めこみ(submersion)**
 
 と呼ぶ。
-
-はめ込み $F:\mathcal{M}\rightarrow\mathcal{N}$ が存在するとき、 $\mathcal{M}$ は $\mathcal{N}$ の **はめ込まれた部分多様体(immersed submanifold)** であるという。
 {{% /definition %}}
 
 言い方を変えると $F$ がはめ込みであるとは、微分 $\mathrm{D}_f(x)[-]$ が全ての点$x$で単射であるという事であり、 沈めこみであるとは全射である事。各点での微分の単射性、全射性について言っているのであって、 $F$ そのものの単射性、全射性についてでは無いので注意。
 
 {{% definition title="埋め込み" %}}
-可微分写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ がはめ込みであり、かつ $F:\mathcal{M}\rightarrow F(\mathcal{M})$ が同相写像であるとき $F$ を **埋め込み(embedding)** と呼ぶ。ただし、 $F(\mathcal{M})\subset\mathcal{N}$ には $\mathcal{N}$ の相対位相を入れる。
+可微分写像 $:\mathcal{M}\rightarrow\mathcal{N}$ がはめ込みかつ単射であり、 $F(\mathcal{M})$ に $\mathcal{N}$ の相対位相を入れた時に $\mathcal{M}$ と $F(\mathcal{M})$ が同相となるならば $F$ を **埋め込み(embedding)** という。
 {{% /definition %}}
 
-例えば単位円のパラメータ表示$F:\mathbb{R}\rightarrow\mathbb{R}^2:t\rightarrow(\cos t,\sin t)$ ははめ込みだが埋め込みではない。放物線のパラメータ表示 $F:\mathbb{R}\rightarrow\mathbb{R}^2:t\rightarrow(t,t^2)$ は埋め込み。
+例えば8の字を描く $F:(-\pi/2,3\pi/2)\rightarrow\mathbb{R}^2:t\mapsto(\sin 2t,\cos t)$  を考えると、これははめ込みかつ単射になっているが、埋め込みではない。
 
 {{% definition title="部分多様体" %}}
-埋め込み $F:\mathcal{M}\rightarrow\mathcal{N}$ が存在するとき $\mathcal{M}$ を $\mathcal{N}$ の **埋め込まれた部分多様体(embedded submanifold)**
+$\mathcal{M},\mathcal{N}$ を $\mathcal{M}\subset\mathcal{N}$ であるような多様体とする。
+
+包含写像 $i:\mathcal{M}\rightarrow\mathcal{N}:x\mapsto x$ がはめ込みである時、 $\mathcal{M}$ は $\mathcal{N}$ に **はめ込まれた部分多様体(immersed submanifold)** であるという。
+
+また、$i$ が埋め込みである時、 $\mathcal{M}$ を $\mathcal{N}$ に **埋め込まれた部分多様体(embedded submanifold)** もしくは単に **部分多様体(submanifold)** という。
 {{% /definition %}}
+

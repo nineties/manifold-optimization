@@ -16,11 +16,12 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 1. [モチベーション](1-motivation)
 2. [多様体の定義](2-manifold)
 3. [多様体の位相構造](3-topology)
-4. [可微分写像と部分多様体](4-submanifold)
+4. [可微分写像、部分多様体](4-submanifold)
 
 
 参考にした文献
 
 - [Optimization Algorithms on Matrix Manifolds](https://press.princeton.edu/absil)
 - [トロント大Marco Gaultieri先生の講義ノート](http://www.math.toronto.edu/mgualt/courses/18-367/)
+- [Lee. Introduction to Smooth Manifolds](https://www.springer.com/jp/book/9780387217529)
 
