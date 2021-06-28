@@ -118,7 +118,9 @@ $m$ 次元多様体 $\mathcal{M}$ から $n$ 次元多様体 $\mathcal{N}$ へ�
 可微分写像 $:\mathcal{M}\rightarrow\mathcal{N}$ がはめ込みかつ単射であり、 $F(\mathcal{M})$ に $\mathcal{N}$ の相対位相を入れた時に $\mathcal{M}$ と $F(\mathcal{M})$ が同相となるならば $F$ を **埋め込み(embedding)** という。
 {{% /definition %}}
 
-例えば8の字を描く $F:(-\pi/2,3\pi/2)\rightarrow\mathbb{R}^2:t\mapsto(\sin 2t,\cos t)$  を考えると、これははめ込みかつ単射になっているが、埋め込みではない。
+例えば8の字を描く $F:(-\pi/2,3\pi/2)\rightarrow\mathbb{R}^2:t\mapsto(\sin 2t,\cos t)$  を考えると、これははめ込みかつ単射になっているが、埋め込みではない。というのは $(0,0)$ において $F^{-1}$ が不連続であるから。
+
+{{< figure src="../images/8-shape-curve.png" >}}
 
 {{% definition title="部分多様体" %}}
 $\mathcal{M},\mathcal{N}$ を $\mathcal{M}\subset\mathcal{N}$ であるような多様体とする。
@@ -128,3 +130,12 @@ $\mathcal{M},\mathcal{N}$ を $\mathcal{M}\subset\mathcal{N}$ であるような
 また、$i$ が埋め込みである時、 $\mathcal{M}$ を $\mathcal{N}$ に **埋め込まれた部分多様体(embedded submanifold)** もしくは単に **部分多様体(submanifold)** という。
 {{% /definition %}}
 
+埋め込みは $\mathcal{M}$ と $F(\mathcal{M})$ が同相である事しか要請しておらず、$F(\mathcal{M})$ の微分構造については何も言っていない。しかし、以下の命題が成立する。
+
+{{% proposition %}}
+集合 $\mathcal{M}$ が多様体 $\mathcal{N}$ の部分多様体となるような $\mathcal{M}$ の微分構造は一意に定まる。
+{{% /proposition %}}
+
+証明は複雑なので省略するが [Lee. Introduction to Smooth Manifolds](https://www.springer.com/jp/book/9780387217529) のProposition 5.6が参考になる。(部分多様体の定義がそもそも違うので、Proposition 5.6そのものではないが)
+
+$\mathcal{M}$ の任意のチャートの間の座標変換が微分同相である事を示せば良いが、その為に一旦 $\mathcal{M}$ から $\mathcal{N}$ に包含写像で写して、$\mathcal{N}$ の微分構造
