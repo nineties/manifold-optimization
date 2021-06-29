@@ -122,20 +122,58 @@ $m$ 次元多様体 $\mathcal{M}$ から $n$ 次元多様体 $\mathcal{N}$ へ�
 
 {{< figure src="../images/8-shape-curve.png" >}}
 
-{{% definition title="部分多様体" %}}
-$\mathcal{M},\mathcal{N}$ を $\mathcal{M}\subset\mathcal{N}$ であるような多様体とする。
+---
 
-包含写像 $i:\mathcal{M}\rightarrow\mathcal{N}:x\mapsto x$ がはめ込みである時、 $\mathcal{M}$ は $\mathcal{N}$ に **はめ込まれた部分多様体(immersed submanifold)** であるという。
+多様体論では空間の内在的性質のみによってその特徴を調べていく方法が主に議論されるので、多様体の外側の空間というものを仮定しない場合が多い。しかし、多くの場面で(特にこのノートで扱う最適化問題の多くで)、別の多様体の部分集合となっている多様体を扱う事が多い。
 
-また、$i$ が埋め込みである時、 $\mathcal{M}$ を $\mathcal{N}$ に **埋め込まれた部分多様体(embedded submanifold)** もしくは単に **部分多様体(submanifold)** という。
+例えば、$n$次元球面 $S^n$ は $n+1$次元多様体であるユークリッド空間 $\mathbb{R}^{n+1}$ の部分集合であり、 $S^n$ 自身も多様体である。($\mathbb{R}^{n+1}$ の部分多様体である)
+
+$$
+S^n=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^{n+1},||\mathbf{x}||=1\\}
+$$
+
+
+$m$次元多様体 $\mathcal{M}$ の部分集合 $\mathcal{N}$ が $n$ 次元多様体であるとは、局所的に $\mathbb{R}^n$ と同一視する事ができるという事であり、以下のように定義される。
+
+{{% definition title="部分多様体" label="def.submanifold" %}}
+$m$ 次元多様体 $\mathcal{M}$ が $n$ 次元多様体 $\mathcal{N}$ の部分集合($\mathcal{M}\subset\mathcal{N}$)である時、包含写像 $i:\mathcal{M}\rightarrow\mathcal{N}$ が埋め込みであるならば、 $\mathcal{M}$ を $\mathcal{N}$ の **部分多様体(submanifold)** という。
 {{% /definition %}}
 
-埋め込みは $\mathcal{M}$ と $F(\mathcal{M})$ が同相である事しか要請しておらず、$F(\mathcal{M})$ の微分構造については何も言っていない。しかし、以下の命題が成立する。
+これから導かれる以下を部分多様体の定義として用いる文献も多い。こちらは局所的に $\mathbb{R}^n$ と同一視できるという事を直接述べたものなので想像しやすいかもしれない。
 
-{{% proposition %}}
-集合 $\mathcal{M}$ が多様体 $\mathcal{N}$ の部分多様体となるような $\mathcal{M}$ の微分構造は一意に定まる。
+証明は大変で詳しくは[Lee. Introduction to Smooth Manifolds](https://www.springer.com/jp/book/9780387217529) のTheorem 5.13を参照。
+
+{{% proposition label="prop.definition-of-submanifold2" %}}
+$n$ 次元多様体 $\mathcal{N}$ の部分集合 $\mathcal{M}$ が $m$ 次元部分多様体であるならば、任意の点 $x\in\mathcal{M}$ に対して、 それを含む $\mathcal{N}$ のチャート $(U,\varphi)$ が存在して
+$$ \varphi(U\cap\mathcal{M})=\varphi(U)\cap(\mathbb{R}^n\times\\{0\\})$$
+となる。すなわち $x\in U\cap\mathcal{N}$ において
+$$\varphi(x)=(y_1,\ldots,y_n,0,\ldots,0)$$
+となる。
+$(U,\varphi)$ の事を $\mathcal{M}$ の **スライスチャート(slice chart)** という。
 {{% /proposition %}}
 
-証明は複雑なので省略するが [Lee. Introduction to Smooth Manifolds](https://www.springer.com/jp/book/9780387217529) のProposition 5.6が参考になる。(部分多様体の定義がそもそも違うので、Proposition 5.6そのものではないが)
+実は $\mathcal{M}$ の微分構造は一意に定まる。従って、部分多様体について言及するときに、わざわざそのアトラスについては説明しない事が多い。 
 
-$\mathcal{M}$ の任意のチャートの間の座標変換が微分同相である事を示せば良いが、その為に一旦 $\mathcal{M}$ から $\mathcal{N}$ に包含写像で写して、$\mathcal{N}$ の微分構造
+{{% proposition %}}
+多様体 $\mathcal{N}$ の部分集合 $\mathcal{M}$ が部分多様体となるような $\mathcal{M}$ の微分構造は一意に定まる。
+{{% /proposition %}}
+
+ある部分集合が部分多様体である事を示すのをチャートを具体的に計算して示すのは面倒だし、そもそもチャートの式が陽には表せない場合が多いので、以下のような定理を用いる。
+
+{{% theorem %}}
+$m$次元多様体 $\mathcal{M}$, $n$次元多様体 $\mathcal{N}$ ($m\geq n$)、可微分写像 $F:\mathcal{M}\rightarrow\mathcal{N}$、 点 $p\in\mathcal{N}$ について、 $F^{-1}(p)$ の全ての点で $F$ のランクが $n$ であるならば、 $F^{-1}(p)$ は $m-n$ 次元部分多様体である。
+
+(このような $p$ を $F$の **正則値(regular value)** であるという。)
+{{% /theorem %}}
+
+$F^{-1}(p)$ の $n$ 次元分が一点に潰れるので $m-n$ 次元分が残るというイメージ。
+
+{{< figure src="../images/submersion-theorem.png" >}}
+
+例えば $ F:\mathbb{R}^{n+1}\rightarrow\mathbb{R}:x\mapsto||x||^2 $ について考えると、これは可微分であってヤコビ行列は
+
+$$ J_F(x) = \begin{pmatrix}
+2x_1 & \cdots & 2x_{n+1}
+\end{pmatrix} $$
+
+となるので $x=0$ 以外の点では $F$ のランクは1。従って例えば$1\in\mathbb{R}$ の逆像 $F^{-1}(1)$ は$(n+1)-1=n$ 次元部分多様体。実は $F^{-1}(1)=\\{x\in\mathbb{R}^{n+1}\mid ||x||^2=1\\}$ なので$n$ 次元超球面 $S^n$ が$n$ 次元多様体である事がこれで示された。
