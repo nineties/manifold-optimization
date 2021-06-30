@@ -268,6 +268,22 @@ $$\varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^n,\|\|\ma
 
 よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。$\square$
 
+{{% example title="ベクトル空間" %}}
+$V$ が $n$次元ベクトル空間であるならば、任意の基底 $e_1,\ldots,e_n$ 上での成分表示
+
+$$ \varphi:V\rightarrow\mathbb{R}^n:x\mapsto(x_1,\ldots,x_n) $$
+
+がこれ1つでアトラスとなり 、 $V$ は $n$ 次元多様体となる。
+{{% /example %}}
+
+{{% example title="行列の集合" %}}
+$n\times p$ 実行列の集合 $\mathbb{R}^{n\times p}$ は
+$$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(X)$$
+(ただし $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル)
+
+とすると $\varphi$ 1つでアトラスとなり $\mathbb{R}^{n\times p}$ は $np$次元多様体となる。
+{{% /example %}}
+
 {{% example title="一般線型群" %}}
 $n$次実正則行列の集合 $$GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $$
 は行列の積によって群となる。これを **一般線型群(general linear group)** という。
@@ -276,8 +292,6 @@ $n$次実正則行列の集合 $$GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 
 $$\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
 を考えると $\mathcal{A}=\\{(GL_n,\varphi)\\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。
 {{% /example %}}
-
-ここで $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル。
 
 まず $\varphi(GL_n)$ が開集合である事を示す。補集合を考えると、
 $$
@@ -294,6 +308,16 @@ $$
 $GL_n$ のような群構造を持つ多様体を **リー群(Lie group)** という。
 
 同じようにして特殊線型群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。
+
+{{% example title="ノンコンパクトシュティーフェル多様体" %}}
+$\mathbb{R}^{n\times p}\_\ast, (p\leq n)$ を各列が一次独立な行列の集合(フルランクの行列の集合)とする。これは
+$$\mathbb{R}^{n\times p}\_\ast = \\{X\in\mathbb{R}^{n\times p}\mid\det(X^TX)\neq 0\\}$$
+と書く事ができる。この集合はチャート
+$$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(X)$$
+によって$np$次元多様体となる。これを **ノンコンパクトシュティーフェル多様体(noncompact Stiefel manifold)** という。
+{{% /example %}}
+
+特別な場合として、$p=1$ のときはユークリッド空間 $\mathbb{R}^n$ から原点を除いた空間 $\mathbb{R}^n\_\ast$ となる。 $p=n$ のときは一般線型群となる。
 
 ---
 

@@ -228,10 +228,10 @@ $SO_n = O_n\cap\det(\mathbb{R}\_+)$
 より $SO_n$ は $O_n$ の開部分集合であるので $O_n$ と次数の等しい多様体である。
 
 
-{{% example title="シュティーフェル多様体" label="ex.stiefel-manifold" %}}
+{{% example title="コンパクトシュティーフェル多様体" label="ex.stiefel-manifold" %}}
 $p\leq n$ の時
 $$\mathrm{St}(p,n)=\\{X\in\mathbb{R}^{n\times p}\mid X^TX = I_p\\}$$
-を **シュティーフェル多様体(Stiefel manifold)** という。これは $np-p(p+1)/2$ 次元多様体である。
+を **コンパクトシュティーフェル多様体(compact Stiefel manifold)** という。これは $np-p(p+1)/2$ 次元多様体である。
 {{% /example %}}
 
-シュティーフェル多様体は $p=1$ の時は $n-1$ 次元球面、 $p=n$ の時は直交群になり、これらを一般化したものと言える。証明は直交群とほぼ同じなので省略。
+コンパクトシュティーフェル多様体は $p=1$ の時は $n-1$ 次元球面、 $p=n$ の時は直交群になり、これらを一般化したものと言える。証明は直交群とほぼ同じなので省略。
