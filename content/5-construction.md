@@ -125,5 +125,11 @@ $$\mathbb{RP}^{n-1}\simeq\mathbb{R}^n\_\ast/{\sim}$$
 
 {{% example title="グラスマン多様体" label="ex.grassmann-manifold" %}}
 
-
+ノンコンパクトシュティーフェル多様体 $\mathbb{R}^{n\times p}\_\ast$ 上の同値関係を
+$$X\sim Y\Leftrightarrow \mathrm{span}(X)=\mathrm{span}(Y)$$
+とすると
+$$\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/{\sim}$$
+は $p(n-p)$ 次元多様体となる。これを **グラスマン多様体(Grassmann manifold)** という。
 {{% /example %}}
+
+つまり、$\mathrm{Grass}(p,n)$ とは$\mathbb{R}^n$ の $p$ 次元部分空間の集合。
