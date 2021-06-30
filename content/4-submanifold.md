@@ -21,16 +21,22 @@ $$ \hat{F}=\psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の微分可能性の定義を復習する。
 
 {{% definition %}}
-$f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が点 $a\in\mathbb{R}^m$ で **微分可能(differentiable)** であるとは
+$V,W$ をバナッハ空間(線型空間であって完備な距離を持つ)の間の写像 $f:V\rightarrow W$ が点 $a\in V$ で **微分可能(differentiable)** であるとは
 
 $$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$ 
 
-を満たす線型写像: $\mathrm{D}_f(a)[-]:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が存在する事である。$f$ が任意の点で微分可能である事を、 $f$ は微分可能であるという。
+を満たす線型写像: $\mathrm{D}_f(a)[-]:V\rightarrow W$ が存在する事である。$f$ が任意の点で微分可能である事を、 $f$ は微分可能であるという。
 
 $\mathrm{D}_f(a)[-]$ を $f$ の $a$ における **微分(differential)** という。
 
 $\mathrm{D}_f(a)[h]$ を $f$ の $a$ における $h$ に沿った **方向微分(directional derivative)** という。
 {{% /definition %}}
+
+バナッハ空間といっているが、ほとんどの場合はユークリッド空間 $\mathbb{R}^m$ であるか、行列 $\mathbb{R}^{m\times n}$ とフロベニウスノルム
+
+$$ ||A||=\sqrt{\sum_{ij}a_{ij}^2} $$
+
+からなる空間であるかどちらか。
 
 これは $f:\mathbb{R}\rightarrow\mathbb{R}$ の微分係数の一般化になっている。
 
@@ -170,6 +176,8 @@ $F^{-1}(p)$ の $n$ 次元分が一点に潰れるので $m-n$ 次元分が残�
 
 {{< figure src="../images/submersion-theorem.png" >}}
 
+これは非常に便利な定理でいろいろな集合が多様体である事を示すことができる。
+
 例えば $ F:\mathbb{R}^{n+1}\rightarrow\mathbb{R}:x\mapsto||x||^2 $ について考えると、これは可微分であってヤコビ行列は
 
 $$ J_F(x) = \begin{pmatrix}
@@ -177,3 +185,51 @@ $$ J_F(x) = \begin{pmatrix}
 \end{pmatrix} $$
 
 となるので $x=0$ 以外の点では $F$ のランクは1。従って例えば$1\in\mathbb{R}$ の逆像 $F^{-1}(1)$ は$(n+1)-1=n$ 次元部分多様体。実は $F^{-1}(1)=\\{x\in\mathbb{R}^{n+1}\mid ||x||^2=1\\}$ なので$n$ 次元超球面 $S^n$ が$n$ 次元多様体である事がこれで示された。
+
+{{% example title="特殊線型群" %}}
+**特殊線型群(special linear group)**
+$$ SL_n = \\{X\in\mathbb{R}^{n\times n}\mid\det X=1\\}$$
+は $n^2-1$ 次元多様体である。
+{{% /example %}}
+
+$F:\mathbb{R}^{n\times n}\rightarrow \mathbb{R}:X\mapsto \det X$ とすると $SL_n=F^{-1}(1)$ である事より。
+
+{{% example title="直交群" %}}
+**直交群(orthogonal group)**
+$$ O_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I \\\}$$
+は $n(n-1)/2$ 次元多様体である。
+{{% /example %}}
+
+$\mathrm{Sym}_n$ を$n$次実対称行列の集合とする。 これは上三角の $n(n+1)/2$ 要素を取り出す写像をチャートとすれば $n(n+1)/2$次元の多様体である事が分かる。
+
+ここで $F:\mathbb{R}^{n\times n}\rightarrow\mathrm{Sym}_n: X^T\mapsto XX$ とすると $O_n=F^{-1}(I)$である。$F$ が可微分なのは(加減乗算だけなので)明らかなので、あとは $F$ のランクを計算する。
+
+ここで $F$ の微分は
+$$\mathrm{D}_F(X)[-]:H\mapsto X^TH+H^TX$$
+となる。なぜならば$F(X+H)-F(X)-\mathrm{D}_F(X)[H] = H^TH$
+で $\lim\_{H\rightarrow 0}||H^TH||/||H||\rightarrow 0$ であるから。
+
+ここで任意の $Y\in\mathrm{Sym}_n$ に対して $H=XY/2$ とおくと
+
+$$\mathrm{D}_F(X)\left[\frac{XY}{2}\right]=\frac{1}{2}(X^T(XY)+(XY)^TX)=\frac{1}{2}(Y+Y^T)=Y$$
+
+より $\mathrm{D}_F[-]$ はフルランクであるので、$F$ のランクは $n(n+1)/2$。従って  $O_n$ の次元は $n^2-n(n+1)/2=n(n-1)/2$
+
+{{% example title="回転群" %}}
+**回転群(rotation group)** もしくは **特殊直交群(special orthogonal group)**
+$$ SO_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I,\det X=1 \\\}$$
+は $n(n-1)/2$ 次元多様体である。
+{{% /example %}}
+
+$\mathbb{R}\_+$ を正の実数の集合とすると、これは $\mathbb{R}$ の開集合。$\det:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}$ は連続写像だから $\det(\mathbb{R}\_+) \subset\mathbb{R}^{n\times n}$ も開集合。よって
+$SO_n = O_n\cap\det(\mathbb{R}\_+)$
+より $SO_n$ は $O_n$ の開部分集合であるので $O_n$ と次数の等しい多様体である。
+
+
+{{% example title="シュティーフェル多様体" label="ex.stiefel-manifold" %}}
+$p\leq n$ の時
+$$\mathrm{St}(p,n)=\\{X\in\mathbb{R}^{n\times p}\mid X^TX = I_p\\}$$
+を **シュティーフェル多様体(Stiefel manifold)** という。これは $np-p(p+1)/2$ 次元多様体である。
+{{% /example %}}
+
+シュティーフェル多様体は $p=1$ の時は $n-1$ 次元球面、 $p=n$ の時は直交群になり、これらを一般化したものと言える。証明は直交群とほぼ同じなので省略。

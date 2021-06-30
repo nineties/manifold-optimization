@@ -97,17 +97,17 @@ $$
 ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}^+$ より $\varphi_\beta(U_\alpha\cap U_\beta)$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\mathcal{A}^+$ の任意のチャートに対して $\varphi_\alpha(U\cap U_\alpha)$ が開集合となるから $U$ は開集合である。逆は明らか。 $\square$
 
 {{% proposition %}}
-多様体の任意の開部分集合は多様体である
+$m$次元多様体の開部分集合は $m$ 次元多様体である
 {{% /proposition %}}
 
 証明
 
-$(\mathcal{M},\mathcal{A}^+)$ を多様体とし、 $U\subset\mathcal{M}$ をその開集合とする。
+$(\mathcal{M},\mathcal{A}^+)$ を $m$次元多様体とし、 $U\subset\mathcal{M}$ をその開集合とする。
 ここで $U$ に含まれるチャートだけを集めた
 
 $$ \mathcal{A}_U =\\{(V,\psi)\ \|\ (V,\psi)\in\mathcal{A}^+,V\subset U\\} $$
 
-を考える。これが $U$ の極大アトラスとなるのは明らか。
+を考える。これが $U$ の$m$次元極大アトラスとなるのは明らか。
 
 $(\mathcal{M},\mathcal{A}^+)$は可算被覆を持つから、それらと $U$ の共通部分を取る事で $(U,\mathcal{A}_U)$ の可算被覆を作れる。
 
