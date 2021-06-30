@@ -64,16 +64,22 @@ $$
 とすると $(U_\pm,\varphi_\pm)$ はチャートである。また、 $\mathcal{A}=\{(U_+,\varphi_+),(U_-,\varphi_-)\}$ はアトラスであり、 $(S^n,\mathcal{A}^+)$ は$n$次元多様体である。</p></div><p>$\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスである事の証明は上でやった $S^2$ の場合とほとんど同じなので省略し、極大アトラス $\mathcal{A}^+$ をとると $(S^n,\mathcal{A}^+)$ が多様体になる事を示す。</p><p>まず $S^n=U_+\cup U_-$ だから可算被覆を持つ事は明らか。続いて、ハウスドルフ性についてだが、
 <a href=https://nineties.github.io/manifold-optimization/2-manifold/#lem.hausdorff>補題2.10</a>
 より2点が同じチャートに含まれる場合には成立するので、2点が $(1,0,\ldots)$ と $(-1,0,\ldots)$ である場合のみ考えれば良い。</p><p>$V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0&lt;0$ の部分とすれば</p><p>$$\varphi_+(V_+)=\varphi_-(V_-)=\{\mathbf{x}|\mathbf{x}\in\mathbb{R}^n,||\mathbf{x}||>1\}$$</p><p>となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
-そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。</p><p>よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。$\square$</p><div class=box><div class=title>例2.12: 一般線型群</div><p>$n$次実正則行列の集合 $$GL_n=\{X\in\mathbb{R}^{n\times n}|\det X\neq 0\} $$
+そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。</p><p>よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。$\square$</p><div class=box><div class=title>例2.12: ベクトル空間</div><p>$V$ が $n$次元ベクトル空間であるならば、任意の基底 $e_1,\ldots,e_n$ 上での成分表示</p><p>$$ \varphi:V\rightarrow\mathbb{R}^n:x\mapsto(x_1,\ldots,x_n) $$</p><p>がこれ1つでアトラスとなり 、 $V$ は $n$ 次元多様体となる。</p></div><div class=box><div class=title>例2.13: 行列の集合</div><p>$n\times p$ 実行列の集合 $\mathbb{R}^{n\times p}$ は
+$$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(X)$$
+(ただし $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル)</p><p>とすると $\varphi$ 1つでアトラスとなり $\mathbb{R}^{n\times p}$ は $np$次元多様体となる。</p></div><div class=box><div class=title>例2.14: 一般線型群</div><p>$n$次実正則行列の集合 $$GL_n=\{X\in\mathbb{R}^{n\times n}|\det X\neq 0\} $$
 は行列の積によって群となる。これを <strong>一般線型群(general linear group)</strong> という。</p><p>写像
 $$\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
-を考えると $\mathcal{A}=\{(GL_n,\varphi)\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。</p></div><p>ここで $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル。</p><p>まず $\varphi(GL_n)$ が開集合である事を示す。補集合を考えると、
+を考えると $\mathcal{A}=\{(GL_n,\varphi)\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。</p></div><p>まず $\varphi(GL_n)$ が開集合である事を示す。補集合を考えると、
 $$
 \begin{aligned}
 \mathbf{x}\in\mathbb{R}^{n^2}\setminus\varphi(GL_n)&\Leftrightarrow\det\circ\mathrm{vec}^{-1}(\mathbf{x})=0 \\<br>&\Leftrightarrow\mathbf{x}\in(\det\circ\mathrm{vec}^{-1})^{-1}(\{0\})
 \end{aligned}$$</p><p>ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\{0\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(GL_n)$ も閉集合。よって $GL_n$ は開集合。</p><p>また $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も
 <a href=https://nineties.github.io/manifold-optimization/2-manifold/#lem.hausdorff>補題2.10</a>
-より明らか。</p><hr><p>$GL_n$ のような群構造を持つ多様体を <strong>リー群(Lie group)</strong> という。</p><p>同じようにして特殊線型群 $SL_n=\{X\in\mathbb{R}^{n\times n}|\det X=1\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。</p><hr><p>ハウスドルフ性を満たさない例を挙げる。</p><div id=ex.y-shape-space style=padding-top:100px;margin-top:-100px></div><div class=box><div class=title>例2.13: 2直線を張り合わせた空間</div><p>空間 $\mathbb{R}\times \{0,1\}$ において $x&lt;0$ の部分で $(x,0)$ と $(x,1)$ を同一視して得られる商空間を $\mathcal{M}$ とする。</p><p>$\pi:X\rightarrow\mathcal{M}$ を商写像とする。$U=\pi(\mathbb{R}\times\{0\}), V=\pi(\mathbb{R}\times\{1\})$ とし、</p><p>$$
+より明らか。</p><hr><p>$GL_n$ のような群構造を持つ多様体を <strong>リー群(Lie group)</strong> という。</p><p>同じようにして特殊線型群 $SL_n=\{X\in\mathbb{R}^{n\times n}|\det X=1\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。</p><div class=box><div class=title>例2.15: ノンコンパクトシュティーフェル多様体</div><p>$\mathbb{R}^{n\times p}_\ast, (p\leq n)$ を各列が一次独立な行列の集合(フルランクの行列の集合)とする。これは
+$$\mathbb{R}^{n\times p}_\ast = \{X\in\mathbb{R}^{n\times p}\mid\det(X^TX)\neq 0\}$$
+と書く事ができる。この集合はチャート
+$$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(X)$$
+によって$np$次元多様体となる。これを <strong>ノンコンパクトシュティーフェル多様体(noncompact Stiefel manifold)</strong> という。</p></div><p>特別な場合として、$p=1$ のときはユークリッド空間 $\mathbb{R}^n$ から原点を除いた空間 $\mathbb{R}^n_\ast$ となる。 $p=n$ のときは一般線型群となる。</p><hr><p>ハウスドルフ性を満たさない例を挙げる。</p><div id=ex.y-shape-space style=padding-top:100px;margin-top:-100px></div><div class=box><div class=title>例2.16: 2直線を張り合わせた空間</div><p>空間 $\mathbb{R}\times \{0,1\}$ において $x&lt;0$ の部分で $(x,0)$ と $(x,1)$ を同一視して得られる商空間を $\mathcal{M}$ とする。</p><p>$\pi:X\rightarrow\mathcal{M}$ を商写像とする。$U=\pi(\mathbb{R}\times\{0\}), V=\pi(\mathbb{R}\times\{1\})$ とし、</p><p>$$
 \begin{aligned}
 \varphi:U \rightarrow\mathbb{R}: (x,0)\mapsto x \\<br>\psi:V \rightarrow\mathbb{R}: (x,1)\mapsto x \\<br>\end{aligned}
 $$</p><p>とおくと $\mathcal{A}=\{(U,\varphi),(V,\psi)\}$ は $\mathcal{M}$ のアトラス。</p></div><p>$\mathcal{M}$ は2つの直線を張り合わせた空間で、 $\varphi,\psi$ は張り合わせる前の直線を取り出すもの。この時 $(\mathcal{M},\mathcal{A}^+)$ はハウスドルフ性を満たさない。

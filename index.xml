@@ -15,7 +15,7 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
 定義2.2: チャートの両立 2つの $d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description></item><item><title>3. 多様体の位相構造</title><link>https://nineties.github.io/manifold-optimization/3-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/3-topology/</guid><description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法と構造について見ていく。
-多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
+多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 定義2.9 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
 定義3.1: 開集合 多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
@@ -31,4 +31,11 @@ $$ \hat{F}=\psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 を $F$ の点 $x$ の周りでの $\varphi,\psi$ による 座標表示(coordinate representation) という。
 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の微分可能性の定義を復習する。
 定義4.2 $V,W$ をバナッハ空間(線型空間であって完備な距離を持つ)の間の写像 $f:V\rightarrow W$ が点 $a\in V$ で 微分可能(differentiable) であるとは
-$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$</description></item><item><title>5. 商多様体</title><link>https://nineties.github.io/manifold-optimization/5-quotient/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/5-quotient/</guid><description/></item></channel></rss>
+$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$</description></item><item><title>5. 多様体の構成方法</title><link>https://nineties.github.io/manifold-optimization/5-construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/5-construction/</guid><description>多様体から新しい多様体を作る方法として、直和、積多様体、商多様体について説明する。
+定義5.1: 多様体の直和 次元の等しい多様体 $(\mathcal{M},\mathcal{A}^+),(\mathcal{N},\mathcal{B}^+)$ に対して
+$$ (\mathcal{M}\sqcup\mathcal{N},(\mathcal{A}\sqcup\mathcal{B})^+)$$
+も同じ次元の多様体となる。これを $\mathcal{M},\mathcal{N}$ の 直和(direct sum) という。
+直和は、2つの多様体を持ってきて1つの多様体という、というだけの話なのでそれ自体は空間としては面白くないが、商多様体を構成する前段で構成したりする。
+定義5.2: 積多様体 $m$ 次元多様体 $(\mathcal{M},\mathcal{A}^+)$、 $n$ 次元多様体 $(\mathcal{N},\mathcal{B}^+)$ に対して $$\mathcal{A}\times\mathcal{B}=\{(U\times V,\varphi\times\psi)\mid(U,\varphi)\in\mathcal{A}, (V,\psi)\in\mathcal{B}\}$$ $$\varphi\times\psi:U\times V\rightarrow\mathbb{R}^m\times\mathbb{R}^n:(x,y)\mapsto(\varphi(x),\psi(y)) $$ とした時、 $$(\mathcal{M}\times\mathcal{N},(\mathcal{A}\times\mathcal{B})^+)$$ は $m+n$ 次元多様体となる。これを 積多様体(product manifold) という。
+例えば、ユークリッド空間$\mathbb{R}^m$ は$\mathbb{R}$ 複数個の積多様体 $\mathbb{R}^m{\sim}eq\mathbb{R}\times\mathbb{R}\times\cdots\mathbb{R}$ である。一次元球面 $S^1$ と $\mathbb{R}$ の積 $S^1\times\mathbb{R}$ は円柱、 $S^1\times S^1$ は2トーラスといった感じで様々な多様体が積多様体として構成される。
+定義5.3: 商多様体 ${\sim}$ を $\mathcal{M}$ 上の同値関係とする。 多様体 $(\mathcal{M},\mathcal{A}^+)$ から多様体 $(\mathcal{M}/{\sim},\mathcal{B}^+)$ への自然な全射が沈め込みとなるとき、$(\mathcal{M}/{\sim},\mathcal{B}^+)$ を$\mathcal{M}$ の ${\sim}$ による 商多様体(quotient manifold) という。</description></item></channel></rss>
