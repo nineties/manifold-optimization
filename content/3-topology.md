@@ -96,7 +96,7 @@ $$
 
 ここで仮定より $\varphi_\beta(U\cap U_\beta)$ は開集合、 $\mathcal{B}\subset\mathcal{A}^+$ より $\varphi_\beta(U_\alpha\cap U_\beta)$ も開集合。よってこれらの共通部分も開集合であり、その微分同相写像 $\varphi_\alpha\circ\varphi_\beta^{-1}$ での逆像も開集合。そしてそれらの和集合は開集合。以上より $\mathcal{A}^+$ の任意のチャートに対して $\varphi_\alpha(U\cap U_\alpha)$ が開集合となるから $U$ は開集合である。逆は明らか。 $\square$
 
-{{% proposition %}}
+{{% proposition label="prop.open-subset-is-manifold-of-samedimension" %}}
 $m$次元多様体の開部分集合は $m$ 次元多様体である
 {{% /proposition %}}
 

@@ -145,7 +145,9 @@ $m$次元多様体 $\mathcal{M}$ の部分集合 $\mathcal{N}$ が $n$ 次元多
 $m$ 次元多様体 $\mathcal{M}$ が $n$ 次元多様体 $\mathcal{N}$ の部分集合($\mathcal{M}\subset\mathcal{N}$)である時、包含写像 $i:\mathcal{M}\rightarrow\mathcal{N}$ が埋め込みであるならば、 $\mathcal{M}$ を $\mathcal{N}$ の **部分多様体(submanifold)** という。
 {{% /definition %}}
 
-これから導かれる以下を部分多様体の定義として用いる文献も多い。こちらは局所的に $\mathbb{R}^n$ と同一視できるという事を直接述べたものなので想像しやすいかもしれない。
+$\mathcal{M}$ が $\mathcal{N}$ の開集合であるならば開部分多様体、閉集合であるならば閉部分多様体という。 {{< ref prop.open-subset-is-manifold-of-samedimension >}} より $\mathcal{M}$ が開部分多様体ならば、$\mathcal{N}$ と同次元である。
+
+以下を部分多様体の定義として用いる文献も多い。こちらは局所的に $\mathbb{R}^n$ と同一視できるという事を直接述べたものなので想像しやすいかもしれない。
 
 証明は大変で詳しくは[Lee. Introduction to Smooth Manifolds](https://www.springer.com/jp/book/9780387217529) のTheorem 5.13を参照。
 
@@ -166,7 +168,7 @@ $(U,\varphi)$ の事を $\mathcal{M}$ の **スライスチャート(slice chart
 
 ある部分集合が部分多様体である事を示すのをチャートを具体的に計算して示すのは面倒だし、そもそもチャートの式が陽には表せない場合が多いので、以下のような定理を用いる。
 
-{{% theorem %}}
+{{% theorem label="th.submersion-theorem" %}}
 $m$次元多様体 $\mathcal{M}$, $n$次元多様体 $\mathcal{N}$ ($m\geq n$)、可微分写像 $F:\mathcal{M}\rightarrow\mathcal{N}$、 点 $p\in\mathcal{N}$ について、 $F^{-1}(p)$ の全ての点で $F$ のランクが $n$ であるならば、 $F^{-1}(p)$ は $m-n$ 次元部分多様体である。
 
 (このような $p$ を $F$の **正則値(regular value)** であるという。)
