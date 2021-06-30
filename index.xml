@@ -30,18 +30,5 @@ $x$ を含む $\mathcal{M}$ のチャート $\varphi:U\rightarrow \varphi(U),\ x
 $$ \hat{F}=\psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 を $F$ の点 $x$ の周りでの $\varphi,\psi$ による 座標表示(coordinate representation) という。
 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の微分可能性の定義を復習する。
-定義4.2 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が点 $a\in\mathbb{R}^m$ で 微分可能(differentiable) であるとは
-$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$
-を満たす線型写像: $\mathrm{D}_f(a)[-]:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が存在する事である。$f$ が任意の点で微分可能である事を、 $f$ は微分可能であるという。</description></item><item><title>4. 接ベクトルと接空間</title><link>https://nineties.github.io/manifold-optimization/4-tangent-space/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-tangent-space/</guid><description/></item><item><title>5. 多様体の様々な構成と可微分写像</title><link>https://nineties.github.io/manifold-optimization/4-construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/4-construction/</guid><description>定義5.1: 多様体の直和 $d$次元 多様体 $(\mathcal{M},\mathcal{A}),(\mathcal{N},\mathcal{B})$ に対して
-$$ (\mathcal{M}\sqcup\mathcal{N},\mathcal{A}\sqcup\mathcal{B}) $$
-も$d$次元多様体となる。これを $\mathcal{M},\mathcal{N}$の 直和(disjoint union) という。
-共通部分がない2つの多様体を持ってきて、まとめて1つの多様体だと言っているだけなので、これ自体はあまり面白くないが、商空間を用いた構成の前段で直和を構成する場合がある。
-例えば では、まず2つの直線を持ってきて(これが$\mathbb{R}$と$\mathbb{R}$の直和)、商集合を作るという操作をしている。
-定義5.2: 積多様体 $m$次元多様体 $(\mathcal{M},\mathcal{A})$ と $n$ 次元多様体 $(\mathcal{N},\mathcal{B})$ について直積
-$$\mathcal{M}\times\mathcal{N}$$
-は$m+n$ 次元多様体となる。これを $\mathcal{M},\mathcal{N}$ の 積多様体(product manifold) という。積多様体の位相は $\mathcal{M},\mathcal{N}$ の積位相と一致する。
-$$ \begin{aligned} &amp;amp;\mathcal{C} = \{(U\times V,\varphi\times\psi)|(U,\varphi)\in\mathcal{A},(V,\psi)\in\mathcal{B}\} \\
-&amp;amp;\text{但し} \varphi\times\psi:(x,y)\mapsto(\varphi(x),\psi(y)) \\
-\end{aligned} $$
-とすると $\mathcal{C}^+$ が $\mathcal{M}\times\mathcal{N}$ の極大アトラスである。
-例えばユークリッド空間 $\mathbb{R}^d$ は積多様体 $\mathbb{R}\times\cdots\times\mathbb{R}$ である。また、 2-トーラス(2-torus) $T^2$ は単位円 $S^1$ 2つの積である。($ T^2 = S^1\times S^1 $)</description></item></channel></rss>
+定義4.2 $V,W$ をバナッハ空間(線型空間であって完備な距離を持つ)の間の写像 $f:V\rightarrow W$ が点 $a\in V$ で 微分可能(differentiable) であるとは
+$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$</description></item><item><title>5. 商多様体</title><link>https://nineties.github.io/manifold-optimization/5-quotient/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/5-quotient/</guid><description/></item></channel></rss>
