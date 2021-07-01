@@ -133,3 +133,4 @@ $$\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/{\sim}$$
 {{% /example %}}
 
 つまり、$\mathrm{Grass}(p,n)$ とは$\mathbb{R}^n$ の $p$ 次元部分空間の集合。
+例えば $\mathrm{Grass}(2,3)$ は $\mathbb{R}^3$ の中の原点を通る平面の集合。各平面が多様体の1点なのでなかなか想像は難しい。
