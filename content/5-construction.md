@@ -133,4 +133,14 @@ $$\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/{\sim}$$
 {{% /example %}}
 
 つまり、$\mathrm{Grass}(p,n)$ とは$\mathbb{R}^n$ の $p$ 次元部分空間の集合。
-例えば $\mathrm{Grass}(2,3)$ は $\mathbb{R}^3$ の中の原点を通る平面の集合。各平面が多様体の1点なのでなかなか想像は難しい。
+例えば $\mathrm{Grass}(2,3)$ は $\mathbb{R}^3$ の中の原点を通る平面の集合。各平面が1つの点となる多様体なのでなかなか想像は難しい。
+
+$\mathrm{span}(X)=\mathrm{span}(Y)$ であるというのは適当な基底変換 $P\in GL_p$ が存在して $Y=XP$ と書けるという事であるから、 $X$ の同値類は
+
+$$[X] = \\{XP\mid P\in GL_p\\}$$
+
+とも書ける。この意味で $\mathrm{Grass}(p,n)$ を $\mathbb{R}^{n\times p}\_\ast/GL_p$ とも書く。では $\mathrm{Grass}(p,n)$ が多様体である事を証明する。
+
+[証明]
+
+$$\mathrm{graph}(\sim)=\\{(X,XP)\mid X\in\mathbb{R}^{n\times p}\_\ast, P\in GL_p\\}$$

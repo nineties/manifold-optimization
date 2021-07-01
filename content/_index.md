@@ -17,7 +17,7 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 2. [多様体の定義](2-manifold)
 3. [多様体の位相構造](3-topology)
 4. [可微分写像、部分多様体](4-submanifold)
-5. [多様体の構成方法](5-construction)
+5. [多様体の構成方法(書きかけ)](5-construction)
 
 
 参考にした文献
