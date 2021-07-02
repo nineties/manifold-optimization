@@ -25,7 +25,7 @@ $$(\mathcal{M}\times\mathcal{N},(\mathcal{A}\times\mathcal{B})^+)$$
 は $m+n$ 次元多様体となる。これを **積多様体(product manifold)** という。
 {{% /definition %}}
 
-例えば、ユークリッド空間$\mathbb{R}^m$ は$\mathbb{R}$ 複数個の積多様体 $\mathbb{R}^m{\sim}eq\mathbb{R}\times\mathbb{R}\times\cdots\mathbb{R}$ である。一次元球面 $S^1$ と $\mathbb{R}$ の積 $S^1\times\mathbb{R}$ は円柱、 $S^1\times S^1$ は2トーラスといった感じで様々な多様体が積多様体として構成される。
+例えば、ユークリッド空間$\mathbb{R}^m$ は$\mathbb{R}$ 複数個の積多様体 $\mathbb{R}^m\simeq\mathbb{R}\times\mathbb{R}\times\cdots\mathbb{R}$ である。一次元球面 $S^1$ と $\mathbb{R}$ の積 $S^1\times\mathbb{R}$ は円柱、 $S^1\times S^1$ は2トーラスといった感じで様々な多様体が積多様体として構成される。
 
 {{% definition title="商多様体" %}}
 ${\sim}$ を $\mathcal{M}$ 上の同値関係とする。
