@@ -261,7 +261,7 @@ $\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスで�
 
 $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分とすれば
 
-$$\varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\in\mathbb{R}^{n+1}\mid\|\|\mathbf{x}\|\|>1\\}$$
+$$\varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\in\mathbb{R}^n\mid\|\|\mathbf{x}\|\|>1\\}$$
 
 となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
 そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。
