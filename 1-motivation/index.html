@@ -4,7 +4,7 @@
 <a href=https://nineties.github.io/manifold-optimization/ class="b bb bw1 pb1 no-underline black">Manifold Optimization</a><section id=main class=mt5><h1 itemprop=name id=title>1. モチベーション</h1><article itemprop=articleBody id=content class="w-90 lh-copy"><p>ロボットが自分の姿勢を推定するという問題を考える。これは例えばオドメトリーの値やコンパスや加速度センサなどの値、カメラで検出したランドマークの座標などの情報を元にして計算される何らかのコスト関数を最小化する問題として表現される。</p><p>このことは、ロボットの姿勢が例えば単位ベクトル $\mathbf{v}\in\mathbb{R}^3,||\mathbf{v}||=1$ で表されるとすると、実数値のコスト関数 $f$ に対して $f(\mathbf{v})$ が最小になる $\mathbf{v}$ は何か？という問題になる。</p><p>この事は、ユークリッド空間 $\mathbb{R}^3$ 上の実数値関数 $f:\mathbb{R}^3\rightarrow\mathbb{R}$ に対する
 制約付き最適化問題</p><p>$$
 \min_{\mathbf{x}\in\mathbb{R}^3}\ f(\mathbf{x})\quad\text{subject to}\quad ||\mathbf{x}||=1
-$$</p><p>として表現出来るが、 制約条件がある為、ニュートン法などの反復解法を単純に用いてこれを解くことはできない。</p><p>上記の制約条件は $\mathbf{x}$ が単位球面 $ S^2 := \{||\mathbf{x}||=1|\mathbf{x}\in\mathbb{R}^3\} $ の点であると言い換える事ができる。つまり、ユークリッド空間上の制約付き最適化問題から、<strong>多様体 $S^2$ 上での制約なし最適化問題</strong></p><p>$$
+$$</p><p>として表現出来るが、 制約条件がある為、ニュートン法などの反復解法を単純に用いてこれを解くことはできない。</p><p>上記の制約条件は $\mathbf{x}$ が単位球面 $ S^2 := \{\mathbf{x}\in\mathbb{R}^3\mid||\mathbf{x}||=1\} $ の点であると言い換える事ができる。つまり、ユークリッド空間上の制約付き最適化問題から、<strong>多様体 $S^2$ 上での制約なし最適化問題</strong></p><p>$$
 \min_{\mathbf{x}\in S^2}\ f(\mathbf{x})
 $$</p><p>に問題を読み換える事ができる。</p><p>このような感じで、他にも様々な問題が <strong>多様体上の最適化問題</strong> に帰着する。
 多くの問題では今の例よりパラメータ数が多く、球面のように想像しやすい空間でもない。
