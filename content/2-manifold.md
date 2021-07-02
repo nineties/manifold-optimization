@@ -189,7 +189,7 @@ $$
 
 ---
 
-以上でアトラス $\mathcal{A}$ の同値類 $[\mathcal{A}]=\\{\mathcal{B}|\mathcal{B}\sim\mathcal{A}\\}$ を考える事ができるようになる。
+以上でアトラス $\mathcal{A}$ の同値類 $[\mathcal{A}]=\\{\mathcal{B}\mid\mathcal{B}\sim\mathcal{A}\\}$ を考える事ができるようになる。
 アトラスの同値類を用いて多様体を定義するという流儀もあるようだけど、ここでは極大アトラスを導入する。何故かというと、この後定義するハウスドルフ性や第二可算性に関して、極大アトラスを用いた方が(多分)シンプルに述べられるから。
 
 {{% definition title="極大アトラス" %}}
@@ -243,7 +243,7 @@ $\varphi$ は全単射だから $x\neq y$ の時、$\varphi(x)\neq\varphi(y)$ �
 
 {{% example title="$n$次元球面" label="ex.n-sphere"%}}
 $$
-S^n=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^{n+1},||\mathbf{x}||=1\\}
+S^n=\\{\mathbf{x}\in\mathbb{R}^{n+1}\mid||\mathbf{x}||=1\\}
 $$
 
 を **$n$ 次元球面($n$-sphere)** という。
@@ -261,7 +261,7 @@ $\varphi_\pm$ がチャートである事と、$\mathcal{A}$ がアトラスで�
 
 $V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0<0$ の部分とすれば
 
-$$\varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\|\mathbf{x}\in\mathbb{R}^n,\|\|\mathbf{x}\|\|>1\\}$$
+$$\varphi_+(V_+)=\varphi_-(V_-)=\\{\mathbf{x}\in\mathbb{R}^{n+1}\mid\|\|\mathbf{x}\|\|>1\\}$$
 
 となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
 そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。
