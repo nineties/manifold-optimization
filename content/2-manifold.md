@@ -110,7 +110,7 @@ $$
 \psi&:V\rightarrow\mathbb{R}^2:\psi(x=ny+c)=(n,c)\\\\
 \end{aligned}
 $$
-と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi)\\}$ は$\mathcal{M}$ のアトラス)。
+と置くとこれらはチャートになる。$U\cap V$ は水平でも並行でもない直線の集合で $\varphi(U\cap V)=\psi(U\cap V)=\\{(a,b)\|a,b\in\mathbb{R},a\neq 0\\}$ になる。これは $\mathbb{R}^2$ の開集合で $\psi\circ\varphi^{-1}:(m,b)\mapsto(1/m,-b/m)$ は $m\neq 0$ で微分同相。$U\cup V=\mathcal{M}$ だから $\\{(U,\varphi),(V,\psi)\\}$ は$\mathcal{M}$ のアトラス)。
 
 ---
 
