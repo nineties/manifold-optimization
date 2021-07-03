@@ -20,7 +20,7 @@ $$ \hat{F}=\psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 
 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の微分可能性の定義を復習する。
 
-{{% definition %}}
+{{% definition label="def.differential" %}}
 $V,W$ をバナッハ空間(線型空間であって完備な距離を持つ)の間の写像 $f:V\rightarrow W$ が点 $a\in V$ で **微分可能(differentiable)** であるとは
 
 $$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$ 
