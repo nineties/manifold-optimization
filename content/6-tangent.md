@@ -3,79 +3,71 @@ title: 6. 接ベクトル空間
 section: 6
 ---
 
-多様体上での最適化を行う上では、点 $x\in\mathcal{M}$ での勾配、もしくは方向微分に相当するものを考える必要がある。({{< ref def.differential >}} の方向微分はバナッハ空間の写像に対するもの)
+多様体上でニュートン法などの最適化アルゴリズムを実行する為には、点 $x\in\mathcal{M}$ で勾配や方向微分に相当するものを計算できる必要がある。多様体 $\mathcal{M}$ 上の実数値関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の点 $x\in\mathcal{M}$ での方向 $\eta$ についての方向微分は、多様体上の点について加法が定義されていないので
 
-多様体 $\mathcal{M}$ 上の実数値関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の点 $x\in\mathcal{M}$ での方向 $\eta$ についての方向微分は
 $$ \mathrm{D}\_{f}(x)[\eta] = \lim_{t\rightarrow 0}\frac{f(x+t\eta)-f(x)}{t} $$
 
-みたいな感じで書けそうな気がするが、多様体上の点 $x$ について加算は定義されていない。そもそも $\eta$ をどう表現するかも明らかではない。チャートを使うというのが一つの方法だが、そうするとチャートの選び方に依存したものとなり使い勝手が悪い。
+といった感じでは書けない。方向 $\eta$ をどう表現するかも明らかではない。チャートを使うというのが一つの方法だが、そうするとチャートの選び方に依存したものとなり使い勝手が悪い。そこで、接ベクトルや接ベクトル空間といった概念が登場する。
 
-そこで、可微分写像 $\gamma:\mathbb{R}\rightarrow\mathcal{M}$ であって $\gamma(0)=x$ を満たすものを考える。このような写像を $\mathcal{M}$ 上の **曲線(curve)** という。
+接ベクトルの定義にはいくつかの流儀があるみたいで、今回参考にしている[教科書](https://press.princeton.edu/absil)では多様体上の実関数に対する微分作用素を接ベクトルとする定義を採用している。この定義は理屈としては分かるものの、図形的な直感を(私は)なかなか得られなかったので、このノートでは別の定義から出発したいと思う。 そちらの定義では曲線の同値類として接ベクトルを定義をする。
+
+---
+
+可微分写像 $\gamma:\mathbb{R}\rightarrow\mathcal{M}$ を $\mathcal{M}$ 上の **曲線(curve)** という。
 
 {{< figure src="../images/curve.png" >}}
 
-これで、 $\mathcal{M}$ 上の点の移動を表すことができるようになったが、その差分 $\gamma(0 + t) - \gamma(0)$ を計算する方法が無い。ただ、上で求めたかった方向微分はこの考え方で求めることができて
-
-$$\lim_{t\rightarrow 0}\frac{f(\gamma(t))-f(\gamma(0))}{t} = 
-\left.\frac{\mathrm{d}}{\mathrm{d}t}f\circ\gamma(t)\right|_{t=0}
-$$
-
-となる($\because$ $f\circ\gamma:\mathbb{R}\rightarrow\mathbb{R}$は $C^\infty$ 級関数)。 これはチャートの選び方に寄らないが、もちろん $f$ の選び方に依存して決まる量である。
-
-そこで、チャートにも $f$ にも寄らないものとして 
-
-$$f\longmapsto
-\left.\frac{\mathrm{d}}{\mathrm{d}t}f\circ\gamma(t)\right|_{t=0}
-$$
-という **作用素** を考えて、これを接ベクトルと呼ぶ。
+点 $x$ を通る曲線を用いる事で $x$ における点の運動を表現できそうである。但し、関心があるのは $x$ の局所的な様子であって曲線全体ではないので、 $x$ において同じ運動をしていると見なせる曲線群を同一視しようというのがこの定義のアイデアである。同じ運動をしているか否かは、点 $x$ の周囲に座標系を貼り付けた時に同じ速度ベクトルになっているか否かで判断できる。
 
 {{% definition title="接ベクトル" %}}
-$\mathcal{F}_x$ を $x\in\mathcal{M}$ の近傍で定義される$\mathbb{R}$への可微分写像の集合とする。
-
-$x$を通る曲線 $\gamma:\mathbb{R}\rightarrow\mathcal{M}, \gamma(0)=x$ に対して、写像 $\xi_x:\mathcal{F}_x\rightarrow\mathbb{R}$ 
-
-$$ \xi_x(f) = \left.\frac{\mathrm{d}}{\mathrm{d}t}f(\gamma(t))\right|_{t=0}$$
-
-
-を $x$ における $\mathcal{M}$ の **接ベクトル(tangent vector)** という。
-
+$t=0$ で点 $x\in\mathcal{M}$ を通る曲線の集合
+$$ \mathcal{L}_x = \\{\gamma:\mathbb{R}\rightarrow\mathcal{M} \mid \gamma(0)=x \\}$$
+の上の同値関係を $x$ を含むチャート $(U,\varphi)$ を用いて
+$$
+\gamma_1\sim\gamma_2\Longleftrightarrow \frac{\mathrm{d}(\varphi\circ\gamma_1)}{\mathrm{d}t}(0) = \frac{\mathrm{d}(\varphi\circ\gamma_2)}{\mathrm{d}t}(0)
+$$
+と定める。これはチャートの選び方に寄らない。
+$\mathcal{L}_x/{\sim}$ の元を $\mathcal{M}$ の点 $x$ での **接ベクトル(tangent vector)** という。
 {{% /definition %}}
 
-作用素を接ベクトルというと言われてもイメージが湧かないので具体例を考える。$\mathcal{M}=\mathbb{R}^2$ として、
+ここで定めた商集合 $\mathcal{L}_x/{\sim}$ にはベクトル空間の構造を入れることができる。点 $x$ の周りのチャート $(U,\varphi)$ を固定すると、$\mathcal{M}$ の接ベクトルと $\mathbb{R}^m$ の速度ベクトルが以下の対応によって一対一に対応する。
 
-$$\gamma(t) = (\cos t,\sin t)^T $$
+$$\phi:\mathcal{L}_x/{\sim}\longrightarrow\mathbb{R}^m: [\gamma] \longmapsto \frac{\mathrm{d}(\varphi\circ\gamma)}{\mathrm{d}t}(0) $$
 
-という曲線を考える。単位円を反時計回りに回る曲線である。任意の可微分写像 $f:\mathbb{R}^2\rightarrow\mathbb{R}$ に対して
+これが単射であるのは定義より明らかで、全射であるのは任意の $v\in\mathbb{R}^m$ に対して
 
-$$
-\frac{\mathrm{d}}{\mathrm{d}t}f(\cos t,\sin t) = -f_x\sin t + f_y\cos t = \begin{pmatrix}f_x & f_y\end{pmatrix}\begin{pmatrix} -\sin t \\\\ \cos t \end{pmatrix}
-$$
+$$ \gamma(t) = \varphi^{-1}(\varphi(x) + vt) $$
 
-となるが、ここで馴染みのある $\gamma$ の接ベクトルの表現 $\gamma'(t):=(-\sin t\ \cos t)^T$ が現れた。また $J_f(\gamma(t)):=(f_x\quad f_y)$ は $f$ のヤコビ行列であるので
+とおけば $\phi([\gamma])=v$ となる事から分かる。
 
-$$
-\frac{\mathrm{d}}{\mathrm{d}t}f(\cos t,\sin t) = J_f(\gamma(t))\gamma'(t)
-$$
+接ベクトルの和とスカラー倍と和も対応
 
-と書ける。一般に、 $\mathcal{M}$ がユークリッド空間であれば
+$$ a_1[\gamma_1] + a_2[\gamma_2] \longmapsto a_1\frac{\mathrm{d}(\varphi\circ\gamma_1)}{\mathrm{d}t}(0) + a_2\frac{\mathrm{d}(\varphi\circ\gamma_2)}{\mathrm{d}t}(0)$$
 
-$$ \dot{\gamma}(0)f = \mathrm{D}_f(\gamma(0))[\gamma'(0)] $$
+によって定めれば良い。具体的に式で書くならば $\phi$ を使って
 
-が成立し、曲線に沿った方向微分となっている事が分かる。
+$$ a_1[\gamma_1] + a_2[\gamma_2] = \phi^{-1}(a_1\phi([\gamma_1])+a_2([\gamma_2])) $$
 
-{{% proposition %}}
-2つの $x$ を通る曲線 $\gamma_1,\gamma_2\ (\gamma_1(0)=\gamma_2(0)=x)$ から得られる $x$ での接ベクトルが一致するのは、適当な$x$を含むチャート $(U, \varphi(x))$ について
+とすれば良い。これがチャート $(U,\varphi)$ の選び方に依存しない事は簡単に示すことができる。以上より$\mathcal{L}_x/{\sim}$ は$\mathcal{M}$と次元の等しいベクトル空間になる事が分かる。
 
-$$
-\left.\frac{\mathrm{d}}{\mathrm{d}t}\varphi(\gamma\_1(t))\right|\_{t=0} =
-\left.\frac{\mathrm{d}}{\mathrm{d}t}\varphi(\gamma\_2(t))\right|\_{t=0}
-$$
-となる時である。
-
-{{% /proposition %}}
-
-接ベクトルというのは $x$ の周りの局所的な性質で決まるので、曲線の選び方には任意性があるが、適当なチャートで座標表示して得られる馴染みのある接ベクトル表現が一致すれば、どちらの曲線を選んでも良い。
 
 {{% definition title="接ベクトル空間" %}}
-多様体 $\mathcal{M}$ の点 $x$ における接ベクトルの集合を **接ベクトル空間(tangent space)** といい、 $T_x\mathcal{M}$ と書く。
+$m$ 次元多様体の点 $x$ における接ベクトルの集合は $m$ 次元ベクトル空間である。これを **接ベクトル空間(tangent vector space)** といい $T_x\mathcal{M}$ と書く。
 {{% /definition %}}
+
+ベクトル空間であるからには、基底が存在してその線形結合で任意の元を表す事ができる。
+例えば $\mathbb{R}^m$ の標準基底
+
+$$e_i=(0,\ldots,0,1,0,\ldots,0)^T$$
+
+に対応する $T_x\mathcal{M}$ の元 $\phi^{-1}(e_i)$ が基底になる。この時の成分表示は
+$\varphi(x)=(\varphi_1(x)\ \cdots\ \varphi_m(x))^T$
+と表すと
+
+$$\frac{\mathrm{d}(\varphi\circ\gamma)}{\mathrm{d}t}(0) = \left(\frac{\mathrm{d}(\varphi_1\circ\gamma)}{\mathrm{d}t}(0)\ \cdots\ \frac{\mathrm{d}(\varphi_m\circ\gamma)}{\mathrm{d}t}(0)\right)^T=\sum_{i}\frac{\mathrm{d}(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)e_i$$
+
+なので、$\phi^{-1}$ で $T_x\mathcal{M}$ に移すと
+
+$$[\gamma] = \sum_i\frac{d(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)\phi^{-1}(e_i) $$
+
+となる。
