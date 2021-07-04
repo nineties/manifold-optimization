@@ -101,10 +101,10 @@ $$
 
 $x$ で滑らかな実数値関数 $\mathcal{M}\rightarrow\mathbb{R}$ の集合を $C_x(\mathcal{M})$ とし、点 $x$ を通る曲線の同値類 $[\gamma]$ に対して、方向微分を返す関数
 
-$$ v_{[\gamma]}:C_x(\mathcal{M})\rightarrow\mathbb{R}: f \mapsto
+$$ \dot{\gamma}(0):C_x(\mathcal{M})\rightarrow\mathbb{R}: f \mapsto
 \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) $$
 
-を考える。これらの集合を $T'_x\mathcal{M}$ とおくと $T_x\mathcal{M}$ と $T'_x\mathcal{M}$ の間には全単射が存在する。対応$[\gamma]\mapsto v\_{[\gamma]}$ を考えると、これは代表元の選び方によらず単射となる。また、$v\in T'_x\mathcal{M}$ が与えられたら、 $x$ の周りのチャート $(U,\varphi)$ に対して曲線の同値類
+を考える。これらの集合を $T'_x\mathcal{M}$ とおくと $T_x\mathcal{M}$ と $T'_x\mathcal{M}$ の間には全単射が存在する。対応$[\gamma]\mapsto \dot{\gamma}(0)$ を考えると、上の命題よりこれは代表元の選び方によらずwell-definedであり単射となる。また、$v\in T'_x\mathcal{M}$ が与えられたら、 $x$ の周りのチャート $(U,\varphi)$ に対して曲線の同値類
 
 $$\phi^{-1}(v(\varphi_1),\ldots,v(\varphi_m))$$
 

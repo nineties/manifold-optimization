@@ -59,11 +59,10 @@ $$\langle u, v \rangle = \mathbf{u}^TG_x\mathbf{v} $$
 このようにリーマン計量は正定値対称行列を用いて簡単に定める事が出来るが、あくまで一つのチャートの中についてだけであって $\mathcal{M}$ 全体についての計量になっていないので注意。ここで、以下の命題が成り立つ。
 
 {{% proposition %}}
-(第二可算でハウスドルフな)多様体 $\mathcal{M}$ には少なくとも一つのリーマン計量を定める事が出来る。
+多様体 $\mathcal{M}$ には少なくとも一つのリーマン計量を定める事が出来る。
 {{% /proposition %}}
 
-第二可算性が嬉しい命題がここで登場した。
-
+第二可算性、ハウスドルフ性が嬉しい命題がここで登場した。
 
 $\mathcal{M}$ が第二可算かつハウスドルフならば **1の分割(partition of unity)** というものが存在する事が示せて、これを使って任意の多様体にリーマン計量を定める事が出来る。詳しい証明を書くのは重たい上、本筋から外れてしまうが、気持ちを説明する。
 
@@ -73,5 +72,106 @@ $$ G_x = I_m $$
 
 とすれば良い。
 
-問題はチャートとチャートが重なっている部分である。そこで、1の分割というものを利用してチャートが重なっている部分の計量をブレンドしていく。1の分割というのはこのブレンドの為の重み付けを表す関数族のこと。具体的には、各チャート $U_\alpha$ に備え付けられた滑らかな関数 $\rho_\alpha:U_\alpha\rightarrow[0,1]$ であって、 $U_\alpha$ の外では $\rho_\alpha(x)=0$ になり、各点 $x$ について $\rho_\alpha(x) > 0$ となるものは有限個しかなく、全ての点で $\sum_\alpha \rho_\alpha(x) = 1$ となるようなもの。
+問題はチャートとチャートが重なっている部分である。そこで、1の分割というものを利用してチャートが重なっている部分の計量をブレンドしていく。1の分割というのはこのブレンドの為の重み付けを表す関数族のこと。具体的には、各チャート $U_\alpha$ に備え付けられた滑らかな関数 $\rho_\alpha:U_\alpha\rightarrow[0,1]$ であって、 $U_\alpha$ の外では $\rho_\alpha(x)=0$ になり、各点 $x$ について $\rho_\alpha(x) > 0$ となるものは有限個しかなく、全ての点で $\sum_\alpha \rho_\alpha(x) = 1$ となるようなもの。これを使って各チャート毎に定められた計量 $g_{\alpha,x}$ をブレンドして
+$$ g_x=\sum_\alpha\rho_\alpha(x) g_{\alpha,x}\quad (\text{ただし $x\not\in U_\alpha$ の時は $g_{\alpha,x}=0$})$$
+とすれば $\mathcal{M}$ 全体に対するリーマン計量を作れる。
 
+{{% definition title="曲線の長さ" %}}
+$\mathcal{M}$ 上の曲線 $\gamma: [a,b]\rightarrow\mathcal{M}$ に対して
+
+$$ L(\gamma) = \int_a^b ||\dot{\gamma}(t)||\mathrm{d} t $$
+
+を曲線 $\gamma$ の **長さ(length)** という。
+{{% /definition %}}
+
+実はこれまで $\dot{\gamma}(0)$ は定義したが $\dot{\gamma}(t)$ は現れなかった。が、全く同様で写像
+
+$$\dot{\gamma}(t):C_x(\mathcal{M})\rightarrow\mathbb{R}:f\mapsto\frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(t) $$
+
+の事であって、これは接ベクトル空間 $T_{\gamma(t)}\mathcal{M}$ の元になる。
+
+{{% definition title="リーマン距離" %}}
+連結なリーマン多様体 $\mathcal{M}$ 上の点 $x,y\in\mathcal{M}$ に対して
+
+$$ d(x,y) := \inf\\{L(\gamma)\mid \text{$\gamma$は$x,y$を結ぶ曲線}\\}$$
+
+を **リーマン距離(Riemannian distance)** という。
+{{% /definition %}}
+
+2点間を結ぶ曲線で最短のものの長さを距離と呼ぶ事にしたわけだが、これは実際に距離の公理を満たす。
+
+{{% proposition %}}
+リーマン多様体はリーマン距離によって距離空間となる。すなわちリーマン距離 $d$ は距離の公理を満たす。
+
+- 非退化性: $d(x,y)=0\Leftrightarrow x=y$
+- 対称性: $d(x,y)=d(y,x)$
+- 三角不等式: $d(x,y) + d(y,z) \geq d(x,z)$
+{{% /proposition %}}
+
+これは計量空間がノルムによって距離空間となるという話とは全然異なるものなので注意。
+
+{{% definition title="勾配" %}}
+リーマン多様体 $\mathcal{M}$ 上で定義された滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の点 $x$ における
+**勾配(gradient)** $\nabla f(x)$ とは $x$ における接ベクトルであって、任意の $h\in T_x\mathcal{M}$ に対して
+
+$$ \langle \nabla f(x), h\rangle = \mathrm{D}_f(x)[h] $$
+
+となるものである。
+{{% /definition %}}
+
+$x$ の周りのチャートにおける成分表示では
+
+$$ \nabla f(x) = G_x^{-1}\frac{\partial}{\partial x}f(x)=G_x^{-1}\left(
+\frac{\partial f}{\partial x_1}(x),\ldots,
+\frac{\partial f}{\partial x_m}(x)
+\right)^T$$
+
+となる。実際に計算してみると、この座標系で $h=(h_1,\ldots,h_m)$ とおくと
+
+$$
+\langle\nabla f(x),h\rangle = h^TG_x G_x^{-1}\frac{\partial}{\partial x}f(x) 
+= h^T\frac{\partial}{\partial x}f(x)
+= \sum_i h_i\frac{\partial f}{\partial x_i}(x)
+$$
+
+よってチャートを $\varphi$、$h$ に対応する適当な曲線を $\gamma$ とすると、各成分は
+
+$$
+h_i = \frac{\mathrm{d}(\varphi_i\circ\gamma)}{\mathrm{d}t}(0),\quad
+\frac{\partial f}{\partial x_i}(x) =
+\left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x
+$$
+
+であったので
+
+$$\langle\nabla f(x),h\rangle =
+\sum_i
+ \frac{\mathrm{d}(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)
+\left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x = \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) = \mathrm{D}_f(x)[h]
+$$
+
+となる。
+
+こうして求めた勾配が、実際に $f$ の変化率を最大化する方向を向いた、ノルムが変化率のベクトルである事が示せる。ここで変化率とはノルムが1のベクトルに対する方向微分のこととする。
+
+{{% proposition %}}
+ノルムが$1$の接ベクトル $v\in T_x\mathcal{M},||v||=1$ で、方向微分 $\mathrm{D}_f(x)[v]$ が最大となるものは
+$$ v = \frac{\nabla f(x)}{||\nabla f(x)||} $$
+である。また、この時の最大値は $||\nabla f(x)||$ と一致する。 
+{{% /proposition %}}
+
+[証明]
+
+コーシー・シュワルツの不等式
+
+$$ \langle \nabla f(x), v\rangle \leq ||\nabla f(x) ||\ ||v|| $$
+
+と $||v||=1$ より
+
+$$ \mathrm{D}_f(x)[v] \leq ||\nabla f(x) || $$
+
+等号が成立するのは $\alpha\in\mathbb{R}$ が存在して $v=\alpha \nabla f(x)$ と表される場合であるから、これと $||v||=1$ より
+
+$$ v = \frac{\nabla f(x)}{||\nabla f(x)||} $$
+
+の時に $\mathrm{D}_f(x)[v]$ は最大となり、最大値は $||\nabla f(x)||$ である。 $\square$
