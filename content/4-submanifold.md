@@ -86,7 +86,7 @@ $$
 {{% /proposition %}}
 
 {{% definition title="可微分写像" %}}
-$F:\mathcal{M}\rightarrow\mathcal{N}$ が **可微分(differentiable)** であるとは、任意の点 $x\in\mathcal{M}$ について、その周りでの $F$ の座標表示
+$F:\mathcal{M}\rightarrow\mathcal{N}$ が **可微分(differentiable)** もしくは **滑らか(smooth)** であるとは、任意の点 $x\in\mathcal{M}$ について、その周りでの $F$ の座標表示
 
 $$ \hat{F}=\psi\circ F\circ\varphi^{-1}:\mathbb{R}^m\rightarrow\mathbb{R}^n $$
 
