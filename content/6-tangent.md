@@ -186,20 +186,44 @@ $$\mathrm{St}(p,n)=\\{X\in\mathbb{R}^{n\times p}\mid X^TX = I_p\\}\quad(p\leq n)
 の接ベクトル空間は
 
 $$ T_X\mathrm{St}(p,n) = \\{Z\in\mathbb{R}^{n\times p}\mid Z^TX+X^TZ=0\\} $$
+
+これは $(X\  X_\bot)$ が直交行列となるような $n\times(n-p)$ 行列 $X_\bot$ を用いて以下のようにも書ける。
+
+$$ T_X\mathrm{St}(p,n) = X\mathrm{Skew}\_p + X_\bot\mathbb{R}^{(n-p)\times p} $$
 {{% /example %}}
 
-$X(t)^TX(t)=I_p$ を $t$ で微分する事によって得られる。
+最初の表現は $X(t)^TX(t)=I_p$ を $t$ で微分する事によって得られる。
+
+ここで、 $X$ はフルランクであるから $n\times (n-p)$ 行列 $X_\bot$ で
+
+$$ X^TX_\bot=0,\quad X_\bot^TX_\bot = I_{n-p} $$
+
+となるようなもの、すなわち $X^TX=I_p$ と合わせて $(X\ X_\bot)$ が直交行列となるようなものが存在する。よって、適当な $n\times p$ 行列 $P$ が存在して
+
+$$ \dot{X} = (X\ X_\bot) P $$
+
+と表せる。ここで $P$ を $p\times p$ 行列 $\Omega$ と $(n-p)\times p$ 行列 $K$ によってブロック化する事で
+
+
+$$ \dot{X} = (X\ X_\bot) \begin{pmatrix} \Omega \\\\ K \end{pmatrix} = X\Omega + X_\bot K $$
+
+と表せる。これを $\dot{X}^TX + X^T\dot{X}=0$ に代入して
+
+$$ (X\Omega + X_\bot K)^TX + X^T(X\Omega + X_\bot K) = \Omega^T+\Omega = 0$$
+
+という条件を得る。次元について確認すると $\Omega$ は$p\times p$歪対称行列なので独立な成分の数は $p(p-1)/2$、 $K$は任意の $(n-p)\times p$ 行列なので、ベクトル空間としての次元は
+
+$$p(n-p)+p(p-1)/2 = np - p(p+1)/2$$
+
+となり、確かに $\mathrm{St}(p,n)$ の次元と一致する。
 
 {{% example title="直交群" %}}
 $$ O_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I \\\}$$
 の接ベクトル空間は
-$$ T_XO_n = \\{ X\Omega\mid \Omega^T=-\Omega \\} $$
+$$ T_XO_n = X\mathrm{Skew}_p $$
 {{% /example %}}
 
-$X\in O_n$ は正則行列だから、適当な行列 $\Omega$ が存在して
-$\dot{X} = X\Omega$ と書ける。ここで $X^TX=I$ より
-$\dot{X}^TX+X^T\dot{X}=0$ だから
-$$\Omega^TX^TX+X^TX\Omega=0 \Rightarrow \Omega^T + \Omega = 0$$
+$O_n = \mathrm{St}(n,n)$ より。
 
 ---
 
