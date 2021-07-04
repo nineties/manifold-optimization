@@ -245,6 +245,8 @@ $$ T_x\mathcal{M} = \mathcal{V}_x\oplus\mathcal{H}_x $$
 
 と分解する事が出来る($\mathcal{V}_x\cap\mathcal{H}_x=\\{0\\},\mathcal{V}_x\cup\mathcal{H}_x=T_x\mathcal{M}$)。 $\mathcal{V}_x$ を **垂直空間(vertical space)**、 $\mathcal{H}_x$ を **水平空間(horizontal space)** という。
 
+{{< figure src="../images/horizontal-space.png" >}}
+
 任意の接ベクトル $u\in T_x\mathcal{M}$ はこの分解に基づいて
 
 $$ u=u_V + u_H \quad u_V\in\mathcal{V}_x,u_H\in\mathcal{H}_x$$
