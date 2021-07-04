@@ -234,3 +234,77 @@ $$ \mathrm{D}\_F(x):T_x\mathcal{M}\rightarrow T\_{F(x)}\mathcal{N}: v\mapsto\mat
 $$ \mathrm{D}\_F(x)[v] = \lim\_{t\rightarrow 0}\frac{F(x+vt)-F(x)}{t} $$
 
 となって、普通の方向微分になる。
+
+---
+
+商多様体 $\mathcal{M}/{\sim}$ 上の接ベクトル空間について考える。多くのケースで $\mathcal{M}/{\sim}$ を直接取り扱うことは難しいので、 $\mathcal{M}$ の接ベクトルと自然な全射 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ を道具として用いて $\mathcal{M}/{\sim}$ の接ベクトルを表したい。具体的には $\pi$ は滑らかな沈め込み写像であるので、任意の接ベクトル $v\in T_{[x]}(\mathcal{M}/{\sim})$ に対して
+
+$$\mathrm{D}_{\pi}(x)[u] = v$$
+
+となるような $u$ が存在する(一意ではない)。このような $u$ を $v$ の点 $x$ での **リフト(lift)** というが、これを用いて $\mathcal{M}/{\sim}$ 上の滑らかな関数の方向微分を計算する事が出来る。すなわち、滑らかな関数 $f:\mathcal{M}/{\sim}\rightarrow\mathbb{R}$ に対して
+
+$$ \mathrm{D}\_{f\circ\pi}(x)[u]=\mathrm{D}_f(\pi(x))\left[\mathrm{D}\_\pi(x)[u]\right] = \mathrm{D}_f([x])[v]$$
+
+となる。
+
+このようなリフト $u$ は大量に存在するが、射影 $\pi$ によって消えてしまう成分とそうでない成分に分解する事が出来る。
+$\dim\mathcal{M}=m,\dim(\mathcal{M}/{\sim})=n$ とする。
+{{< ref th.submersion-theorem >}} より $\pi^{-1}([x])$ は $\mathcal{M}$ の $m-n$次元部分多様体である。よってこれの点 $x$ での接ベクトル空間
+
+$$\mathcal{V}_x = T_x(\pi^{-1}([x]))$$
+
+も $m-n$ 次元のベクトル空間。ここで $T_x\mathcal{M}$ は $m$ 次元のベクトル空間であるので $n$ 次元の $\mathcal{V}_x$ の補空間 $\mathcal{H}_x$ によって
+
+$$ T_x\mathcal{M} = \mathcal{V}_x\oplus\mathcal{H}_x $$
+
+と分解する事が出来る($\mathcal{V}_x\cap\mathcal{H}_x=\\{0\\},\mathcal{V}_x\cup\mathcal{H}_x=T_x\mathcal{M}$)。 $\mathcal{V}_x$ を **垂直空間(vertical space)**、 $\mathcal{H}_x$ を **水平空間(horizontal space)** という。
+
+任意の接ベクトル $u\in T_x\mathcal{M}$ はこの分解に基づいて
+
+$$ u=u_V + u_H \quad u_V\in\mathcal{V}_x,u_H\in\mathcal{H}_x$$
+
+と一意的に分解できるが、垂直な成分の方は
+
+$$\mathrm{D}_\pi(x)[u_V] = 0$$
+
+と $0$ につぶれてしまう。何故ならば $\pi^{-1}([x])$ の上のどのような曲線も $\mathcal{M}/{\sim}$ では一点につぶれてしまい動かない為。
+
+残った水平空間 $\mathcal{H}_x$ の方は $T\_{[x]}(\mathcal{M}/{\sim})$ と同型(どちらも $n$ 次元のベクトル空間) になり、任意の $v\in T\_{[x]}(\mathcal{M}/{\sim})$ に対して
+
+$$\mathcal{D}_{\pi}(x)[u] = v$$
+
+となる $u\in \mathcal{H}_x$ が一意に存在する。これを $v$ の $x$ での **水平リフト(horizontal lift)** という。また
+
+$$T_{[x]}(\mathcal{M}/{\sim})\simeq\mathcal{H}_x$$
+
+なのであるから、水平空間の事を接ベクトル空間だと思ってしまっても良い。
+
+{{% example title="実射影空間" %}}
+実射影空間 $\mathbb{RP}^{n-1}$ の接ベクトル空間は
+$$ T_x\mathbb{RP}^{n-1} = \\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
+{{% /example %}}
+
+実射影空間 $\mathbb{RP}^{n-1}$ は $\mathbb{R}^n_\ast$ に同値関係
+
+$$x\sim y \Leftrightarrow \exists \alpha\in\mathbb{R}_\ast,y=\alpha x$$
+を入れたものであるので、
+
+$$\pi^{-1}([x]) = \\{\alpha x\mid\alpha\in\mathbb{R}_\ast\\}=x\mathbb{R}\_\ast$$
+
+となる。よって点 $x\in \mathbb{R}^n_\ast$ での垂直空間は
+
+$$\mathcal{V}_x=\\{\alpha x\mid\alpha\in\mathbb{R}\\}=x\mathbb{R}$$
+
+であるから、水平空間として"例えば"
+
+$$\mathcal{H}_x=\\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
+
+を取ることが出来る。
+
+グラスマン多様体は実射影空間を一般化したものであったから、この接ベクトル空間も同じような形になる。
+
+{{% example title="グラスマン多様体" %}}
+グラスマン多様体 $\mathrm{Grass}(p,n)$ の接ベクトル空間は
+
+$$ T_X\mathrm{Grass}(p,n) = \\{Z\in\mathbb{R}^{n\times p}\mid X^TZ=0\\} $$
+{{% /example %}}
