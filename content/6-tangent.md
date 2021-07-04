@@ -207,7 +207,7 @@ $X(t)^TX(t)=I_p$ を $t$ で微分する事によって得られる。
 {{% example title="直交群" %}}
 $$ O_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I \\\}$$
 の接ベクトル空間は
-$$ T_xO_n = \\{ X\Omega\mid \Omega^T=-\Omega \\} $$
+$$ T_XO_n = \\{ X\Omega\mid \Omega^T=-\Omega \\} $$
 {{% /example %}}
 
 $X\in O_n$ は正則行列だから、適当な行列 $\Omega$ が存在して
