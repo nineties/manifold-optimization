@@ -32,4 +32,7 @@ $ ||x||^2 = 1 $ より $\dot{x}(t)^Tx(t) = 0$ となる事から。</p><div clas
 $$ T_XO_n = \{ X\Omega\mid \Omega^T=-\Omega \} $$</p></div><p>$X\in O_n$ は正則行列だから、適当な行列 $\Omega$ が存在して
 $\dot{X} = X\Omega$ と書ける。ここで $X^TX=I$ より
 $\dot{X}^TX+X^T\dot{X}=0$ だから
-$$\Omega^TX^TX+X^TX\Omega=0 \Rightarrow \Omega^T + \Omega = 0$$</p></article></section><footer><div><p class="f6 gray mt6 lh-copy"></p></div></footer><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script></body></html>
+$$\Omega^TX^TX+X^TX\Omega=0 \Rightarrow \Omega^T + \Omega = 0$$</p><hr><p><a href=https://nineties.github.io/manifold-optimization/4-submanifold/#def.differential>定義4.2</a>
+で定めたバナッハ空間の間の写像 $f:V\rightarrow W$ の微分 $\mathrm{D}_f(a)[-]$ を接ベクトル空間に対して一般化する。</p><div class=box><div class=title>定義6.10</div><p>多様体の間の滑らかな写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ と、接ベクトル $v\in T_x\mathcal{M}$ に対して、
+$$(\mathrm{D}_F(x)[v])(f) := v(f\circ F)$$
+と定めると $\mathrm{D}_F(x)[v]$ は $T_{F(x)}\mathcal{N}$ の接ベクトルとなる。この対応</p><p>$$ \mathrm{D}_F(x):T_x\mathcal{M}\rightarrow T_{F(x)}\mathcal{N}: v\mapsto\mathrm{D}_F(x)[v] $$</p><p>は線型写像になり、これを $F$ の $x$ における <strong>微分(differential)</strong> という。</p></div><p>もし $\mathcal{M},\mathcal{N}$ がベクトル空間の場合は同型 $T_x\mathcal{M}\simeq\mathcal{M}, T_{F(x)}\mathcal{N}\simeq\mathcal{N}$ によって $v$ は普通のベクトル $v\in\mathcal{M}$ となり、 $F$ の微分は</p><p>$$ \mathrm{D}_F(x)[v] = \lim_{t\rightarrow 0}\frac{F(x+vt)-F(x)}{t} $$</p><p>となって、普通の方向微分になる。</p></article></section><footer><div><p class="f6 gray mt6 lh-copy"></p></div></footer><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script></body></html>
