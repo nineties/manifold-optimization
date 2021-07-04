@@ -142,18 +142,6 @@ $$\left(\frac{\partial}{\partial x_i}\right)_x$$
 
 以上のように接ベクトル空間には複数の同型な定義の仕方がある。今後文脈から明らかな場合には同じ記号 $T_x\mathcal{M}$ を利用する。
 
-{{% definition title="接バンドル" %}}
-接空間の全ての点での直和
-$$ T\mathcal{M} = \bigsqcup\_{x\in\mathcal{M}} T_x\mathcal{M} $$
-を $\mathcal{M}$ の **接バンドル(tangent bundle)** という。
-{{% /definition %}}
-
-$\dim\mathcal{M}=n$の時、接バンドル $T\mathcal{M}$ は $2n$ 次元多様体見なすことが出来る。というのは $\mathcal{M}$ の$x$の周りのチャート $(U,\varphi)$ に対して
-
-$$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2m}: v\mapsto (\varphi_1(x),\ldots,\varphi_m(x),v(\varphi_1(x)),\ldots,v(\varphi_m(x)))^T$$
-
-が $T\mathcal{M}$ のチャートとなり、これらを全て集めて $T\mathcal{M}$ のアトラスを構成する事が出来るから。
-
 ---
 
 以上で定義された接ベクトル空間と、馴染みのある接線や接平面といったものがどのように関係するかを調べる。もちろん、後者は曲線の同値類や微分作用素ではないので、接ベクトル空間そのものではないが、ベクトル空間として同型である事を示す事が出来る。
@@ -308,3 +296,28 @@ $$\mathcal{H}_x=\\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
 
 $$ T_X\mathrm{Grass}(p,n) = \\{Z\in\mathbb{R}^{n\times p}\mid X^TZ=0\\} $$
 {{% /example %}}
+
+接ベクトル空間を集めた集合は、それ自体も多様体と見なすことが出来る。
+
+
+{{% definition title="接バンドル" %}}
+接空間の全ての点での直和
+$$ T\mathcal{M} = \bigsqcup\_{x\in\mathcal{M}} T_x\mathcal{M} $$
+を $\mathcal{M}$ の **接バンドル(tangent bundle)** という。
+{{% /definition %}}
+
+$\dim\mathcal{M}=n$の時、接バンドル $T\mathcal{M}$ は $2n$ 次元多様体見なすことが出来る。というのは $\mathcal{M}$ の$x$の周りのチャート $(U,\varphi)$ に対して
+
+$$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2m}: v\mapsto (\varphi_1(x),\ldots,\varphi_m(x),v(\varphi_1(x)),\ldots,v(\varphi_m(x)))^T$$
+
+が $T\mathcal{M}$ のチャートとなり、これらを全て集めて $T\mathcal{M}$ のアトラスを構成する事が出来る。
+
+{{% definition title="ベクトル場" %}}
+$\mathcal{M}$ の各点 $x$ に接ベクトル場 $T_x\mathcal{M}$ のベクトルを対応づける滑らかな写像
+
+$$ V:\mathcal{M}\rightarrow T\mathcal{M}: x\rightarrow v\in T_x\mathcal{M} $$
+
+を **ベクトル場(vector field)** という。
+{{% /definition %}}
+
+多様体の各点に接ベクトルが1つずつ定められていて、それらが点の移動に関して滑らかに変化していくようなものを表している。
