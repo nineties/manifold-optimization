@@ -132,13 +132,11 @@ $$[\gamma] = \sum_i\frac{d(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)\phi^{-1}(e_i) 
 
 $$ f \longmapsto \left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x $$
 
-になって、 $x_i$ 軸方向の偏微分操作を表しているという事が分かる。そして、同じチャートを利用したときにベクトルの成分が2つの定義で全く同じになるということも分かる。
-
-$f$ が最初から $\mathbb{R}^m$ 上の関数であるならば、接ベクトル空間の基底は
+になって、 $x_i$ 軸方向の偏微分操作を表しているという事が分かる。文脈から $\varphi$ が明らかな時はこれを省略して、この作用素を
 
 $$\left(\frac{\partial}{\partial x_i}\right)_x$$
 
-とシンプルに表される。
+とシンプルに表す事がある。
 
 以上のように接ベクトル空間には複数の同型な定義の仕方がある。今後文脈から明らかな場合には同じ記号 $T_x\mathcal{M}$ を利用する。
 
@@ -321,3 +319,45 @@ $$ V:\mathcal{M}\rightarrow T\mathcal{M}: x\rightarrow v\in T_x\mathcal{M} $$
 {{% /definition %}}
 
 多様体の各点に接ベクトルが1つずつ定められていて、それらが点の移動に関して滑らかに変化していくようなものを表している。
+
+$V(x)$ の事を $V_x$ と書く事にする。そして ベクトル場 $V$, $f\in C(\mathcal{M})$ に対して
+
+$$ Vf(x) := V_x(f) $$
+
+と定める。これは $f$ の点 $x$ における接ベクトル $V_x$ に沿った方向微分。
+
+ベクトル場 $V,V'$ に対して、その加法や $f\in C(\mathcal{M})$ 倍を各点で自然に定める事が出来る。
+これらの演算でベクトル場の滑らかさは損なわれない。
+$$
+\begin{aligned}
+(V+V')_x &:= V_x + V'_x \\\\
+(fV)_x &:= f(x)V_x
+\end{aligned}
+$$
+
+あるチャート $(U,\varphi)$ の中では各点 $x$ に接ベクトル空間の$i$番目の標準基底を対応させるベクトル場
+
+$$x\mapsto \left(\frac{\partial}{\partial x_i}\right)_x$$
+
+を考える事が出来る。これを $i$-th coordinate vector field(日本語では？) と呼び $E_i$ と書く。つまり
+
+$$ (E_if)(x) = \left(\frac{\partial f}{\partial x_i}\right)_x = \left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x$$
+
+のこと。すると、任意のベクトル場は $U$ の中では以下のように分解することが出来る
+
+$$ V = \sum_{i}(V\varphi_i)E_i$$
+
+実際に点 $x$ での $f$ の方向微分を計算してみると $\gamma$ を接ベクトル $V_x$ に対応する適当な曲線として
+
+$$
+\begin{aligned}
+Vf(x) &= \sum_i((V\varphi_i)E_i)f(x) \\\\
+&= \sum_i ((V\varphi_i)E_i)_x(f) \\\\
+&= \sum_i (V\varphi_i(x))\ (E_i)_x(f) \\\\
+&= \sum_i V_x(\varphi_i)\ (E_if)(x) \\\\
+&= \sum_i \frac{\mathrm{d}(\varphi_i\circ\gamma)}{\mathrm{d} t}(0)\left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x \\\\
+&= \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) \\\\
+&= V_x(f)
+\end{aligned}$$
+
+となる。
