@@ -293,7 +293,10 @@ $$T_{[x]}(\mathcal{M}/{\sim})\simeq\mathcal{H}_x$$
 
 {{% example title="実射影空間" %}}
 実射影空間 $\mathbb{RP}^{n-1}$ の接ベクトル空間は
-$$ T_x\mathbb{RP}^{n-1} = \\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
+$$ T_{[x]}\mathbb{RP}^{n-1} = \\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
+任意の $\alpha\in\mathbb{R}_\ast$ と点 $x$ でのリフト $u_x$ に対して
+$$ u_{\alpha x}=\alpha u_x $$
+が成立する。
 {{% /example %}}
 
 実射影空間 $\mathbb{RP}^{n-1}$ は $\mathbb{R}^n_\ast$ に同値関係
@@ -311,14 +314,33 @@ $$\mathcal{V}_x=\\{\alpha x\mid\alpha\in\mathbb{R}\\}=x\mathbb{R}$$
 
 $$\mathcal{H}_x=\\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
 
-を取ることが出来る。
+を取ることが出来る。ここで $v\in T_{[x]}\mathbb{RP}^{n-1}$ の点 $x$ でのリフトを $u_x$ とすると、任意の $\alpha\in\mathbb{R}$ に対して $x\sim\alpha x$ であるので
+
+$$\mathrm{D}\_{\pi}(x)[u_x] = v$$
+
+ここで $\alpha(x) = \alpha x$ とおくと、合成微分則より
+$$
+\mathrm{D}\_{\pi}(\alpha(x))[\mathrm{D}\_{\alpha}(x)[u_x]] = \mathrm{D}\_{\pi}(x)[u_x]
+$$
+であり $D_\alpha(x)[u_x] = \alpha u_x$ であるから
+$$\mathrm{D}\_{\pi}(\alpha x)[\alpha u_x] = v$$
+
+これは $v$ の点 $\alpha x$ でのリフト $u_{\alpha x}$ であるので
+$$ u_{\alpha x} = \alpha u_x $$
+が成り立つ。
 
 グラスマン多様体は実射影空間を一般化したものであったから、この接ベクトル空間も同じような形になる。
 
 {{% example title="グラスマン多様体" %}}
 グラスマン多様体 $\mathrm{Grass}(p,n)$ の接ベクトル空間は
 
-$$ T_X\mathrm{Grass}(p,n) = \\{Z\in\mathbb{R}^{n\times p}\mid X^TZ=0\\} $$
+$$ T_{[X]}\mathrm{Grass}(p,n) = \\{Z\in\mathbb{R}^{n\times p}\mid X^TZ=0\\} $$
+
+任意の $A\in GL_p$ と点 $X$ でのリフト $U_x$ に対して
+
+$$ U_{XA}=U_XA$$
+
+である。
 {{% /example %}}
 
 接ベクトル空間を集めた集合は、それ自体も多様体と見なすことが出来る。

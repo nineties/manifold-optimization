@@ -310,3 +310,51 @@ P^\bot_X(V) = X\mathrm{sym}(X^TV)
 $$
 
 となる。
+
+---
+
+リーマン多様体$(\mathcal{M},g)$ の商多様体 $\mathcal{M}/{\sim}$ のリーマン計量を $g$ から導出する事を考える。
+
+自然な全射 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ による同値類 $[x]\in\mathcal{M}/{\sim}$ の逆像 $\pi^{-1}([x])$ の点 $x$ での接ベクトル空間
+
+$$ \mathcal{V}_x = T_x\pi^{-1}([x]) $$
+
+を点 $x$ の垂直空間というのだった。前節ではこれの補空間として水平空間を定義したが、今回は $\mathcal{M}$ に内積が定められている為、直交する補空間を取ることが出来る。
+
+$$ \mathcal{H}_x = \mathcal{V}_x^\bot = \\{u\in T_x\mathcal{M}\mid \langle u,v \rangle = 0, \forall v \in\mathcal{V}_x\\}$$
+
+そこで $u,v\in T_{[x]}(\mathcal{M}/{\sim})$ の $\mathcal{H}_x$ への水平リフトを $\bar{u},\bar{v}$ とした時、 $u,v$ の内積を $T_x\mathcal{M}$ における $\bar{u},\bar{v}$ の内積によって定めたい。
+
+$$ g_{[x]}(u,v) = g_x(\bar{u},\bar{v}) $$
+
+これは一般にはリーマン計量には **ならない**。というのは右辺が $x$ に依存する為 well-defined ではないから。右辺が代表元 $x$ の選び方に寄らないときは、これがリーマン計量を定め $\mathcal{M}/{\sim}$ はリーマン多様体となる。このような条件を満たす $\pi$ を **リーマン沈め込み (Riemannian submersion)** という。
+
+$\pi$ がリーマン沈め込みであるならば、滑らかな関数 $f:\mathcal{M}/{\sim}\rightarrow\mathbb{R}$ に対して$\nabla (f\circ\pi)(x)$ が $\nabla f([x])$ の水平リフトとなる。つまり
+
+$$\nabla f([x]) = \mathrm{D}_{\pi}(x)[\nabla (f\circ\pi)(x)]$$
+
+となる。
+
+
+{{% example title="実射影空間" %}}
+$\mathbb{RP}^{n-1}$ の各点 $[x]$ での接ベクトル $u,v$ の内積を、それらの点 $x$ での $\mathbb{R}^n_\ast$ へのリフト $u_x,v_x$ を用いて
+
+$$ \langle u, v \rangle_{[x]} = \frac{u_x^Tv_x}{||x||^2} $$
+
+と定めると、自然な全射 $\pi:\mathbb{R}^n_\ast\rightarrow\mathbb{RP}^{n-1}$ はリーマン沈め込みとなる。
+{{% /example %}}
+
+$x\sim y$ ならばある $\alpha\in\mathbb{R}$ が存在して $y=\alpha x$ と書ける。この時 $$ u_{\alpha x}=\alpha u_x, v_{\alpha x}=\alpha v_x$$ であったから
+
+$$\frac{u_y^Tv_u}{||y||^2} = \frac{u\_{\alpha x}^Tv\_{\alpha x}}{||\alpha x||^2} = \frac{\alpha^2 u_x^Tv_x}{||\alpha x||^2}=\frac{u_x^Tv_x}{||x||^2}$$
+
+よって $\langle u, v \rangle_{[x]}$ は代表元の選び方によらず定まり、 $\pi$ はリーマン沈め込みとなる。
+
+これをグラスマン多様体に一般化すると以下のようになる。
+
+{{% example title="グラスマン多様体" %}}
+$\mathrm{Grass}(p,n)$ の各点 $[X]$ での接ベクトル $U,V$ の内積を、それらの点 $X$ での $\mathbb{R}^{n\times p}\_\ast$ へのリフト $U_X,V_X$ を用いて
+
+$$ \langle U,V \rangle_{[X]} = \mathrm{tr}((X^TX)^{-1}U^TV) $$
+と定めると、自然な全射 $\pi:\mathbb{R}^{n\times p}_\ast\rightarrow\mathrm{Grass}(p,n)$ はリーマン沈め込みとなる。
+{{% /example %}}
