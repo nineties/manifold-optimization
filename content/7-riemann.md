@@ -124,16 +124,16 @@ $$ d(x,y) := \inf\\{L(\gamma)\mid \text{$\gamma$は$x,y$を結ぶ曲線}\\}$$
 
 {{% definition title="勾配" %}}
 リーマン多様体 $\mathcal{M}$ 上で定義された滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の点 $x$ における
-**勾配(gradient)** $\nabla f(x)$ とは $x$ における接ベクトルであって、任意の $h\in T_x\mathcal{M}$ に対して
+**勾配(gradient)** $\mathrm{grad} f(x)$ とは $x$ における接ベクトルであって、任意の $h\in T_x\mathcal{M}$ に対して
 
-$$ \langle \nabla f(x), h\rangle = \mathrm{D}_f(x)[h] $$
+$$ \langle \mathrm{grad} f(x), h\rangle = \mathrm{D}_f(x)[h] $$
 
 となるものである。
 {{% /definition %}}
 
 $x$ の周りのチャートにおける成分表示では
 
-$$ \nabla f(x) = G_x^{-1}\frac{\partial}{\partial x}f(x)=G_x^{-1}\left(
+$$ \mathrm{grad} f(x) = G_x^{-1}\frac{\partial}{\partial x}f(x)=G_x^{-1}\left(
 \frac{\partial f}{\partial x_1}(x),\ldots,
 \frac{\partial f}{\partial x_m}(x)
 \right)^T$$
@@ -141,7 +141,7 @@ $$ \nabla f(x) = G_x^{-1}\frac{\partial}{\partial x}f(x)=G_x^{-1}\left(
 となる。実際に計算してみると、この座標系で $h=(h_1,\ldots,h_m)$ とおくと
 
 $$
-\langle\nabla f(x),h\rangle = h^TG_x G_x^{-1}\frac{\partial}{\partial x}f(x) 
+\langle\mathrm{grad} f(x),h\rangle = h^TG_x G_x^{-1}\frac{\partial}{\partial x}f(x) 
 = h^T\frac{\partial}{\partial x}f(x)
 = \sum_i h_i\frac{\partial f}{\partial x_i}(x)
 $$
@@ -156,7 +156,7 @@ $$
 
 であったので
 
-$$\langle\nabla f(x),h\rangle =
+$$\langle\mathrm{grad} f(x),h\rangle =
 \sum_i
  \frac{\mathrm{d}(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)
 \left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x = \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) = \mathrm{D}_f(x)[h]
@@ -166,13 +166,13 @@ $$
 
 {{% example title="ユークリッド空間における勾配" %}}
 ユークリッド空間 $\mathbb{R}^m$ 上の滑らかな関数 $f:\mathbb{R}^m\rightarrow\mathbb{R}$の勾配は
-$$\nabla f(x) = (f_{x_1}(x),\ldots,f_{x_m}(x))^T $$
+$$\mathrm{grad} f(x) = (f_{x_1}(x),\ldots,f_{x_m}(x))^T $$
 {{% /example %}}
 
 {{% example title="$\mathbb{R}^{n\times p}$ における勾配" %}}
 ベクトル空間 $\mathbb{R}^{n\times p}$ 上の滑らかな関数 $f:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}$の勾配は変数を $x_{ij}=X_{ij}$ とおいた時
 
-$$ \nabla f(X) = \begin{pmatrix}
+$$ \mathrm{grad} f(X) = \begin{pmatrix}
 f_{x_{11}}(X) & \cdots & f_{x_{1p}}(X) \\\\
 \vdots & \ddots & \vdots \\\\
 f_{x_{n1}}(X) & \cdots & f_{x_{np}}(X) \\\\
@@ -183,25 +183,25 @@ f_{x_{n1}}(X) & \cdots & f_{x_{np}}(X) \\\\
 
 {{% proposition %}}
 ノルムが$1$の接ベクトル $v\in T_x\mathcal{M},||v||=1$ で、方向微分 $\mathrm{D}_f(x)[v]$ が最大となるものは
-$$ v = \frac{\nabla f(x)}{||\nabla f(x)||} $$
-である。また、この時の最大値は $||\nabla f(x)||$ と一致する。 
+$$ v = \frac{\mathrm{grad} f(x)}{||\mathrm{grad} f(x)||} $$
+である。また、この時の最大値は $||\mathrm{grad} f(x)||$ と一致する。 
 {{% /proposition %}}
 
 [証明]
 
 コーシー・シュワルツの不等式
 
-$$ \langle \nabla f(x), v\rangle \leq ||\nabla f(x) ||\ ||v|| $$
+$$ \langle \mathrm{grad} f(x), v\rangle \leq ||\mathrm{grad} f(x) ||\ ||v|| $$
 
 と $||v||=1$ より
 
-$$ \mathrm{D}_f(x)[v] \leq ||\nabla f(x) || $$
+$$ \mathrm{D}_f(x)[v] \leq ||\mathrm{grad} f(x) || $$
 
-等号が成立するのは $\alpha\in\mathbb{R}$ が存在して $v=\alpha \nabla f(x)$ と表される場合であるから、これと $||v||=1$ より
+等号が成立するのは $\alpha\in\mathbb{R}$ が存在して $v=\alpha \mathrm{grad} f(x)$ と表される場合であるから、これと $||v||=1$ より
 
-$$ v = \frac{\nabla f(x)}{||\nabla f(x)||} $$
+$$ v = \frac{\mathrm{grad} f(x)}{||\mathrm{grad} f(x)||} $$
 
-の時に $\mathrm{D}_f(x)[v]$ は最大となり、最大値は $||\nabla f(x)||$ である。 $\square$
+の時に $\mathrm{D}_f(x)[v]$ は最大となり、最大値は $||\mathrm{grad} f(x)||$ である。 $\square$
 
 ---
 
@@ -225,9 +225,9 @@ $$ u=u_V + u_H,\quad u_V\in T_x\mathcal{N},u_H\in (T_x\mathcal{N})^\bot$$
 
 $$P_x:T_x\mathcal{M}\rightarrow T_x\mathcal{N}: u\mapsto u_V$$
 $$P^\bot_x:T_x\mathcal{M}\rightarrow (T_x\mathcal{N})^\bot: u\mapsto u_H$$
-をそれぞれの空間への **直交射影(orthogonal projection)** という。 そして、部分空間 $\mathcal{N}$ の点 $x$ における勾配($\nabla_\mathcal{N}f(x)$)は $\mathcal{M}$ における勾配($\nabla_\mathcal{M}f(x)$)の $T_x\mathcal{N}$ への直交射影を取れば得られる。すなわち
+をそれぞれの空間への **直交射影(orthogonal projection)** という。 そして、部分空間 $\mathcal{N}$ の点 $x$ における勾配($\mathrm{grad}_\mathcal{N}f(x)$)は $\mathcal{M}$ における勾配($\mathrm{grad}_\mathcal{M}f(x)$)の $T_x\mathcal{N}$ への直交射影を取れば得られる。すなわち
 
-$$\nabla_\mathcal{N}f(x) = P_x(\nabla_\mathcal{M}f(x)) $$
+$$\mathrm{grad}_\mathcal{N}f(x) = P_x(\mathrm{grad}_\mathcal{M}f(x)) $$
 
 {{% example title="$n$次元球面" %}}
 $n$次元球面 $S^n = \\{x\in\mathbb{R}^{n+1}\mid ||x||=1\\}$ にユークリッド空間 $\mathbb{R}^{n+1}$ の標準内積によってリーマン計量
@@ -248,7 +248,7 @@ $$ (T_x S^n)^\bot = \\{ \alpha x \mid \alpha\in\mathbb{R}\\} = x\mathbb{R}$$
 $$P_x = I-xx^T,\quad P^\bot_x = xx^T$$
 
 によって表され、勾配は
-$$\nabla f(x) = (I-xx^T)\left(f_{x_1}(x),\ldots,f_{x_{n+1}}(x)\right)^T $$
+$$\mathrm{grad} f(x) = (I-xx^T)\left(f_{x_1}(x),\ldots,f_{x_{n+1}}(x)\right)^T $$
 となる。
 
 {{% example title="コンパクトシュティーフェル多様体" %}}
@@ -329,9 +329,9 @@ $$ g_{[x]}(u,v) = g_x(\bar{u},\bar{v}) $$
 
 これは一般にはリーマン計量には **ならない**。というのは右辺が $x$ に依存する為 well-defined ではないから。右辺が代表元 $x$ の選び方に寄らないときは、これがリーマン計量を定め $\mathcal{M}/{\sim}$ はリーマン多様体となる。このような条件を満たす $\pi$ を **リーマン沈め込み (Riemannian submersion)** という。
 
-$\pi$ がリーマン沈め込みであるならば、滑らかな関数 $f:\mathcal{M}/{\sim}\rightarrow\mathbb{R}$ に対して$\nabla (f\circ\pi)(x)$ が $\nabla f([x])$ の水平リフトとなる。つまり
+$\pi$ がリーマン沈め込みであるならば、滑らかな関数 $f:\mathcal{M}/{\sim}\rightarrow\mathbb{R}$ に対して$\mathrm{grad} (f\circ\pi)(x)$ が $\mathrm{grad} f([x])$ の水平リフトとなる。つまり
 
-$$\nabla f([x]) = \mathrm{D}_{\pi}(x)[\nabla (f\circ\pi)(x)]$$
+$$\mathrm{grad} f([x]) = \mathrm{D}_{\pi}(x)[\mathrm{grad} (f\circ\pi)(x)]$$
 
 となる。
 
