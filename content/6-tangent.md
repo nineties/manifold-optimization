@@ -348,7 +348,7 @@ $$ U_{XA}=U_XA$$
 
 {{% definition title="接バンドル" %}}
 接空間の全ての点での直和
-$$ T\mathcal{M} = \bigsqcup\_{x\in\mathcal{M}} T_x\mathcal{M} $$
+$$ T\mathcal{M} = \bigsqcup\_{x\in\mathcal{M}} T_x\mathcal{M} = \\{(x,v)\mid x\in\mathcal{M},v\in T_x\mathcal{M}\\}$$
 を $\mathcal{M}$ の **接バンドル(tangent bundle)** という。
 {{% /definition %}}
 

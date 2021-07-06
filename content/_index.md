@@ -19,7 +19,8 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 4. [可微分写像、部分多様体](4-submanifold)
 5. [多様体の構成方法](5-construction)
 6. [接ベクトル空間](6-tangent)
-6. [リーマン多様体](7-riemann)
+7. [リーマン多様体](7-riemann)
+8. [直線探索法](8-linesearch)
 
 
 参考にした文献
