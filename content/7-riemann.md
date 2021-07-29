@@ -251,7 +251,7 @@ $$P_x = I-xx^T,\quad P^\bot_x = xx^T$$
 $$\mathrm{grad} f(x) = (I-xx^T)\left(f_{x_1}(x),\ldots,f_{x_{n+1}}(x)\right)^T $$
 となる。
 
-{{% example title="コンパクトシュティーフェル多様体" %}}
+{{% example title="シュティーフェル多様体" %}}
 
 $$\mathrm{St}(p,n)=\\{X\in\mathbb{R}^{n\times p}\mid X^TX = I_p\\}\quad(p\leq n)$$
 

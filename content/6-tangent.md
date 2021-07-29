@@ -181,7 +181,7 @@ $$T_xS^n=\\{z\in\mathbb{R}^{n+1}\mid x^Tz=0\\}$$
 任意の $S^n$ 上の曲線 $t\mapsto x(t)$ について
 $ ||x||^2 = 1 $ より $\dot{x}(t)^Tx(t) = 0$ となる事から。
 
-{{% example title="コンパクトシュティーフェル多様体" %}}
+{{% example title="シュティーフェル多様体" %}}
 $$\mathrm{St}(p,n)=\\{X\in\mathbb{R}^{n\times p}\mid X^TX = I_p\\}\quad(p\leq n)$$
 の接ベクトル空間は
 
@@ -220,7 +220,7 @@ $$p(n-p)+p(p-1)/2 = np - p(p+1)/2$$
 {{% example title="直交群" %}}
 $$ O_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I \\\}$$
 の接ベクトル空間は
-$$ T_XO_n = X\mathrm{Skew}_p $$
+$$ T_XO_n = X\mathrm{Skew}_n $$
 {{% /example %}}
 
 $O_n = \mathrm{St}(n,n)$ より。

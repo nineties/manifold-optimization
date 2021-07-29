@@ -125,7 +125,7 @@ $$\mathbb{RP}^{n-1}\simeq\mathbb{R}^n\_\ast/{\sim}$$
 
 {{% example title="グラスマン多様体" label="ex.grassmann-manifold" %}}
 
-ノンコンパクトシュティーフェル多様体 $\mathbb{R}^{n\times p}\_\ast$ 上の同値関係を
+ノンシュティーフェル多様体 $\mathbb{R}^{n\times p}\_\ast$ 上の同値関係を
 $$X\sim Y\Leftrightarrow \mathrm{span}(X)=\mathrm{span}(Y)$$
 とすると
 $$\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/{\sim}$$
