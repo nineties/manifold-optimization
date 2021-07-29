@@ -15,7 +15,7 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
 定義2.2: チャートの両立 2つの $d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description></item><item><title>3. 多様体の位相構造</title><link>https://nineties.github.io/manifold-optimization/3-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/3-topology/</guid><description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法と構造について見ていく。
-多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
+多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 定義2.9 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
 定義3.1: 開集合 多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
@@ -49,4 +49,10 @@ $$ \mathrm{D}_{f}(x)[\eta] = \lim_{t\rightarrow 0}\frac{f(x+t\eta)-f(x)}{t} $$
 そもそも勾配とはなんであるかというと、ベクトル解析における概念では $f$ の変化率が最大となる方向を向いていて、ノルムがその変化率であるようなベクトル指すのだった。多様体の上での勾配はこれを一般化した概念としたいが、接ベクトル $v\in T_x\mathcal{M}$ の 長さ が与えられていないので、変化率が最大つまり 同じ距離だけ進んだ時 に $f$ が最も大きく変化する方向を定める事ができない。リーマン計量を入れれば、ベクトルの長さなどの幾何学的性質を多様体の上で定義する事が可能になる為、勾配も定義する事が可能になる。
 定義7.1: 内積 実ベクトル空間 $V$ に対して定められた写像 $\langle\cdot ,\cdot\rangle:V\times V\rightarrow\mathbb{R}$ が以下の性質を満たすとき、これを 内積(inner product) という。
 任意の $u,v,w\in V,a\in\mathbb{R}$ に対して
-対称性: $\langle u,v\rangle = \langle v,u\rangle$ 第一引数についての線型性: $\langle au+v, w\rangle =a\langle u, w\rangle +\langle v, w\rangle$ 正定値性: $u\neq 0\Rightarrow \langle u, u\rangle &amp;gt; 0$ 第二引数についての線型性は対称性と第一引数についての線型性より導かれる。 $\langle 0, 0\rangle =\langle 0+0, 0\rangle =\langle 0, 0\rangle + \langle 0, 0\rangle $ より $\langle 0, 0\rangle =0$ なので $\langle u, u\rangle \geq 0$ である事と、非退化性 $\langle u, u\rangle =0\Rightarrow u=0$ も得られる。</description></item></channel></rss>
+対称性: $\langle u,v\rangle = \langle v,u\rangle$ 第一引数についての線型性: $\langle au+v, w\rangle =a\langle u, w\rangle +\langle v, w\rangle$ 正定値性: $u\neq 0\Rightarrow \langle u, u\rangle &amp;gt; 0$ 第二引数についての線型性は対称性と第一引数についての線型性より導かれる。 $\langle 0, 0\rangle =\langle 0+0, 0\rangle =\langle 0, 0\rangle + \langle 0, 0\rangle $ より $\langle 0, 0\rangle =0$ なので $\langle u, u\rangle \geq 0$ である事と、非退化性 $\langle u, u\rangle =0\Rightarrow u=0$ も得られる。</description></item><item><title>8. 直線探索法</title><link>https://nineties.github.io/manifold-optimization/8-linesearch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/8-linesearch/</guid><description>ユークリッド空間 $\mathbb{R}^n$ の関数 $f:\mathbb{R}^n\rightarrow\mathbb{R}$ に対する 直線探索法(line-search method) とは点 $x_0\in\mathbb{R}^n$ から出発して、更新式
+$$ x_{k+1}=x_k + t_kv_k $$
+を反復し $f$ の極小値を求める方法。ここで $v_k$ は 探索方向(search direction) と呼ばれるベクトル、 $t_k$ は ステップサイズ(step size) と呼ばれるスカラーであって、これらをどのように求めるかによって様々な最適化アルゴリズムが存在する。
+これを多様体 $\mathcal{M}$ 上で行うためには、$v_k$ を点 $x_k$ での接ベクトル $T_{x_k}\mathcal{M}$ とし、 $\gamma$ を $\dot{\gamma}(0)=v_k$ となるような曲線とし、 $\gamma$ に沿って探索を行えば良い。
+ユークリッド空間での直線探索法と異なり、曲線 $\gamma$ の選び方という自由度が増えている。$\gamma$ を構成する方法は無数にあるが、レトラクションという写像を用いるのが一般的である。
+定義8.1: レトラクション 接バンドル $T\mathcal{M}$ から $\mathcal{M}$ への滑らかな写像 $R:T\mathcal{M}\rightarrow\mathcal{M}$ で以下の条件を満たすものを レトラクション(retraction) という。 $R$ の $T_x\mathcal{M}$ への制限を $R_x:T_x\mathcal{M}\rightarrow\mathcal{M}$ と書く。
+$R_x(0) = x$ 局所剛性(local rigidity) : $\mathrm{D}_{R_x}(0)=\mathrm{id}_{T_x\mathcal{M}}$ $\mathrm{D}_{R_x}(0)$ は $T_x\mathcal{M}$の接ベクトル空間 $T_0T_x\mathcal{M}$ から $T_x\mathcal{M}$ への写像 $$ \mathrm{D}_{R_x}(0): T_0T_x\mathcal{M}\rightarrow T_x\mathcal{M} $$ であるが、$T_x\mathcal{M}$ はベクトル空間だから $T_0T_x\mathcal{M}\simeq T_x\mathcal{M}$ であるので $$ \mathrm{D}_{R_x}(0): T_x\mathcal{M}\rightarrow T_x\mathcal{M} $$ として上の定義では扱っている。</description></item></channel></rss>
