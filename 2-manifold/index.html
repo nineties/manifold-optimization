@@ -66,16 +66,16 @@ $$
 より2点が同じチャートに含まれる場合には成立するので、2点が $(1,0,\ldots)$ と $(-1,0,\ldots)$ である場合のみ考えれば良い。</p><p>$V_+$ を $U_+$ の $x_0>0$ の部分、 $V_-$ を $U_-$ の $x_0&lt;0$ の部分とすれば</p><p>$$\varphi_+(V_+)=\varphi_-(V_-)=\{\mathbf{x}\in\mathbb{R}^n\mid||\mathbf{x}||>1\}$$</p><p>となって、これらは $\mathbb{R}^n$ の開集合($\because$ 閉球体の補集合)だから、$\varphi_\pm$ のこれらへの制限は $S^n$ のチャートになる。
 そして $V_+\cap V_-=\emptyset$ だから、これらは $(\pm 1,0,\ldots)$ を分離する。以上より $(S^n,\mathcal{A}^+)$ はハウスドルフ性を満たす。</p><p>よって $(S^n,\mathcal{A}^+)$ は $n$ 次元多様体である。$\square$</p><div class=box><div class=title>例2.12: ベクトル空間</div><p>$V$ が $n$次元ベクトル空間であるならば、任意の基底 $e_1,\ldots,e_n$ 上での成分表示</p><p>$$ \varphi:V\rightarrow\mathbb{R}^n:x\mapsto(x_1,\ldots,x_n) $$</p><p>がこれ1つでアトラスとなり 、 $V$ は $n$ 次元多様体となる。</p></div><div class=box><div class=title>例2.13: 行列の集合</div><p>$n\times p$ 実行列の集合 $\mathbb{R}^{n\times p}$ は
 $$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(X)$$
-(ただし $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル)</p><p>とすると $\varphi$ 1つでアトラスとなり $\mathbb{R}^{n\times p}$ は $np$次元多様体となる。</p></div><div class=box><div class=title>例2.14: 一般線型群</div><p>$n$次実正則行列の集合 $$GL_n=\{X\in\mathbb{R}^{n\times n}|\det X\neq 0\} $$
+(ただし $\mathrm{vec}(X)$ は $X$ の各列を縦に繋げたベクトル)</p><p>とすると $\varphi$ 1つでアトラスとなり $\mathbb{R}^{n\times p}$ は $np$次元多様体となる。</p></div><div class=box><div class=title>例2.14: 一般線型群</div><p>$n$次実正則行列の集合 $$\mathrm{GL}_n=\{X\in\mathbb{R}^{n\times n}|\det X\neq 0\} $$
 は行列の積によって群となる。これを <strong>一般線型群(general linear group)</strong> という。</p><p>写像
-$$\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
-を考えると $\mathcal{A}=\{(GL_n,\varphi)\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。</p></div><p>まず $\varphi(GL_n)$ が開集合である事を示す。補集合を考えると、
+$$\varphi:\mathrm{GL}_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
+を考えると $\mathcal{A}=\{(\mathrm{GL}_n,\varphi)\}$ がアトラスとなり、 $(\mathrm{GL}_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。</p></div><p>まず $\varphi(\mathrm{GL}_n)$ が開集合である事を示す。補集合を考えると、
 $$
 \begin{aligned}
-\mathbf{x}\in\mathbb{R}^{n^2}\setminus\varphi(GL_n)&\Leftrightarrow\det\circ\mathrm{vec}^{-1}(\mathbf{x})=0 \\<br>&\Leftrightarrow\mathbf{x}\in(\det\circ\mathrm{vec}^{-1})^{-1}(\{0\})
-\end{aligned}$$</p><p>ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\{0\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(GL_n)$ も閉集合。よって $GL_n$ は開集合。</p><p>また $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も
+\mathbf{x}\in\mathbb{R}^{n^2}\setminus\varphi(\mathrm{GL}_n)&\Leftrightarrow\det\circ\mathrm{vec}^{-1}(\mathbf{x})=0 \\<br>&\Leftrightarrow\mathbf{x}\in(\det\circ\mathrm{vec}^{-1})^{-1}(\{0\})
+\end{aligned}$$</p><p>ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\{0\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(\mathrm{GL}_n)$ も閉集合。よって $\mathrm{GL}_n$ は開集合。</p><p>また $\mathrm{vec}$ は全単射だから $(\mathrm{GL}_n,\varphi)$ はチャートである。$\mathrm{GL}_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も
 <a href=https://nineties.github.io/manifold-optimization/2-manifold/#lem.hausdorff>補題2.10</a>
-より明らか。</p><hr><p>$GL_n$ のような群構造を持つ多様体を <strong>リー群(Lie group)</strong> という。</p><p>同じようにして特殊線型群 $SL_n=\{X\in\mathbb{R}^{n\times n}|\det X=1\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。</p><div class=box><div class=title>例2.15: ノンコンパクトシュティーフェル多様体</div><p>$\mathbb{R}^{n\times p}_\ast, (p\leq n)$ を各列が一次独立な行列の集合(フルランクの行列の集合)とする。これは
+より明らか。</p><hr><p>$\mathrm{GL}_n$ のような群構造を持つ多様体を <strong>リー群(Lie group)</strong> という。</p><p>同じようにして特殊線型群 $SL_n=\{X\in\mathbb{R}^{n\times n}|\det X=1\}$ なども多様体になるが、 $\mathrm{GL}_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。</p><div class=box><div class=title>例2.15: ノンコンパクトシュティーフェル多様体</div><p>$\mathbb{R}^{n\times p}_\ast, (p\leq n)$ を各列が一次独立な行列の集合(フルランクの行列の集合)とする。これは
 $$\mathbb{R}^{n\times p}_\ast = \{X\in\mathbb{R}^{n\times p}\mid\det(X^TX)\neq 0\}$$
 と書く事ができる。この集合はチャート
 $$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(X)$$
