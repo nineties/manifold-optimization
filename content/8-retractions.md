@@ -1,5 +1,5 @@
 ---
-title: 8. 直線探索法
+title: 8. レトラクション
 section: 8
 ---
 
@@ -235,8 +235,12 @@ $$ \mathrm{R}\_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = 
 グラスマン多様体についても同様。
 
 {{% example title="グラスマン多様体のレトラクション" %}}
-グラスマン多様体 $\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$
+グラスマン多様体 $\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$ の点 $[X]$とベクトル $V\in T\mathrm{Grass}(p,n)$ について $V$ の $X$ での水平リフトを $V_X$ とすると
+$$ \mathrm{R}\_{[X]}(V)=\mathrm{span}(X+V_X) $$
+はレトラクション。ただし $\mathrm{span}:\mathbb{R}^{n\times p}\_\ast\rightarrow\mathrm{Grass}(p,n)$ は自然な全射。
 {{% /example %}}
+
+レトラクションの重要な性質として以下が成り立つ。つまり、 $\mathcal{M}$ 上での勾配を、ベクトル空間 $T_x\mathcal{M}$ の勾配として求める事が可能になる。
 
 {{% proposition %}}
 $\mathcal{M}$ がリーマン多様体である時、

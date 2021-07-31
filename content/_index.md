@@ -20,7 +20,7 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 5. [多様体の構成方法](5-construction)
 6. [接ベクトル空間](6-tangent)
 7. [リーマン多様体](7-riemann)
-8. [直線探索法](8-linesearch)
+8. [レトラクション](8-retractions)
 
 
 参考にした文献
