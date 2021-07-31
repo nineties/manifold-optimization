@@ -285,29 +285,29 @@ $$\varphi:\mathbb{R}^{n\times p}\rightarrow\mathbb{R}^{np}:X\mapsto\mathrm{vec}(
 {{% /example %}}
 
 {{% example title="一般線型群" %}}
-$n$次実正則行列の集合 $$GL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $$
+$n$次実正則行列の集合 $$\mathrm{GL}_n=\\{X\in\mathbb{R}^{n\times n}\|\det X\neq 0\\} $$
 は行列の積によって群となる。これを **一般線型群(general linear group)** という。
 
 写像
-$$\varphi:GL_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
-を考えると $\mathcal{A}=\\{(GL_n,\varphi)\\}$ がアトラスとなり、 $(GL_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。
+$$\varphi:\mathrm{GL}_n\rightarrow\mathbb{R}^{n^2}: X\mapsto\mathrm{vec}(X)$$
+を考えると $\mathcal{A}=\\{(\mathrm{GL}_n,\varphi)\\}$ がアトラスとなり、 $(\mathrm{GL}_n,\mathcal{A}^+)$ は $n^2$次元多様体となる。
 {{% /example %}}
 
-まず $\varphi(GL_n)$ が開集合である事を示す。補集合を考えると、
+まず $\varphi(\mathrm{GL}_n)$ が開集合である事を示す。補集合を考えると、
 $$
 \begin{aligned}
-\mathbf{x}\in\mathbb{R}^{n^2}\setminus\varphi(GL_n)&\Leftrightarrow\det\circ\mathrm{vec}^{-1}(\mathbf{x})=0 \\\\
+\mathbf{x}\in\mathbb{R}^{n^2}\setminus\varphi(\mathrm{GL}_n)&\Leftrightarrow\det\circ\mathrm{vec}^{-1}(\mathbf{x})=0 \\\\
 &\Leftrightarrow\mathbf{x}\in(\det\circ\mathrm{vec}^{-1})^{-1}(\\{0\\})
 \end{aligned}$$
 
-ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\\{0\\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(GL_n)$ も閉集合。よって $GL_n$ は開集合。
+ここで $\det\circ\mathrm{vec}^{-1}:\mathbb{R}^{n^2}\rightarrow\mathbb{R}$ はベクトルの成分の加減乗算のみで定義されるので連続。そして一点集合 $\\{0\\}$ は閉集合であるので、その逆像である $\mathbb{R}^{n^2}\setminus\varphi(\mathrm{GL}_n)$ も閉集合。よって $\mathrm{GL}_n$ は開集合。
 
-また $\mathrm{vec}$ は全単射だから $(GL_n,\varphi)$ はチャートである。$GL_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も{{< ref lem.hausdorff >}}より明らか。
+また $\mathrm{vec}$ は全単射だから $(\mathrm{GL}_n,\varphi)$ はチャートである。$\mathrm{GL}_n$ 全体が一つのチャートで覆われるので、可算被覆を持つことは明らか。ハウスドルフ性も{{< ref lem.hausdorff >}}より明らか。
 
 ---
-$GL_n$ のような群構造を持つ多様体を **リー群(Lie group)** という。
+$\mathrm{GL}_n$ のような群構造を持つ多様体を **リー群(Lie group)** という。
 
-同じようにして特殊線型群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ なども多様体になるが、 $GL_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。
+同じようにして特殊線型群 $SL_n=\\{X\in\mathbb{R}^{n\times n}\|\det X=1\\}$ なども多様体になるが、 $\mathrm{GL}_n$ と同じようにチャートを与える事によって直接示すのは大変なので、いくつか定理を示した後にやる。
 
 {{% example title="ノンコンパクトシュティーフェル多様体" %}}
 $\mathbb{R}^{n\times p}\_\ast, (p\leq n)$ を各列が一次独立な行列の集合(フルランクの行列の集合)とする。これは

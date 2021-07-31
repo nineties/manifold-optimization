@@ -232,6 +232,12 @@ $$ \mathrm{R}\_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = 
 
 これはwell-defined。その他の条件については省略する。 $\square$
 
+グラスマン多様体についても同様。
+
+{{% example title="グラスマン多様体のレトラクション" %}}
+グラスマン多様体 $\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$
+{{% /example %}}
+
 {{% proposition %}}
 $\mathcal{M}$ がリーマン多様体である時、
 滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ とレトラクション $R:T\mathcal{M}\rightarrow\mathcal{M}$ について

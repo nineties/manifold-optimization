@@ -336,7 +336,7 @@ $$ u_{\alpha x} = \alpha u_x $$
 
 $$ T_{[X]}\mathrm{Grass}(p,n) = \\{Z\in\mathbb{R}^{n\times p}\mid X^TZ=0\\} $$
 
-任意の $A\in GL_p$ と点 $X$ でのリフト $U_x$ に対して
+任意の $A\in \mathrm{GL}_p$ と点 $X$ でのリフト $U_x$ に対して
 
 $$ U_{XA}=U_XA$$
 

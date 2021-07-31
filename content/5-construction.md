@@ -135,8 +135,8 @@ $$\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/{\sim}$$
 つまり、$\mathrm{Grass}(p,n)$ とは$\mathbb{R}^n$ の $p$ 次元部分空間の集合。
 例えば $\mathrm{Grass}(2,3)$ は $\mathbb{R}^3$ の中の原点を通る平面の集合。各平面が1つの点となる多様体なのでなかなか想像は難しい。
 
-$\mathrm{span}(X)=\mathrm{span}(Y)$ であるというのは適当な基底変換 $P\in GL_p$ が存在して $Y=XP$ と書けるという事であるから、 $X$ の同値類は
+$\mathrm{span}(X)=\mathrm{span}(Y)$ であるというのは適当な基底変換 $P\in \mathrm{GL}_p$ が存在して $Y=XP$ と書けるという事であるから、 $X$ の同値類は
 
-$$[X] = \\{XP\mid P\in GL_p\\}$$
+$$[X] = \\{XP\mid P\in \mathrm{GL}_p\\}$$
 
-とも書ける。この意味で $\mathrm{Grass}(p,n)$ を $\mathbb{R}^{n\times p}\_\ast/GL_p$ とも書く。$\mathrm{Grass}(p,n)$ が多様体である事を証明したいが、もうちょっと準備が必要そうであるので次の節に回す。
+とも書ける。この意味で $\mathrm{Grass}(p,n)$ を $\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$ とも書く。$\mathrm{Grass}(p,n)$ が多様体である事を証明したいが、もうちょっと準備が必要そうであるので次の節に回す。
