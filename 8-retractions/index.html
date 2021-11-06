@@ -47,14 +47,14 @@ $$ R_X(V) = X(I+\Omega)(I-\Omega^2)^{-1/2} $$</p></div><p>$ U = X(X^TX)^{-1/2}$ 
 $$\begin{aligned}
 \mathrm{R}_X(X\Omega) &= X(I+\Omega)((X(I+\Omega))^TX(I+\Omega))^{-\frac{1}{2}} \\<br>&= X(I+\Omega)((I-\Omega)X^TX(I+\Omega))^{-\frac{1}{2}} \\<br>&= X(I+\Omega)(I-\Omega^2)^{-\frac{1}{2}} \quad(\because X^TX=I)\\<br>\end{aligned}$$</p><p>直交群の場合はQR分解に比べると計算量が多くあまり有用な場面はない。</p><div class=box><div class=title>例8.11: シュティーフェル多様体の極分解によるレトラクション</div><p>シュティーフェル多様体 $\mathrm{St}(p,n)$ の点 $X$ と $V=T_X\mathrm{St}(p,n)$ に対して
 $$ R_X(V) = (X+V)(I+V^TV)^{-\frac{1}{2}} $$</p></div><p>$$ T_X\mathrm{St}(p,n)=\{Z\in\mathbb{R}^{n\times p}\mid Z^TX+X^TZ=0\}$$
-であたので
+であったので
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V$ を代入して
 $$\begin{aligned}
-\mathrm{R}_X() &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\<br>&= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\<br>&= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\<br>\end{aligned}$$</p><div class=box><div class=title>例8.12: 直交群のCayley変換によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
+\mathrm{R}_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\<br>&= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\<br>&= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\<br>\end{aligned}$$</p><div class=box><div class=title>例8.12: 直交群のCayley変換によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$</p></div><div class=box><div class=title>例8.13: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
 $$G(i,j,\theta)=\begin{pmatrix}
 1 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\<br>\vdots & \ddots & \vdots & & \vdots & & \vdots \\<br>0 & \cdots & \cos\theta & \cdots & \sin\theta & \cdots & 0 \\<br>\vdots & & \vdots & \ddots & \vdots & & \vdots \\<br>0 & \cdots & -\sin\theta & \cdots & \cos\theta & \cdots & 0 \\<br>\vdots & & \vdots & & \vdots & \ddots & \vdots \\<br>0 & \cdots & 0 & \cdots & 0 & \cdots & 1 \\<br>\end{pmatrix}$$</p><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=\prod_{i&lt;j}G(i,j,\Omega_{ij})$$</p></div><div class=box><div class=title>例8.14: 直交群の指数写像によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
+$$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=X\prod_{i&lt;j}G(i,j,\Omega_{ij})$$</p></div><div class=box><div class=title>例8.14: 直交群の指数写像によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$\mathrm{R}_X(V)=X\exp\Omega = X\sum_{k=0}^\infty\frac{1}{k!}\Omega^k$$</p></div><p>続いて商多様体のレトラクションの構成方法について。</p><div class=box><div class=title>命題8.15</div><p>$\mathcal{M}$ を多様体 $\mathcal{M}/{\sim}$ をその商多様体、 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ を自然な全射とする。</p><p>$\mathrm{R}:T\mathcal{M}\rightarrow\mathcal{M}$ を$\mathcal{M}$ のレトラクションであり、任意の
 $v\in T_{[x]}\mathcal{M}/{\sim}$ とその点 $a,b\ ([a]=[b]=[x])$ への水平リフト $v_a,v_b$ に対して
 $$ \pi(\mathrm{R}_a(v_a)) = \pi(\mathrm{R}_b(v_b)) $$
