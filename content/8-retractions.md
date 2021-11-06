@@ -171,7 +171,7 @@ $$ R_X(V) = (X+V)(I+V^TV)^{-\frac{1}{2}} $$
 {{% /example %}}
 
 $$ T_X\mathrm{St}(p,n)=\\{Z\in\mathbb{R}^{n\times p}\mid Z^TX+X^TZ=0\\}$$ 
-であたので
+であったので
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V$ を代入して
 $$\begin{aligned}
 \mathrm{R}_X() &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\\\
