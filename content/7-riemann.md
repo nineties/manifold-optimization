@@ -225,9 +225,9 @@ $$ u=u_V + u_H,\quad u_V\in T_x\mathcal{N},u_H\in (T_x\mathcal{N})^\bot$$
 
 $$P_x:T_x\mathcal{M}\rightarrow T_x\mathcal{N}: u\mapsto u_V$$
 $$P^\bot_x:T_x\mathcal{M}\rightarrow (T_x\mathcal{N})^\bot: u\mapsto u_H$$
-をそれぞれの空間への **直交射影(orthogonal projection)** という。 そして、部分空間 $\mathcal{N}$ の点 $x$ における勾配($\mathrm{grad}_\mathcal{N}f(x)$)は $\mathcal{M}$ における勾配($\mathrm{grad}_\mathcal{M}f(x)$)の $T_x\mathcal{N}$ への直交射影を取れば得られる。すなわち
+をそれぞれの空間への **直交射影(orthogonal projection)** という。 そして、部分空間 $\mathcal{N}$ の点 $x$ における勾配($\mathrm{grad}\_\mathcal{N}f(x)$)は $\mathcal{M}$ における勾配($\mathrm{grad}_\mathcal{M}f(x)$)の $T_x\mathcal{N}$ への直交射影を取れば得られる。すなわち
 
-$$\mathrm{grad}_\mathcal{N}f(x) = P_x(\mathrm{grad}_\mathcal{M}f(x)) $$
+$$\mathrm{grad}\_\mathcal{N}f(x) = P_x(\mathrm{grad}\_\mathcal{M}f(x)) $$
 
 {{% example title="$n$次元球面" %}}
 $n$次元球面 $S^n = \\{x\in\mathbb{R}^{n+1}\mid ||x||=1\\}$ にユークリッド空間 $\mathbb{R}^{n+1}$ の標準内積によってリーマン計量
