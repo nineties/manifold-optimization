@@ -174,7 +174,7 @@ $$ T_X\mathrm{St}(p,n)=\\{Z\in\mathbb{R}^{n\times p}\mid Z^TX+X^TZ=0\\}$$
 であったので
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V$ を代入して
 $$\begin{aligned}
-\mathrm{R}_X() &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\\\
+\mathrm{R}_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\\\
 &= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\\\
 &= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\\\
 \end{aligned}$$
