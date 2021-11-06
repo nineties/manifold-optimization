@@ -197,7 +197,7 @@ $$G(i,j,\theta)=\begin{pmatrix}
 \end{pmatrix}$$
 
 直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=\prod\_{i<j}G(i,j,\Omega\_{ij})$$
+$$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=X\prod\_{i<j}G(i,j,\Omega\_{ij})$$
 {{% /proposition %}}
 
 {{% example title="直交群の指数写像によるレトラクション" %}}
