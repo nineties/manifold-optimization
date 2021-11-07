@@ -306,6 +306,12 @@ $$\sum_{i<j}\left.\frac{\mathrm{d}}{\mathrm{d}t}G(i,j,t\Theta_{ij})\right|_{t=0}
 $$R_X(V)=X\exp\Omega = X\sum\_{k=0}^\infty\frac{1}{k!}\Omega^k$$
 {{% /example %}}
 
+$R_X$ が滑らかである事は明らか。また $R_X(0)=X\exp 0=X$
+そして、任意の $H=X\Theta\in T_XO_n$ に対して
+
+$$\mathrm{D}R_X(0)[H] = \left.\frac{\mathrm{d}}{\mathrm{d}t}X\exp(t\Theta)\right|_{t=0} = X\Theta \exp(0) = X\Theta = H\quad\square$$
+
+
 続いて商多様体のレトラクションの構成方法について。
 
 {{% proposition %}}
