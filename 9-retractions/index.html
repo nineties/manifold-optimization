@@ -10,11 +10,11 @@ $$ \mathrm{D}{R_x}(0): T_x\mathcal{M}\rightarrow T_x\mathcal{M} $$
 という写像とみる事が出来て、これが $\mathrm{id}$ であると言うのは接ベクトル空間を動かさないという事に他ならない。</p><hr><p>さて、レトラクションが与えられると、直線探索を行うのに必要な曲線を以下のようにして構成することができる。</p><div class=box><div class=title>命題9.2</div><p>$R:T\mathcal{M}\rightarrow\mathcal{M}$ をレトラクションとする。接ベクトル $v\in T_x\mathcal{M}$ に対して曲線を
 $$ \gamma(t) = R_x(tv) \quad t\in(-\varepsilon,\varepsilon)$$
 と定めると
-$$ \gamma(0) = x,\ \dot{\gamma}(0) = v $$</p></div><p>$\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M}$ が滑らかな写像であるのは明らかであり $\gamma(0)=R_x(0) = x$ かつ</p><p>$$\dot{\gamma}(0) = \mathrm{D}{R_x}(0)\left[\frac{\mathrm{d}(tv)}{\mathrm{d}t}(0)\right] = \mathrm{D}{R_x}(0)[v]=v$$</p><div class=box><div class=title>定義9.3: レトラクションを用いた探索</div><p>$\mathcal{M}$ を多様体、 $\mathrm{R}$ をレトラクションとする。点 $x_k\in\mathcal{M}$ から接ベクトル $v_k\in T_{x_k}\mathcal{M}$ の方向にステップサイズ $t_k\in\mathbb{R}$ だけ進むことを表す更新式は
-$$ x_{k+1} = \mathrm{R}_{x_k}(t_kv_k) $$</p></div><p>同じ多様体上でも最適化アルゴリズムはレトラクションの選び方によって変化し、効率的に計算できるレトラクションを見つける事が重要となる。
+$$ \gamma(0) = x,\ \dot{\gamma}(0) = v $$</p></div><p>$\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M}$ が滑らかな写像であるのは明らかであり $\gamma(0)=R_x(0) = x$ かつ</p><p>$$\dot{\gamma}(0) = \mathrm{D}{R_x}(0)\left[\frac{\mathrm{d}(tv)}{\mathrm{d}t}(0)\right] = \mathrm{D}{R_x}(0)[v]=v$$</p><div class=box><div class=title>定義9.3: レトラクションを用いた探索</div><p>$\mathcal{M}$ を多様体、 $R$ をレトラクションとする。点 $x_k\in\mathcal{M}$ から接ベクトル $v_k\in T_{x_k}\mathcal{M}$ の方向にステップサイズ $t_k\in\mathbb{R}$ だけ進むことを表す更新式は
+$$ x_{k+1} = R_{x_k}(t_kv_k) $$</p></div><p>同じ多様体上でも最適化アルゴリズムはレトラクションの選び方によって変化し、効率的に計算できるレトラクションを見つける事が重要となる。
 例えばリーマン多様体には <strong>指数写像(exponential mapping)</strong> という自然に定まるレトラクションが存在するが、計算量や数値的安定性の観点から計算機で扱うのは難しい事が多い。数学的な性質の良さと、計算機で実行する上での性質の良さは異なるので注意。</p><div class=box><div class=title>例9.4: ベクトル空間のレトラクション</div><p>$\mathcal{M}$ がベクトル空間の場合には、通常の直線探索と一致する。</p><p>ベクトル空間 $\mathcal{M}$ の点 $x$ と、接ベクトル $v\in T_x\mathcal{M}$ に対して、同型 $\mathcal{M}\simeq T_x\mathcal{M}$ を用いて
 $$ R_x(v) = x + v $$
-と定めると、これはレトラクションであり、更新式は</p><p>$$ x_{k+1} = \mathrm{R}_{x_k}(t_kv_k) = x_k + t_kv_k $$</p></div><p>続いて、$\mathcal{M}$ がベクトル空間 $\mathcal{V}$ の部分多様体である場合を考える。この場合も 点 $x\in\mathcal{M}$ と接ベクトル $v\in T_x\mathcal{M}$ の加算 $ x + v $ を$\mathcal{V}$ の中で求める事が出来る。従って $x+v$ を $\mathcal{M}$ の点に移す写像によってレトラクションを構成する事ができる。</p><div id=prop.retraction style=padding-top:100px;margin-top:-100px></div><div class=box><div class=title>命題9.5</div><p>$\mathcal{M}$ をベクトル空間 $\mathcal{V}$ の部分多様体とし、 $\mathcal{N}$ を
+と定めると、これはレトラクションであり、更新式は</p><p>$$ x_{k+1} = R_{x_k}(t_kv_k) = x_k + t_kv_k $$</p></div><p>続いて、$\mathcal{M}$ がベクトル空間 $\mathcal{V}$ の部分多様体である場合を考える。この場合も 点 $x\in\mathcal{M}$ と接ベクトル $v\in T_x\mathcal{M}$ の加算 $ x + v $ を$\mathcal{V}$ の中で求める事が出来る。従って $x+v$ を $\mathcal{M}$ の点に移す写像によってレトラクションを構成する事ができる。</p><div id=prop.retraction style=padding-top:100px;margin-top:-100px></div><div class=box><div class=title>命題9.5</div><p>$\mathcal{M}$ をベクトル空間 $\mathcal{V}$ の部分多様体とし、 $\mathcal{N}$ を
 $$ \dim \mathcal{M} + \dim \mathcal{N} = \dim\mathcal{V} $$
 であるような任意の多様体とする。
 $ \phi: \mathcal{M}\times\mathcal{N}\rightarrow \mathcal{V} $
@@ -27,7 +27,7 @@ $\mathcal{V}$ の中で計算した $x + v$ から $\mathcal{M}$ への写像を
 $R_x$ が滑らかな写像となるのは明らか。</p><p>$$ R_x(0) = \pi(\phi^{-1}(x+0)) = \pi(\phi^{-1}(x)) = \pi(x, e) = x $$</p><p>また,任意の $v\in T_x\mathcal{M}$ に対して</p><p>$$ \begin{aligned}
 & \mathrm{D}{R_x}(0)[v] \\<br>= & \mathrm{D}(\pi\circ\phi^{-1})(x)[v] \\<br>= & \mathrm{D}\pi(\phi^{-1}(x))[\mathrm{D}\phi^{-1}(x)[v]] \\<br>= & \mathrm{D}\pi(\phi^{-1}(x))[(v,0)] \\<br>= & \mathrm{D}\pi(x,e)[(v,0)] \\<br>= & v
 \end{aligned}$$</p><p>$\square$</p><div class=box><div class=title>例9.6: $n$次元球面のレトラクションの例</div><p>$S^n$ 上の点 $x$ と $v\in T_x S^n$ に対して
-$$\mathrm{R}_x(v) = \frac{x+v}{||x+v||} $$</p></div><p>$$\phi:S^n\times\mathbb{R}_+\rightarrow\mathbb{R}^{n+1}_\ast: (x,r) \mapsto rx $$</p><p>とおく。これは$r=1$に固定すると恒等写像になり、</p><p>$$ \phi^{-1}(x) = (x/||x||,||x||)$$</p><p>であり、
+$$R_x(v) = \frac{x+v}{||x+v||} $$</p></div><p>$$\phi:S^n\times\mathbb{R}_+\rightarrow\mathbb{R}^{n+1}_\ast: (x,r) \mapsto rx $$</p><p>とおく。これは$r=1$に固定すると恒等写像になり、</p><p>$$ \phi^{-1}(x) = (x/||x||,||x||)$$</p><p>であり、
 <a href=https://nineties.github.io/manifold-optimization/9-retractions/#prop.retraction>命題9.5</a>
 を使用すると上記レトラクションを得る。</p><p>直交群やシュティーフェル多様体に対するレトラクションの同様の構成は行列のQR分解を利用して得られる。</p><div class=box><div class=title>命題9.7: QR分解</div><p>$U^+_{n}$ を $n\times n$ の実上三角行列で対角成分が全て正であるものの集合とする。</p><p>任意の $X\in\mathbb{R}^{m\times n}_\ast, (m\geq n)$ は</p><p>$$ X=QR\quad (Q\in \mathbb{R}^{m\times n}, R\in U^+_n, Q^TQ=I)$$
 と一意に分解できる。この対応 $X\mapsto Q$ を $\mathrm{qf}(X)=Q$ と表記する。</p><figure><img src=../images/qr-factorization.png></figure></div><p>特に $m=n$ の時は $Q$ は直交行列となる。</p><div class=box><div class=title>例9.8: 直交群のQR分解によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
@@ -38,7 +38,7 @@ $$ \phi: O_n\times U^+_n\rightarrow\mathbb{R}^{n\times n}_\ast: (Q,R)\rightarrow
 が使える。</p><p>ここで
 $$ T_XO_n = X\mathrm{Skew}_n=\{X\Omega\mid\Omega^T=-\Omega\}$$
 であったので $V=X\Omega$ と書けるから
-$$\mathrm{R}_X(X\Omega)=\mathrm{qf}(X+X\Omega)=X\mathrm{qf}(I+\Omega)\quad(\because\text{$X$は直交行列})$$</p><p>とも表せる。</p><p>シュティーフェル多様体へ一般化しても全く同様。</p><div class=box><div class=title>例9.9: シュティーフェル多様体のQR分解によるレトラクション</div><p>シュティーフェル多様体 $\mathrm{St}(p,n)$ の点 $X$ と $V=T_X\mathrm{St}(p,n)$ に対して
+$$R_X(X\Omega)=\mathrm{qf}(X+X\Omega)=X\mathrm{qf}(I+\Omega)\quad(\because\text{$X$は直交行列})$$</p><p>とも表せる。</p><p>シュティーフェル多様体へ一般化しても全く同様。</p><div class=box><div class=title>例9.9: シュティーフェル多様体のQR分解によるレトラクション</div><p>シュティーフェル多様体 $\mathrm{St}(p,n)$ の点 $X$ と $V=T_X\mathrm{St}(p,n)$ に対して
 $$ R_X(V) = \mathrm{qf}(X + V)$$</p></div><p>このレトラクションを求める為には例えばシュミットの直交化法などのアルゴリズムを用いる。ちなみに $p=1$ の時は上で例示した $n-1$次元球面のレトラクションと一致する。</p><hr><p>QR分解ではなく極分解を用いる事もできる。</p><div class=box><div class=title>命題9.10: 極分解</div><p>$\mathrm{Sym}^+_n$ を$n\times n$正定値実対称行列の集合とする。</p><p>任意の $X\in\mathbb{R}^{m\times n}_\ast, (m\geq n)$ は</p><p>$$ X=UP\quad (U\in \mathbb{R}^{m\times n}, P\in \mathrm{Sym}^+_n, U^TU=I)$$
 と一意に分解でき、
 $$
@@ -49,40 +49,40 @@ $$
 を用いると以下が示せる。</p><div class=box><div class=title>例9.11: 直交群の極分解によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$ R_X(V) = X(I+\Omega)(I-\Omega^2)^{-1/2} $$</p></div><p>$ U = X(X^TX)^{-1/2}$ の $X$ に $X+V=X+X\Omega=X(I+\Omega)$ を代入して
 $$\begin{aligned}
-\mathrm{R}_X(X\Omega) &= X(I+\Omega)((X(I+\Omega))^TX(I+\Omega))^{-\frac{1}{2}} \\<br>&= X(I+\Omega)((I-\Omega)X^TX(I+\Omega))^{-\frac{1}{2}} \\<br>&= X(I+\Omega)(I-\Omega^2)^{-\frac{1}{2}} \quad(\because X^TX=I)\\<br>\end{aligned}$$</p><p>直交群の場合はQR分解に比べると計算量が多くあまり有用な場面はない。</p><div class=box><div class=title>例9.12: シュティーフェル多様体の極分解によるレトラクション</div><p>シュティーフェル多様体 $\mathrm{St}(p,n)$ の点 $X$ と $V=T_X\mathrm{St}(p,n)$ に対して
+R_X(X\Omega) &= X(I+\Omega)((X(I+\Omega))^TX(I+\Omega))^{-\frac{1}{2}} \\<br>&= X(I+\Omega)((I-\Omega)X^TX(I+\Omega))^{-\frac{1}{2}} \\<br>&= X(I+\Omega)(I-\Omega^2)^{-\frac{1}{2}} \quad(\because X^TX=I)\\<br>\end{aligned}$$</p><p>直交群の場合はQR分解に比べると計算量が多くあまり有用な場面はない。</p><div class=box><div class=title>例9.12: シュティーフェル多様体の極分解によるレトラクション</div><p>シュティーフェル多様体 $\mathrm{St}(p,n)$ の点 $X$ と $V=T_X\mathrm{St}(p,n)$ に対して
 $$ R_X(V) = (X+V)(I+V^TV)^{-\frac{1}{2}} $$</p></div><p>$$ T_X\mathrm{St}(p,n)=\{Z\in\mathbb{R}^{n\times p}\mid Z^TX+X^TZ=0\}$$
 であったので
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V$ を代入して
 $$\begin{aligned}
-\mathrm{R}_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\<br>&= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\<br>&= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\<br>\end{aligned}$$</p><hr><p>続いてCayley変換を利用する例。</p><div class=box><div class=title>命題9.13: Cayley変換</div><p>任意の $A\in\mathrm{Skew}_n$ に対して $I+A$ は正則であり $(I-A)(I+A)^{-1}$ は直交行列である。</p><p>この写像</p><p>$$\mathrm{Skew}_n\rightarrow O_n: A\mapsto (I-A)(I+A)^{-1}$$</p><p>を <strong>Cayley変換(Cayley Transform)</strong> という。</p></div><div class=box><div class=title>例9.14: 直交群のCayley変換によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$</p></div><p>これは
+R_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\<br>&= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\<br>&= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\<br>\end{aligned}$$</p><hr><p>続いてCayley変換を利用する例。</p><div class=box><div class=title>命題9.13: Cayley変換</div><p>任意の $A\in\mathrm{Skew}_n$ に対して $I+A$ は正則であり $(I-A)(I+A)^{-1}$ は直交行列である。</p><p>この写像</p><p>$$\mathrm{Skew}_n\rightarrow O_n: A\mapsto (I-A)(I+A)^{-1}$$</p><p>を <strong>Cayley変換(Cayley Transform)</strong> という。</p></div><div class=box><div class=title>例9.14: 直交群のCayley変換によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
+$$ R_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$</p></div><p>これは
 <a href=https://nineties.github.io/manifold-optimization/9-retractions/#prop.retraction>命題9.5</a>
 を利用するものではないので、レトラクションの条件を直接示す。
-$\mathrm{R}_X$ が滑らかな写像であるのは明らかで$ \mathrm{R}_X(0) = X(I-0)^{-1}(I+0)= X$。
-また</p><p>$$\mathrm{R}_X(V)=X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) $$</p><p>であるので
+$R_X$ が滑らかな写像であるのは明らかで$ R_X(0) = X(I-0)^{-1}(I+0)= X$。
+また</p><p>$$R_X(V)=X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) $$</p><p>であるので
 <a href=https://nineties.github.io/manifold-optimization/7-derivative/#prop.derivative-of-multiply>命題7.5</a>
 と
 <a href=https://nineties.github.io/manifold-optimization/7-derivative/#prop.derivative-of-inv>命題7.6</a>
 より</p><p>$$
-\mathrm{D}\mathrm{R}_X(V)[H]
-=\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)
-+\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H
+\mathrm{D}R_X(0)[H] =\frac{1}{2}XX^{-1}HX^{-1}X +\frac{1}{2}XX^{-1}H = \frac{1}{2}H+\frac{1}{2}H = H
 $$
-であるので
-$$
-\mathrm{D}\mathrm{R}_X(0)[H] =\frac{1}{2}XX^{-1}HX^{-1}X +\frac{1}{2}XX^{-1}H = \frac{1}{2}H+\frac{1}{2}H = H
-$$
-より局所剛性も成立 $\square$</p><div class=box><div class=title>例9.15: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
+であるので局所剛性も成立 $\square$</p><div class=box><div class=title>例9.15: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
 $$G(i,j,\theta)=\begin{pmatrix}
 1 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\<br>\vdots & \ddots & \vdots & & \vdots & & \vdots \\<br>0 & \cdots & \cos\theta & \cdots & \sin\theta & \cdots & 0 \\<br>\vdots & & \vdots & \ddots & \vdots & & \vdots \\<br>0 & \cdots & -\sin\theta & \cdots & \cos\theta & \cdots & 0 \\<br>\vdots & & \vdots & & \vdots & \ddots & \vdots \\<br>0 & \cdots & 0 & \cdots & 0 & \cdots & 1 \\<br>\end{pmatrix}$$</p><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=X\prod_{i&lt;j}G(i,j,\Omega_{ij})$$</p></div><div class=box><div class=title>例9.16: 直交群の指数写像によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$\mathrm{R}_X(V)=X\exp\Omega = X\sum_{k=0}^\infty\frac{1}{k!}\Omega^k$$</p></div><p>続いて商多様体のレトラクションの構成方法について。</p><div class=box><div class=title>命題9.17</div><p>$\mathcal{M}$ を多様体 $\mathcal{M}/{\sim}$ をその商多様体、 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ を自然な全射とする。</p><p>$\mathrm{R}:T\mathcal{M}\rightarrow\mathcal{M}$ を$\mathcal{M}$ のレトラクションであり、任意の
+$$R_X(V)=X\mathrm{Giv}(\Omega)=X\prod_{i&lt;j}G(i,j,\Omega_{ij})$$</p></div><p>$R_X$ が滑らかな関数なのは明らか。任意の $i,j$ について $G(i,j,0)=I$ であるので
+$$R_X(0)=X\mathrm{Giv}(0)=X\prod_{i&lt;j}G(i,j,0)=X\prod_{i&lt;j}I=X $$
+また、任意の $H=X\Theta\in T_XO_n$ に対して</p><p>$$\begin{aligned}
+\mathrm{D} R_X(0)[H] &= \lim_{t\rightarrow 0}\frac{R_X(tH) + R_X(0)}{t} \\<br>&= \lim_{t\rightarrow 0}\frac{X\mathrm{Giv}(t\Theta) + X\mathrm{Giv}(0)}{t} \\<br>&= X \frac{\mathrm{d}}{\mathrm{d}t}\left.\left(\prod_{i&lt;j}G(i,j,t\Theta_{ij})\right)\right|_{t=0}
+\end{aligned}$$</p><p>ここで</p><p>$$\left.\frac{\mathrm{d}}{\mathrm{d}t}G(i,j,t\Theta_{ij})\right|_{t=0}
+=\begin{pmatrix}
+0 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\<br>\vdots & \ddots & \vdots & & \vdots & & \vdots \\<br>0 & \cdots & 0 & \cdots & \Theta_{ij} & \cdots & 0 \\<br>\vdots & & \vdots & \ddots & \vdots & & \vdots \\<br>0 & \cdots & -\Theta_{ij} & \cdots & 0 & \cdots & 0 \\<br>\vdots & & \vdots & & \vdots & \ddots & \vdots \\<br>0 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\<br>\end{pmatrix}$$</p><p>であるので</p><p>$$\sum_{i&lt;j}\left.\frac{\mathrm{d}}{\mathrm{d}t}G(i,j,t\Theta_{ij})\right|_{t=0} = \Theta$$</p><p>これと $G(i,j,0)=I$ より $\mathrm{D} R_X(0)[H] = X\Theta = H$ $\square$</p><div class=box><div class=title>例9.16: 直交群の指数写像によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
+$$R_X(V)=X\exp\Omega = X\sum_{k=0}^\infty\frac{1}{k!}\Omega^k$$</p></div><p>続いて商多様体のレトラクションの構成方法について。</p><div class=box><div class=title>命題9.17</div><p>$\mathcal{M}$ を多様体 $\mathcal{M}/{\sim}$ をその商多様体、 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ を自然な全射とする。</p><p>$R:T\mathcal{M}\rightarrow\mathcal{M}$ を$\mathcal{M}$ のレトラクションであり、任意の
 $v\in T_{[x]}\mathcal{M}/{\sim}$ とその点 $a,b\ ([a]=[b]=[x])$ への水平リフト $v_a,v_b$ に対して
-$$ \pi(\mathrm{R}_a(v_a)) = \pi(\mathrm{R}_b(v_b)) $$
-となるようなものであるならば、</p><p>$$ \mathrm{R}'_{[x]}(v) := \pi(\mathrm{R}_x(v_x)) $$</p><p>は代表元 $x$ の選び方によらずwell-definedであり、 $\mathcal{M}/{\sim}$ のレトラクションとなる。</p></div><div class=box><div class=title>例9.18: 実射影空間のレトラクション</div><p>実射影空間 $\mathbb{RP}^{n-1}=\mathbb{R}^n_\ast/\mathbb{R}_\ast$ の点 $[x]$ とベクトル $v\in T_{[x]}\mathbb{RP}^{n-1}$ について、 $v$ の点 $x$ での水平リフトを $v_x$ とすると
-$$\mathrm{R}_{[x]}(v) = \pi(x + v_x)$$
-はレトラクション。ただし $\pi:\mathbb{R}^n_\ast\rightarrow\mathbb{RP}^{n-1}$ は自然な全射。</p></div><p>$x\sim y$ とすると $y=\alpha x\quad(\alpha\in\mathbb{R}_\ast)$ と表す事ができる。この時 $v_{\alpha x}=\alpha v_x$ であったから</p><p>$$ \mathrm{R}_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = \mathrm{R}_{[x]}(v) $$</p><p>これはwell-defined。その他の条件については省略する。 $\square$</p><p>グラスマン多様体についても同様。</p><div class=box><div class=title>例9.19: グラスマン多様体のレトラクション</div><p>グラスマン多様体 $\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}_\ast/\mathrm{GL}_p$ の点 $[X]$とベクトル $V\in T\mathrm{Grass}(p,n)$ について $V$ の $X$ での水平リフトを $V_X$ とすると
-$$ \mathrm{R}_{[X]}(V)=\mathrm{span}(X+V_X) $$
+$$ \pi(R_a(v_a)) = \pi(R_b(v_b)) $$
+となるようなものであるならば、</p><p>$$ R'_{[x]}(v) := \pi(R_x(v_x)) $$</p><p>は代表元 $x$ の選び方によらずwell-definedであり、 $\mathcal{M}/{\sim}$ のレトラクションとなる。</p></div><div class=box><div class=title>例9.18: 実射影空間のレトラクション</div><p>実射影空間 $\mathbb{RP}^{n-1}=\mathbb{R}^n_\ast/\mathbb{R}_\ast$ の点 $[x]$ とベクトル $v\in T_{[x]}\mathbb{RP}^{n-1}$ について、 $v$ の点 $x$ での水平リフトを $v_x$ とすると
+$$R_{[x]}(v) = \pi(x + v_x)$$
+はレトラクション。ただし $\pi:\mathbb{R}^n_\ast\rightarrow\mathbb{RP}^{n-1}$ は自然な全射。</p></div><p>$x\sim y$ とすると $y=\alpha x\quad(\alpha\in\mathbb{R}_\ast)$ と表す事ができる。この時 $v_{\alpha x}=\alpha v_x$ であったから</p><p>$$ R_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = R_{[x]}(v) $$</p><p>これはwell-defined。その他の条件については省略する。 $\square$</p><p>グラスマン多様体についても同様。</p><div class=box><div class=title>例9.19: グラスマン多様体のレトラクション</div><p>グラスマン多様体 $\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}_\ast/\mathrm{GL}_p$ の点 $[X]$とベクトル $V\in T\mathrm{Grass}(p,n)$ について $V$ の $X$ での水平リフトを $V_X$ とすると
+$$ R_{[X]}(V)=\mathrm{span}(X+V_X) $$
 はレトラクション。ただし $\mathrm{span}:\mathbb{R}^{n\times p}_\ast\rightarrow\mathrm{Grass}(p,n)$ は自然な全射。</p></div><p>レトラクションの重要な性質として以下が成り立つ。つまり、 $\mathcal{M}$ 上での勾配を、ベクトル空間 $T_x\mathcal{M}$ の勾配として求める事が可能になる。</p><div class=box><div class=title>命題9.20</div><p>$\mathcal{M}$ がリーマン多様体である時、
 滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ とレトラクション $R:T\mathcal{M}\rightarrow\mathcal{M}$ について
 $$ \mathrm{grad}(f\circ R_x)(0) = \mathrm{grad} f(x) $$</p></div></article></section><footer><div><p class="f6 gray mt6 lh-copy"></p></div></footer><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script></body></html>
