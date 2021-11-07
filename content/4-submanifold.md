@@ -81,7 +81,7 @@ $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が微分可能ならば、各変数に�
 $f:\mathbb{R}^{m_1}\rightarrow\mathbb{R}^{m_2}$ が $x$ で微分可能で $g:\mathbb{R}^{m_2}\rightarrow\mathbb{R}^{m_3}$ が $f(x)$ で微分可能ならば以下の連鎖律が成り立つ。
 
 $$
-\mathrm{D}{g\circ f}(x) = \mathrm{D}g(f(x))\circ\mathrm{D}f(x)
+\mathrm{D}(g\circ f)(x) = \mathrm{D}g(f(x))\circ\mathrm{D}f(x)
 $$
 {{% /proposition %}}
 
