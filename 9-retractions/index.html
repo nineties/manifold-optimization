@@ -59,7 +59,20 @@ $$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Ome
 <a href=https://nineties.github.io/manifold-optimization/9-retractions/#prop.retraction>命題9.5</a>
 を利用するものではないので、レトラクションの条件を直接示す。
 $\mathrm{R}_X$ が滑らかな写像であるのは明らかで$ \mathrm{R}_X(0) = X(I-0)^{-1}(I+0)= X$。
-また</p><p>$$ \mathrm{R}_X(V) = X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)$$</p><p>であるので、これを $V$ で微分して</p><p>$$ \mathrm{D}\mathrm{R}_X(V) = \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) + \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1} $$</p><p>であるから</p><p>$$ \mathrm{D}\mathrm{R}_X(0) = \frac{1}{2}XX^{-1}X^{-1}X + \frac{1}{2}XX^{-1} = \frac{1}{2}I+\frac{1}{2}I = I $$</p><div class=box><div class=title>例9.15: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
+また</p><p>$$\mathrm{R}_X(V)=X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) $$</p><p>であるので
+<a href=https://nineties.github.io/manifold-optimization/7-derivative/#prop.derivative-of-multiply>命題7.5</a>
+と
+<a href=https://nineties.github.io/manifold-optimization/7-derivative/#prop.derivative-of-inv>命題7.6</a>
+より</p><p>$$
+\mathrm{D}\mathrm{R}_X(V)[H]
+=\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)
++\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H
+$$
+であるので
+$$
+\mathrm{D}\mathrm{R}_X(0)[H] =\frac{1}{2}XX^{-1}HX^{-1}X +\frac{1}{2}XX^{-1}H = \frac{1}{2}H+\frac{1}{2}H = H
+$$
+より局所剛性も成立 $\square$</p><div class=box><div class=title>例9.15: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
 $$G(i,j,\theta)=\begin{pmatrix}
 1 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\<br>\vdots & \ddots & \vdots & & \vdots & & \vdots \\<br>0 & \cdots & \cos\theta & \cdots & \sin\theta & \cdots & 0 \\<br>\vdots & & \vdots & \ddots & \vdots & & \vdots \\<br>0 & \cdots & -\sin\theta & \cdots & \cos\theta & \cdots & 0 \\<br>\vdots & & \vdots & & \vdots & \ddots & \vdots \\<br>0 & \cdots & 0 & \cdots & 0 & \cdots & 1 \\<br>\end{pmatrix}$$</p><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=X\prod_{i&lt;j}G(i,j,\Omega_{ij})$$</p></div><div class=box><div class=title>例9.16: 直交群の指数写像によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
