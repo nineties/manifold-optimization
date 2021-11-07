@@ -223,8 +223,8 @@ $$ SO_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I,\det X=1 \\\}$$
 は $n(n-1)/2$ 次元多様体である。
 {{% /example %}}
 
-$\mathbb{R}\_+$ を正の実数の集合とすると、これは $\mathbb{R}$ の開集合。$\det:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}$ は連続写像だから $\det(\mathbb{R}\_+) \subset\mathbb{R}^{n\times n}$ も開集合。よって
-$SO_n = O_n\cap\det(\mathbb{R}\_+)$
+$\mathbb{R}\_+$ を正の実数の集合とすると、これは $\mathbb{R}$ の開集合。$\det:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}$ は連続写像だから $\det^{-1}(\mathbb{R}\_+) \subset\mathbb{R}^{n\times n}$ も開集合。よって
+$SO_n = O_n\cap\det^{-1}(\mathbb{R}\_+)$
 より $SO_n$ は $O_n$ の開部分集合であるので $O_n$ と次数の等しい多様体である。
 
 
