@@ -66,8 +66,8 @@ $$\dot{\gamma}(0) = \mathrm{D}{R_x}(0)\left[\frac{\mathrm{d}(tv)}{\mathrm{d}t}(0
 
 {{% definition title="レトラクションを用いた探索" %}}
 
-$\mathcal{M}$ を多様体、 $\mathrm{R}$ をレトラクションとする。点 $x_k\in\mathcal{M}$ から接ベクトル $v_k\in T_{x_k}\mathcal{M}$ の方向にステップサイズ $t_k\in\mathbb{R}$ だけ進むことを表す更新式は
-$$ x_{k+1} = \mathrm{R}_{x_k}(t_kv_k) $$
+$\mathcal{M}$ を多様体、 $R$ をレトラクションとする。点 $x_k\in\mathcal{M}$ から接ベクトル $v_k\in T_{x_k}\mathcal{M}$ の方向にステップサイズ $t_k\in\mathbb{R}$ だけ進むことを表す更新式は
+$$ x_{k+1} = R_{x_k}(t_kv_k) $$
 
 {{% /definition %}}
 
@@ -81,7 +81,7 @@ $\mathcal{M}$ がベクトル空間の場合には、通常の直線探索と一
 $$ R_x(v) = x + v $$
 と定めると、これはレトラクションであり、更新式は
 
-$$ x_{k+1} = \mathrm{R}_{x_k}(t_kv_k) = x_k + t_kv_k $$
+$$ x_{k+1} = R_{x_k}(t_kv_k) = x_k + t_kv_k $$
 {{% /example %}}
 
 続いて、$\mathcal{M}$ がベクトル空間 $\mathcal{V}$ の部分多様体である場合を考える。この場合も 点 $x\in\mathcal{M}$ と接ベクトル $v\in T_x\mathcal{M}$ の加算 $ x + v $ を$\mathcal{V}$ の中で求める事が出来る。従って $x+v$ を $\mathcal{M}$ の点に移す写像によってレトラクションを構成する事ができる。
@@ -123,7 +123,7 @@ $\square$
 
 {{% example title="$n$次元球面のレトラクションの例" %}}
 $S^n$ 上の点 $x$ と $v\in T_x S^n$ に対して
-$$\mathrm{R}_x(v) = \frac{x+v}{||x+v||} $$
+$$R_x(v) = \frac{x+v}{||x+v||} $$
 {{% /example %}}
 
 $$\phi:S^n\times\mathbb{R}_+\rightarrow\mathbb{R}^{n+1}\_\ast: (x,r) \mapsto rx $$
@@ -162,7 +162,7 @@ $$ \phi: O_n\times U^+_n\rightarrow\mathbb{R}^{n\times n}\_\ast: (Q,R)\rightarro
 ここで
 $$ T_XO_n = X\mathrm{Skew}_n=\\{X\Omega\mid\Omega^T=-\Omega\\}$$
 であったので $V=X\Omega$ と書けるから
-$$\mathrm{R}_X(X\Omega)=\mathrm{qf}(X+X\Omega)=X\mathrm{qf}(I+\Omega)\quad(\because\text{$X$は直交行列})$$
+$$R_X(X\Omega)=\mathrm{qf}(X+X\Omega)=X\mathrm{qf}(I+\Omega)\quad(\because\text{$X$は直交行列})$$
 
 とも表せる。
 
@@ -201,7 +201,7 @@ $$ R_X(V) = X(I+\Omega)(I-\Omega^2)^{-1/2} $$
 
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V=X+X\Omega=X(I+\Omega)$ を代入して
 $$\begin{aligned}
-\mathrm{R}_X(X\Omega) &= X(I+\Omega)((X(I+\Omega))^TX(I+\Omega))^{-\frac{1}{2}} \\\\
+R_X(X\Omega) &= X(I+\Omega)((X(I+\Omega))^TX(I+\Omega))^{-\frac{1}{2}} \\\\
 &= X(I+\Omega)((I-\Omega)X^TX(I+\Omega))^{-\frac{1}{2}} \\\\
 &= X(I+\Omega)(I-\Omega^2)^{-\frac{1}{2}} \quad(\because X^TX=I)\\\\
 \end{aligned}$$
@@ -217,7 +217,7 @@ $$ T_X\mathrm{St}(p,n)=\\{Z\in\mathbb{R}^{n\times p}\mid Z^TX+X^TZ=0\\}$$
 であったので
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V$ を代入して
 $$\begin{aligned}
-\mathrm{R}_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\\\
+R_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\\\
 &= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\\\
 &= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\\\
 \end{aligned}$$
@@ -239,27 +239,21 @@ $$\mathrm{Skew}_n\rightarrow O_n: A\mapsto (I-A)(I+A)^{-1}$$
 
 {{% example title="直交群のCayley変換によるレトラクション" %}}
 直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$
+$$ R_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$
 {{% /proposition %}}
 
 これは {{< ref prop.retraction >}} を利用するものではないので、レトラクションの条件を直接示す。
-$\mathrm{R}_X$ が滑らかな写像であるのは明らかで$ \mathrm{R}_X(0) = X(I-0)^{-1}(I+0)= X$。
+$R_X$ が滑らかな写像であるのは明らかで$ R_X(0) = X(I-0)^{-1}(I+0)= X$。
 また
 
-$$\mathrm{R}_X(V)=X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) $$
+$$R_X(V)=X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) $$
 
 であるので {{< ref prop.derivative-of-multiply >}}と{{< ref prop.derivative-of-inv >}} より
 
 $$
-\mathrm{D}\mathrm{R}_X(V)[H]
-=\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)
-+\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H
+\mathrm{D}R_X(0)[H] =\frac{1}{2}XX^{-1}HX^{-1}X +\frac{1}{2}XX^{-1}H = \frac{1}{2}H+\frac{1}{2}H = H
 $$
-であるので
-$$
-\mathrm{D}\mathrm{R}_X(0)[H] =\frac{1}{2}XX^{-1}HX^{-1}X +\frac{1}{2}XX^{-1}H = \frac{1}{2}H+\frac{1}{2}H = H
-$$
-より局所剛性も成立 $\square$
+であるので局所剛性も成立 $\square$
 
 
 {{% example title="直交群のGivens回転によるレトラクション" %}}
@@ -275,12 +269,41 @@ $$G(i,j,\theta)=\begin{pmatrix}
 \end{pmatrix}$$
 
 直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=X\prod\_{i<j}G(i,j,\Omega\_{ij})$$
+$$R_X(V)=X\mathrm{Giv}(\Omega)=X\prod\_{i<j}G(i,j,\Omega\_{ij})$$
 {{% /proposition %}}
+
+$R_X$ が滑らかな関数なのは明らか。任意の $i,j$ について $G(i,j,0)=I$ であるので
+$$R_X(0)=X\mathrm{Giv}(0)=X\prod\_{i<j}G(i,j,0)=X\prod\_{i<j}I=X $$
+また、任意の $H=X\Theta\in T_XO_n$ に対して
+
+$$\begin{aligned}
+\mathrm{D} R_X(0)[H] &= \lim_{t\rightarrow 0}\frac{R_X(tH) + R_X(0)}{t} \\\\
+&= \lim_{t\rightarrow 0}\frac{X\mathrm{Giv}(t\Theta) + X\mathrm{Giv}(0)}{t} \\\\
+&= X \frac{\mathrm{d}}{\mathrm{d}t}\left.\left(\prod_{i<j}G(i,j,t\Theta_{ij})\right)\right|_{t=0}
+\end{aligned}$$
+
+ここで
+
+$$\left.\frac{\mathrm{d}}{\mathrm{d}t}G(i,j,t\Theta_{ij})\right|_{t=0}
+=\begin{pmatrix}
+0 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\\\
+\vdots & \ddots & \vdots &   & \vdots &  & \vdots \\\\
+0 & \cdots & 0 & \cdots & \Theta_{ij} & \cdots & 0 \\\\
+\vdots &  & \vdots & \ddots & \vdots &  & \vdots \\\\
+0 & \cdots & -\Theta_{ij} & \cdots & 0 & \cdots & 0 \\\\
+\vdots &  & \vdots & & \vdots & \ddots & \vdots \\\\
+0 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\\\
+\end{pmatrix}$$
+
+であるので
+
+$$\sum_{i<j}\left.\frac{\mathrm{d}}{\mathrm{d}t}G(i,j,t\Theta_{ij})\right|_{t=0} = \Theta$$
+
+これと $G(i,j,0)=I$ より $\mathrm{D} R_X(0)[H] = X\Theta = H$ $\square$
 
 {{% example title="直交群の指数写像によるレトラクション" %}}
 直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$\mathrm{R}_X(V)=X\exp\Omega = X\sum\_{k=0}^\infty\frac{1}{k!}\Omega^k$$
+$$R_X(V)=X\exp\Omega = X\sum\_{k=0}^\infty\frac{1}{k!}\Omega^k$$
 {{% /example %}}
 
 続いて商多様体のレトラクションの構成方法について。
@@ -288,25 +311,25 @@ $$\mathrm{R}_X(V)=X\exp\Omega = X\sum\_{k=0}^\infty\frac{1}{k!}\Omega^k$$
 {{% proposition %}}
 $\mathcal{M}$ を多様体 $\mathcal{M}/{\sim}$ をその商多様体、 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ を自然な全射とする。
 
-$\mathrm{R}:T\mathcal{M}\rightarrow\mathcal{M}$ を$\mathcal{M}$ のレトラクションであり、任意の
+$R:T\mathcal{M}\rightarrow\mathcal{M}$ を$\mathcal{M}$ のレトラクションであり、任意の
 $v\in T_{[x]}\mathcal{M}/{\sim}$ とその点 $a,b\ ([a]=[b]=[x])$ への水平リフト $v_a,v_b$ に対して
-$$ \pi(\mathrm{R}_a(v_a)) = \pi(\mathrm{R}_b(v_b)) $$
+$$ \pi(R_a(v_a)) = \pi(R_b(v_b)) $$
 となるようなものであるならば、
 
-$$ \mathrm{R}'_{[x]}(v) := \pi(\mathrm{R}_x(v_x)) $$
+$$ R'_{[x]}(v) := \pi(R_x(v_x)) $$
 
 は代表元 $x$ の選び方によらずwell-definedであり、 $\mathcal{M}/{\sim}$ のレトラクションとなる。
 {{% /proposition %}}
 
 {{% example title="実射影空間のレトラクション" %}}
 実射影空間 $\mathbb{RP}^{n-1}=\mathbb{R}^n\_\ast/\mathbb{R}\_\ast$ の点 $[x]$ とベクトル $v\in T_{[x]}\mathbb{RP}^{n-1}$ について、 $v$ の点 $x$ での水平リフトを $v_x$ とすると
-$$\mathrm{R}_{[x]}(v) = \pi(x + v_x)$$
+$$R_{[x]}(v) = \pi(x + v_x)$$
 はレトラクション。ただし $\pi:\mathbb{R}^n\_\ast\rightarrow\mathbb{RP}^{n-1}$ は自然な全射。
 {{% /example %}}
 
 $x\sim y$ とすると $y=\alpha x\quad(\alpha\in\mathbb{R}\_\ast)$ と表す事ができる。この時 $v_{\alpha x}=\alpha v_x$ であったから
 
-$$ \mathrm{R}\_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = \mathrm{R}_{[x]}(v) $$
+$$ R\_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = R_{[x]}(v) $$
 
 これはwell-defined。その他の条件については省略する。 $\square$
 
@@ -314,7 +337,7 @@ $$ \mathrm{R}\_{[y]}(v)=\pi(y+v_y)=\pi(\alpha x + \alpha v_x) = \pi (x + v_x) = 
 
 {{% example title="グラスマン多様体のレトラクション" %}}
 グラスマン多様体 $\mathrm{Grass}(p,n)=\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$ の点 $[X]$とベクトル $V\in T\mathrm{Grass}(p,n)$ について $V$ の $X$ での水平リフトを $V_X$ とすると
-$$ \mathrm{R}\_{[X]}(V)=\mathrm{span}(X+V_X) $$
+$$ R\_{[X]}(V)=\mathrm{span}(X+V_X) $$
 はレトラクション。ただし $\mathrm{span}:\mathbb{R}^{n\times p}\_\ast\rightarrow\mathrm{Grass}(p,n)$ は自然な全射。
 {{% /example %}}
 
