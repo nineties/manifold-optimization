@@ -121,18 +121,18 @@ $$ \begin{aligned}
 
 $\square$
 
----
-
-
-
 {{% example title="$n$次元球面のレトラクションの例" %}}
 $S^n$ 上の点 $x$ と $v\in T_x S^n$ に対して
 $$\mathrm{R}_x(v) = \frac{x+v}{||x+v||} $$
 {{% /example %}}
 
-$\mathcal{M}=S^n, \mathcal{N}=\\{r\in\mathbb{R}\mid r > 0\\}$ に対して
-$$\phi:S^n\times\mathcal{N}\rightarrow\mathbb{R}^{n+1}\_\ast: (x,r) \mapsto rx $$
-とおき {{< ref prop.retraction >}} を使用。
+$$\phi:S^n\times\mathbb{R}_+\rightarrow\mathbb{R}^{n+1}\_\ast: (x,r) \mapsto rx $$
+
+とおく。これは$r=1$に固定すると恒等写像になり、
+
+$$ \phi^{-1}(x) = (x/||x||,||x||)$$
+
+であり、{{< ref prop.retraction >}} を使用すると上記レトラクションを得る。
 
 直交群やシュティーフェル多様体に対するレトラクションの同様の構成は行列のQR分解を利用して得られる。
 
@@ -241,6 +241,20 @@ $$\mathrm{Skew}_n\rightarrow O_n: A\mapsto (I-A)(I+A)^{-1}$$
 直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$
 {{% /proposition %}}
+
+これは {{< ref prop.retraction >}} を利用するものではないので、レトラクションの条件を直接示す。
+$\mathrm{R}_X$ が滑らかな写像であるのは明らかで$ \mathrm{R}_X(0) = X(I-0)^{-1}(I+0)= X$。
+また
+
+$$ \mathrm{R}_X(V) = X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)$$
+
+であるので、これを $V$ で微分して
+
+$$ \mathrm{D}\mathrm{R}\_X(V) = \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) + \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1} $$
+
+であるから
+
+$$ \mathrm{D}\mathrm{R}\_X(0) = \frac{1}{2}XX^{-1}X^{-1}X + \frac{1}{2}XX^{-1} = \frac{1}{2}I+\frac{1}{2}I = I $$
 
 {{% example title="直交群のGivens回転によるレトラクション" %}}
 単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを **ギブンズ回転(Givens rotation)** という。これは $ij$平面での回転を表す。
