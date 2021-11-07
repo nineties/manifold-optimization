@@ -71,7 +71,7 @@ $$x{\sim} y\Leftrightarrow x-y\in\mathbb{Z}$$
 ここで $\pi(x,y)=x$ となるような $y$ は $x{\sim} y$ であるものなので $\pi$ は${\sim}$ で同値な点を一点に潰す写像で、これが沈め込みであるという事が商多様体を作る自然な全射が沈め込みであるという事と同値になる。
 
 そして $\mathrm{graph}({\sim})$ が閉集合であるということは、 $\mathcal{M}/{\sim}$ がハウスドルフ空間であるということに対応する。
-$\mathrm{graph}({\sim})$ が開集合であるならば、その補集合 $\mathrm{graph}({\sim})^\circ$ が開集合であるので、任意の点 $(x,y)\in\mathrm{graph}({\sim})^\circ $に対して
+$\mathrm{graph}({\sim})$ が閉集合であるならば、その補集合 $\mathrm{graph}({\sim})^\circ$ が開集合であるので、任意の点 $(x,y)\in\mathrm{graph}({\sim})^\circ $に対して
 $(x,y)\in U\times V$ となる開集合 $U\times V\subset\mathrm{graph}({\sim})^\circ$ が存在する。
 
 ところで $(x,y)\in\mathrm{graph}({\sim})^\circ$ であるということは $x\not{\sim} y$ である事を表すので、このことは $x\not{\sim} y$ であるならば $x\in U,y\in V,U\cap V=\emptyset$ となる開集合 $U,V$ が存在する事と同値。
