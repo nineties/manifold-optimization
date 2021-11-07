@@ -249,7 +249,7 @@ $O_n = \mathrm{St}(n,n)$ より。
 {{% definition %}}
 多様体の間の滑らかな写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ と、接ベクトル $v\in T_x\mathcal{M}$ に対して、
 $$(\mathrm{D}_F(x)[v])(f) := v(f\circ F)$$
-と定めると $\mathrm{D}_F(x)[v]$ は $T\_{F(x)}\mathcal{N}$ の接ベクトルとなる。この対応
+と定めると $\mathrm{D}_F(x)[v]$ は $\mathcal{N}$の$F(x)$ における接ベクトルとなる。この対応
 
 $$ \mathrm{D}\_F(x):T_x\mathcal{M}\rightarrow T\_{F(x)}\mathcal{N}: v\mapsto\mathrm{D}\_F(x)[v] $$
 
