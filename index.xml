@@ -15,7 +15,7 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
 定義2.2: チャートの両立 2つの $d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description></item><item><title>3. 多様体の位相構造</title><link>https://nineties.github.io/manifold-optimization/3-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/3-topology/</guid><description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法と構造について見ていく。
-多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 定義2.9 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
+多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
 定義3.1: 開集合 多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
