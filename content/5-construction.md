@@ -60,10 +60,13 @@ $$\mathrm{dim}(\mathcal{M}/{\sim})=2\dim(\mathcal{M})-\mathrm{dim}(\mathrm{graph
 $$x{\sim} y\Leftrightarrow x-y\in\mathbb{Z}$$
 
 とする。この時 $\mathcal{M}/{\sim}$ は単位円 $S^1$ と微分同相な空間になる。
+(この同値関係では、数直線上の小数部分が等しい各点が同じ点になるので、下図のように $S^1$ が出来上がる)
 
-この時、商多様体の条件が何を言っているか確認すると、まず $\mathrm{graph}({\sim})$ は以下の図のように直線 $x-y=k,k\in\mathbb{Z}$ を集めた空間になる。
+{{< figure src="../images/quotient-space0.png" >}}
 
-{{< figure src="../images/quotient-space.png" >}}
+これが商多様体となる条件が何を言っているか確認すると、まず $\mathrm{graph}({\sim})$ は以下の図のように直線 $x-y=k,k\in\mathbb{Z}$ を集めた空間になる。
+
+{{< figure src="../images/quotient-space1.png" >}}
 
 ここで $\pi(x,y)=x$ となるような $y$ は $x{\sim} y$ であるものなので $\pi$ は${\sim}$ で同値な点を一点に潰す写像で、これが沈め込みであるという事が商多様体を作る自然な全射が沈め込みであるという事と同値になる。
 
@@ -139,4 +142,4 @@ $\mathrm{span}(X)=\mathrm{span}(Y)$ であるというのは適当な基底変�
 
 $$[X] = \\{XP\mid P\in \mathrm{GL}_p\\}$$
 
-とも書ける。この意味で $\mathrm{Grass}(p,n)$ を $\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$ とも書く。$\mathrm{Grass}(p,n)$ が多様体である事を証明したいが、もうちょっと準備が必要そうであるので次の節に回す。
+とも書ける。この意味で $\mathrm{Grass}(p,n)$ を $\mathbb{R}^{n\times p}\_\ast/\mathrm{GL}_p$ とも書く。
