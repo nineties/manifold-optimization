@@ -377,7 +377,7 @@ $$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2n}: v\mapsto (\varphi_1(x),\l
 が $T\mathcal{M}$ のチャートとなり、これらを全て集めて $T\mathcal{M}$ のアトラスを構成する事が出来る。
 
 {{% definition title="ベクトル場" %}}
-$\mathcal{M}$ の各点 $x$ に接ベクトル場 $T_x\mathcal{M}$ のベクトルを対応づける滑らかな写像
+$\mathcal{M}$ の各点 $x$ に接ベクトル空間 $T_x\mathcal{M}$ のベクトルを対応づける滑らかな写像
 
 $$ V:\mathcal{M}\rightarrow T\mathcal{M}: x\rightarrow v\in T_x\mathcal{M} $$
 
