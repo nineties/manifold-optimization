@@ -26,12 +26,10 @@ $$ R_x(v) = \pi(\phi^{-1}(x + v)) $$
 $\mathcal{V}$ の中で計算した $x + v$ から $\mathcal{M}$ への写像を構成している。</p><figure><img src=../images/retraction-by-decomposition.png></figure><p>[証明]
 $R_x$ が滑らかな写像となるのは明らか。</p><p>$$ R_x(0) = \pi(\phi^{-1}(x+0)) = \pi(\phi^{-1}(x)) = \pi(x, e) = x $$</p><p>また,任意の $v\in T_x\mathcal{M}$ に対して</p><p>$$ \begin{aligned}
 & \mathrm{D}{R_x}(0)[v] \\<br>= & \mathrm{D}(\pi\circ\phi^{-1})(x)[v] \\<br>= & \mathrm{D}\pi(\phi^{-1}(x))[\mathrm{D}\phi^{-1}(x)[v]] \\<br>= & \mathrm{D}\pi(\phi^{-1}(x))[(v,0)] \\<br>= & \mathrm{D}\pi(x,e)[(v,0)] \\<br>= & v
-\end{aligned}$$</p><p>$\square$</p><hr><div class=box><div class=title>例8.6: $n$次元球面のレトラクションの例</div><p>$S^n$ 上の点 $x$ と $v\in T_x S^n$ に対して
-$$\mathrm{R}_x(v) = \frac{x+v}{||x+v||} $$</p></div><p>$\mathcal{M}=S^n, \mathcal{N}=\{r\in\mathbb{R}\mid r > 0\}$ に対して
-$$\phi:S^n\times\mathcal{N}\rightarrow\mathbb{R}^{n+1}_\ast: (x,r) \mapsto rx $$
-とおき
+\end{aligned}$$</p><p>$\square$</p><div class=box><div class=title>例8.6: $n$次元球面のレトラクションの例</div><p>$S^n$ 上の点 $x$ と $v\in T_x S^n$ に対して
+$$\mathrm{R}_x(v) = \frac{x+v}{||x+v||} $$</p></div><p>$$\phi:S^n\times\mathbb{R}_+\rightarrow\mathbb{R}^{n+1}_\ast: (x,r) \mapsto rx $$</p><p>とおく。これは$r=1$に固定すると恒等写像になり、</p><p>$$ \phi^{-1}(x) = (x/||x||,||x||)$$</p><p>であり、
 <a href=https://nineties.github.io/manifold-optimization/8-retractions/#prop.retraction>命題8.5</a>
-を使用。</p><p>直交群やシュティーフェル多様体に対するレトラクションの同様の構成は行列のQR分解を利用して得られる。</p><div class=box><div class=title>命題8.7: QR分解</div><p>$U^+_{n}$ を $n\times n$ の実上三角行列で対角成分が全て正であるものの集合とする。</p><p>任意の $X\in\mathbb{R}^{m\times n}_\ast, (m\geq n)$ は</p><p>$$ X=QR\quad (Q\in \mathbb{R}^{m\times n}, R\in U^+_n, Q^TQ=I)$$
+を使用すると上記レトラクションを得る。</p><p>直交群やシュティーフェル多様体に対するレトラクションの同様の構成は行列のQR分解を利用して得られる。</p><div class=box><div class=title>命題8.7: QR分解</div><p>$U^+_{n}$ を $n\times n$ の実上三角行列で対角成分が全て正であるものの集合とする。</p><p>任意の $X\in\mathbb{R}^{m\times n}_\ast, (m\geq n)$ は</p><p>$$ X=QR\quad (Q\in \mathbb{R}^{m\times n}, R\in U^+_n, Q^TQ=I)$$
 と一意に分解できる。この対応 $X\mapsto Q$ を $\mathrm{qf}(X)=Q$ と表記する。</p><figure><img src=../images/qr-factorization.png></figure></div><p>特に $m=n$ の時は $Q$ は直交行列となる。</p><div class=box><div class=title>例8.8: 直交群のQR分解によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$ R_X(V) = \mathrm{qf}(X + V)=X\mathrm{qf}(I+\Omega) $$</p></div><p>$\mathcal{M}=O_n,\mathcal{N}=U^+_{n}$ に対して
 $$ \phi: O_n\times U^+_n\rightarrow\mathbb{R}^{n\times n}_\ast: (Q,R)\rightarrow QR $$
@@ -57,7 +55,11 @@ $$ R_X(V) = (X+V)(I+V^TV)^{-\frac{1}{2}} $$</p></div><p>$$ T_X\mathrm{St}(p,n)=\
 $ U = X(X^TX)^{-1/2}$ の $X$ に $X+V$ を代入して
 $$\begin{aligned}
 \mathrm{R}_X(V) &= (X+V)((X+V)^T(X+V))^{-\frac{1}{2}} \\<br>&= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\<br>&= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\<br>\end{aligned}$$</p><hr><p>続いてCayley変換を利用する例。</p><div class=box><div class=title>命題8.13: Cayley変換</div><p>任意の $A\in\mathrm{Skew}_n$ に対して $I+A$ は正則であり $(I-A)(I+A)^{-1}$ は直交行列である。</p><p>この写像</p><p>$$\mathrm{Skew}_n\rightarrow O_n: A\mapsto (I-A)(I+A)^{-1}$$</p><p>を <strong>Cayley変換(Cayley Transform)</strong> という。</p></div><div class=box><div class=title>例8.14: 直交群のCayley変換によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
-$$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$</p></div><div class=box><div class=title>例8.15: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
+$$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Omega\right) $$</p></div><p>これは
+<a href=https://nineties.github.io/manifold-optimization/8-retractions/#prop.retraction>命題8.5</a>
+を利用するものではないので、レトラクションの条件を直接示す。
+$\mathrm{R}_X$ が滑らかな写像であるのは明らかで$ \mathrm{R}_X(0) = X(I-0)^{-1}(I+0)= X$。
+また</p><p>$$ \mathrm{R}_X(V) = X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)$$</p><p>であるので、これを $V$ で微分して</p><p>$$ \mathrm{D}\mathrm{R}_X(V) = \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) + \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1} $$</p><p>であるから</p><p>$$ \mathrm{D}\mathrm{R}_X(0) = \frac{1}{2}XX^{-1}X^{-1}X + \frac{1}{2}XX^{-1} = \frac{1}{2}I+\frac{1}{2}I = I $$</p><div class=box><div class=title>例8.15: 直交群のGivens回転によるレトラクション</div><p>単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを <strong>ギブンズ回転(Givens rotation)</strong> という。これは $ij$平面での回転を表す。
 $$G(i,j,\theta)=\begin{pmatrix}
 1 & \cdots & 0 & \cdots & 0 & \cdots & 0 \\<br>\vdots & \ddots & \vdots & & \vdots & & \vdots \\<br>0 & \cdots & \cos\theta & \cdots & \sin\theta & \cdots & 0 \\<br>\vdots & & \vdots & \ddots & \vdots & & \vdots \\<br>0 & \cdots & -\sin\theta & \cdots & \cos\theta & \cdots & 0 \\<br>\vdots & & \vdots & & \vdots & \ddots & \vdots \\<br>0 & \cdots & 0 & \cdots & 0 & \cdots & 1 \\<br>\end{pmatrix}$$</p><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
 $$\mathrm{R}_X(V)=X\mathrm{Giv}(\Omega)=X\prod_{i&lt;j}G(i,j,\Omega_{ij})$$</p></div><div class=box><div class=title>例8.16: 直交群の指数写像によるレトラクション</div><p>直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して
