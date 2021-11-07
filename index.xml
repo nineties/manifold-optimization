@@ -15,7 +15,7 @@ $$ \min_{\mathbf{x}\in S^2}\ f(\mathbf{x}) $$
 定義2.2: チャートの両立 2つの $d$次元チャート $(U,\varphi),(V,\psi)$ に対して
 $$ \psi\circ\varphi^{-1}: \varphi(U\cap V)\rightarrow\psi(U\cap V) $$
 を 座標変換(change of coordinates) という。</description></item><item><title>3. 多様体の位相構造</title><link>https://nineties.github.io/manifold-optimization/3-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/3-topology/</guid><description>すでに述べたように、このノートでは多様体の位相は天下り的に与えられるのではなくて、極大アトラスによって定められる。その構成方法と構造について見ていく。
-多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 定義2.9 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
+多くの多様体の定義では位相空間としてハウスドルフかつ第二可算(もしくはパラコンパクト)である事が仮定される事が多いが、 のように定義された多様体の極大アトラスが定める位相もこれらの性質を持つ事が言える。
 ハウスドルフ空間であるので、多様体上の点列が収束するならばその極限は一意に定まる事が保証される。第二可算性やパラコンパクト性がどう嬉しいかは私も勉強中なのでまだよく分かっていない。後ほど使う場面でわかるだろう。
 定義3.1: 開集合 多様体 $\mathcal{M}$ の部分集合 $U\subset \mathcal{M}$ が$\mathcal{M}$の 開集合(open subset) であるとは、任意のチャート $(V,\varphi)$ について $\varphi(U\cap V)$ が開集合である事をいう。
 $U$ が開集合であるというのは、どの地図上でその部分を見ても開集合になっているという事。
@@ -48,7 +48,7 @@ $$ \mathrm{D}_{f}(x)[\eta] = \lim_{t\rightarrow 0}\frac{f(x+t\eta)-f(x)}{t} $$
 曲線の定義域は開集合であればなんでも良いが、今は $t=0$ 付近にしか興味がないのでこう書く事にする。
 ここで適当なチャートを選んで $\gamma$ を座標表示すれば、$x=\gamma(0)$ における速度ベクトルを求める事が出来るが、チャートの選び方に依存してしまう。そこで、 $x$ を通りこの点で同じ運動をしている曲線の集合 を速度ベクトル (接ベクトル) として定める。 同じ運動をしているか否かは、点 $x$ の周囲に座標系を貼り付けた時に同じ速度ベクトルになっているか否かで判断できる。
 定義6.2: 接ベクトル $t=0$ で点 $x\in\mathcal{M}$ を通る曲線の集合 $$ \mathcal{L}_x = \{\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M} \mid \gamma(0)=x \}$$ の上の同値関係を $x$ を含むチャート $(U,\varphi)$ を用いて $$ \gamma_1\sim\gamma_2\Longleftrightarrow \frac{\mathrm{d}(\varphi\circ\gamma_1)}{\mathrm{d}t}(0) = \frac{\mathrm{d}(\varphi\circ\gamma_2)}{\mathrm{d}t}(0) $$ と定める。これはチャートの選び方に寄らない。 $\mathcal{L}_x/{\sim}$ の元を $\mathcal{M}$ の点 $x$ での 接ベクトル(tangent vector) という。</description></item><item><title>7. リーマン多様体</title><link>https://nineties.github.io/manifold-optimization/7-riemann/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nineties.github.io/manifold-optimization/7-riemann/</guid><description>前節までで多様体上で定義された滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の方向微分は計算できるようになったが、最適化アルゴリズムを実行する為には 勾配(gradient) が必要である。そして、勾配を定義する為には多様体に リーマン計量(Riemannian metric) という構造を入れる必要がある。
-勾配を定めるのに何故リーマン軽量が必要なのか戸惑うかもしれない(私は最初は戸惑った)。接ベクトル空間 $T_x\mathcal{M}$ を定めることができて各接ベクトル $v\in T_x\mathcal{M}$ に沿った方向微分を計算できるのに、何故勾配を定める事ができないのか？という事である。
+勾配を定めるのに何故リーマン計量が必要なのか戸惑うかもしれない(私は最初は戸惑った)。接ベクトル空間 $T_x\mathcal{M}$ を定めることができて各接ベクトル $v\in T_x\mathcal{M}$ に沿った方向微分を計算できるのに、何故勾配を定める事ができないのか？という事である。
 そもそも勾配とはなんであるかというと、ベクトル解析における概念では $f$ の変化率が最大となる方向を向いていて、ノルムがその変化率であるようなベクトル指すのだった。多様体の上での勾配はこれを一般化した概念としたいが、接ベクトル $v\in T_x\mathcal{M}$ の 長さ が与えられていないので、変化率が最大つまり 同じ距離だけ進んだ時 に $f$ が最も大きく変化する方向を定める事ができない。リーマン計量を入れれば、ベクトルの長さなどの幾何学的性質を多様体の上で定義する事が可能になる為、勾配も定義する事が可能になる。
 定義7.1: 内積 実ベクトル空間 $V$ に対して定められた写像 $\langle\cdot ,\cdot\rangle:V\times V\rightarrow\mathbb{R}$ が以下の性質を満たすとき、これを 内積(inner product) という。
 任意の $u,v,w\in V,a\in\mathbb{R}$ に対して
