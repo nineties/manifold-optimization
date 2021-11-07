@@ -40,8 +40,8 @@ $$\mathrm{D}_F(X)[-]:H\mapsto X^TH+H^TX$$
 となる。なぜならば$F(X+H)-F(X)-\mathrm{D}_F(X)[H] = H^TH$
 で $\lim_{H\rightarrow 0}||H^TH||/||H||\rightarrow 0$ であるから。</p><p>ここで任意の $Y\in\mathrm{Sym}_n$ に対して $H=XY/2$ とおくと</p><p>$$\mathrm{D}_F(X)\left[\frac{XY}{2}\right]=\frac{1}{2}(X^T(XY)+(XY)^TX)=\frac{1}{2}(Y+Y^T)=Y$$</p><p>より $\mathrm{D}_F[-]$ はフルランクであるので、$F$ のランクは $n(n+1)/2$。従って $O_n$ の次元は $n^2-n(n+1)/2=n(n-1)/2$</p><div class=box><div class=title>例4.16: 回転群</div><p><strong>回転群(rotation group)</strong> もしくは <strong>特殊直交群(special orthogonal group)</strong>
 $$ SO_n = \{X\in\mathbb{R}^{n\times n}\mid X^TX=I,\det X=1 \}$$
-は $n(n-1)/2$ 次元多様体である。</p></div><p>$\mathbb{R}_+$ を正の実数の集合とすると、これは $\mathbb{R}$ の開集合。$\det:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}$ は連続写像だから $\det(\mathbb{R}_+) \subset\mathbb{R}^{n\times n}$ も開集合。よって
-$SO_n = O_n\cap\det(\mathbb{R}_+)$
+は $n(n-1)/2$ 次元多様体である。</p></div><p>$\mathbb{R}_+$ を正の実数の集合とすると、これは $\mathbb{R}$ の開集合。$\det:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}$ は連続写像だから $\det^{-1}(\mathbb{R}_+) \subset\mathbb{R}^{n\times n}$ も開集合。よって
+$SO_n = O_n\cap\det^{-1}(\mathbb{R}_+)$
 より $SO_n$ は $O_n$ の開部分集合であるので $O_n$ と次数の等しい多様体である。</p><div id=ex.stiefel-manifold style=padding-top:100px;margin-top:-100px></div><div class=box><div class=title>例4.17: コンパクトシュティーフェル多様体</div><p>$p\leq n$ の時
 $$\mathrm{St}(p,n)=\{X\in\mathbb{R}^{n\times p}\mid X^TX = I_p\}$$
 を <strong>コンパクトシュティーフェル多様体(compact Stiefel manifold)</strong> という。これは $np-p(p+1)/2$ 次元多様体である。</p></div><p>以後コンパクトシュティーフェル多様体の事を単にシュティーフェル多様体と呼ぶ。</p><p>シュティーフェル多様体は $p=1$ の時は $n-1$ 次元球面、 $p=n$ の時は直交群になり、これらを一般化したものと言える。証明は直交群とほぼ同じなので省略。</p></article></section><footer><div><p class="f6 gray mt6 lh-copy"></p></div></footer><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script></body></html>
