@@ -135,7 +135,7 @@ $\mathcal{M}$ のアトラス $\mathcal{A},\mathcal{B}$ について $\mathcal{A
 
 任意のアトラスについて
 $$\mathcal{A}\sim\mathcal{A}\quad(\text{反射律}) $$
-$$\mathcal{A}\sim\mathcal{B}\Rightarrow\mathcal{B}\rightarrow\mathcal{A}\quad(\text{対称律})$$
+$$\mathcal{A}\sim\mathcal{B}\Rightarrow\mathcal{B}\sim\mathcal{A}\quad(\text{対称律})$$
 が成立することは明らかなので、
 $$\mathcal{A}\sim\mathcal{B},\mathcal{B}\sim\mathcal{C}\Rightarrow\mathcal{A}\sim\mathcal{C}\quad(\text{推移律})$$
 を示せば良い。その為には、$\mathcal{A}\sim\mathcal{B},\mathcal{B}\sim\mathcal{C}$ の時に、任意のチャート $(U,\varphi)\in\mathcal{A},(V,\psi)\in\mathcal{C}$ が両立する事を示せば良い。
