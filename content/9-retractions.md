@@ -246,15 +246,21 @@ $$ \mathrm{R}_X(V)=X\left(I-\frac{1}{2}\Omega\right)^{-1}\left(I+\frac{1}{2}\Ome
 $\mathrm{R}_X$ が滑らかな写像であるのは明らかで$ \mathrm{R}_X(0) = X(I-0)^{-1}(I+0)= X$。
 また
 
-$$ \mathrm{R}_X(V) = X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)$$
+$$\mathrm{R}_X(V)=X\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) $$
 
-であるので、これを $V$ で微分して
+であるので {{< ref prop.derivative-of-multiply >}}と{{< ref prop.derivative-of-inv >}} より
 
-$$ \mathrm{D}\mathrm{R}\_X(V) = \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right) + \frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1} $$
+$$
+\mathrm{D}\mathrm{R}_X(V)[H]
+=\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H\left(X-\frac{1}{2}V\right)^{-1}\left(X+\frac{1}{2}V\right)
++\frac{1}{2}X\left(X-\frac{1}{2}V\right)^{-1}H
+$$
+であるので
+$$
+\mathrm{D}\mathrm{R}_X(0)[H] =\frac{1}{2}XX^{-1}HX^{-1}X +\frac{1}{2}XX^{-1}H = \frac{1}{2}H+\frac{1}{2}H = H
+$$
+より局所剛性も成立 $\square$
 
-であるから
-
-$$ \mathrm{D}\mathrm{R}\_X(0) = \frac{1}{2}XX^{-1}X^{-1}X + \frac{1}{2}XX^{-1} = \frac{1}{2}I+\frac{1}{2}I = I $$
 
 {{% example title="直交群のGivens回転によるレトラクション" %}}
 単位行列の $(i,i)$成分と$(j,j)$成分を $\cos\theta$に、 $(i,j)$成分と$(j,i)$成分を$\sin\theta$ と $-\sin\theta$ に置き換えたものを **ギブンズ回転(Givens rotation)** という。これは $ij$平面での回転を表す。

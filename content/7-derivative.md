@@ -44,7 +44,12 @@ $$ \mathrm{D}\\,\mathrm{tr}(X)[V] = \mathrm{tr}(V) $$
 {{% /proposition %}}
 $\mathrm{tr}:\mathbb{R}^{n\times n}\rightarrow\mathbb{R}$ は線型写像である為。
 
-{{% proposition %}}
+{{% proposition label="prop.derivative-of-multiply" %}}
+$\mathcal{M}$ をベクトル空間とし、 $F:\mathcal{M}\rightarrow\mathbb{R}^{l\times m}, G:\mathcal{M}\rightarrow\mathbb{R}^{m\times n}$ を滑らかな写像とすると $H(X)=F(X)G(X)$ として
+$$ \mathrm{D} H(X)[V] = \left(\mathrm{D}F(X)[V]\right) G(X) + F(X)\left(\mathrm{D}G(X)[V]\right) $$
+{{% /proposition %}}
+
+{{% proposition label="prop.derivative-of-inv" %}}
 $\mathrm{inv}:\mathrm{GL}_n\rightarrow\mathrm{GL}_n: X\mapsto X^{-1}$ とすると
 $$ \mathrm{D}\\,\mathrm{inv}(X)[V] = -X^{-1}VX^{-1} $$
 {{% /proposition %}}
