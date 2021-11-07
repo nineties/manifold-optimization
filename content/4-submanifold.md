@@ -32,11 +32,11 @@ $\mathrm{D}_f(a)[-]$ を $f$ の $a$ における **微分(differential)** と�
 $\mathrm{D}_f(a)[h]$ を $f$ の $a$ における $h$ に沿った **方向微分(directional derivative)** という。
 {{% /definition %}}
 
-バナッハ空間といっているが、ほとんどの場合はユークリッド空間 $\mathbb{R}^m$ であるか、行列 $\mathbb{R}^{m\times n}$ とフロベニウスノルム
+バナッハ空間といっているが、ユークリッド空間 $\mathbb{R}^m$ であるか、行列 $\mathbb{R}^{m\times n}$ とフロベニウスノルム
 
 $$ ||A||=\sqrt{\sum_{ij}a_{ij}^2} $$
 
-からなる空間であるかどちらか。
+からなる空間が登場する場合が多い。
 
 これは $f:\mathbb{R}\rightarrow\mathbb{R}$ の微分係数の一般化になっている。
 
@@ -204,7 +204,7 @@ $$ O_n = \\{X\in\mathbb{R}^{n\times n}\mid X^TX=I \\\}$$
 
 $\mathrm{Sym}_n$ を$n$次実対称行列の集合とする。 これは上三角の $n(n+1)/2$ 要素を取り出す写像をチャートとすれば $n(n+1)/2$次元の多様体である事が分かる。
 
-ここで $F:\mathbb{R}^{n\times n}\rightarrow\mathrm{Sym}_n: X^T\mapsto XX$ とすると $O_n=F^{-1}(I)$である。$F$ が可微分なのは(加減乗算だけなので)明らかなので、あとは $F$ のランクを計算する。
+ここで $F:\mathbb{R}^{n\times n}\rightarrow\mathrm{Sym}_n: X\mapsto X^TX$ とすると $O_n=F^{-1}(I)$である。$F$ が可微分なのは(加減乗算だけなので)明らかなので、あとは $F$ のランクを計算する。
 
 ここで $F$ の微分は
 $$\mathrm{D}_F(X)[-]:H\mapsto X^TH+H^TX$$
