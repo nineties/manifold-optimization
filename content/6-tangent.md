@@ -7,17 +7,28 @@ section: 6
 
 $$ \mathrm{D}\_{f}(x)[\eta] = \lim_{t\rightarrow 0}\frac{f(x+t\eta)-f(x)}{t} $$
 
-といった感じでは書けない。方向 $\eta$ をどう表現するかも明らかではない。チャートを使うというのが一つの方法だが、そうするとチャートの選び方に依存したものとなり使い勝手が悪い。そこで、接ベクトルや接ベクトル空間といった概念が登場する。
+といった感じでは書けない。方向 $\eta$ をどう表現するかも明らかではない。
+適当なチャートを用いれば、ユークリッド空間の関数になるのでこれらを計算する事ができるが、チャートの選び方に結果が依存してしまう為、定義としては使い勝手が良くない。
 
-接ベクトルの定義にはいくつかの流儀があるみたいで、今回参考にしている[教科書](https://press.princeton.edu/absil)では多様体上の実関数に対する微分作用素を接ベクトルとする定義を採用している。この定義は理屈としては分かるものの、図形的な直感を(私は)なかなか得られなかったので、このノートでは別の定義から出発したいと思う。 そちらの定義では曲線の同値類として接ベクトルを定義をする。
+そこで接ベクトルや接ベクトル空間といった概念が登場するのだが、チャートの選び方に依存しない定義とするために、非常に巧妙なものとなっている。その為とても難しい(と私は感じた)。
+
+接ベクトルの定義にはいくつかの流儀があるみたいで、今回参考にしている[教科書](https://press.princeton.edu/absil)では多様体上の実関数に対する微分作用素を接ベクトルとする定義を採用している。この定義は理屈としては分かるものの、図形的な直感を(私は)なかなか得られなかったので、このノートでは別のもっと直感的に理解しやすい(と私が思う)定義から出発したいと思う。
 
 ---
 
-滑らかな写像 $\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M}$ を $\mathcal{M}$ 上の **曲線(curve)** という。(曲線の定義域は開集合であればなんでも良いが、今は $t=0$ 付近にしか興味がないのでこう書く事にする。)
+接ベクトルは多様体上を滑らかに移動する点の速度ベクトルとして理解する事が出来る。
+
+{{% definition title="曲線" %}}
+$\varepsilon>0$ の時、滑らかな写像 $\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M}$ を $\mathcal{M}$ 上の **曲線(curve)** という。
+{{% /definition %}}
+
+曲線の定義域は開集合であればなんでも良いが、今は $t=0$ 付近にしか興味がないのでこう書く事にする。
 
 {{< figure src="../images/curve.png" >}}
 
-点 $x$ を通る曲線を用いる事で $x$ における点の運動を表現できそうである。但し、関心があるのは $x$ の局所的な様子であって曲線全体ではないので、 $x$ において同じ運動をしていると見なせる曲線群を同一視しようというのがこの定義のアイデアである。同じ運動をしているか否かは、点 $x$ の周囲に座標系を貼り付けた時に同じ速度ベクトルになっているか否かで判断できる。
+ここで適当なチャートを選んで $\gamma$ を座標表示すれば、$x=\gamma(0)$ における速度ベクトルを求める事が出来るが、チャートの選び方に依存してしまう。そこで、
+**$x$ を通りこの点で同じ運動をしている曲線の集合** を速度ベクトル (接ベクトル) として定める。
+同じ運動をしているか否かは、点 $x$ の周囲に座標系を貼り付けた時に同じ速度ベクトルになっているか否かで判断できる。
 
 {{% definition title="接ベクトル" %}}
 $t=0$ で点 $x\in\mathcal{M}$ を通る曲線の集合
@@ -30,7 +41,11 @@ $$
 $\mathcal{L}_x/{\sim}$ の元を $\mathcal{M}$ の点 $x$ での **接ベクトル(tangent vector)** という。
 {{% /definition %}}
 
-ここで定めた商集合 $\mathcal{L}_x/{\sim}$ にはベクトル空間の構造を入れることができる。点 $x$ の周りのチャート $(U,\varphi)$ を固定すると、$\mathcal{M}$ の接ベクトルと $\mathbb{R}^m$ の速度ベクトルが以下の対応によって一対一に対応する。
+$$\frac{\mathrm{d}(\varphi\circ\gamma_1)}{\mathrm{d}t}(0) = \frac{\mathrm{d}(\varphi\circ\gamma_2)}{\mathrm{d}t}(0)$$
+
+の両辺の速度ベクトルそのものはチャートの選び方によって変わるが、それらが一致するか否かはチャートの選び方には依らないという事である。
+
+$\mathcal{L}_x/{\sim}$ にはベクトル空間の構造を入れることができる。点 $x$ の周りのチャート $(U,\varphi)$ を固定すると、$m$次元多様体 $\mathcal{M}$ の接ベクトルと $\mathbb{R}^m$ の速度ベクトルが以下の対応によって一対一に対応する。
 
 $$\phi:\mathcal{L}_x/{\sim}\longrightarrow\mathbb{R}^m: [\gamma] \longmapsto \frac{\mathrm{d}(\varphi\circ\gamma)}{\mathrm{d}t}(0) $$
 
@@ -38,7 +53,7 @@ $$\phi:\mathcal{L}_x/{\sim}\longrightarrow\mathbb{R}^m: [\gamma] \longmapsto \fr
 
 $$ \gamma(t) = \varphi^{-1}(\varphi(x) + vt) $$
 
-とおけば $\phi([\gamma])=v$ となる事から分かる。
+という曲線を考えると $\phi([\gamma])=v$ となる為。
 
 接ベクトルの和とスカラー倍と和も対応
 
@@ -78,7 +93,7 @@ $$[\gamma] = \sum_i\frac{d(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)\phi^{-1}(e_i) 
 
 {{% definition title="方向微分" %}}
 多様体 $\mathcal{M}$ 上で定義された滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ と
-点 $x\in\mathcal{M}$ を通る曲線 $\gamma:\mathbb{R}\rightarrow\mathcal{M},\gamma(0)=x$ について
+点 $x\in\mathcal{M}$ を通る曲線 $\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M},\gamma(0)=x$ について
 
 $$
 \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0)
@@ -86,6 +101,8 @@ $$
 
 を $f$ の点 $x$ における曲線 $\gamma$ に沿った **方向微分(directional derivative)** という。
 {{% /definition %}}
+
+($\gamma(t)$ は $\mathcal{M}$ 上の点だったが、 $f\circ\gamma$ は $(-\varepsilon,\varepsilon)\rightarrow\mathbb{R}$ という実数値関数なので $t=0$ での微分係数を通常通り計算する事が出来ることに注意)
 
 そして、以下が成り立つ。
 
@@ -132,7 +149,7 @@ $$[\gamma] = \sum_i\frac{d(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)\phi^{-1}(e_i) 
 
 $$ f \longmapsto \left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x $$
 
-になって、 $x_i$ 軸方向の偏微分操作を表しているという事が分かる。文脈から $\varphi$ が明らかな時はこれを省略して、この作用素を
+になって、 $x_i$ 軸方向の偏微分操作を表しているという事が分かる。この作用素を
 
 $$\left(\frac{\partial}{\partial x_i}\right)_x$$
 
@@ -350,11 +367,12 @@ $$ U_{XA}=U_XA$$
 接空間の全ての点での直和
 $$ T\mathcal{M} = \bigsqcup\_{x\in\mathcal{M}} T_x\mathcal{M} = \\{(x,v)\mid x\in\mathcal{M},v\in T_x\mathcal{M}\\}$$
 を $\mathcal{M}$ の **接バンドル(tangent bundle)** という。
+$\dim\mathcal{M}=n$の時、接バンドル $T\mathcal{M}$ は $2n$ 次元多様体見なすことが出来る。
 {{% /definition %}}
 
-$\dim\mathcal{M}=n$の時、接バンドル $T\mathcal{M}$ は $2n$ 次元多様体見なすことが出来る。というのは $\mathcal{M}$ の$x$の周りのチャート $(U,\varphi)$ に対して
+というのは $\mathcal{M}$ の$x$の周りのチャート $(U,\varphi)$ に対して
 
-$$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2m}: v\mapsto (\varphi_1(x),\ldots,\varphi_m(x),v(\varphi_1(x)),\ldots,v(\varphi_m(x)))^T$$
+$$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2n}: v\mapsto (\varphi_1(x),\ldots,\varphi_n(x),v(\varphi_1(x)),\ldots,v(\varphi_n(x)))^T$$
 
 が $T\mathcal{M}$ のチャートとなり、これらを全て集めて $T\mathcal{M}$ のアトラスを構成する事が出来る。
 
