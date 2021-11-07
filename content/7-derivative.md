@@ -57,7 +57,7 @@ $$\begin{aligned}
 \end{aligned} $$
 
 {{% proposition %}}
-$$\mathrm{det}:\mathrm{GL}_n\rightarrow\mathbb{R}$$ に対して
+$\mathrm{det}:\mathrm{GL}_n\rightarrow\mathbb{R}$ に対して
 $$ \mathrm{D}\\,\mathrm{det}(X)[V] = \mathrm{tr}\left(\mathrm{adj}(X)V\right) = \mathrm{det}(X)\mathrm{tr}\left(X^{-1}V\right) $$
 {{% /proposition %}}
 
