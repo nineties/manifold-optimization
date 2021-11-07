@@ -23,13 +23,13 @@ $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の微分可能性の定義を復習す�
 {{% definition label="def.differential" %}}
 $V,W$ をバナッハ空間(線型空間であって完備な距離を持つ)の間の写像 $f:V\rightarrow W$ が点 $a\in V$ で **微分可能(differentiable)** であるとは
 
-$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}_f(a)[h]||}{||h||}=0 $$ 
+$$ \lim_{h\rightarrow 0}\frac{||f(a+h)-f(a)-\mathrm{D}f(a)[h]||}{||h||}=0 $$ 
 
-を満たす線型写像: $\mathrm{D}_f(a)[-]:V\rightarrow W$ が存在する事である。$f$ が任意の点で微分可能である事を、 $f$ は微分可能であるという。
+を満たす線型写像: $\mathrm{D}f(a)[-]:V\rightarrow W$ が存在する事である。$f$ が任意の点で微分可能である事を、 $f$ は微分可能であるという。
 
-$\mathrm{D}_f(a)[-]$ を $f$ の $a$ における **微分(differential)** という。
+$\mathrm{D}f(a)[-]$ を $f$ の $a$ における **微分(differential)** という。
 
-$\mathrm{D}_f(a)[h]$ を $f$ の $a$ における $h$ に沿った **方向微分(directional derivative)** という。
+$\mathrm{D}f(a)[h]$ を $f$ の $a$ における $h$ に沿った **方向微分(directional derivative)** という。
 {{% /definition %}}
 
 バナッハ空間といっているが、ユークリッド空間 $\mathbb{R}^m$ であるか、行列 $\mathbb{R}^{m\times n}$ とフロベニウスノルム
@@ -41,21 +41,21 @@ $$ ||A||=\sqrt{\sum_{ij}a_{ij}^2} $$
 これは $f:\mathbb{R}\rightarrow\mathbb{R}$ の微分係数の一般化になっている。
 
 $$
-f(a+h) = f(a) + \mathrm{D}_f(a)[h] + o(||h||)
+f(a+h) = f(a) + \mathrm{D}f(a)[h] + o(||h||)
 $$
 
-であるので点 $a$ から $h$ だけ進むと $f(a)$ が $\mathrm{D}_f(a)[h]$ だけ増えるということ。 $\mathrm{D}_f(a)[-]$ が(写像だけど)接線の傾きに相当する。
+であるので点 $a$ から $h$ だけ進むと $f(a)$ が $\mathrm{D}f(a)[h]$ だけ増えるということ。 $\mathrm{D}f(a)[-]$ が(写像だけど)接線の傾きに相当する。
 
 $x=a+h$ とおいて書き直すと
 
 $$
-f(x) = f(a) + \mathrm{D}_f(a)[x-a] + o(||x-a||)
+f(x) = f(a) + \mathrm{D}f(a)[x-a] + o(||x-a||)
 $$
 
 であるので、これは $f(x)$ の $x=a$ の周りでの一次近似であるとも言える。
 
 {{% proposition title="ヤコビ行列" %}}
-$f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の点 $a$ での微分係数 $\mathrm{D}_f(a)[-]$ の標準基底での表現行列は **ヤコビ行列(Jacobian matrix)** $J_f(a)$ である。すなわち
+$f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ の点 $a$ での微分係数 $\mathrm{D}f(a)[-]$ の標準基底での表現行列は **ヤコビ行列(Jacobian matrix)** $J_f(a)$ である。すなわち
 $$ f: (x_1,\ldots,x_m)\mapsto (f_1(x_1,\ldots,x_m),\ldots,f_n(x_1,\ldots,x_m))$$
 とおくと
 $$
@@ -71,7 +71,7 @@ $$
 つまり、標準基底では方向微分がヤコビ行列と $h$ の単なる積になる。
 
 $$
-\mathrm{D}_f(a)[h] = J_f(a)h
+\mathrm{D}f(a)[h] = J_f(a)h
 $$
 
 $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が微分可能ならば、各変数について偏微分可能であるがこの逆は成り立たない。一方、各偏微分係数が連続なら($f$が $C^1$ 級ならば)微分可能である事が言える。
@@ -81,7 +81,7 @@ $f:\mathbb{R}^m\rightarrow\mathbb{R}^n$ が微分可能ならば、各変数に�
 $f:\mathbb{R}^{m_1}\rightarrow\mathbb{R}^{m_2}$ が $x$ で微分可能で $g:\mathbb{R}^{m_2}\rightarrow\mathbb{R}^{m_3}$ が $f(x)$ で微分可能ならば以下の連鎖律が成り立つ。
 
 $$
-\mathrm{D}_{g\circ f}(x) = \mathrm{D}_g(f(x))\circ\mathrm{D}_f(x)
+\mathrm{D}{g\circ f}(x) = \mathrm{D}g(f(x))\circ\mathrm{D}f(x)
 $$
 {{% /proposition %}}
 
@@ -104,7 +104,7 @@ $$ \mathcal{M}\simeq\mathcal{N}$$
 {{% /definition %}}
 
 {{% definition title="可微分写像のランク" %}}
-$m$ 次元多様体 $\mathcal{M}$ から、 $n$ 次元多様体 $\mathcal{N}$ への可微分写像$F:\mathcal{M}\rightarrow\mathcal{N}$, 点 $x\in\mathcal{M}$ に対して、線型写像 $\mathrm{D}_{\hat{F}}(\varphi(x))[-]:\mathbb{R}^m\rightarrow\mathbb{R}^n$ のランクを $F$ の 点 $x\in\mathcal{M}$ における **ランク(rank)** という。(全ての点でランクが等しい時は、それを 単に $F$ のランクという。)
+$m$ 次元多様体 $\mathcal{M}$ から、 $n$ 次元多様体 $\mathcal{N}$ への可微分写像$F:\mathcal{M}\rightarrow\mathcal{N}$, 点 $x\in\mathcal{M}$ に対して、線型写像 $\mathrm{D}{\hat{F}}(\varphi(x))[-]:\mathbb{R}^m\rightarrow\mathbb{R}^n$ のランクを $F$ の 点 $x\in\mathcal{M}$ における **ランク(rank)** という。(全ての点でランクが等しい時は、それを 単に $F$ のランクという。)
 {{% /definition %}}
 
 微分同相写像$f: \mathbb{R}^n\rightarrow\mathbb{R}^n$ のヤコビ行列は正則行列になるので、座標変換によって可微分写像のランクは変わらない。
@@ -118,7 +118,7 @@ $m$ 次元多様体 $\mathcal{M}$ から $n$ 次元多様体 $\mathcal{N}$ へ�
 と呼ぶ。
 {{% /definition %}}
 
-言い方を変えると $F$ がはめ込みであるとは、微分 $\mathrm{D}_f(x)[-]$ が全ての点$x$で単射であるという事であり、 沈めこみであるとは全射である事。各点での微分の単射性、全射性について言っているのであって、 $F$ そのものの単射性、全射性についてでは無いので注意。
+言い方を変えると $F$ がはめ込みであるとは、微分 $\mathrm{D}f(x)[-]$ が全ての点$x$で単射であるという事であり、 沈めこみであるとは全射である事。各点での微分の単射性、全射性について言っているのであって、 $F$ そのものの単射性、全射性についてでは無いので注意。
 
 {{% definition title="埋め込み" %}}
 可微分写像 $:\mathcal{M}\rightarrow\mathcal{N}$ がはめ込みかつ単射であり、 $F(\mathcal{M})$ に $\mathcal{N}$ の相対位相を入れた時に $\mathcal{M}$ と $F(\mathcal{M})$ が同相となるならば $F$ を **埋め込み(embedding)** という。
@@ -207,15 +207,15 @@ $\mathrm{Sym}_n$ を$n$次実対称行列の集合とする。 これは上三�
 ここで $F:\mathbb{R}^{n\times n}\rightarrow\mathrm{Sym}_n: X\mapsto X^TX$ とすると $O_n=F^{-1}(I)$である。$F$ が可微分なのは(加減乗算だけなので)明らかなので、あとは $F$ のランクを計算する。
 
 ここで $F$ の微分は
-$$\mathrm{D}_F(X)[-]:H\mapsto X^TH+H^TX$$
-となる。なぜならば$F(X+H)-F(X)-\mathrm{D}_F(X)[H] = H^TH$
+$$\mathrm{D}F(X)[-]:H\mapsto X^TH+H^TX$$
+となる。なぜならば$F(X+H)-F(X)-\mathrm{D}F(X)[H] = H^TH$
 で $\lim\_{H\rightarrow 0}||H^TH||/||H||\rightarrow 0$ であるから。
 
 ここで任意の $Y\in\mathrm{Sym}_n$ に対して $H=XY/2$ とおくと
 
-$$\mathrm{D}_F(X)\left[\frac{XY}{2}\right]=\frac{1}{2}(X^T(XY)+(XY)^TX)=\frac{1}{2}(Y+Y^T)=Y$$
+$$\mathrm{D}F(X)\left[\frac{XY}{2}\right]=\frac{1}{2}(X^T(XY)+(XY)^TX)=\frac{1}{2}(Y+Y^T)=Y$$
 
-より $\mathrm{D}_F[-]$ はフルランクであるので、$F$ のランクは $n(n+1)/2$。従って  $O_n$ の次元は $n^2-n(n+1)/2=n(n-1)/2$
+より $\mathrm{D}F[-]$ はフルランクであるので、$F$ のランクは $n(n+1)/2$。従って  $O_n$ の次元は $n^2-n(n+1)/2=n(n-1)/2$
 
 {{% example title="回転群" %}}
 **回転群(rotation group)** もしくは **特殊直交群(special orthogonal group)**

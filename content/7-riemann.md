@@ -126,7 +126,7 @@ $$ d(x,y) := \inf\\{L(\gamma)\mid \text{$\gamma$は$x,y$を結ぶ曲線}\\}$$
 リーマン多様体 $\mathcal{M}$ 上で定義された滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の点 $x$ における
 **勾配(gradient)** $\mathrm{grad} f(x)$ とは $x$ における接ベクトルであって、任意の $h\in T_x\mathcal{M}$ に対して
 
-$$ \langle \mathrm{grad} f(x), h\rangle = \mathrm{D}_f(x)[h] $$
+$$ \langle \mathrm{grad} f(x), h\rangle = \mathrm{D}f(x)[h] $$
 
 となるものである。
 {{% /definition %}}
@@ -159,7 +159,7 @@ $$
 $$\langle\mathrm{grad} f(x),h\rangle =
 \sum_i
  \frac{\mathrm{d}(\varphi_i\circ\gamma)}{\mathrm{d}t}(0)
-\left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x = \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) = \mathrm{D}_f(x)[h]
+\left(\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\right)_x = \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) = \mathrm{D}f(x)[h]
 $$
 
 となる。
@@ -182,7 +182,7 @@ f_{x_{n1}}(X) & \cdots & f_{x_{np}}(X) \\\\
 こうして求めた勾配が、実際に $f$ の変化率を最大化する方向を向いた、ノルムが変化率のベクトルである事が示せる。ここで変化率とはノルムが1のベクトルに対する方向微分のこととする。
 
 {{% proposition %}}
-ノルムが$1$の接ベクトル $v\in T_x\mathcal{M},||v||=1$ で、方向微分 $\mathrm{D}_f(x)[v]$ が最大となるものは
+ノルムが$1$の接ベクトル $v\in T_x\mathcal{M},||v||=1$ で、方向微分 $\mathrm{D}f(x)[v]$ が最大となるものは
 $$ v = \frac{\mathrm{grad} f(x)}{||\mathrm{grad} f(x)||} $$
 である。また、この時の最大値は $||\mathrm{grad} f(x)||$ と一致する。 
 {{% /proposition %}}
@@ -195,13 +195,13 @@ $$ \langle \mathrm{grad} f(x), v\rangle \leq ||\mathrm{grad} f(x) ||\ ||v|| $$
 
 と $||v||=1$ より
 
-$$ \mathrm{D}_f(x)[v] \leq ||\mathrm{grad} f(x) || $$
+$$ \mathrm{D}f(x)[v] \leq ||\mathrm{grad} f(x) || $$
 
 等号が成立するのは $\alpha\in\mathbb{R}$ が存在して $v=\alpha \mathrm{grad} f(x)$ と表される場合であるから、これと $||v||=1$ より
 
 $$ v = \frac{\mathrm{grad} f(x)}{||\mathrm{grad} f(x)||} $$
 
-の時に $\mathrm{D}_f(x)[v]$ は最大となり、最大値は $||\mathrm{grad} f(x)||$ である。 $\square$
+の時に $\mathrm{D}f(x)[v]$ は最大となり、最大値は $||\mathrm{grad} f(x)||$ である。 $\square$
 
 ---
 
@@ -331,7 +331,7 @@ $$ g_{[x]}(u,v) = g_x(\bar{u},\bar{v}) $$
 
 $\pi$ がリーマン沈め込みであるならば、滑らかな関数 $f:\mathcal{M}/{\sim}\rightarrow\mathbb{R}$ に対して$\mathrm{grad} (f\circ\pi)(x)$ が $\mathrm{grad} f([x])$ の水平リフトとなる。つまり
 
-$$\mathrm{grad} f([x]) = \mathrm{D}_{\pi}(x)[\mathrm{grad} (f\circ\pi)(x)]$$
+$$\mathrm{grad} f([x]) = \mathrm{D}{\pi}(x)[\mathrm{grad} (f\circ\pi)(x)]$$
 
 となる。
 

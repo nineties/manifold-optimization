@@ -3,37 +3,55 @@ title: 8. レトラクション
 section: 8
 ---
 
+各点 $x\in\mathcal{M}$ での勾配が定められるようになったので、次は $\mathcal{M}$ 上で点を動かして最小値を探索する方法を考える。
+
 ユークリッド空間 $\mathbb{R}^n$ の関数 $f:\mathbb{R}^n\rightarrow\mathbb{R}$ に対する **直線探索法(line-search method)** とは点 $x_0\in\mathbb{R}^n$ から出発して、更新式
 
 $$ x_{k+1}=x_k + t_kv_k $$
 
-を反復し $f$ の極小値を求める方法。ここで $v_k$ は **探索方向(search direction)** と呼ばれるベクトル、 $t_k$ は **ステップサイズ(step size)** と呼ばれるスカラーであって、これらをどのように求めるかによって様々な最適化アルゴリズムが存在する。
+を反復し $f$ の極小値を求める方法である。ここで $v_k$ は **探索方向(search direction)** と呼ばれるベクトル、 $t_k$ は **ステップサイズ(step size)** と呼ばれるスカラーであって、これらをどのように求めるかによって様々な最適化アルゴリズムが存在する。
 
 
-これを多様体 $\mathcal{M}$ 上で行うためには、$v_k$ を点 $x_k$ での接ベクトル $T_{x_k}\mathcal{M}$ とし、 $\gamma$ を $\dot{\gamma}(0)=v_k$ となるような曲線とし、 $\gamma$ に沿って探索を行えば良い。
+多様体 $\mathcal{M}$ 上で同様の探索を行う事を考える。つまり $x_k \in\mathcal{M}$ から $v_k\in T_{x_k}\mathcal{M}$ の方向に探索を進めるということ行いたいわけであるが、 一般の多様体上では直線というものを考えることは出来ないので、
+
+$$
+\gamma(0) = x_k,\quad\dot{\gamma}(0)=v_k
+$$
+
+を満たす曲線 $\gamma$ に沿って探索を行う。ユークリッド空間での直線探索法と異なり、曲線 $\gamma$ の選び方という自由度が増えている。
 
 {{< figure src="../images/linesearch.png" >}}
 
-ユークリッド空間での直線探索法と異なり、曲線 $\gamma$ の選び方という自由度が増えている。$\gamma$ を構成する方法は無数にあるが、レトラクションという写像を用いるのが一般的である。
+このような $\gamma$ は条件さえ満たせばどのように構成しても良いが、レトラクションという接バンドルから多様体への写像を用いるのが一般的である。
+
 
 {{% definition title="レトラクション" %}}
 接バンドル $T\mathcal{M}$ から $\mathcal{M}$ への滑らかな写像 $R:T\mathcal{M}\rightarrow\mathcal{M}$ で以下の条件を満たすものを **レトラクション(retraction)** という。 $R$ の $T_x\mathcal{M}$ への制限を $R_x:T_x\mathcal{M}\rightarrow\mathcal{M}$ と書く。
 
 1. $R_x(0) = x$
-2. **局所剛性(local rigidity)** : $\mathrm{D}\_{R_x}(0)=\mathrm{id}_{T_x\mathcal{M}}$
+2. **局所剛性(local rigidity)** : $\mathrm{D}{R_x}(0)=\mathrm{id}_{T_x\mathcal{M}}$
 {{% /definition %}}
 
-$\mathrm{D}\_{R_x}(0)$ は $T_x\mathcal{M}$の接ベクトル空間 $T_0T_x\mathcal{M}$ から $T_x\mathcal{M}$ への写像
-$$ \mathrm{D}\_{R_x}(0): T_0T_x\mathcal{M}\rightarrow T_x\mathcal{M} $$
-であるが、$T_x\mathcal{M}$ はベクトル空間だから $T_0T_x\mathcal{M}\simeq T_x\mathcal{M}$ であるので
-$$ \mathrm{D}\_{R_x}(0): T_x\mathcal{M}\rightarrow T_x\mathcal{M} $$
-として上の定義では扱っている。
+イメージとしては下の図のように、接ベクトル空間 $T_x\mathcal{M}$ 上で $x$ から $v$ だけ進んだ点から $\mathcal{M}$ 上に移す写像が $R_x$
 
-そして局所剛性は、任意の $v\in T_x\mathcal{M}$ に対して
+{{< figure src="../images/retraction.png" >}}
 
-$$\mathrm{D}\_{R_x}(0)[v] = v$$
+局所剛性は、任意の $v\in T_x\mathcal{M}$ に対して
 
-であるということ。レトラクションが与えられると、直線探索を行うのに必要な曲線を以下のようにして構成することができる。
+$$\mathrm{D}{R_x}(0)[v] = v$$
+
+であるというで、 $x$ の周囲 $(v=0)$ での接ベクトル空間は $R_x$ によって動かないということを言っている。
+
+厳密に言うと、 $\mathrm{D}{R_x}(0)$ は $T_x\mathcal{M}$の接ベクトル空間 $T_0(T_x\mathcal{M})$ から $T_x\mathcal{M}$ への写像
+$$ \mathrm{D}{R_x}(0): T_0(T_x\mathcal{M})\rightarrow T_x\mathcal{M} $$
+であるが、ベクトル空間の接ベクトル空間はそれ自身と一致するので $T_0T_x\mathcal{M}\simeq T_x\mathcal{M}$ である。つまり微分 $\mathrm{D}{R_x}(0)$ は
+$$ \mathrm{D}{R_x}(0): T_x\mathcal{M}\rightarrow T_x\mathcal{M} $$
+という写像とみる事が出来て、これが $\mathrm{id}$ であると言うのは接ベクトル空間を動かさないという事に他ならない。
+
+---
+
+さて、レトラクションが与えられると、直線探索を行うのに必要な曲線を以下のようにして構成することができる。
+
 
 {{% proposition %}}
 $R:T\mathcal{M}\rightarrow\mathcal{M}$ をレトラクションとする。接ベクトル $v\in T_x\mathcal{M}$ に対して曲線を
@@ -44,31 +62,29 @@ $$ \gamma(0) = x,\ \dot{\gamma}(0) = v $$
 
 $\gamma:(-\varepsilon,\varepsilon)\rightarrow\mathcal{M}$ が滑らかな写像であるのは明らかであり $\gamma(0)=R_x(0) = x$ かつ
 
-$$\dot{\gamma}(0) = \mathrm{D}_{R_x}(0)\left[\frac{\mathrm{d}(tv)}{\mathrm{d}t}(0)\right] = \mathrm{D}\_{R_x}(0)[v]=v$$
+$$\dot{\gamma}(0) = \mathrm{D}{R_x}(0)\left[\frac{\mathrm{d}(tv)}{\mathrm{d}t}(0)\right] = \mathrm{D}{R_x}(0)[v]=v$$
 
-{{< figure src="../images/retraction.png" >}}
+{{% definition title="レトラクションを用いた探索" %}}
 
-$\mathcal{M}$ を多様体、 $\mathrm{R}$ を $\mathcal{M}$ の何らかのレトラクションとする。点 $x_k\in\mathcal{M}$ から接ベクトル $v_k\in T_{x_k}\mathcal{M}$ の方向にステップサイズ $t_k\in\mathbb{R}$ だけ進むという事は、更新式
+$\mathcal{M}$ を多様体、 $\mathrm{R}$ をレトラクションとする。点 $x_k\in\mathcal{M}$ から接ベクトル $v_k\in T_{x_k}\mathcal{M}$ の方向にステップサイズ $t_k\in\mathbb{R}$ だけ進むことを表す更新式は
 $$ x_{k+1} = \mathrm{R}_{x_k}(t_kv_k) $$
-によって表す事ができる。
 
-このように、多様体上での最適化アルゴリズムはレトラクションの選び方によって変化し、効率的に計算できるレトラクションを見つける事が重要となる。
+{{% /definition %}}
 
-ちなみに、リーマ多様体には **指数写像(exponential mapping)** という自然に定まるレトラクションが存在するが、計算量が多く計算機で扱うのは難しい事が多い。
+同じ多様体上でも最適化アルゴリズムはレトラクションの選び方によって変化し、効率的に計算できるレトラクションを見つける事が重要となる。
+例えばリーマン多様体には **指数写像(exponential mapping)** という自然に定まるレトラクションが存在するが、計算量や数値的安定性の観点から計算機で扱うのは難しい事が多い。数学的な性質の良さと、計算機で実行する上での性質の良さは異なるので注意。
 
 {{% example title="ベクトル空間のレトラクション" %}}
+$\mathcal{M}$ がベクトル空間の場合には、通常の直線探索と一致する。
+
 ベクトル空間 $\mathcal{M}$ の点 $x$ と、接ベクトル $v\in T_x\mathcal{M}$ に対して、同型 $\mathcal{M}\simeq T_x\mathcal{M}$ を用いて
 $$ R_x(v) = x + v $$
-と定めると、これはレトラクションである。
-{{% /example %}}
-
-$\mathcal{M}$ がベクトル空間の場合には(今定めたレトラクションを用いると)、更新式は
+と定めると、これはレトラクションであり、更新式は
 
 $$ x_{k+1} = \mathrm{R}_{x_k}(t_kv_k) = x_k + t_kv_k $$
+{{% /example %}}
 
-となって、通常の直線探索と一致する。
-
-続いて、$\mathcal{M}$ がベクトル空間 $\mathcal{V}$ の部分多様体である場合を考える。この場合も 点 $x\in\mathcal{M}$ と接ベクトル $v\in T_x\mathcal{M}$ の加算 $ x + v $ を$\mathcal{V}$ の中で求める事が出来る。従って $x+v$ を $\mathcal{M}$ の点に移す写像によってレトラクションを構成する事ができるが、以下がその写像が満たすべき条件となる。
+続いて、$\mathcal{M}$ がベクトル空間 $\mathcal{V}$ の部分多様体である場合を考える。この場合も 点 $x\in\mathcal{M}$ と接ベクトル $v\in T_x\mathcal{M}$ の加算 $ x + v $ を$\mathcal{V}$ の中で求める事が出来る。従って $x+v$ を $\mathcal{M}$ の点に移す写像によってレトラクションを構成する事ができる。
 
 {{% proposition label="prop.retraction" %}}
 $\mathcal{M}$ をベクトル空間 $\mathcal{V}$ の部分多様体とし、 $\mathcal{N}$ を
@@ -81,6 +97,33 @@ $$ \phi(x,e) = x\quad \forall x\in\mathcal{M} $$
 $$ R_x(v) = \pi(\phi^{-1}(x + v)) $$
 は $x$ の近傍で $\mathcal{M}$ のレトラクションである。
 {{% /proposition %}}
+
+下図の様なイメージ。ベクトル空間 $\mathcal{V}$ を2つの多様体 $\mathcal{M},\mathcal{N}$ に分解する写像 $\phi^{-1}$ を考えて、
+$\mathcal{V}$ の中で計算した $x + v$ から $\mathcal{M}$ への写像を構成している。
+
+{{< figure src="../images/retraction-by-decomposition.png" >}}
+
+[証明]
+$R_x$ が滑らかな写像となるのは明らか。
+
+$$ R_x(0) = \pi(\phi^{-1}(x+0)) = \pi(\phi^{-1}(x)) = \pi(x, e) = x $$
+
+また,任意の $v\in T_x\mathcal{M}$ に対して
+
+$$ \begin{aligned}
+  & \mathrm{D}{R\_x}(0)[v] \\\\
+= & \mathrm{D}(\pi\circ\phi^{-1})(x)[v] \\\\
+= & \mathrm{D}\pi(\phi^{-1}(x))[\mathrm{D}\phi^{-1}(x)[v]] \\\\
+= & \mathrm{D}\pi(\phi^{-1}(x))[(v,0)] \\\\
+= & \mathrm{D}\pi(x,e)[(v,0)] \\\\
+= & v
+\end{aligned}$$
+
+$\square$
+
+---
+
+
 
 {{% example title="$n$次元球面のレトラクションの例" %}}
 $S^n$ 上の点 $x$ と $v\in T_x S^n$ に対して
@@ -178,6 +221,21 @@ $$\begin{aligned}
 &= (X+V)(X^TX + V^TV + V^TX+X^TV)^{-\frac{1}{2}} \\\\
 &= (X+V)(I + V^TV)^{-\frac{1}{2}} \quad(\because X^TX=I,V^TX+X^TV=0)\\\\
 \end{aligned}$$
+
+---
+
+続いてCayley変換を利用する例。
+
+{{% proposition title="Cayley変換" %}}
+任意の $A\in\mathrm{Skew}_n$ に対して $I+A$ は正則であり $(I-A)(I+A)^{-1}$ は直交行列である。
+
+この写像
+
+$$\mathrm{Skew}_n\rightarrow O_n: A\mapsto (I-A)(I+A)^{-1}$$
+
+を **Cayley変換(Cayley Transform)** という。
+{{% /proposition %}}
+
 
 {{% example title="直交群のCayley変換によるレトラクション" %}}
 直交群 $O_n$ の点 $X$ と $V=X\Omega\in T_XO_n$ に対して

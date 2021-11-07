@@ -5,7 +5,7 @@ section: 6
 
 多様体上でニュートン法などの最適化アルゴリズムを実行する為には、点 $x\in\mathcal{M}$ で勾配や方向微分に相当するものを計算できる必要がある。多様体 $\mathcal{M}$ 上の実数値関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ の点 $x\in\mathcal{M}$ での方向 $\eta$ についての方向微分は、多様体上の点について加法が定義されていないので
 
-$$ \mathrm{D}\_{f}(x)[\eta] = \lim_{t\rightarrow 0}\frac{f(x+t\eta)-f(x)}{t} $$
+$$ \mathrm{D}{f}(x)[\eta] = \lim_{t\rightarrow 0}\frac{f(x+t\eta)-f(x)}{t} $$
 
 といった感じでは書けない。方向 $\eta$ をどう表現するかも明らかではない。
 適当なチャートを用いれば、ユークリッド空間の関数になるのでこれらを計算する事ができるが、チャートの選び方に結果が依存してしまう為、定義としては使い勝手が良くない。
@@ -169,13 +169,13 @@ $$ T_xV\simeq V$$
 直線の接線はその直線自身だし、平面の接平面はその平面自身。実際に計算すると
 $v\in T_x V, f\in C_x(V)$ に対して
 
-$$ v(f) = \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) = \mathrm{D}_{f}(x)\left[\frac{\mathrm{d}\gamma}{\mathrm{d}t}(0)\right]=\mathrm{D}\_{f}(x)[\dot{\gamma}(0)]$$
+$$ v(f) = \frac{\mathrm{d}(f\circ\gamma)}{\mathrm{d}t}(0) = \mathrm{D}{f}(x)\left[\frac{\mathrm{d}\gamma}{\mathrm{d}t}(0)\right]=\mathrm{D}{f}(x)[\dot{\gamma}(0)]$$
 
 となる。($\because$ ベクトル空間であるので $\gamma$ の時間での微分が直接計算できる)
 
-$\mathrm{D}\_{f}(x)$ は曲線 $\gamma$ に依存しないので $v$ と $\dot{\gamma}(0)$ が一対一に対応する。さらに$\mathrm{D}\_{f}(x)$ は線形写像であったから
+$\mathrm{D}{f}(x)$ は曲線 $\gamma$ に依存しないので $v$ と $\dot{\gamma}(0)$ が一対一に対応する。さらに$\mathrm{D}{f}(x)$ は線形写像であったから
 
-$$a_1v_1(f)+a_2v_2(f) = \mathrm{D}_{f}(x)[a_1\dot{\gamma_1}(0)+a_2\dot{\gamma_2}(0)]$$
+$$a_1v_1(f)+a_2v_2(f) = \mathrm{D}{f}(x)[a_1\dot{\gamma_1}(0)+a_2\dot{\gamma_2}(0)]$$
 
 となるので
 
@@ -244,21 +244,21 @@ $O_n = \mathrm{St}(n,n)$ より。
 
 ---
 
-{{< ref def.differential >}} で定めたバナッハ空間の間の写像 $f:V\rightarrow W$ の微分 $\mathrm{D}_f(a)[-]$ を接ベクトル空間に対して一般化する。
+{{< ref def.differential >}} で定めたバナッハ空間の間の写像 $f:V\rightarrow W$ の微分 $\mathrm{D}f(a)[-]$ を接ベクトル空間に対して一般化する。
 
 {{% definition %}}
 多様体の間の滑らかな写像 $F:\mathcal{M}\rightarrow\mathcal{N}$ と、接ベクトル $v\in T_x\mathcal{M}$ に対して、
-$$(\mathrm{D}_F(x)[v])(f) := v(f\circ F)$$
-と定めると $\mathrm{D}_F(x)[v]$ は $\mathcal{N}$の$F(x)$ における接ベクトルとなる。この対応
+$$(\mathrm{D}F(x)[v])(f) := v(f\circ F)$$
+と定めると $\mathrm{D}F(x)[v]$ は $\mathcal{N}$の$F(x)$ における接ベクトルとなる。この対応
 
-$$ \mathrm{D}\_F(x):T_x\mathcal{M}\rightarrow T\_{F(x)}\mathcal{N}: v\mapsto\mathrm{D}\_F(x)[v] $$
+$$ \mathrm{D}F(x):T_x\mathcal{M}\rightarrow T\_{F(x)}\mathcal{N}: v\mapsto\mathrm{D}F(x)[v] $$
 
 は線型写像になり、これを $F$ の $x$ における **微分(differential)** という。
 {{% /definition %}}
 
 もし $\mathcal{M},\mathcal{N}$ がベクトル空間の場合は同型 $T\_x\mathcal{M}\simeq\mathcal{M}, T\_{F(x)}\mathcal{N}\simeq\mathcal{N}$ によって $v$ は普通のベクトル $v\in\mathcal{M}$ となり、 $F$ の微分は
 
-$$ \mathrm{D}\_F(x)[v] = \lim\_{t\rightarrow 0}\frac{F(x+vt)-F(x)}{t} $$
+$$ \mathrm{D}F(x)[v] = \lim\_{t\rightarrow 0}\frac{F(x+vt)-F(x)}{t} $$
 
 となって、普通の方向微分になる。
 
@@ -266,11 +266,11 @@ $$ \mathrm{D}\_F(x)[v] = \lim\_{t\rightarrow 0}\frac{F(x+vt)-F(x)}{t} $$
 
 商多様体 $\mathcal{M}/{\sim}$ 上の接ベクトル空間について考える。多くのケースで $\mathcal{M}/{\sim}$ を直接取り扱うことは難しいので、 $\mathcal{M}$ の接ベクトルと自然な全射 $\pi:\mathcal{M}\rightarrow\mathcal{M}/{\sim}$ を道具として用いて $\mathcal{M}/{\sim}$ の接ベクトルを表したい。具体的には $\pi$ は滑らかな沈め込み写像であるので、任意の接ベクトル $v\in T_{[x]}(\mathcal{M}/{\sim})$ に対して
 
-$$\mathrm{D}_{\pi}(x)[u] = v$$
+$$\mathrm{D}{\pi}(x)[u] = v$$
 
 となるような $u$ が存在する(一意ではない)。このような $u$ を $v$ の点 $x$ での **リフト(lift)** というが、これを用いて $\mathcal{M}/{\sim}$ 上の滑らかな関数の方向微分を計算する事が出来る。すなわち、滑らかな関数 $f:\mathcal{M}/{\sim}\rightarrow\mathbb{R}$ に対して
 
-$$ \mathrm{D}\_{f\circ\pi}(x)[u]=\mathrm{D}_f(\pi(x))\left[\mathrm{D}\_\pi(x)[u]\right] = \mathrm{D}_f([x])[v]$$
+$$ \mathrm{D}{f\circ\pi}(x)[u]=\mathrm{D}f(\pi(x))\left[\mathrm{D}\pi(x)[u]\right] = \mathrm{D}f([x])[v]$$
 
 となる。
 
@@ -294,7 +294,7 @@ $$ u=u_V + u_H \quad u_V\in\mathcal{V}_x,u_H\in\mathcal{H}_x$$
 
 と一意的に分解できるが、垂直な成分の方は
 
-$$\mathrm{D}_\pi(x)[u_V] = 0$$
+$$\mathrm{D}\pi(x)[u_V] = 0$$
 
 と $0$ につぶれてしまう。何故ならば $\pi^{-1}([x])$ の上のどのような曲線も $\mathcal{M}/{\sim}$ では一点につぶれてしまい動かない為。
 
@@ -333,14 +333,14 @@ $$\mathcal{H}_x=\\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
 
 を取ることが出来る。ここで $v\in T_{[x]}\mathbb{RP}^{n-1}$ の点 $x$ でのリフトを $u_x$ とすると、任意の $\alpha\in\mathbb{R}$ に対して $x\sim\alpha x$ であるので
 
-$$\mathrm{D}\_{\pi}(x)[u_x] = v$$
+$$\mathrm{D}{\pi}(x)[u_x] = v$$
 
 ここで $\alpha(x) = \alpha x$ とおくと、合成微分則より
 $$
-\mathrm{D}\_{\pi}(\alpha(x))[\mathrm{D}\_{\alpha}(x)[u_x]] = \mathrm{D}\_{\pi}(x)[u_x]
+\mathrm{D}{\pi}(\alpha(x))[\mathrm{D}{\alpha}(x)[u_x]] = \mathrm{D}{\pi}(x)[u_x]
 $$
 であり $D_\alpha(x)[u_x] = \alpha u_x$ であるから
-$$\mathrm{D}\_{\pi}(\alpha x)[\alpha u_x] = v$$
+$$\mathrm{D}{\pi}(\alpha x)[\alpha u_x] = v$$
 
 これは $v$ の点 $\alpha x$ でのリフト $u_{\alpha x}$ であるので
 $$ u_{\alpha x} = \alpha u_x $$
