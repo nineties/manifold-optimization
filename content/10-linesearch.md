@@ -41,3 +41,6 @@ $$ f(R_x(t v)) \leq f(x) + c \langle\mathrm{grad}f(x),t v \rangle $$
 {{% /definition %}}
 
 Armijo条件は移動 $x\rightarrow R_x(tv)$ によって $f$ の値が十分減少する事を要求する条件であり、求める減少の大きさはパラメータ $c\in(0,1)$ によって制御する。
+ユークリッド空間 $\mathbb{R}$ 上の滑らかな関数 $y=f(x)$ に対するArmijo条件を図示すると下図のようになる。(もちろん、一般の多様体に対してこのような図示は難しい。)
+
+{{< figure src="../images/armijo.png" >}}
