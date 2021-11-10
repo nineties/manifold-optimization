@@ -12,7 +12,7 @@ $$ x_{k+1} = R_{x_k}(t_kv_k) $$
 
 {{% definition title="Gradient-related sequence" %}}
 リーマン多様体 $\mathcal{M}$ 上の滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ について、点列 $\\{x_k\\}\,x_k\in\mathcal{M}$ と接ベクトルの列 $\\{d_k\\}\,d_k\in T\_{x_k}\mathcal{M}$ が **gradient-related** であるとは、 $f$ の非停留点に収束する任意の点列 $\\{x_k\\}\_{k\in K}$ について、対応する接ベクトルの列 $\\{d_k\\}\_{k\in K}$ が有界で
-$$ \lim\_{k\rightarrow\infty}\sup\_{k\in K}\langle\mathrm{grad} f(x_k),d_k\rangle < 0$$
+$$ \lim\_{N\rightarrow\infty}\sup\_{k\in K,k>N}\langle\mathrm{grad} f(x_k),d_k\rangle < 0$$
 が成立する事である。
 {{% /definition %}}
 
