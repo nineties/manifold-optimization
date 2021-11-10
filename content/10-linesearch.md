@@ -36,7 +36,7 @@ $x_{K+1},x_{K+2},\ldots \in U$ となること。
 (ハウスドルフ空間である) 多様体 $\mathcal{M}$ 上の任意の収束する点列についてその極限は一意に定まる。
 {{% /proposition %}}
 
-まず、探索方向 $v_k$ はGradient-related sequenceとなるように選ぶと良い。
+探索方向 $v_k$ はGradient-related sequenceとなるように選ぶと良い。
 
 {{% definition title="Gradient-related sequence" %}}
 リーマン多様体 $\mathcal{M}$ 上の滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ について、点列 $\\{x_k\\}\,x_k\in\mathcal{M}$ と接ベクトルの列 $\\{v_k\\}\,v_k\in T\_{x_k}\mathcal{M}$ が **gradient-related** であるとは、 $f$ の非停留点に収束する任意の点列 $\\{x_k\\}\_{k\in K}$ について、対応する接ベクトルの列 $\\{v_k\\}\_{k\in K}$ が有界で
