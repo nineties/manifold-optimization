@@ -19,3 +19,9 @@ $$ \lim\_{N\rightarrow\infty}\sup\_{k\in K,k>N}\langle\mathrm{grad} f(x_k),d_k\r
 (gradient-related sequenceって日本語だと何と呼ばれるのでしょうか？)
 
 $f$ の **停留点** というのは $\mathrm{grad} f(x) = 0$ であるような点 $x$ の事であり、 **非停留点** はそうでない点。接ベクトルの列 $\\{d_k\\}\_{k\in K}$ が有界であるというのは、適当な実数 $M$ が存在して任意の $k\in K$ に対して $||d_k|| < M$ となる事。
+
+また$ \langle\mathrm{grad} f(x_k),d_k\rangle < 0$ であるというのは $d_k$ が $f$ が減少する方向であるという事を表しているので、
+
+$$ \lim\_{N\rightarrow\infty}\sup\_{k\in K,k>N}\langle\mathrm{grad} f(x_k),d_k\rangle < 0$$
+
+であるというのは、最初の方は別として 最終的には $\\{d_k\\}$ が全て $f$ を減少させる方向であるという事。
