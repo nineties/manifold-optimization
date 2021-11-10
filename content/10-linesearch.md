@@ -69,3 +69,14 @@ Armijo条件は移動 $x\rightarrow R_x(tv)$ によって $f$ の値が十分減
 ユークリッド空間 $\mathbb{R}$ 上の滑らかな関数 $y=f(x)$ に対するArmijo条件を図示すると下図のようになる。(もちろん、一般の多様体に対してこのような図示は難しい。)
 
 {{< figure src="../images/armijo.png" >}}
+
+Armijo条件を満たす $t$ を見つける方法としては、例えば以下のアルゴリズムがある。
+
+{{% algorithm title="Backtrackingアルゴリズム" %}}
+
+$\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
+
+1. $t=\alpha$ とする。これがArmijo条件を満たすならば終了する。
+2. $t \leftarrow \beta t$ とし1に戻る。
+
+{{% /algorithm %}}
