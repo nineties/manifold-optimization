@@ -11,6 +11,16 @@ $$ x_{k+1} = R_{x_k}(t_kv_k) $$
 の **探索方向(search direction)** $v_k$ と、 **ステップサイズ(step size)** $t_k$ をどのように選ぶべきかについて調べる。
 これらは反復法が収束する事や収束先が停留点であるといった性質を持つように選ぶ必要がある。
 
+ところで、多様体上の点列が収束するとはそもそもどういう事かというところから定義が必要である。
+
+{{% definition title="点列の収束" %}}
+多様体 $\mathcal{M}$ 上の点列 $\\{x_k\\}$ に対して、あるチャート $(U,\psi)$ と点 $x\_{\ast} \in U$ が存在し、ある自然数 $K$ について
+$k > K$ ならば $x_k \in U$ であり、$\psi(x_k)$ が $\psi(x\_\ast)$ に収束するならば、 $\\{x_k\\}$ は **収束する (convergent)** という。
+また、
+$$ \psi^{-1}(\lim\_{k\rightarrow\infty} \psi(x_k)) $$
+を $\\{x_k\\}$ の **極限(limit)** といい、 $\lim_{k\rightarrow\infty}x_k$ と書く。
+{{% /definition %}}
+
 まず、探索方向 $v_k$ はGradient-related sequenceとなるように選ぶと良い。
 
 {{% definition title="Gradient-related sequence" %}}
