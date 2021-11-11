@@ -87,13 +87,14 @@ $\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
 もちろん、 $f(R_x(t v))$ が最も小さくなるような$t\_\ast = \mathrm{argmin}_t f(R_x(t v))$ を厳密に求める事ができるならば、それでも良い。
 
 続いてAbsil本ではいきなり"Accelerated" Line Searchというフレームワークが紹介されるが、本ノートでは単純なものから説明する。
+「フレームワーク」と呼んでいるのは、探索方向やステップサイズの選び方にまだ自由度があるため。
 
-{{% algorithm title="LS: Line Search" %}}
+{{% algorithm title="Line Search (LS)" %}}
 リーマン多様体 $\mathcal{M}$、滑らかな関数 $f: \mathcal{M}\rightarrow\mathbb{R}$ 、レトラクション $R:T\mathcal{M}\rightarrow\mathcal{M}$、定数 $c\in (0,1)$とする。
 
 最初の点 $x_0\in\mathcal{M}$ を選び、$k=0,1,2,\ldots$ に対して以下を反復する。
 
-1. 接ベクトル $d_k\in T\_{x_k}\mathcal{M}$ を選ぶ。
+1. ベクトル $v_k\in T\_{x_k}\mathcal{M}$ を選ぶ。
 2. Armijo条件を満たすステップサイズ $t$ を選ぶ。
 3. $x\_{k+1} = R\_{x_k}(td_k)$ とする。
 
