@@ -38,6 +38,13 @@ $x_{K+1},x_{K+2},\ldots \in U$ となること。
 (ハウスドルフ空間である) 多様体 $\mathcal{M}$ 上の任意の収束する点列についてその極限は一意に定まる。
 {{% /proposition %}}
 
+{{% proposition %}}
+多様体 $\mathcal{M},\mathcal{N}$ の間の写像 $f:\mathcal{M}\rightarrow\mathcal{N}$ が連続であるならば、任意の収束する$\mathcal{M}$の点列 $\\{x_k\\}$ に対して
+
+$$ \lim_{k\rightarrow\infty} f(x_k) = f\left(\lim_{k\rightarrow\infty} x_k\right) $$
+
+{{% /proposition %}}
+
 探索方向 $v_k$ はGradient-related sequenceとなるように選ぶと良い。
 
 {{% definition title="Gradient-related sequence" %}}
