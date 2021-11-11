@@ -74,7 +74,7 @@ $$ f(R_x(t v)) \leq f(x) + c \langle\mathrm{grad}f(x),t v \rangle $$
 を満たす時、 $t$ は **Armijo条件(Armijo Condition)** を満たすという。
 {{% /definition %}}
 
-Armijo条件は移動 $x\rightarrow R_x(tv)$ によって $f$ の値が十分減少する事を要求する条件であり、求める減少の大きさはパラメータ $c\in(0,1)$ によって制御する。
+Armijo条件は移動 $x\rightarrow R_x(tv)$ によって $f$ の値が十分減少する事を要求する条件であり、求める減少の大きさはパラメータ $c\in(0,1)$ によって制御する。非常に小さな値 (例えば $10^{-4}$)が使われる事が多い。
 ユークリッド空間 $\mathbb{R}$ 上の滑らかな関数 $y=f(x)$ に対するArmijo条件を図示すると下図のようになる。(もちろん、一般の多様体に対してこのような図示は難しい。)
 
 {{< figure src="../images/armijo.png" >}}
@@ -91,20 +91,21 @@ $\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
 
 {{% /algorithm %}}
 
+$\alpha=1, \beta=1/2$ といった値がよく使われると思う。
 もちろん、 $f(R_x(t v))$ が最も小さくなるような$t\_\ast = \mathrm{argmin}_t f(R_x(t v))$ を厳密に求める事ができるならば、それでも良い。
 
 続いてAbsil本ではいきなり"Accelerated" Line Searchというフレームワークが紹介されるが、本ノートでは単純なものから説明する。
-「フレームワーク」と呼んでいるのは、探索方向やステップサイズの選び方にまだ自由度があるため。
+「フレームワーク」と呼んでいるのは、探索方向の選び方にまだ自由度があるため。
 
 {{% algorithm title="Line Search (LS)" %}}
 リーマン多様体 $\mathcal{M}$、滑らかな関数 $f: \mathcal{M}\rightarrow\mathbb{R}$ 、レトラクション $R:T\mathcal{M}\rightarrow\mathcal{M}$、定数 $c\in (0,1)$とする。
 
 最初の点 $x_0\in\mathcal{M}$ を選び、$k=0,1,2,\ldots$ に対して以下を反復する。
 
-1. ベクトル $v_k\in T\_{x_k}\mathcal{M}$ を選ぶ。
-2. Armijo条件を満たすステップサイズ $t$ を選ぶ。
-3. $x\_{k+1} = R\_{x_k}(td_k)$ とする。
+1. 探索方向 $v_k\in T\_{x_k}\mathcal{M}$ を選ぶ。
+2. Armijo条件を満たすステップサイズ $t_k$ をBacktrackingアルゴリズムにより求める。
+3. $x\_{k+1} = R\_{x_k}(t_kv_k)$ とする。
 
-(ただし $\\{d_k\\}$ は $\\{x_k\\}$ とGradient-relatedとなるように選ぶ)
+(ただし $\\{v_k\\}$ は $\\{x_k\\}$ とGradient-relatedとなるように選ぶ)
 
 {{% /algorithm %}}
