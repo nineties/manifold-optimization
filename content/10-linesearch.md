@@ -84,6 +84,8 @@ $\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
 
 {{% /algorithm %}}
 
+もちろん、 $f(R_x(t v))$ が最も小さくなるような$t\_\ast = \mathrm{argmin}_t f(R_x(t v))$ を厳密に求める事ができるならば、それでも良い。
+
 続いてAbsil本ではいきなり"Accelerated" Line Searchというフレームワークが紹介されるが、本ノートでは単純なものから説明する。
 
 {{% algorithm title="LS: Line Search" %}}
