@@ -45,24 +45,11 @@ $$ \lim_{k\rightarrow\infty} f(x_k) = f\left(\lim_{k\rightarrow\infty} x_k\right
 
 {{% /proposition %}}
 
-探索方向 $v_k$ はGradient-related sequenceとなるように選ぶと良い。
+探索方向 $v_k$ については $f(x_k)$ の値が減少する方向を選びたいので
 
-{{% definition title="Gradient-related sequence" %}}
-リーマン多様体 $\mathcal{M}$ 上の滑らかな関数 $f:\mathcal{M}\rightarrow\mathbb{R}$ について、点列 $\\{x_k\\}\,x_k\in\mathcal{M}$ と接ベクトルの列 $\\{v_k\\}\,v_k\in T\_{x_k}\mathcal{M}$ が **gradient-related** であるとは、 $f$ の非停留点に収束する任意の点列 $\\{x_k\\}\_{k\in K}$ について、対応する接ベクトルの列 $\\{v_k\\}\_{k\in K}$ が有界で
-$$ \lim\_{N\rightarrow\infty}\sup\_{k\in K,k>N}\langle\mathrm{grad} f(x_k),v_k\rangle < 0$$
-が成立する事である。
-{{% /definition %}}
+$$ \langle\mathrm{grad} f(x_k), v_k)\rangle < 0$$
 
-(gradient-related sequenceって日本語だと何と呼ばれるのでしょうか？)
-
-$f$ の **停留点** というのは $\mathrm{grad} f(x) = 0$ であるような点 $x$ の事であり、 **非停留点** はそうでない点。接ベクトルの列 $\\{v_k\\}\_{k\in K}$ が有界であるというのは、適当な実数 $M$ が存在して任意の $k\in K$ に対して $||v_k|| < M$ となる事。
-
-また$ \langle\mathrm{grad} f(x_k),v_k\rangle < 0$ であるというのは $v_k$ が $f$ が減少する方向であるという事を表しているので、
-
-$$ \lim\_{N\rightarrow\infty}\sup\_{k\in K,k>N}\langle\mathrm{grad} f(x_k),v_k\rangle < 0$$
-
-であるというのは、最初の方は別として 最終的には $\\{v_k\\}$ が全て $f$ を減少させる方向であるという事。
-つまり Gradient-related sequence というのは、停留点以外では(いずれ必ず)減少する方向を向くような方向の列であって、$||v_k||\neq\infty$であるようなもの。
+となるように選べば良い。([Absil本](https://press.princeton.edu/absil)では $\\{x_k\\}$ に対する **Gradient-related sequence** になるように選ぶとあるが、収束性の証明が面倒になる割にそこまで一般化するメリットがあまりないので、このノートではシンプルにする。特にArmijo pointを求めるアルゴリズムはGradient-related sequenceであるだけだと条件が弱くて停止しない場合があると思う。私が間違ってたら教えてください。)
 
 ステップサイズ $t_k$ は以下のArmijo条件を満たすように取ると良い。
 
@@ -82,7 +69,7 @@ Armijo条件は移動 $x\rightarrow R_x(tv)$ によって $f$ の値が十分減
 Armijo条件を満たす $t$ を見つける方法としては、例えば以下のアルゴリズムがある。
 (下記アルゴリズムで見つかる点をAbsil本ではArmijo Pointと呼んでいる。)
 
-{{% algorithm title="Backtrackingアルゴリズム" %}}
+{{% algorithm title="ArmijoのBacktrackingアルゴリズム" %}}
 
 $\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
 
@@ -92,20 +79,40 @@ $\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
 {{% /algorithm %}}
 
 $\alpha=1, \beta=1/2$ といった値がよく使われると思う。
-もちろん、 $f(R_x(t v))$ が最も小さくなるような$t\_\ast = \mathrm{argmin}_t f(R_x(t v))$ を厳密に求める事ができるならば、それでも良い。
+もちろん、 $f(R_x(t v))$ が最も小さくなるような$t\_\ast = \mathrm{argmin}_t f(R_x(t v))$ を厳密に求める事ができるならばそれでも良い。
+Backtrackingアルゴリズムは以下の重要な性質を持つ。
 
-続いてAbsil本ではいきなり"Accelerated" Line Searchというフレームワークが紹介されるが、本ノートでは単純なものから説明する。
-「フレームワーク」と呼んでいるのは、探索方向の選び方にまだ自由度があるため。
+{{% theorem %}}
+$f(x)$ が停留点でなく、 $\langle\mathrm{grad}f(x),v\rangle < 0$ であるならば、 ArmijoのBacktrackingアルゴリズムは有限ステップで停止する。
+{{% /theorem %}}
+
+【証明】背理法により示す。Backtrackingアルゴリズムが停止しないとすると、$n=0,1,2,\ldots$ に対して
+$$ f(R_x(\alpha\beta^n v)) > f(x) + c \langle\mathrm{grad}f(x),\alpha\beta^n v \rangle $$
+すなわち
+$$ \frac{f(R_x(\alpha\beta^n v))-f(R_x(0))}{\beta^n} > c\alpha \langle\mathrm{grad}f(x),v \rangle \quad(\because R_x(0)=x)$$
+が成立。ここで $n\rightarrow\infty$ の極限をとると
+
+$$ \left.\frac{\mathrm{d}}{\mathrm{d}t} f(R_x(\alpha t v))\right|_{t=0} \geq c\alpha \langle\mathrm{grad}f(x),v \rangle$$
+
+この左辺は
+
+$$\left.\frac{\mathrm{d}}{\mathrm{d}t} f(R_x(\alpha t v))\right|_{t=0} = \mathrm{D}f(R_x(0))[\mathrm{D}R_x(0)[\alpha v]]=\mathrm{D}f(x)[\alpha v]=\langle\mathrm{grad}f(x),\alpha v\rangle = \alpha\langle\mathrm{grad}f(x),v\rangle$$
+
+であるので
+
+$$ \langle\mathrm{grad}f(x),v\rangle \geq c\langle\mathrm{grad}f(x),v \rangle$$
+
+よって $c\in(0,1)$ より $\langle\mathrm{grad}f(x),v\rangle \geq 0$ となるがこれは矛盾。$\square$
+
+さて、ではいよいよ直線探索のアルゴリズムの説明をする。(Absil本ではいきなり"Accelerated" Line Searchというフレームワークが紹介されるが、本ノートでは単純なものから説明する。)
 
 {{% algorithm title="Line Search (LS)" %}}
 リーマン多様体 $\mathcal{M}$、滑らかな関数 $f: \mathcal{M}\rightarrow\mathbb{R}$ 、レトラクション $R:T\mathcal{M}\rightarrow\mathcal{M}$、定数 $c\in (0,1)$とする。
 
 最初の点 $x_0\in\mathcal{M}$ を選び、$k=0,1,2,\ldots$ に対して以下を反復する。
 
-1. 探索方向 $v_k\in T\_{x_k}\mathcal{M}$ を選ぶ。
+1. 探索方向 $v_k\in T\_{x_k}\mathcal{M}$ を $\langle\mathrm{grad}f(x_k),v_k\rangle<0$ を満たすように選ぶ。
 2. Armijo条件を満たすステップサイズ $t_k$ をBacktrackingアルゴリズムにより求める。
 3. $x\_{k+1} = R\_{x_k}(t_kv_k)$ とする。
-
-(ただし $\\{v_k\\}$ は $\\{x_k\\}$ とGradient-relatedとなるように選ぶ)
 
 {{% /algorithm %}}

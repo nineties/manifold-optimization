@@ -129,6 +129,8 @@ $$ d(x,y) := \inf\\{L(\gamma)\mid \text{$\gamma$は$x,y$を結ぶ曲線}\\}$$
 $$ \langle \mathrm{grad} f(x), h\rangle = \mathrm{D}f(x)[h] $$
 
 となるものである。
+
+$\mathrm{grad} f(x) = 0$ であるような点 $x$ を $f$ の **停留点(Stationary point)** という。
 {{% /definition %}}
 
 $x$ の周りのチャートにおける成分表示では
@@ -163,6 +165,7 @@ $$\langle\mathrm{grad} f(x),h\rangle =
 $$
 
 となる。
+
 
 {{% example title="ユークリッド空間における勾配" %}}
 ユークリッド空間 $\mathbb{R}^m$ 上の滑らかな関数 $f:\mathbb{R}^m\rightarrow\mathbb{R}$の勾配は
