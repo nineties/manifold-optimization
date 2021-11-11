@@ -19,10 +19,12 @@ $k > K$ ならば $x_k \in U$ であり、$\psi(x_k)$ が $\psi(x\_\ast)$ に収
 また、
 $$ \psi^{-1}(\lim\_{k\rightarrow\infty} \psi(x_k)) $$
 を $\\{x_k\\}$ の **極限(limit)** といい、 $\lim_{k\rightarrow\infty}x_k$ と書く。
+
+また $\\{x_k\\}$ の適当な部分列が $x\in\mathcal{M}$ に収束するならば $x$ をこの点列の **極限点(limit point)** と呼び、 $\\{x_k\\}$ の極限点の集合を **極限集合(limit set)** という。
 {{% /definition %}}
 
 つまり適当なチャートの上に移ってユークリッド空間の点列としての極限を取ってから、$\mathcal{M}$ に戻せば良い。
-ところで教科書では触れていないけど、多様体は位相空間であるから近傍を用いて点列の極限を定義する事も出来てこれらの定義は同値。
+また、多様体は位相空間であるから近傍を用いて点列の極限を定義する事も出来てこれらの定義は同値。
 細かい証明は省略するが $\psi$ は同相写像であるからほぼ明らか。
 
 {{% definition title="点列の収束(近傍を用いた定義)" %}}
@@ -71,6 +73,7 @@ Armijo条件は移動 $x\rightarrow R_x(tv)$ によって $f$ の値が十分減
 {{< figure src="../images/armijo.png" >}}
 
 Armijo条件を満たす $t$ を見つける方法としては、例えば以下のアルゴリズムがある。
+(下記アルゴリズムで見つかる点をAbsil本ではArmijo Pointと呼んでいる。)
 
 {{% algorithm title="Backtrackingアルゴリズム" %}}
 
@@ -78,5 +81,20 @@ $\alpha > 0$ を十分大きな定数、 $\beta \in (0, 1)$ とする。
 
 1. $t=\alpha$ とする。これがArmijo条件を満たすならば終了する。
 2. $t \leftarrow \beta t$ とし1に戻る。
+
+{{% /algorithm %}}
+
+続いてAbsil本ではいきなり"Accelerated" Line Searchというフレームワークが紹介されるが、本ノートでは単純なものから説明する。
+
+{{% algorithm title="LS: Line Search" %}}
+リーマン多様体 $\mathcal{M}$、滑らかな関数 $f: \mathcal{M}\rightarrow\mathbb{R}$ 、レトラクション $R:T\mathcal{M}\rightarrow\mathcal{M}$、定数 $c\in (0,1)$とする。
+
+最初の点 $x_0\in\mathcal{M}$ を選び、$k=0,1,2,\ldots$ に対して以下を反復する。
+
+1. 接ベクトル $d_k\in T\_{x_k}\mathcal{M}$ を選ぶ。
+2. Armijo条件を満たすステップサイズ $t$ を選ぶ。
+3. $x\_{k+1} = R\_{x_k}(td_k)$ とする。
+
+(ただし $\\{d_k\\}$ は $\\{x_k\\}$ とGradient-relatedとなるように選ぶ)
 
 {{% /algorithm %}}
