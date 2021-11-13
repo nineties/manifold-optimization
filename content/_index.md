@@ -18,7 +18,7 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 3. [多様体の位相構造](3-topology)
 4. [可微分写像、部分多様体](4-submanifold)
 5. [多様体の構成方法](5-construction)
-6. [接ベクトル空間](6-tangent)
+6. [接ベクトル空間、接バンドル、ベクトル場](6-tangent)
 7. [微分](7-derivative)
 8. [リーマン多様体、勾配](8-riemann)
 9. [レトラクション](9-retractions)
