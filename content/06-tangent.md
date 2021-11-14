@@ -290,15 +290,15 @@ $$T_{[x]}(\mathcal{M}/{\sim})\simeq\mathcal{H}_x$$
 
 {{% example title="実射影空間" %}}
 実射影空間 $\mathbb{RP}^{n-1}$ の接ベクトル空間は
-$$ T_{[x]}\mathbb{RP}^{n-1} = \\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
-任意の $\alpha\in\mathbb{R}_\ast$ と点 $x$ でのリフト $u_x$ に対して
+$$ T\_{[x]}\mathbb{RP}^{n-1} = \\{z\in\mathbb{R}^n\mid x^Tz=0\\}$$
+任意の $\alpha\in\mathbb{R}\_\ast$ と点 $x$ でのリフト $u_x$ に対して
 $$ u_{\alpha x}=\alpha u_x $$
 が成立する。
 {{% /example %}}
 
-実射影空間 $\mathbb{RP}^{n-1}$ は $\mathbb{R}^n_\ast$ に同値関係
+実射影空間 $\mathbb{RP}^{n-1}$ は $\mathbb{R}^n\_\ast$ に同値関係
 
-$$x\sim y \Leftrightarrow \exists \alpha\in\mathbb{R}_\ast,y=\alpha x$$
+$$x\sim y \Leftrightarrow \exists \alpha\in\mathbb{R}\_\ast,y=\alpha x$$
 を入れたものであるので、
 
 $$\pi^{-1}([x]) = \\{\alpha x\mid\alpha\in\mathbb{R}_\ast\\}=x\mathbb{R}\_\ast$$
