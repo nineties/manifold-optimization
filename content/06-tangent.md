@@ -352,7 +352,7 @@ $\dim\mathcal{M}=n$の時、接バンドル $T\mathcal{M}$ は $2n$ 次元多様
 
 というのは $\mathcal{M}$ の$x$の周りのチャート $(U,\varphi)$ に対して
 
-$$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2n}: v\mapsto (\varphi_1(x),\ldots,\varphi_n(x),v(\varphi_1(x)),\ldots,v(\varphi_n(x)))^T$$
+$$ \varphi': T_x\mathcal{M}\rightarrow\mathbb{R}^{2n}: v\mapsto (\varphi_1(x),\ldots,\varphi_n(x),v(\varphi_1)(x),\ldots,v(\varphi_n)(x))^T$$
 
 が $T\mathcal{M}$ のチャートとなり、これらを全て集めて $T\mathcal{M}$ のアトラスを構成する事が出来る。
 
