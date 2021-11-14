@@ -13,16 +13,18 @@ Computer Vision、ロボットの制御、機械学習モデルのパラメー�
 
 もし内容に誤りがありましたら、 [IssueやPull Request](https://github.com/nineties/manifold-optimization)を頂けますとありがたいです。
 
-1. [モチベーション](1-motivation)
-2. [多様体の定義](2-manifold)
-3. [多様体の位相構造](3-topology)
-4. [可微分写像、部分多様体](4-submanifold)
-5. [多様体の構成方法](5-construction)
-6. [接ベクトル空間、接バンドル、ベクトル場](6-tangent)
-7. [微分](7-derivative)
-8. [リーマン多様体、勾配](8-riemann)
-9. [レトラクション](9-retractions)
+1. [モチベーション](01-motivation)
+2. [多様体の定義](02-manifold)
+3. [多様体の位相構造](03-topology)
+4. [可微分写像、部分多様体](04-submanifold)
+5. [多様体の構成方法](05-construction)
+6. [接ベクトル空間、接バンドル、ベクトル場](06-tangent)
+7. [微分](07-derivative)
+8. [リーマン多様体、勾配](08-riemann)
+9. [レトラクション](09-retractions)
 10. [直線探索](10-linesearch)
+
+- [索引](99-indexpage)
 
 
 参考にした文献
