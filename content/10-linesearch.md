@@ -171,14 +171,14 @@ $$ v'_k = \frac{v_k}{||v_k||},\quad t'_k=\frac{t_k||v_k||}{\beta}$$
 
 $$\begin{aligned}
                 &\quad f(R_{x_k}(t'_kv'_k)) > f(x_k) + c t'_k\langle\mathrm{grad}f(x_k),v'_k \rangle \\\\
-\Leftrightarrow &\quad \frac{f(R_{x_k}(t'_kv'_k))) - f(R_{x_k}(0v'_k))}{t'_k} > c\langle\mathrm{grad}f(x_k),v'_k\rangle
+\Leftrightarrow &\quad \frac{f(R\_{x\_k}(t'\_kv'\_k))) - f(R\_{x\_k}(0v'\_k))}{t'\_k} > c\langle\mathrm{grad}f(x\_k),v'\_k\rangle
 \end{aligned}$$
 
 であるので、中間値の定理よりある $\tilde{t}\in (0,t'_k)$ が存在して
 
 $$\begin{aligned}
-                & \quad \left.\frac{\mathrm{d}}{\mathrm{d}t} f(R_{x_k}(tv'_k)\right|_{t=\tilde{t}} > c\langle\mathrm{grad}f(x_k),v'_k\rangle \\\\
-\Leftrightarrow & \quad \mathrm{D}f(R_{x_k}(\tilde{t}v'_k))[\mathrm{D}R_x(\tilde{t}v'_k)[v'_k]] > c\langle\mathrm{grad}f(x_k),v'_k\rangle \\\\
-\Leftrightarrow & \quad \langle\mathrm{grad}f(x_k),v'_k\rangle > c\langle\mathrm{grad}f(x_k),v'_k\rangle \\\\
-\Leftrightarrow & \quad (1-c)\langle\mathrm{grad}f(x_k),v'_k\rangle > 0
+                & \quad \left.\frac{\mathrm{d}}{\mathrm{d}t} f(R\_{x\_k}(tv'\_k)\right|\_{t=\tilde{t}} > c\langle\mathrm{grad}f(x\_k),v'\_k\rangle \\\\
+\Leftrightarrow & \quad \mathrm{D}f(R\_{x\_k}(\tilde{t}v'\_k))[\mathrm{D}R\_x(\tilde{t}v'\_k)[v'\_k]] > c\langle\mathrm{grad}f(x\_k),v'\_k\rangle
 \end{aligned}$$
+
+(ここでAbsil本では「$||v'_k||=1$ だから$\\{v'_k\\}$はコンパクト集合なので収束する部分列が取れる」という議論をしているのだけどこれは正しいだろうか？一般の多様体では「有界閉集合だからコンパクト」とは言えないし、欲しいのはコンパクト性じゃなくて点列コンパクト性であるし。)
