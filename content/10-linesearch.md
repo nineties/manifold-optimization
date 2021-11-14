@@ -40,6 +40,16 @@ $$ \lim_{k\rightarrow\infty} f(x_k) = f\left(\lim_{k\rightarrow\infty} x_k\right
 
 {{% /proposition %}}
 
+点列 $\\{x_k\\}$ の各点における接ベクトルの列 $\\{v_k\\}\,v_k\in T_{x_k}\mathcal{M}$ の収束も考える必要がある。
+[Absil本](https://press.princeton.edu/absil)では説明が欠けている気がするが、各 $v_k$ はそれぞれ異なる接ベクトル空間の元であるので、
+$\\{v_k\\}$ の代わりに接バンドル $T\mathcal{M}$ の点列 $ \\{(x_k, v_k)\\}$ を考える。そして
+$\displaystyle\lim_{k\rightarrow\infty}(x_k,v_k) = (x_\ast,v_\ast) $
+である事を
+$\displaystyle\lim_{k\rightarrow\infty} v_k = v_\ast $
+と定める。
+
+----
+
 探索方向 $v_k$ は停留点以外では $f(x_k)$ が減少する方向を向いていて欲しい。[Absil本](https://press.princeton.edu/absil)では $\\{x_k\\}$ に対する **Gradient-related sequence** になるように選ぶとあるが、取り扱いが面倒な割にほとんどの場合はここまで一般化する必要がないと思うので、 ここでは以下の条件を満たすように選ぶことにする。
 (特に $k$ が小さいところでArmijo pointを求めるアルゴリズムがGradient-related sequenceであるだけだと条件が弱くて停止しない場合があると思う。私が間違ってたらどなたか教えてください。)
 
