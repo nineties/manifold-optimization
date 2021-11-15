@@ -146,8 +146,10 @@ Wolfe条件に相当する条件を扱うのは、後に説明するアフィン
 Backtracking Line Searchアルゴリズムの生成する点列 $\\{x_k\\}$ が集積点を持つならばそれは $f$ の停留点である
 {{% /theorem %}}
 
+(Absil本ではこの定理の証明がなんかおかしいように思う。「探索方向ベクトルを正規化したものの集合がコンパクト集合だから収束する部分列が取れる」という議論をしているが、探索方向ベクトルはそれぞれ異なる接ベクトル空間の元なので構造を持った集合ではないし、欲しいのはコンパクト性じゃなくて点列コンパクト性である。)
+
 【証明】
-Armijo条件と $x_{k+1} = R\_{x_k}(t_kv_k)$ より$ f(x_{k}) \geq f(x_{k+1})$であるので、$\\{f(x_k)\\}$ は $\mathbb{R}$ の単調減少列である。 部分列 $\\{x\_k\\}\_{k\in K}$ が $x\_\ast$ に収束するならば、 $\\{f(x\_k)\\}\_{k\in K}$ は $f(x\_\ast)$ に収束するが $f(x_k)$ が単調減少列であることより $\\{f(x\_k)\\}$ 全体も $f(x\_\ast)$ に収束する。また $f$ は滑らかな関数であるので、 $\\{\mathrm{grad}f(x_k)\\}$ は $\mathrm{grad}f(x_\ast)$ に収束する。
+Armijo条件と $x_{k+1} = R\_{x_k}(t_kv_k)$ より$ f(x_{k}) \geq f(x_{k+1})$であるので、$\\{f(x_k)\\}$ は $\mathbb{R}$ の単調減少列である。 部分列 $\\{x\_k\\}\_{k\in K}$ が $x\_\ast$ に収束するならば、 $\\{f(x\_k)\\}\_{k\in K}$ は $f(x\_\ast)$ に収束するが $f(x_k)$ が単調減少列であることより $\\{f(x\_k)\\}$ 全体も $f(x\_\ast)$ に収束する。また $f$ は滑らかな関数であるので、 $\\{\mathrm{grad}f(x_k)\\}$ は $\mathrm{grad}f(x\_\ast)$ に収束する。
 
 Armijo条件と探索方向の選び方より
 
@@ -162,12 +164,12 @@ $$ \lim_{k\rightarrow\infty} t_k||\mathrm{grad}f(x_k)||^2 = 0$$
 
 $$ f\left(R_{x_k}\left(\frac{t_k}{\beta} v_k\right)\right) > f(x_k) + c \frac{t_k}{\beta}\langle\mathrm{grad}f(x_k),v_k \rangle $$
 
-となる。ここで
+となる。ここで $k$ が十分大きければ $x_k,x_{k+1},\ldots$ の全てを含むチャートが存在するのでそれを $(U,\psi)$ とし、このチャート上で
+$v_k,v_{k+1},\ldots$ に対応する $\mathbb{R}^n$ のベクトルを $u_k,u_{k+1},\ldots$ とする。
 
-$$ v'_k = \frac{v_k}{||v_k||},\quad t'_k=\frac{t_k||v_k||}{\beta}$$
+ここで$v'\_k = \frac{v_k}{||u_k||} $ とおく。すると $v'\_k,v'\_{k+1},\ldots$ に対応する $\mathbb{R}^n$ のベクトルはノルムが1の列 $\frac{u_k}{||u_k||},\frac{u\_{k+1}}{||u\_{k+1}||},\ldots$ となる。これは $\mathbb{R}^n$ の有界閉集合の無限点列であるので、収束する部分列を持つ。すなわち適当な添字の集合 $K$ が存在して$ \lim_{k\in K,k\rightarrow\infty}\frac{u_k}{||u_k||} = u\_\ast $ なる $u\_\ast \in \mathbb{R}^n$ が存在する。つまり $\mathbb{R}^{2n}$ の点列 $\\{(\psi(x_k),u_k/||u_k||)\\}$ も $k\in K,k\rightarrow\infty$ で $(\psi(x\_\ast),u\_\ast)$ に収束するので、対応する接バンドル $T\mathcal{M}$ の点列 $\\{(x_k,v'_k)\\}$ も収束する(一つのチャート内で局所的に見れば $T\mathcal{M}$と $\mathbb{R}^{2n}$ は同相空間だから)。その点を $(x\_\ast, v'\_\ast)$ とする。
 
-とおくと
-
+さて、さらに$t'_k=\frac{t_k||u_k||}{\beta}$とおくと
 
 $$\begin{aligned}
                 &\quad f(R_{x_k}(t'_kv'_k)) > f(x_k) + c t'_k\langle\mathrm{grad}f(x_k),v'_k \rangle \\\\
@@ -181,4 +183,4 @@ $$\begin{aligned}
 \Leftrightarrow & \quad \mathrm{D}f(R\_{x\_k}(\tilde{t}v'\_k))[\mathrm{D}R\_x(\tilde{t}v'\_k)[v'\_k]] > c\langle\mathrm{grad}f(x\_k),v'\_k\rangle
 \end{aligned}$$
 
-(ここでAbsil本では「$||v'\_k||=1$ だから$\\{v'\_k\\}$はコンパクト集合なので収束する部分列が取れる」という議論をしているのだけどこれは怪しい気がする。$\\{v'\_k\\}$ はそれぞれ異なる接ベクトル空間の元なので、そもそも構造を持った集合ではなく「有界閉集合だからコンパクト」とは言えないし、欲しいのはコンパクト性じゃなくて点列コンパクト性。)
+(TBD)
