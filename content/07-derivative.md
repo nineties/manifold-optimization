@@ -1,6 +1,7 @@
 ---
 title: 7. 微分
 section: 7
+description: "バナッハ空間の間の写像の微分を接ベクトル空間に対して一般化する。"
 ---
 
 {{< ref def.differential >}} で定めたバナッハ空間の間の写像 $f:V\rightarrow W$ の微分 $\mathrm{D}f(a)[-]$ を接ベクトル空間に対して一般化する。

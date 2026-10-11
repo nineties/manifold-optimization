@@ -8,24 +8,28 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest   # ubuntu-18.04 のランナーは廃止され、2021-11 以降デプロイが止まっていた
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.83.1'
           # extended: true
 
       - name: Build
+        # 相互参照 (ref ショートコード) は他ページの Scratch を読むので、並列に描画すると
+        # 参照が抜けることがある。ワーカーを1にして毎回同じ結果にする。
+        env:
+          HUGO_NUMWORKERMULTIPLIER: 1
         run: hugo --minify
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
